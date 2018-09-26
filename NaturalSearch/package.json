@@ -10,8 +10,11 @@
   "dependencies": {
     "body-parser": "*",
     "bootstrap": "*",
+    "css": "^2.2.4",
+    "d3": "^5.7.0",
+    "d3-node": "^2.0.1",
     "ejs": "^2.4.2",
-    "express": "*",
+    "express": "^4.16.3",
     "morgan": "*",
     "neo4j-driver": "^1.5.0",
     "nodemon": "^1.18.4"
