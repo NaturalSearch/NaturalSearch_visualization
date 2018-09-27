@@ -19,7 +19,8 @@
     "neo4j": "^2.0.0-RC2",
     "neo4j-driver": "^1.6.3",
     "neo4jd3": "0.0.5",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "popoto": "^2.0.8"
   },
   "description": ""
 }
