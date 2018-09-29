@@ -3,12 +3,12 @@
 <style>
 
 .links line {
-  stroke: #000000;
+  stroke: purple;
   stroke-opacity: 0.6;
 }
 
 .nodes circle {
-  stroke: #fff;
+  stroke: black;
   stroke-width: 1.5px;
 }
 
@@ -28,7 +28,7 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("../static/img/movied3.json", function(error, graph) {
+d3.json("../static/img/movied3_final.json", function(error, graph) {
   if (error) throw error;
 
   var link = svg.append("g")
@@ -43,7 +43,7 @@ d3.json("../static/img/movied3.json", function(error, graph) {
     .selectAll("circle")
     .data(graph.nodes)
     .enter().append("circle")
-      .attr("r", 5)
+      .attr("r", 15)
       .attr("fill", function(d) { return color(d.group); })
       .call(d3.drag()
           .on("start", dragstarted)
@@ -51,7 +51,7 @@ d3.json("../static/img/movied3.json", function(error, graph) {
           .on("end", dragended));
 
   node.append("title")
-      .text(function(d) { return d.id; });
+      .text(function(d) { return d.title || d.name; });
 
   simulation
       .nodes(graph.nodes)

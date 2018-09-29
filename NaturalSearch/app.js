@@ -39,36 +39,39 @@ app.get('/', function(req, res){
   res.send('Ae carai');
 });
 
-var test = require('./public/img/movie.json');
+var data_movie = require('./public/img/movie_complete.json');
+
 //console.log(JSON.stringify(test));
 
 
 app.get('/teste', function(req, res){
   
   function idIndex(a,id) {
-    for (var i=1;i<a.length;i++) {
+    for (var i=0;i<a.length;i++) {
       if (a[i].id == id) return i;}
     return null;
   }
-  var nodes=[], links=[],movies=[];
 
-  test.results[0].data.forEach(function (row) {
+  // capturar os dados dos filmes
+  var nodes=[], links=[];
+  data_movie.results[0].data.forEach(function (row) {
      row.graph.nodes.forEach(function (n) {
-       if (idIndex(nodes,n.id) == null) 
-       group = n.labels[0];
-       if (group=="Movie"){
-          group=1;
-          nodes.push({id:n.id,title:n.properties.name,group:group});
-          links = links.concat( row.graph.relationships.map(function(r) {
-            source = idIndex(nodes,r.startNode)
-            target = idIndex(nodes,r.endNode)
-            return {source:source,target:target,value:10};
-           }));
+       if (idIndex(nodes,n.id) == null)
+        group=n.labels[0];
+        if (group=="Movie"){
+            group=1;
+        }else if (group=="Person"){
+          group=2;
         }
-      });
+         nodes.push({id:n.id,title:(n.properties.name || n.properties.title),group:groupn});
+     });
+     links = links.concat( row.graph.relationships.map(function(r) {
+      return {source:idIndex(nodes,r.startNode),target:idIndex(nodes,r.endNode),value:20};
+    }));
 
   });
-  res.send('porraaa')
+  
+  res.send("poraaa");
   viz = {nodes:nodes, links:links};
   
   //create a new file json to use in d3
