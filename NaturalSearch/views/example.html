@@ -13,10 +13,10 @@
 }
 
 </style>
-<svg width="960" height="600"></svg>
+
+<svg width="1400" height="800"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
-
 var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
@@ -26,9 +26,9 @@ var color = d3.scaleOrdinal(d3.schemeCategory20);
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }))
     .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(width / 2, height / 2));
+    .force("center", d3.forceCenter(width/2 , height/2));
 
-d3.json("../static/img/movied3_final.json", function(error, graph) {
+d3.json("../static/img/movied3.json", function(error, graph) {
   if (error) throw error;
 
   var link = svg.append("g")

@@ -60,19 +60,23 @@ app.get('/teste', function(req, res){
         group=n.labels[0];
         if (group=="Movie"){
             group=1;
+          title=n.properties.title
+          nodes.push({id:n.id,title:title,group:group});
         }else if (group=="Person"){
           group=2;
+          name=n.properties.name;
+          nodes.push({id:n.id,name:name,group:group});
         }
-         nodes.push({id:n.id,title:(n.properties.name || n.properties.title),group:groupn});
+         
      });
      links = links.concat( row.graph.relationships.map(function(r) {
-      return {source:idIndex(nodes,r.startNode),target:idIndex(nodes,r.endNode),value:20};
+      return {source:r.startNode,target:r.endNode,value:20};
     }));
-
+    viz = {nodes:nodes, links:links};
   });
   
+  
   res.send("poraaa");
-  viz = {nodes:nodes, links:links};
   
   //create a new file json to use in d3
   var fs = require('fs');
