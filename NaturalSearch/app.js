@@ -50,15 +50,23 @@ app.get('/teste', function(req, res){
       if (a[i].id == id) return i;}
     return null;
   }
-  var nodes=[], links=[];
+  var nodes=[], links=[],movies=[];
+
   test.results[0].data.forEach(function (row) {
      row.graph.nodes.forEach(function (n) {
-       if (idIndex(nodes,n.id) == null)
-        nodes.push({id:n.id,label:n.labels[0],title:n.properties.name});
-     });
-     links = links.concat( row.graph.relationships.map(function(r) {
-       return {start:idIndex(nodes,r.startNode),end:idIndex(nodes,r.endNode),type:r.type};
-     }));
+       if (idIndex(nodes,n.id) == null) 
+       group = n.labels[0];
+       if (group=="Movie"){
+          group=1;
+          nodes.push({id:n.id,title:n.properties.name,group:group});
+          links = links.concat( row.graph.relationships.map(function(r) {
+            source = idIndex(nodes,r.startNode)
+            target = idIndex(nodes,r.endNode)
+            return {source:source,target:target,value:10};
+           }));
+        }
+      });
+
   });
   res.send('porraaa')
   viz = {nodes:nodes, links:links};

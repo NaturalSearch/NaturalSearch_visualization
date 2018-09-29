@@ -3,7 +3,7 @@
 <style>
 
 .links line {
-  stroke: #999;
+  stroke: #000000;
   stroke-opacity: 0.6;
 }
 
@@ -28,7 +28,7 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("../static/img/miserables.json", function(error, graph) {
+d3.json("../static/img/movied3.json", function(error, graph) {
   if (error) throw error;
 
   var link = svg.append("g")
