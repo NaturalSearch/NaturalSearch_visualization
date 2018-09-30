@@ -173,16 +173,19 @@
 
   <!--Search div-->
   <div id="search" class="bg-search text-center ">
-    <input id="inputGroup-sizing-lg" type="search" placeholder="Digite aqui..">
-    <div class="check-box center">  
-        <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox1" />
-        <label for="campo-checkbox1">Projetos</label>
-        &ensp;&ensp;
-        <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox" />
-        <label for="campo-checkbox">Propostas</label>
-    </div>
-    <br>
-   <button class=" fas fa-search btn btn-info btn-lg"> Pesquisar</button>
+    <form action="graph" method="GET">
+      <input id="inputGroup-sizing-lg" type="search" placeholder="Digite aqui..">
+      <div class="check-box center">  
+          <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox1" />
+          <label for="campo-checkbox1">Projetos</label>
+          &ensp;&ensp;
+          <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox" />
+          <label for="campo-checkbox">Propostas</label>
+      </div>
+      <br>
+    <button class="fas fa-search btn btn-info btn-lg" type="submit"> Pesquisar
+  </button>
+  </form>
   </div>
 
   <!-- Como usar  -->

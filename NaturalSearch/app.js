@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //actions
 app.get('/home', function(req, resp) {
   resp.sendFile('home.html', {root: path.join(__dirname, 'views')});
+
 })
 
 app.get('/example', function(req, resp) {
@@ -27,24 +28,28 @@ app.get('/example', function(req, resp) {
 
 app.get('/', function(req, res){
   session
-    .run("MATCH (n) RETURN n LIMIT 25")
+    .run("MATCH ()-[r]->() RETURN r LIMIT 800")
     .then(function(result){
       result.records.forEach(function(record){
-        //console.log(JSON.stringify(record));
+        console.log(record);
+      
+        var fs = require('fs');
+
+        fs.writeFileSync('public/img/auto_movie.json', JSON.stringify(record));
       });
     })
     .catch(function(err){
       console.log(err);
     });
   res.send('Ae carai');
+  
 });
 
-var data_movie = require('./public/img/movie_complete.json');
 
 //console.log(JSON.stringify(test));
+var data_movie = require('./public/img/movie_complete.json');
 
-
-app.get('/teste', function(req, res){
+app.get('/load', function(req, res){
   
   function idIndex(a,id) {
     for (var i=0;i<a.length;i++) {
@@ -70,7 +75,7 @@ app.get('/teste', function(req, res){
          
      });
      links = links.concat( row.graph.relationships.map(function(r) {
-      return {source:r.startNode,target:r.endNode,value:20};
+      return {source:r.startNode,target:r.endNode,value:30};
     }));
     viz = {nodes:nodes, links:links};
   });
@@ -81,7 +86,7 @@ app.get('/teste', function(req, res){
   //create a new file json to use in d3
   var fs = require('fs');
 
-  fs.writeFileSync('movied3.json', JSON.stringify(viz));
+  fs.writeFileSync('public/img/graph_d3.json', JSON.stringify(viz));
 
     console.log("Arquivo salvo");
 }); 
