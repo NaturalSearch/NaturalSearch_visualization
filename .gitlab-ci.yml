@@ -7,13 +7,7 @@ before_script:
   - npm install
 # Pick zero or more services to be used on all builds.
 # Only needed when using a docker container to run your tests in.
-# Check out: http://docs.gitlab.com/ce/ci/docker/using_docker_images.html#what-is-a-service
-cache:
-  paths:   
-  - node_modules/
-    
-
-
+# Check out: http://docs.gitlab.com/ce/ci/docker/using_docker_images.html#what-is-a-service  
 services:
   - neo4j:3.0 
 
@@ -25,10 +19,5 @@ cache:
 
 test_async:
   script:
-   - npm install
-   - node ./specs/start.js ./specs/async.spec.js
+   - node ./NaturalSearch/specs/test.js 
 
-test_db:
-  script:
-   - npm install
-   - node ./specs/start.js ./specs/db-neo4j.spec.js
