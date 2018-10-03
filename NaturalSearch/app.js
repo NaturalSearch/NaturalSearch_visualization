@@ -41,7 +41,7 @@ app.get('/', function(req, res){
     .catch(function(err){
       console.log(err);
     });
-  res.send('Ae carai');
+  res.send('Sucesso!');
   
 });
 
@@ -79,9 +79,6 @@ app.get('/load', function(req, res){
     }));
     viz = {nodes:nodes, links:links};
   });
-  
-  
-  res.send("poraaa");
   
   //create a new file json to use in d3
   var fs = require('fs');

@@ -18,6 +18,5 @@ cache:
 
 test_async:
   script:
-   - node ./specs/app.js ./specs/async.spec.js
-   - npm install
+   - node ./NaturalSearch/specs/test.js 
 
