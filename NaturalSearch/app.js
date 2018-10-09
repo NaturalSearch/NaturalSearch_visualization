@@ -21,14 +21,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, 'public')));
  
-var driver = neo4j.driver('bolt://neo4j', neo4j.auth.basic('neo4j','suaSenhaDoNeo4jAqui'));
+var driver = neo4j.driver('bolt://neo4j', neo4j.auth.basic('neo4j','eps'));
 var session = driver.session();
 
 app.get('/', function(req,res){
   session
-      .run('MATCH(n:Movie) RETURN n LIMIT 25')
+      .run('MATCH(n:Movie) RETURN n LIMIT 26')
       .then(function(result){
           var movieArr = [];
+          console.log(result);
           result.records.forEach(function(record){
               movieArr.push({
                 title: record._fields[0].properties.title,
@@ -63,8 +64,30 @@ app.get('/', function(req,res){
     .catch(function(err){
       console.log(err);
     });
-
 });
+
+app.get('/movie/search', function(req,res){
+ // var title = req.movie_title;
+  //console.log(title);
+  session
+      .run('MATCH (n:Movie) WHERE n.title CONTAINS "Matrix" RETURN n.title')
+      .then(function(result){
+         // var movieArr2 = [];
+          //console.log(result);
+         // result.records.forEach(function(record){
+           //   movieArr2.push({
+             //   title: record._fields[0].properties.title
+            //});
+            console.log(n.title);
+          });
+
+          //res.render('index',{
+            //movies: movieArr2,
+              //  person: personArr
+
+         // });
+
+  });
 
 // Configura nosso servidor HTTP para responder com Olá mundo
 /*function onRequest(request, response) {
@@ -88,7 +111,7 @@ app.listen(3000);
 // Imprime uma mensagem no servidor
 console.log("Server running at http://localhost:3000/");
 
-module.exports =app;
+module.exports = app;
 // Open the full screen search box 
 //function openSearch() {
 //  document.getElementById("myOverlay").style.display = "block";

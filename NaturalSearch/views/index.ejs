@@ -1,3 +1,12 @@
+ 
+
+<form method="get" action="/movie/search">
+    <label>Movie Name</label><br>
+    <input type = "text" name = "movie_title">
+    <br>
+    <input type = "submit" value = "Submit">
+</form>
+
 <h1>MOVIES</h1>
 <ul>
 <% movies.forEach(function(movie){ %>
@@ -6,10 +15,3 @@
 <% }) %>
 </ul>
 
-<h1>PERSON</h1>
-<ul>
-<% person.forEach(function(person){ %>
-    <li><%= person.name %></li>
-
-<% }) %>
-</ul>
