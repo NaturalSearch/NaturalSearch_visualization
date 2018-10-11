@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 //actions
-app.get('/home', function(req, resp) {
-  resp.sendFile('home.html', {root: path.join(__dirname, 'views')});
+app.get('/result', function(req, resp) {
+  resp.sendFile('result.html', {root: path.join(__dirname, 'views')});
 
 })
 
