@@ -173,8 +173,8 @@
 
   <!--Search div-->
   <div id="search" class="bg-search text-center ">
-    <form action="graph" method="GET">
-      <input id="inputGroup-sizing-lg" type="search" placeholder="Digite aqui..">
+    <form action="" method="GET">
+      <input id="inputGroup-sizing-lg" name='q' type="text" placeholder="Digite aqui..">
       <div class="check-box center">  
           <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox1" />
           <label for="campo-checkbox1">Projetos</label>
@@ -183,7 +183,7 @@
           <label for="campo-checkbox">Propostas</label>
       </div>
       <br>
-    <button class="fas fa-search btn btn-info btn-lg" type="submit"> Pesquisar
+    <button class="fas fa-search btn btn-info btn-lg" type="submit" onclick="search_form(q)">PESQUISAR
   </button>
   </form>
   </div>
@@ -308,9 +308,9 @@
 
   <!-- Container (Contact Section) -->
   <div id="whoare" class="container-fluid-3">
+    Este Produto deu Inicio no dia 14 de agosto de 2018, sendo resultado da interdisciplinaridade
     <h2>Quem somos?</h2>
     <h4>
-      Este Produto deu Inicio no dia 14 de agosto de 2018, sendo resultado da interdisciplinaridade
       entre duas disciplinas ministrada pela professora Carla, da Universidade de Brasília(UnB),
       sendo Engenharia de Produto de Software(EPS) e Métodos de Desenvolvimento de Software(MDS).
       Somos alunos da UnB do curso de Engenharia de Software, a equipe do projeto é composta por 10 alunos,

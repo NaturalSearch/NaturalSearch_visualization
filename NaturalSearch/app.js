@@ -7,6 +7,10 @@ var bodyParser = require('body-parser');
 var neo4j = require('neo4j-driver').v1;
 var driver = neo4j.driver('bolt://neo4j', neo4j.auth.basic('neo4j','eps'));
 var session = driver.session();
+var url = require('url');
+
+
+
 
 //definição de arquivos html e staticos
 app.use('/static',express.static('public'))
@@ -19,14 +23,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //actions
 app.get('/home', function(req, resp) {
   resp.sendFile('home.html', {root: path.join(__dirname, 'views')});
-
+  console.log("pesquisa" + req.query.q);
 })
 
 app.get('/example', function(req, resp) {
   resp.sendFile('example.html', {root: path.join(__dirname, 'views')});
 })
 
-app.get('/', function(req, res){
+app.get('/home?q=', function(req, res){
   session
     .run("MATCH ()-[r]->() RETURN r LIMIT 800")
     .then(function(result){
