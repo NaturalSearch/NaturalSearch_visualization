@@ -18,8 +18,12 @@
   <!--Chama a tabela-->
       <script>
       $(document).ready(function() {
-    $('#example').DataTable();
+    $('#example').DataTable( {
+        scrollY:        '50vh',
+        scrollCollapse: true,
+       
     } );
+} );
       </script>
       
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.cs	s">
@@ -166,6 +170,17 @@
   stroke: #fff;
   stroke-width: 1.5px;
 }
+
+.table config{
+    width: 20px; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 2px solid #7B68EE; /* Add a grey border */
+    margin-bottom: 5px; /* Add some space below the input */
+    border-radius: 10px;
+    background-color: #fff;
+}
+
 </style>
 </head>
  
@@ -207,7 +222,8 @@
       <br>
       <br>
       <br>
-   <table id="example" class="display" style="width:50%">
+  <div id ="table" class="table config text-center">
+   <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>Name</th>
@@ -676,18 +692,9 @@
                 <td>$112,000</td>
             </tr>
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </tfoot>
     </table>
-    <div>
+    </div>
+    </div>
       
 </body>
 </html>
