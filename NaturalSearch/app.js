@@ -22,6 +22,11 @@ app.get('/result', function(req, resp) {
 
 })
 
+app.get('/home', function(req, resp) {
+  resp.sendFile('home.html', {root: path.join(__dirname, 'views')});
+
+})
+
 app.get('/example', function(req, resp) {
   resp.sendFile('example.html', {root: path.join(__dirname, 'views')});
 })
