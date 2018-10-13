@@ -1,4 +1,4 @@
-// declaração de packges
+//packges
 var express = require('express');
 var path = require('path');
 var app = express();
@@ -9,15 +9,26 @@ var driver = neo4j.driver('bolt://neo4j', neo4j.auth.basic('neo4j','eps'));
 var session = driver.session();
 var url = require('url');
 
-
-
-
-//definição de arquivos html e staticos
+//define static engine
 app.use('/static',express.static('public'))
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+//
+function titleize(text) {
+  // change the first letter to upper.
+  text = text.charAt(0).toUpperCase() + text.slice(1);
 
+  for (var i = 0; i < text.length; i++) {
+    if (text.charAt(i) ===" ") {
+        var charToUper = text.charAt(i+1).toUpperCase();
+        var sliceBegin = text.slice(0, (i+1));
+        var sliceEnd = text.slice(i + 2);
+        text = sliceBegin + charToUper + sliceEnd;
+    }
+  }
+  return text;
+}
 
 
 //actions
@@ -25,30 +36,28 @@ app.get('/home', function(req, resp) {
   resp.sendFile('home.html', {root: path.join(__dirname, 'views')});
   console.log(req.query.q);
   search_result = req.query.q;
-  session
-  /*Como fazer querys no neo4j
-
-  "MATCH (search {title:"+"'"+search_result +"'"+"}) RETURN search"
-  search é o nome da variável que queremos salvar o resultado
-
-  */
- 
-  .run("MATCH (search {title:"+"'"+search_result +"'"+"}) RETURN search")
   
+  if(search_result!=null){
+    search_result=titleize(search_result);
+    console.log(search_result);
+  }
+  
+  //uppercase the first letter of some words
+  session
+  .run("MATCH (p:Person) WHERE ANY(prop in keys(p) where TOSTRING(p[prop]) CONTAINS '"+ search_result+ "')RETURN p;")
   .then(function(result){
     result.records.forEach(function(record){
-      console.log(record);
-    
-      var fs = require('fs');
-
-      fs.writeFileSync('public/img/search_t.json', JSON.stringify(record));
+      list_result = [];
+      list_result.push(record._fields[0].properties.name,
+                       record._fields[0].properties.born.low);
+      console.log(list_result);  
     });
   })
   .catch(function(err){
     console.log(err);
   });
-
 })
+
 
 app.get('/example', function(req, resp) {
   resp.sendFile('example.html', {root: path.join(__dirname, 'views')});
