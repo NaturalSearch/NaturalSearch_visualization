@@ -23,31 +23,36 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //actions
 app.get('/home', function(req, resp) {
   resp.sendFile('home.html', {root: path.join(__dirname, 'views')});
-  console.log("pesquisa" + req.query.q);
+  console.log(req.query.q);
+  search_result = req.query.q;
+  session
+  /*Como fazer querys no neo4j
+
+  "MATCH (search {title:"+"'"+search_result +"'"+"}) RETURN search"
+  search é o nome da variável que queremos salvar o resultado
+
+  */
+ 
+  .run("MATCH (search {title:"+"'"+search_result +"'"+"}) RETURN search")
+  
+  .then(function(result){
+    result.records.forEach(function(record){
+      console.log(record);
+    
+      var fs = require('fs');
+
+      fs.writeFileSync('public/img/search_t.json', JSON.stringify(record));
+    });
+  })
+  .catch(function(err){
+    console.log(err);
+  });
+
 })
 
 app.get('/example', function(req, resp) {
   resp.sendFile('example.html', {root: path.join(__dirname, 'views')});
 })
-
-app.get('/home?q=', function(req, res){
-  session
-    .run("MATCH ()-[r]->() RETURN r LIMIT 800")
-    .then(function(result){
-      result.records.forEach(function(record){
-        console.log(record);
-      
-        var fs = require('fs');
-
-        fs.writeFileSync('public/img/auto_movie.json', JSON.stringify(record));
-      });
-    })
-    .catch(function(err){
-      console.log(err);
-    });
-  res.send('Sucesso!');
-  
-});
 
 
 //console.log(JSON.stringify(test));
