@@ -32,6 +32,11 @@ function titleize(text) {
 
 
 //actions
+app.get('/result', function(req, resp) {
+  resp.sendFile('result.html', {root: path.join(__dirname, 'views')});
+
+})
+
 app.get('/home', function(req, resp) {
   resp.sendFile('home.html', {root: path.join(__dirname, 'views')});
   console.log(req.query.q);
