@@ -1,23 +1,19 @@
 {
-  "name": "natural_search",
-  "version": "1.0.0",
-  "main": "app.js",
+  "name": "naturalsearch",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.18.4",
     "body-parser": "^1.18.3",
-    "d3": "^5.7.0",
-    "d3-node": "^2.0.1",
-    "ejs": "^2.4.2",
-    "express": "^4.16.3",
-    "morgan": "^1.9.1",
-    "neo4j": "^2.0.0-RC2",
-    "neo4j-driver": "^1.6.3",
-    "neo4jd3": "0.0.5",
-    "nodemon": "^1.18.4"
-  },
-  "description": ""
+    "neo4j-driver": "^1.6.3"
+  }
 }
