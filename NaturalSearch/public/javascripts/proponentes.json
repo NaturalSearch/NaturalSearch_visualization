@@ -1,0 +1,1552 @@
+{
+    "proponentes": [
+        {
+            "nome": "Rui Barbosa dos Santos",
+            "responsavel": "Rui Barbosa dos Santos",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Venâncio Aires",
+            "total_captado": 0.0,
+            "proponente_id": "0430b1ed483aaad999203d9cb74d3edc9ce7147eabdb691046091f"
+        },
+        {
+            "nome": "Renan Lopes Dos Santos",
+            "responsavel": "Renan Lopes dos Santos",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Santo Antônio do Descoberto",
+            "total_captado": 0.0,
+            "proponente_id": "b315ba566940ed8449f32c463e35df5b3b88913a6d31eb4da79fc3"
+        },
+        {
+            "nome": "José Otávio Monteiro Badaró Santos",
+            "responsavel": "JOSÉ OTÁVIO M. BADARÓ SANTOS",
+            "tipo_pessoa": "fisica",
+            "UF": "BA",
+            "municipio": "Lençóis",
+            "total_captado": 0.0,
+            "proponente_id": "0f4efb56f42997c9cbc81de672fb5078c4e8e5d9efabe8ac3e7260"
+        },
+        {
+            "nome": "Cláudio Henrique Euripedes de Oliveira ",
+            "responsavel": "Cláudio Henrique Euripedes de Oliveira",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Uberlândia",
+            "total_captado": 0.0,
+            "proponente_id": "2b3508d14dfa11768a36f666306d19d34c299c50b2656f4f237831"
+        },
+        {
+            "nome": "JOHNNY CHARLES ALVES",
+            "responsavel": "Johnny Charles Alves",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Uberlândia",
+            "total_captado": 0.0,
+            "proponente_id": "8ccd6290e8d55fb4ab3b982ac9ea541fce04a4cc9db61db658d86f"
+        },
+        {
+            "nome": "ARICELIA CANTANHEDE SALES",
+            "responsavel": "ARICELIA CANTANHEDE SALES",
+            "tipo_pessoa": "fisica",
+            "UF": "MA",
+            "municipio": "São Luís",
+            "total_captado": 0.0,
+            "proponente_id": "3ba093333bf4df06aec3eca53b1037b5fb0a0826ef6925227b5875"
+        },
+        {
+            "nome": "marcely pereira de souza",
+            "responsavel": "jose willen brasil lima",
+            "tipo_pessoa": "fisica",
+            "UF": "PA",
+            "municipio": "Marituba",
+            "total_captado": 0.0,
+            "proponente_id": "388a85120ba1bf047e14e81142ebe1b1f34d04995eda0f842f2c1f"
+        },
+        {
+            "nome": "Alessandro Ribeiro Correa",
+            "responsavel": "Alessando Ribeiro Correa",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "0214b909d4c55b9dfeec13082b8405419ffeabc1b8638bd1b7f48b"
+        },
+        {
+            "nome": "Alexandre Guttierrez Mantini",
+            "responsavel": "ALEXANDRE GUTTIERREZ MANTINI",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Juiz de Fora",
+            "total_captado": 0.0,
+            "proponente_id": "1bb5a5af61dad5cac43526670af73306a9e4e0d8cffb870102ce9c"
+        },
+        {
+            "nome": "EDSON LUIS SAVEGNAGO",
+            "responsavel": "EDSON LUIS SAVEGNAGO",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Três Arroios",
+            "total_captado": 0.0,
+            "proponente_id": "d3c61cd8d4fdabdf841a40d3e2c2f20445e2ec8d7b1ff03ed6affa"
+        },
+        {
+            "nome": "Adriano Moreira Roza",
+            "responsavel": "Adriano Moreira Roza",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "f587af7d1d5a3735b223a180e4cfd2b621176ee0f3395c45bb2029"
+        },
+        {
+            "nome": "Cristiane Silva de Britto",
+            "responsavel": "Cristiane Silva de Britto",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "1b7ba19c5f47c76f975b39730dc734cdf78e156cf43a3018dbf8c2"
+        },
+        {
+            "nome": "Maximiliano Condé de Souza",
+            "responsavel": "cosme damião elias",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Ubá",
+            "total_captado": 0.0,
+            "proponente_id": "9df7e3721a89da83e04e1431bd987d19d29294d32b4de228e3e837"
+        },
+        {
+            "nome": "Lucas Fontes Lima",
+            "responsavel": "vinicius herbert de souza",
+            "tipo_pessoa": "fisica",
+            "UF": "SE",
+            "municipio": "Areia Branca",
+            "total_captado": 0.0,
+            "proponente_id": "b75fec3b24791e07b38f005edb1a78ce574a178117603fb6d3a69e"
+        },
+        {
+            "nome": "MARCELO SENA OLIVEIRA",
+            "responsavel": "MARCELO SENA OLIVEIRA",
+            "tipo_pessoa": "fisica",
+            "UF": "PE",
+            "municipio": "Jaboatão dos Guararapes",
+            "total_captado": 0.0,
+            "proponente_id": "e39f3e4554ac400f4d981144176e8d5471b3d6caf82f8ce7ea0784"
+        },
+        {
+            "nome": "Laura Borsa Cattani",
+            "responsavel": "Laura Borsa Cattani",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "89dee13e27d8d64176d76849b39ae66431ea5d74aafd3042305674"
+        },
+        {
+            "nome": "Lucimar Cesario da Silva",
+            "responsavel": "LUCIMAR CESÁRIO DA SILVA",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Goiânia",
+            "total_captado": 0.0,
+            "proponente_id": "5aa92932191dd2b3cf2409bf67f126e242c14d22bfa60544fbcff9"
+        },
+        {
+            "nome": "Laurinete de Moraes Cavalcante de Albuquerque",
+            "responsavel": "Laurinete de Moraes Cavalcante de Albuquerque",
+            "tipo_pessoa": "fisica",
+            "UF": "PE",
+            "municipio": "Recife",
+            "total_captado": 0.0,
+            "proponente_id": "987f45152a7aaaab300de70c5f23aa2aeee3b56efd391b485ec28c"
+        },
+        {
+            "nome": "Francisco Evandro Campos da Silva",
+            "responsavel": "vinicius herbert de souza",
+            "tipo_pessoa": "fisica",
+            "UF": "CE",
+            "municipio": "Fortaleza",
+            "total_captado": 0.0,
+            "proponente_id": "97381b45b3e6e93e36b3d8b3b41ce578dfdf0932ae850ed058d062"
+        },
+        {
+            "nome": "RAFAEL VIEIRA LUCAS",
+            "responsavel": "RAFAEL VIEIRA LUCAS",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 297000.0,
+            "proponente_id": "3d330298b90245218424c07ec689511b95c34cbcd5444c6c6bbb36"
+        },
+        {
+            "nome": "ALEX LEONARDO GUENTHER",
+            "responsavel": "Alex Leonardo Guenther",
+            "tipo_pessoa": "fisica",
+            "UF": "SC",
+            "municipio": "Blumenau",
+            "total_captado": 242007.5,
+            "proponente_id": "bf5c774bdcaa260e78b6227ecc29fcf59e1404059043fbece42717"
+        },
+        {
+            "nome": "JUANA RONDON DE MIRANDA",
+            "responsavel": "Juana Rondon de Miranda",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "cfd1deced0f44d981d195b875f4835f05ae556f27f8337eab410e3"
+        },
+        {
+            "nome": "Malcon Jean Bauer.",
+            "responsavel": "Malcon Jean Bauer.",
+            "tipo_pessoa": "fisica",
+            "UF": "SC",
+            "municipio": "Florianópolis",
+            "total_captado": 0.0,
+            "proponente_id": "85ad45ce1b2236f22523e8f572872e4b111bc4b3c9eca61c0b6636"
+        },
+        {
+            "nome": "Liliane Miranda Ferreira",
+            "responsavel": "Luciana Costa",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "0a925698b89b8edfc7cd3a34226e4b0f8d8c5d31402218941b8697"
+        },
+        {
+            "nome": "Jenara Miranda Lopes",
+            "responsavel": "Jenara Miranda Lopes",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "c9c26ff515956add0f5531a86df0e24e5611581a522174f114d28f"
+        },
+        {
+            "nome": "Têmis Nicolaidis Cardoso",
+            "responsavel": "Sarah Brito da Silveira",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "706eb82b2428f55af84631e0e0820eaaf08c3600e30ece2b7370a7"
+        },
+        {
+            "nome": "Luciano dos Santos Alves",
+            "responsavel": "Luciano dos Santos Alves",
+            "tipo_pessoa": "fisica",
+            "UF": "SC",
+            "municipio": "Palhoça",
+            "total_captado": 0.0,
+            "proponente_id": "f13567864ec32f6bc9fea3409d22af641844f4bc0a5cc006af5c83"
+        },
+        {
+            "nome": "Ubiratan Machado Pinto",
+            "responsavel": "Ubiratan Machado Pinto",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "ede240ffe425c7b48a8134564365d9837d33d6d45d7c29986975cc"
+        },
+        {
+            "nome": "RODRIGO DO NASCIMENTO GARCIA",
+            "responsavel": "RODRIGO DO NASCIMENTO GARCIA",
+            "tipo_pessoa": "fisica",
+            "UF": "AC",
+            "municipio": "Rio Branco",
+            "total_captado": 0.0,
+            "proponente_id": "0b661544f633cf7609fc6124cbe7d80e1626282d87313e2e366942"
+        },
+        {
+            "nome": "Sayonara Bezerra malta",
+            "responsavel": "Sayonara Bezerra Malta",
+            "tipo_pessoa": "fisica",
+            "UF": "BA",
+            "municipio": "Ilhéus",
+            "total_captado": 0.0,
+            "proponente_id": "3d4d7b1e8b0b396b83713908e38e53f1589461623f16fa08d1e12f"
+        },
+        {
+            "nome": "Mônica de Figueiredo Behague",
+            "responsavel": "MÔNICA DE FIGUEIREDO BEHAGUE",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "1fc446dc4ea0aa756d15ae4eadedce5372b74c71452f82e5c5c70e"
+        },
+        {
+            "nome": "Elisângela Pacete Virga",
+            "responsavel": "Elisângela Pacete Virga",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Poços de Caldas",
+            "total_captado": 0.0,
+            "proponente_id": "09f06cf2b3922d470bb51770be04ad331667a19ccec7b64f8967cc"
+        },
+        {
+            "nome": "WALTER RIBEIRO DE ALBUQUERQUE",
+            "responsavel": "Walter Ribeiro de Albuquerque",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "d2fd30360382a4285ed0a3a46c30584056b944d2bff37602a4e363"
+        },
+        {
+            "nome": "Marcos de Castro Machado",
+            "responsavel": "Marcos de Castro Machado",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Belo Horizonte",
+            "total_captado": 0.0,
+            "proponente_id": "469256353daf16e8fb1fe6f0b0cc6c9c4934a6ad983e6ad8c65f14"
+        },
+        {
+            "nome": "AMUR JOSUÉ GOMES",
+            "responsavel": "Amur Josué Gomes",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Belo Horizonte",
+            "total_captado": 0.0,
+            "proponente_id": "bc82de05fe2bbd9418dfdedc2ccf14b8424f45fec2600fc6d8ee4a"
+        },
+        {
+            "nome": "THIAGO DIAS FRANCISCO",
+            "responsavel": "THIAGO DIAS FRANCISCO",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "95a1571dc19060f6abb18311bef0b13f899167087c782ee36d9f60"
+        },
+        {
+            "nome": "Darcy Coppes Junior ",
+            "responsavel": "Darcy Coppes Junior",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "ccddece8922bcdaa29f075cc4f2a395445c8f6f0be5f360de790d3"
+        },
+        {
+            "nome": "Flávio Lopes de Oliveira",
+            "responsavel": "Flávio Lopes de Oliveira",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "São Leopoldo",
+            "total_captado": 0.0,
+            "proponente_id": "7e0a765ec3a4347c9d56ae3ecea916efae8d278af5f590913ec9c2"
+        },
+        {
+            "nome": "JOSE RICARDO DO NASCIMENTO",
+            "responsavel": "JOSE RICARDO DO NASCIMENTO",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "ef028d1e212cf1dbac2af3100c5390deb9623aa3bd1b9cbf3ab271"
+        },
+        {
+            "nome": "Cosme Eduardo Cruz de Oliveira",
+            "responsavel": "Cosme Eduardo Cruz de Oliveira",
+            "tipo_pessoa": "fisica",
+            "UF": "BA",
+            "municipio": "Salvador",
+            "total_captado": 0.0,
+            "proponente_id": "2873c5f1b544b6e7264fe85e349fb8bbdf53b7e27de44046cee660"
+        },
+        {
+            "nome": "Emiliano Fischer Cunha",
+            "responsavel": "Davi de Oliveira Pinheiro",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "4385e12120cc3d94434da51f509322fb26e036d3271ef01c27ead6"
+        },
+        {
+            "nome": "Philipi Emmanuel Lustosa Bandeira",
+            "responsavel": "Philipi Emmanuel Lustosa Bandeira",
+            "tipo_pessoa": "fisica",
+            "UF": "CE",
+            "municipio": "Fortaleza",
+            "total_captado": 0.0,
+            "proponente_id": "6c923763983c0934ae9d5f0047be5d7a49664d5ebb35f5f9675133"
+        },
+        {
+            "nome": "William Rafael José Pimenta",
+            "responsavel": "William Rafael Jose Pimenta",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Goiânia",
+            "total_captado": 0.0,
+            "proponente_id": "828c534b8f6a3c393a70e374818ee6c4a3d8c810c5b46cb3db6a65"
+        },
+        {
+            "nome": "Adauto Lima Cardoso",
+            "responsavel": "Adauto Lima Cardoso",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "Botucatu",
+            "total_captado": 0.0,
+            "proponente_id": "c7f997f979456a13bf79fa180532cf88b8b4db5404c7d5b21413fe"
+        },
+        {
+            "nome": "Maria José de Oliveira",
+            "responsavel": "Maria José de Oliveira",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Itabira",
+            "total_captado": 0.0,
+            "proponente_id": "f851dcffe8da4059e5d2411b71e2ee99d6068d89ad9badb1cc241d"
+        },
+        {
+            "nome": "Alex Braga da Silva",
+            "responsavel": "Marco Antonio Pacheco Junqueira",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "655549535b70ca892ab98ec477a68abcedc19b75387c2ab98b7c9b"
+        },
+        {
+            "nome": "Luís Fabiano Farias Borges",
+            "responsavel": "",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "05f8fd6b7947fa12577f1437e5cfbed9b2489d1b94c0098d602618"
+        },
+        {
+            "nome": "Marco Antônio Shimidt Arruda",
+            "responsavel": "Marco Antonio Schmith de Arruda",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "5eb321fe080d8878ec0ff6b14f40aed908933a556740b7a5ad2f45"
+        },
+        {
+            "nome": "Rodrigo Leonardo Moreira",
+            "responsavel": "Rodrigo Leonardo Moreira",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Belo Horizonte",
+            "total_captado": 0.0,
+            "proponente_id": "046a41410cbbe76eff10cfd7a7c08dd051e1bc96bb59cb732e3518"
+        },
+        {
+            "nome": "Wallace Barbosa Lima",
+            "responsavel": "Wallace Barbosa Lima",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "663173daac44ffdb81c6f85954361a954e8c3b8e93862fe0e586e4"
+        },
+        {
+            "nome": "CIRO PEREIRA NETO",
+            "responsavel": "CIRO PEREIRA NETO",
+            "tipo_pessoa": "fisica",
+            "UF": "PR",
+            "municipio": "Maringá",
+            "total_captado": 0.0,
+            "proponente_id": "8a29d587914b6ae78805467b70b6efa393704d80d4ce2c2a9affc2"
+        },
+        {
+            "nome": "Dulphe Pinheiro Machado",
+            "responsavel": "Dulphe Pinheiro Machado",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "7b93a808a3dd553008bff402af8ea4c04a91c2e4ea5d12233f4cd9"
+        },
+        {
+            "nome": "HUGO ALESSANDRO BAIA",
+            "responsavel": "Hugo",
+            "tipo_pessoa": "fisica",
+            "UF": "TO",
+            "municipio": "Palmas",
+            "total_captado": 0.0,
+            "proponente_id": "26c393824dd0693097f2d434a7d84562e32586a117d1535e7cb784"
+        },
+        {
+            "nome": "Moacir Torres",
+            "responsavel": "Moacir Torres",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "Indaiatuba",
+            "total_captado": 0.0,
+            "proponente_id": "da0ca5f539c21a6e98c601ce363fe243e6753bd250ccb42c2ed325"
+        },
+        {
+            "nome": "Michelly Crystian Rodrigues ",
+            "responsavel": "Michelly Crystian Rodrigues",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "80313ccadf481ff2c032e5871e5581ec78f1e8cb9a6a69390d2964"
+        },
+        {
+            "nome": "Gisela de Moraes Rodrigues",
+            "responsavel": "José Fernando Marques",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "f70ed17a1e00a62443a789af8709aeec557dcf14feb193cf9f0e60"
+        },
+        {
+            "nome": "Flávia Sortica Giacomini",
+            "responsavel": "vinicius herbert de souza",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Santa Maria",
+            "total_captado": 0.0,
+            "proponente_id": "d5d2b25c4ed711269e4573a1f0d0faf91ff22082f8f728177ea77f"
+        },
+        {
+            "nome": "camila soato",
+            "responsavel": "camila soato",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "c371619adcdef6648b372078a0969e41aae59d93cb5a99a769b95b"
+        },
+        {
+            "nome": "Pedro Henrique Netto Botosso ",
+            "responsavel": "Raquel Barbosa Arnaud",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Goiânia",
+            "total_captado": 0.0,
+            "proponente_id": "3ec22c8092aa9910d33e985070d2f08e65202b74ff35f4cfbb3182"
+        },
+        {
+            "nome": "Josimar Jose Machado de Souza",
+            "responsavel": "claudiney donizete gomes martins",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Portelândia",
+            "total_captado": 0.0,
+            "proponente_id": "ea5ceed9f0fb5eef9ec80c0c5420659811ca03b2350495198cc295"
+        },
+        {
+            "nome": "Lucas Andrade Fonsceca",
+            "responsavel": "vinicius herbert de souza",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "169106a16966089ae3c54d2b7babf7439a4a799bce928bc1ece000"
+        },
+        {
+            "nome": "Michelle Silveira da Silva",
+            "responsavel": "Michelle Silveira da Silva",
+            "tipo_pessoa": "fisica",
+            "UF": "SC",
+            "municipio": "Chapecó",
+            "total_captado": 83136.03,
+            "proponente_id": "6ada75cdfbc882363219334e687c9293e7377204800b1e9fc9fa6b"
+        },
+        {
+            "nome": "Nailde Viana Castanha",
+            "responsavel": "Nailde Viana Castanha",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "5588c574261a16912f12dac7f5461bfcff11c4cd9f2d90b9b70b99"
+        },
+        {
+            "nome": "Mariangela de Abreu",
+            "responsavel": "Mariangela de Abreu",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Pirenópolis",
+            "total_captado": 0.0,
+            "proponente_id": "8b47b29a1ea46e574836b79f3649891fb0ba10852d646c19638326"
+        },
+        {
+            "nome": "Sandra Helena do Carmo Rodrigues",
+            "responsavel": "Sandra Helena do Carmo Rodrigues",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Minduri",
+            "total_captado": 0.0,
+            "proponente_id": "6cd54f8711d8fa83adc71302a796609828256113bb4743ec678605"
+        },
+        {
+            "nome": "Diego Machado",
+            "responsavel": "Diego Machado",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "0cc30049f835a642d3f5c435dbc96eb71bc1268692bf575ae66e87"
+        },
+        {
+            "nome": "Janaína Magalhães",
+            "responsavel": "",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "dceaa8e5f76def33912bbe374eb17137037bbe169361ddf92462a4"
+        },
+        {
+            "nome": "Maria Teresa Romagnoli Rios",
+            "responsavel": "SIMONE MARIA DE ARAÚJO",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Araxá",
+            "total_captado": 350000.0,
+            "proponente_id": "2ac6b76ac384b00620b36484ce6e3dc1a34d4e323bc16f04fe5496"
+        },
+        {
+            "nome": "   Fábio Christian da Costa Silva",
+            "responsavel": "",
+            "tipo_pessoa": "fisica",
+            "UF": "PI",
+            "municipio": "Teresina",
+            "total_captado": 0.0,
+            "proponente_id": "47c2767ec799863eaf379f714f1c07c5497d6287bc7c0a62709e63"
+        },
+        {
+            "nome": "Leonardo Gomes Manduca Net",
+            "responsavel": "Marcelo Bruno Brigati Bizzi",
+            "tipo_pessoa": "fisica",
+            "UF": "AM",
+            "municipio": "Tabatinga",
+            "total_captado": 0.0,
+            "proponente_id": "699af57f827bdec3a828503afc848ba38002699fe90afb39a2b399"
+        },
+        {
+            "nome": "Michelle Dumont Lamounier",
+            "responsavel": "Michelle Dumont Lamounier",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Santa Bárbara",
+            "total_captado": 561034.2,
+            "proponente_id": "6b1586ad089a2017fcc81db5fd54f8e4b8272426b4f423557046a2"
+        },
+        {
+            "nome": "Pollyana de Freitas Andrade",
+            "responsavel": "Pollyana de Freitas Andrade",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Anápolis",
+            "total_captado": 0.0,
+            "proponente_id": "cdcdfe29d380bd5d4702045527dd06b0808ee992e77cf8f3cee842"
+        },
+        {
+            "nome": "Ana Patrícia de Queiroz Carneiro Dourado ",
+            "responsavel": "",
+            "tipo_pessoa": "fisica",
+            "UF": "CE",
+            "municipio": "Fortaleza",
+            "total_captado": 0.0,
+            "proponente_id": "302a44b8c2be32068e9627c5e63220e48cd251e865c14ce6736061"
+        },
+        {
+            "nome": "Ana Arruda Neiva Marques",
+            "responsavel": "Ana Arruda Neiva Marques",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "8d3e5b1b9800eb20b38e945257579f0c871a944c4ee47e11834d9a"
+        },
+        {
+            "nome": "Luis Felipe Barbosa",
+            "responsavel": "felipe da veiga",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "071276d3ff4f765dea4fdc6c5c4342e16497b18542ba00b4b621fc"
+        },
+        {
+            "nome": "Erika Fraenkel Cabral",
+            "responsavel": "Erika Fraenkel Cabral",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "14ab689505728e55d9ceb9babbc98e02045318190596e0cb4f1aea"
+        },
+        {
+            "nome": "PAULO HENRIQUE CAMPOS DE PAIVA VIEIRA",
+            "responsavel": "PAULO HENRIQUE CAMPOS DE PAIVA VIEIRA",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Belo Horizonte",
+            "total_captado": 0.0,
+            "proponente_id": "d8ff40dcccaa3cf70af0abb48a498b72254a30929e02d270602900"
+        },
+        {
+            "nome": "Mirian Keiko Luz Ito Rovo de Souza Lima",
+            "responsavel": "Mirian Keiko Luz Ito Rovo de Souza Lima",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "d0b0e1cf077c04728fbe8766b15504dc26d3aa42e5dd153f035717"
+        },
+        {
+            "nome": "Lorena Ferreira Oliveira",
+            "responsavel": "Lorena Ferreira Oliveira",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "03c0282fcfba694683b6b0f19f4131d06bb67262b9214316163069"
+        },
+        {
+            "nome": "Samuel Costa dos Santos ",
+            "responsavel": "Samuel Costa  dos Santos",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Santo Antônio da Patrulha",
+            "total_captado": 0.0,
+            "proponente_id": "e537db235f39b2bdd317154ee1b1f7c0df3add894f38d41707857b"
+        },
+        {
+            "nome": "MAURO DE MACEDO SOUSA",
+            "responsavel": "MAURO DE MACÊDO SOUSA",
+            "tipo_pessoa": "fisica",
+            "UF": "BA",
+            "municipio": "Juazeiro",
+            "total_captado": 0.0,
+            "proponente_id": "7a2310eadb886e7aaf03bffb87c7b8f7e8cf039c9070bde1b93e5a"
+        },
+        {
+            "nome": "André Felipe Carvalho de Miranda",
+            "responsavel": "André Felipe Carvalho de Miranda",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "832eda9d202e9a66a462f2ea5bec838942b4e78a3e4496dd77eceb"
+        },
+        {
+            "nome": "Sérgio Rodrigo Reis",
+            "responsavel": "sérgio rodrigo reis",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Belo Horizonte",
+            "total_captado": 0.0,
+            "proponente_id": "8860be11daf8357a0768419b4f1dec43073aa38982b16568c46455"
+        },
+        {
+            "nome": "Ronaldo Eli Júnior",
+            "responsavel": "Ronaldo Eli Júnior",
+            "tipo_pessoa": "fisica",
+            "UF": "PE",
+            "municipio": "Olinda",
+            "total_captado": 0.0,
+            "proponente_id": "afd4a8596e7c9ca2b45274daf644900c2e9fd39e44d87f6185d8d9"
+        },
+        {
+            "nome": "MARISE SIMOES DA COSTA",
+            "responsavel": "robson silva de mello",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Petrópolis",
+            "total_captado": 0.0,
+            "proponente_id": "556ba4820cbcbc48b1a7b4445ef199183ff9fae4c527fbadf3ba11"
+        },
+        {
+            "nome": "ruth moreira sousa regiani",
+            "responsavel": "ruth moreira sousa regiani",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "b59c6843a6ef5d209d929a10bc01482c550bf0bc520131490cb2b7"
+        },
+        {
+            "nome": "Carla Regina Clark da Costa",
+            "responsavel": "Cláudio Cesar Rocha de Oliveira",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Belo Horizonte",
+            "total_captado": 0.0,
+            "proponente_id": "719639c744edf7543c7d094c6006b8ba0251ef7c8abd297d771a5b"
+        },
+        {
+            "nome": "GERALDO DOS SANTOS FILHO",
+            "responsavel": "GERALDO DOS SANTOS FILHO",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "Ribeirão Preto",
+            "total_captado": 0.0,
+            "proponente_id": "119e44afb1cd5e266e736bbce53488d86786df121c895f09596bbd"
+        },
+        {
+            "nome": "Dheyne de Souza Santos",
+            "responsavel": "Dheyne de Souza Santos",
+            "tipo_pessoa": "fisica",
+            "UF": "PR",
+            "municipio": "Curitiba",
+            "total_captado": 0.0,
+            "proponente_id": "b79c295762ebb141e6aeaae2a15aea0df921e47ac6e17d77bf22a3"
+        },
+        {
+            "nome": "Ulísver Aparecido da Silva",
+            "responsavel": "Ulísver Aparecido da Silva",
+            "tipo_pessoa": "fisica",
+            "UF": "MS",
+            "municipio": "Campo Grande",
+            "total_captado": 0.0,
+            "proponente_id": "a2216b82657df37a2a0fff4119988114615f694412f90810e20beb"
+        },
+        {
+            "nome": "Rodrigo de Oliveira Costa",
+            "responsavel": "Rodrigo de Oliveira Costa",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "d6ed25aceb4a095c53542a718d479fe6149a5a66cf5c27358c6043"
+        },
+        {
+            "nome": "Ramilson Noronha Santiago",
+            "responsavel": "Ramilson Noronha Santiago",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Belo Horizonte",
+            "total_captado": 0.0,
+            "proponente_id": "3f884cc0653c57387782738fa6333a164c7c63d6839b94c96dc38c"
+        },
+        {
+            "nome": "Renata Cristina do Rosário Lira",
+            "responsavel": "Arthur Leandro de Moraes Maroja",
+            "tipo_pessoa": "fisica",
+            "UF": "PA",
+            "municipio": "Ananindeua",
+            "total_captado": 0.0,
+            "proponente_id": "199199b7521ab9a8c1e115f2f1a209eaa6916d50993080e8a5c02d"
+        },
+        {
+            "nome": "Clodovil Salustiano de Morais",
+            "responsavel": "Clodovil Salustiano de Morais",
+            "tipo_pessoa": "fisica",
+            "UF": "PR",
+            "municipio": "Londrina",
+            "total_captado": 0.0,
+            "proponente_id": "e7aabd5f05a0822b3934186042e47581da4e167a0744c64eddcbd9"
+        },
+        {
+            "nome": "Thiago de Lemos Santana",
+            "responsavel": "Luciano Diogo Oliveira Freitas",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Aparecida de Goiânia",
+            "total_captado": 0.0,
+            "proponente_id": "dfc177561af380db2ae3b5eab3e91fac2bb16d682dc941990944b1"
+        },
+        {
+            "nome": "Gustavo Santana Miranda Brito",
+            "responsavel": "Gustavo Santana Miranda Brito",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Goiânia",
+            "total_captado": 0.0,
+            "proponente_id": "70802b7ff81933941706a3186d0bada06b1eae515c3446f9ae2db8"
+        },
+        {
+            "nome": "Caio Ramos da Silva",
+            "responsavel": "Caio Ramos da Silva",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "cd63b31db0b92284455d0c828da3d5631a3c392456fea77ca3c806"
+        },
+        {
+            "nome": "Lincoln Ramos Lima",
+            "responsavel": "LINCOLN RAMOS LIMA",
+            "tipo_pessoa": "fisica",
+            "UF": "AM",
+            "municipio": "Humaitá",
+            "total_captado": 0.0,
+            "proponente_id": "20e702339a5218fffb5da29db2092c74deecd169e805424afca885"
+        },
+        {
+            "nome": "Marina Cavalcanti Tedesco",
+            "responsavel": "MARINA CAVALCANTI TEDESCO",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "ee35df2977bb50d35384e6d2631f467f0987c0365ff20626b918c4"
+        },
+        {
+            "nome": "Juliane Almeida Gomes",
+            "responsavel": "Juliane Almeida Gomes",
+            "tipo_pessoa": "fisica",
+            "UF": "TO",
+            "municipio": "Palmas",
+            "total_captado": 0.0,
+            "proponente_id": "6ad9ee9077c87bfe9a3d40946b5c23dc86c70b32fb43faf2cd5477"
+        },
+        {
+            "nome": "FABIO DE SOUZA MIRANDA",
+            "responsavel": "Lorena Ferreira Oliveira",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "dca81166872136a225bb4fb29f852415a7fbaf17cdef824e09aae2"
+        },
+        {
+            "nome": "Vanessa Clark",
+            "responsavel": "",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "9c59807251adfcb663199e971e2ca2fec702e30af31f34a43202f0"
+        },
+        {
+            "nome": "Zelina Karla Almeida Fassini LIma",
+            "responsavel": "zelina karla almeida fassini lima",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "d49ab3791b663bff5db9c8c04fc9f39c15bb282ce5fea1518c1f3b"
+        },
+        {
+            "nome": "ailton valdemar gularte ferreira",
+            "responsavel": "ailton valdemar gularte ferreira",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Rio Grande",
+            "total_captado": 0.0,
+            "proponente_id": "3c791e9f2923e02bfece021b383d3619bc77e6ef8a40e4a108f4f7"
+        },
+        {
+            "nome": "CRISTIANO APARECIDO MONTALVÃO DA SILVA",
+            "responsavel": "CRISTIANO APARECIDO MONTALVÃO DA SILVA",
+            "tipo_pessoa": "fisica",
+            "UF": "PE",
+            "municipio": "Triunfo",
+            "total_captado": 0.0,
+            "proponente_id": "02c8e679cc2ec593ef2674d60dc390022adcdd8e5322db74d35659"
+        },
+        {
+            "nome": "MIchel Coelho Blois",
+            "responsavel": "Rodrigo Nogueira",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "e86b2dc805cab0ebdb3c72f50929fadf47f7e8a551dabe6dfa41d2"
+        },
+        {
+            "nome": "Rafael Andre Nishida Mayrink Goes",
+            "responsavel": "Rafael Andre Nishida Mayrink Goes",
+            "tipo_pessoa": "fisica",
+            "UF": "PR",
+            "municipio": "Londrina",
+            "total_captado": 0.0,
+            "proponente_id": "c207c9fafe1f613e4acfc1658c155513c5cb6173257a468b1dcad2"
+        },
+        {
+            "nome": "Edilson Luiz da Silva",
+            "responsavel": "Edilson Luiz da Silva",
+            "tipo_pessoa": "fisica",
+            "UF": "PE",
+            "municipio": "Sanharó",
+            "total_captado": 0.0,
+            "proponente_id": "6de34c50b0e2536d4b3ce210d784701b1b0307ed517c0642873682"
+        },
+        {
+            "nome": "Diogo Cavalcanti Velasco",
+            "responsavel": "Diogo Cavalcanti Velasco",
+            "tipo_pessoa": "fisica",
+            "UF": "SE",
+            "municipio": "Aracaju",
+            "total_captado": 0.0,
+            "proponente_id": "9abcb4bac5debed98ff0a9b2af99326f038356d39716927e5501c4"
+        },
+        {
+            "nome": "Barbara Juliana Vieira Dias da Silva ",
+            "responsavel": "Barbara Juliana Vieira Dias Da Silva",
+            "tipo_pessoa": "fisica",
+            "UF": "BA",
+            "municipio": "Salvador",
+            "total_captado": 325000.0,
+            "proponente_id": "e731613812a9cbe065a6b4d3ae6f04331b725c2544c9603d3a0a80"
+        },
+        {
+            "nome": "Fabianna Kamilla Lopes Barbosa",
+            "responsavel": "Flávio de Carvalho Nardelli",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "d19c3028688a766abdb97c65fa23f2429aeec0bdee23dc8071315b"
+        },
+        {
+            "nome": "Silvana Leite Morais",
+            "responsavel": "Silvana Leite Morais",
+            "tipo_pessoa": "fisica",
+            "UF": "PE",
+            "municipio": "Recife",
+            "total_captado": 0.0,
+            "proponente_id": "2a3cff0c41afacd6ee30351cb1f59e7296502545711a5fdf41cb7e"
+        },
+        {
+            "nome": "Aline Maciel",
+            "responsavel": "Aline Maciel",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Pelotas",
+            "total_captado": 0.0,
+            "proponente_id": "e01459995b5b741283b3433c1a5f7f89cca80aea6dd0b43b63a541"
+        },
+        {
+            "nome": "JOSE ROBERTO DO NASCIMENTO SILVA",
+            "responsavel": "JOSE ROBERTO NASCIMENTO DA SILVA",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "3da20d171e16b4c82b6670952a6ddb782f4b16b848e070e2198ecb"
+        },
+        {
+            "nome": "SAUL VALADARES DE ALMEIDA",
+            "responsavel": "SAUL VALADARES DE ALMEIDA",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Aparecida de Goiânia",
+            "total_captado": 0.0,
+            "proponente_id": "bc9bc12a7723f8c1dd714f8e5cf1ff9e12683dde8dccc0be29eaee"
+        },
+        {
+            "nome": "Andrew Garcia Negreiros da Silva",
+            "responsavel": "Andrew Garcia Negreiros da Silva",
+            "tipo_pessoa": "fisica",
+            "UF": "AM",
+            "municipio": "Manaus",
+            "total_captado": 0.0,
+            "proponente_id": "2620ce03d0c2f1180cc42be1c88101c53632247ef4fbff2faa81cc"
+        },
+        {
+            "nome": "LUIZ ROGÉRIO DA SILVA",
+            "responsavel": "LUIZ ROGÉRIO LAZUR NEVES E SILVA",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "São João del Rei",
+            "total_captado": 0.0,
+            "proponente_id": "d49318c6cdc3e22314a507251d3eb62a41cf871e64d02159cd1c04"
+        },
+        {
+            "nome": "Lindsay Korth da Silva",
+            "responsavel": "Lindsay Korth da Silva",
+            "tipo_pessoa": "fisica",
+            "UF": "SC",
+            "municipio": "Florianópolis",
+            "total_captado": 0.0,
+            "proponente_id": "8684b3b716d51bb12e3f7a71bd800b75414f2b34a965d6445dca88"
+        },
+        {
+            "nome": "Taís Luciana Spichler",
+            "responsavel": "Taís Luciana Spichler",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "8de4eaa47033344c0f836d3dd28266d13dd033a2fb5f21e45130b6"
+        },
+        {
+            "nome": "Marcos Rogerio Beltrão dos Santos",
+            "responsavel": "Marcelo Bruno Brigati Bizzi",
+            "tipo_pessoa": "fisica",
+            "UF": "BA",
+            "municipio": "Correntina",
+            "total_captado": 0.0,
+            "proponente_id": "210d62b7ab85283176ff277f7a98a1f822d942bd40999459f0526d"
+        },
+        {
+            "nome": "Davi Barbosa Ribeiro",
+            "responsavel": "JEFFERSON OLIVEIRA MOTTA LEITE",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "cce77dabc633722831433ed97c03f4da155c91afdaf53ef05ffb7b"
+        },
+        {
+            "nome": "Priscilla Matos Ribeiro Silva",
+            "responsavel": "Priscilla Matos Ribeiro Silva",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "72134493d76749a69c9044e81b7f2442758a564dc9bb7f5f0e9aa6"
+        },
+        {
+            "nome": "Martha Suzana Rodrigues Andrade",
+            "responsavel": "Martha Suzana Rodrigues Andrade",
+            "tipo_pessoa": "fisica",
+            "UF": "PE",
+            "municipio": "Olinda",
+            "total_captado": 0.0,
+            "proponente_id": "1b2744e8798f77bcfc79c9c9788f604bfd1f17f2f615f41c46184c"
+        },
+        {
+            "nome": "Érico Luís Cunha Cazarré ",
+            "responsavel": "Érico Luís Cunha Cazarré ",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "a764fe7ff2df186ac0f104732ee389856a01f19f228572227dd362"
+        },
+        {
+            "nome": "Jordane Resende Macedo",
+            "responsavel": "Jordane Resende Macedo",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Belo Horizonte",
+            "total_captado": 0.0,
+            "proponente_id": "78ab5eea5727ebb15bc5d4691a0c8caab9c77e09bda615c3df16e3"
+        },
+        {
+            "nome": "Fernando da Costa Bresolin",
+            "responsavel": "Fernando Costa Bresolin",
+            "tipo_pessoa": "fisica",
+            "UF": "SC",
+            "municipio": "Florianópolis",
+            "total_captado": 0.0,
+            "proponente_id": "d18bb638048d0bcc8af2e43ebeea93479889f39abda18bbe890aa9"
+        },
+        {
+            "nome": "Mônica Marcondes Machado",
+            "responsavel": "Mônica Marcondes Machado",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "2b309232e028e9149af8366fc3ed674e2f537bdf6930173df4236c"
+        },
+        {
+            "nome": "Leonardo El Mourani Isaac",
+            "responsavel": "Leonardo El Mourani Isaac",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "57aa4705cbe18a979586548baee209bea81c553a843c833ca09ed3"
+        },
+        {
+            "nome": "Orlando Ribeiro Dantas",
+            "responsavel": "Grupo da Secretaria da Identidade e da Diversidade Cultural",
+            "tipo_pessoa": "fisica",
+            "UF": "BA",
+            "municipio": "Porto Seguro",
+            "total_captado": 0.0,
+            "proponente_id": "302c6e776bc84df7a38d8cba770c95168a9702eb9fd90fb0ffca5c"
+        },
+        {
+            "nome": "Rachel Vallego Rodrigues",
+            "responsavel": "Rachel Vallego Rodrigues",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "440bacca19fda20f388f8c9c97bd1cd9be813be3ed607254184a82"
+        },
+        {
+            "nome": "Iuri Moreno Chaves Pereira",
+            "responsavel": "Iuri Moreno Chaves Pereira",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Goiânia",
+            "total_captado": 0.0,
+            "proponente_id": "fae2427cee2b274b1ffba4dadbea19ec145b9d48ad9e5657e1325f"
+        },
+        {
+            "nome": "OZIAS SCHMIDT",
+            "responsavel": "Rafael Martins Ribeiro",
+            "tipo_pessoa": "fisica",
+            "UF": "ES",
+            "municipio": "São Gabriel da Palha",
+            "total_captado": 0.0,
+            "proponente_id": "adcb83a8e9884edf95edba14c909125baf0aa62af09ef25428bab4"
+        },
+        {
+            "nome": "Helena Ramos Paixão Tegon",
+            "responsavel": "Helena Ramos Paixão Tegon",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "5c7ada6274bb9ac093bf017e7938096ad3aec6884361acda963982"
+        },
+        {
+            "nome": "José William  Vavruk",
+            "responsavel": "José William  Vavruk",
+            "tipo_pessoa": "fisica",
+            "UF": "PR",
+            "municipio": "São José dos Pinhais",
+            "total_captado": 0.0,
+            "proponente_id": "1a2b707ea3fa510e63ffd508447654badf329b3dfe63e0e6ab4c84"
+        },
+        {
+            "nome": "IAN DOS ANJOS HERMES DA FONSECA",
+            "responsavel": "euselio cardoso pereira",
+            "tipo_pessoa": "fisica",
+            "UF": "AM",
+            "municipio": "Manaus",
+            "total_captado": 0.0,
+            "proponente_id": "5001ad4c6fd4db7dca82098aede59527ac0a15990d646b1c1b409e"
+        },
+        {
+            "nome": "Rafael",
+            "responsavel": "Rafael Queiroz Bessa",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "094e5828d1eb4449221ff577614df7b928329189df2fdc795ad36f"
+        },
+        {
+            "nome": "JOSÉ MANOEL DE SOUZA JUNIOR",
+            "responsavel": "JOSÉ MANOEL DE SOUZA JUNIOR",
+            "tipo_pessoa": "fisica",
+            "UF": "MS",
+            "municipio": "Dourados",
+            "total_captado": 0.0,
+            "proponente_id": "645f7aebdc8c16b11519f94d64e32821d8507490ec5c2fdaa3df04"
+        },
+        {
+            "nome": "Gustavo Cascon Martins",
+            "responsavel": "Gustavo Cascon Martins",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "263b2f3e514fb84388a61b5f583cce85297b415bb8df0ee45cc668"
+        },
+        {
+            "nome": "João Batista da Veiga",
+            "responsavel": "",
+            "tipo_pessoa": "fisica",
+            "UF": "PI",
+            "municipio": "São Raimundo Nonato",
+            "total_captado": 0.0,
+            "proponente_id": "126c26576fb17919cab2985bc711bc1bdf67036445baedb9dde96f"
+        },
+        {
+            "nome": "Giane Cesário Cristino Drumond",
+            "responsavel": "Giane Cesário Cristino Drumond",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Contagem",
+            "total_captado": 0.0,
+            "proponente_id": "cf0b240c7f04af4e7f9a784fee96007d988daf56ee3897e02ff0aa"
+        },
+        {
+            "nome": "ary rodrigo perez",
+            "responsavel": "ary rodrigo perez",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "ffc5123ea1bb6578b8e27edf0055eb67ec6242198517cbc01ab8a0"
+        },
+        {
+            "nome": "Amarílio Sales Santos",
+            "responsavel": "Amarílio Sales Santos",
+            "tipo_pessoa": "fisica",
+            "UF": "BA",
+            "municipio": "Salvador",
+            "total_captado": 0.0,
+            "proponente_id": "23fd1c41984f6bfa21be6fa6f5f45de2c2ff6bcb6ff7d04542d940"
+        },
+        {
+            "nome": "Thais Azevedo da Silva",
+            "responsavel": "Thais Azevedo da Silva",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "15f50089908c48ac28d3f91b54873fa2250f662d49ea9718c42f66"
+        },
+        {
+            "nome": "Soilo Urupe Chue",
+            "responsavel": "Soilo Urupe Chue",
+            "tipo_pessoa": "fisica",
+            "UF": "MT",
+            "municipio": "Cuiabá",
+            "total_captado": 0.0,
+            "proponente_id": "4e6c42714dd88946bd25d487ba4a60084b96ce2051fd25a5062756"
+        },
+        {
+            "nome": "Gustavo Maurer Gomes Türck",
+            "responsavel": "Gustavo Maurer Gomes Türck",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "456e3a37df689308ae105307405dcae3c302225c639bf79e96fc3d"
+        },
+        {
+            "nome": "Orivan Jarbas Orsi",
+            "responsavel": "Orivan Jarbas Orsi",
+            "tipo_pessoa": "fisica",
+            "UF": "SC",
+            "municipio": "Nova Trento",
+            "total_captado": 0.0,
+            "proponente_id": "105b15cb03787f93298cb3b1e946ad86adaa5228ff1d54a913d7d8"
+        },
+        {
+            "nome": "Suêdemar dos Santos Nascimento",
+            "responsavel": "Suêdemar dos Santos Nascimento",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Goiânia",
+            "total_captado": 0.0,
+            "proponente_id": "8e22f5043d1d5ae35a848da8ed4be44844e1a58b853430cca80bcc"
+        },
+        {
+            "nome": "Rosana Silva Chagas",
+            "responsavel": "Rosana Silva Chagas",
+            "tipo_pessoa": "fisica",
+            "UF": "RJ",
+            "municipio": "Rio de Janeiro",
+            "total_captado": 0.0,
+            "proponente_id": "e463d4a510184d8d9cd3d7e36edc327f0f1811ea76a9b660fc1bef"
+        },
+        {
+            "nome": "Valmir Vitor Grego",
+            "responsavel": "Valmir Vitor Grego",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Barroso",
+            "total_captado": 146690.5,
+            "proponente_id": "e3ea01360867b42ed0510582a6da69951015d5d4d67b12a65512e1"
+        },
+        {
+            "nome": "Gustavo Costa Portela",
+            "responsavel": "Gustavo Costa Portela",
+            "tipo_pessoa": "fisica",
+            "UF": "CE",
+            "municipio": "Fortaleza",
+            "total_captado": 20000.0,
+            "proponente_id": "862fa94fddbd217936c57e459abe708363f3d168af990aff0aa38d"
+        },
+        {
+            "nome": "Flávia Aparecida de Oliveira",
+            "responsavel": "Franco de Rezende Mendes Groia",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Lima Duarte",
+            "total_captado": 0.0,
+            "proponente_id": "e5f209949b616c6e890ab505283c1653bba54f63fef95786efca6f"
+        },
+        {
+            "nome": "Lorena Carmo de Sousa",
+            "responsavel": "Lorena Carmo de Sousa",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "7e40f75ea6272df05e8541d2f9e4d4f2685749039de32a542d95d7"
+        },
+        {
+            "nome": "Luis Gustavo Bandeira Rebouças",
+            "responsavel": "Luis Gustavo Bandeira Rebouças",
+            "tipo_pessoa": "fisica",
+            "UF": "CE",
+            "municipio": "Fortaleza",
+            "total_captado": 0.0,
+            "proponente_id": "2935c8290a22f71ed7581e4563a964cea06e4b4f37b64203dcc53f"
+        },
+        {
+            "nome": "EDDY TRICERRI ANDRE",
+            "responsavel": "EDDY TRICERRI ANDRE",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "b86a7ee2f00430b71c830eeabb73bb49909c0fa4bcdb878743a55c"
+        },
+        {
+            "nome": "Cledson da rRosa Motta",
+            "responsavel": "Cledson da Rosa Motta",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Cachoeirinha",
+            "total_captado": 0.0,
+            "proponente_id": "b19da95767b580095b59f4620dfd276641ae4571adc3f8575df305"
+        },
+        {
+            "nome": "Vanderlei Bururewadi Wadzerepruwe",
+            "responsavel": "Thiago Vercillo Pimentel",
+            "tipo_pessoa": "fisica",
+            "UF": "MT",
+            "municipio": "Barra do Garças",
+            "total_captado": 0.0,
+            "proponente_id": "15e9fd4abccfbfc8433bd82d881bf86a76a4f24d0ef6170778c97a"
+        },
+        {
+            "nome": "Luísa Ramos Caetano",
+            "responsavel": "Luísa Ramos Caetano",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "fd07368838db347cb3ad97a992662665c408701ebd2621edf9e813"
+        },
+        {
+            "nome": "Pedro Henrique Ferreira Lima",
+            "responsavel": "Pedro Henrique Ferreira Lima",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "96068cb2a339569fcfcf5b260ea0200373163f6611afcade07f8a2"
+        },
+        {
+            "nome": "ENEIAS GONCALVES HAMAGUCHI",
+            "responsavel": "ENEIAS GONÃ‡ALVES HAMAGUCHI",
+            "tipo_pessoa": "fisica",
+            "UF": "MG",
+            "municipio": "Uberlândia",
+            "total_captado": 0.0,
+            "proponente_id": "54d2f66be8fe2f68962695380d5e1b5ad1bc1a9666593189772c56"
+        },
+        {
+            "nome": "ANA MICHELE OLIVEIRA DA SILVA",
+            "responsavel": "ANA MICHELE OLIVEIRA DA SILVA",
+            "tipo_pessoa": "fisica",
+            "UF": "CE",
+            "municipio": "Maracanaú",
+            "total_captado": 0.0,
+            "proponente_id": "79c32043aef7f8a6b26fc87f6f4c2269f3e373f1e36fce5b1d1cfd"
+        },
+        {
+            "nome": "Gecíola Fonseca Torres",
+            "responsavel": "Gecíola Fonseca Torres",
+            "tipo_pessoa": "fisica",
+            "UF": "RS",
+            "municipio": "Porto Alegre",
+            "total_captado": 0.0,
+            "proponente_id": "2b56faef240cf7a0ac845973816be0a086fe76247448136e9ef5db"
+        },
+        {
+            "nome": "Jose Benites",
+            "responsavel": "maria giovanna rodrigues guimaraes",
+            "tipo_pessoa": "fisica",
+            "UF": "SC",
+            "municipio": "Florianópolis",
+            "total_captado": 0.0,
+            "proponente_id": "7a14b106b2a03ee61d339b0f5ceecc686e6d8a8a9042a74bfadf62"
+        },
+        {
+            "nome": "Alex Fagundes Caetano",
+            "responsavel": "Alex Fagundes Caetano",
+            "tipo_pessoa": "fisica",
+            "UF": "ES",
+            "municipio": "Vitória",
+            "total_captado": 0.0,
+            "proponente_id": "5d6c47bc792e499e6e8d7bed6485c9a9d375d57c0baf35e1bd4b4b"
+        },
+        {
+            "nome": "Patrícia Lúcia Mercio Silveira Sá ",
+            "responsavel": "Patrícia Lúcia Mercio da Silveira Sá ",
+            "tipo_pessoa": "fisica",
+            "UF": "DF",
+            "municipio": "Brasília",
+            "total_captado": 0.0,
+            "proponente_id": "9d26d9f26d43b55d7881523c6d75ea961943f86694911ea7cdf91f"
+        },
+        {
+            "nome": "Cynthya Carolline Ferreira Borges",
+            "responsavel": "Cynthya Carolline Ferreira Borges",
+            "tipo_pessoa": "fisica",
+            "UF": "PR",
+            "municipio": "Cascavel",
+            "total_captado": 8678.51,
+            "proponente_id": "e60edd470a8ecfb33a9079d8a1c489151fa6fcc99867bbdbf687a7"
+        },
+        {
+            "nome": "Bruna Patrícia Ferreira Borges",
+            "responsavel": "Bruna Patrícia Ferreira Borges",
+            "tipo_pessoa": "fisica",
+            "UF": "PR",
+            "municipio": "Curitiba",
+            "total_captado": 0.0,
+            "proponente_id": "a5e95e4a7e4b05063fc1fb69c6f26db0ac4954c75eb5d07bda5e54"
+        },
+        {
+            "nome": "Maxwell Sandeer Flôr",
+            "responsavel": "vinicius herbert de souza",
+            "tipo_pessoa": "fisica",
+            "UF": "SC",
+            "municipio": "Criciúma",
+            "total_captado": 0.0,
+            "proponente_id": "6af732f1eb191edabce42dc34bc2f82ee58e9a37294ca8517b10f2"
+        },
+        {
+            "nome": "adan bruno costa da silva",
+            "responsavel": "adan bruno costa da silva",
+            "tipo_pessoa": "fisica",
+            "UF": "PA",
+            "municipio": "Belém",
+            "total_captado": 0.0,
+            "proponente_id": "19aa86134c8b8bcf16698d7a45504994645a2db90f9efa134e7930"
+        },
+        {
+            "nome": "MARCOS ANTONIO LAZARINI",
+            "responsavel": "MARCOS ANTONIO LAZARINI",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 0.0,
+            "proponente_id": "eef74a26055dee63732b72c4e74db1f0570b7a46befe8fa6944d17"
+        },
+        {
+            "nome": "EMIDIO SANDERSON DIAS SÁ",
+            "responsavel": "Emidio Sanderson Dias Sá",
+            "tipo_pessoa": "fisica",
+            "UF": "CE",
+            "municipio": "Fortaleza",
+            "total_captado": 0.0,
+            "proponente_id": "14bf16ad84cb48bfa97b212b0abf4c99b664a218a50b1ed0191cec"
+        },
+        {
+            "nome": "Fernando Marques Ribeiro",
+            "responsavel": "Fernando Marques Ribeiro",
+            "tipo_pessoa": "fisica",
+            "UF": "GO",
+            "municipio": "Aparecida de Goiânia",
+            "total_captado": 0.0,
+            "proponente_id": "cf19d430ef38ba6ddf3c4368e96ac3d3297642e51def902fe6e7ee"
+        },
+        {
+            "nome": "Aguinaldo Silva Filho",
+            "responsavel": "Aguinaldo Silva Filho",
+            "tipo_pessoa": "fisica",
+            "UF": "SP",
+            "municipio": "São Paulo",
+            "total_captado": 299190.0,
+            "proponente_id": "323fc36c8294aaf6e70c00b0bcce1e15d25ee4cc742450c56dc1eb"
+        }
+    ]
+}
