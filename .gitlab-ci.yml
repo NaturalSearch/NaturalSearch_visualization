@@ -18,5 +18,5 @@ cache:
 
 test_async:
   script:
-   - node ./NaturalSearch/specs/test.js 
+   - node ./NaturalSearch/test/test.js 
 
