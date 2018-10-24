@@ -5,4 +5,4 @@ add package.json /code
 run yarn install 
 add . /code 
 run yarn global add nodemon
-cmd ["nodemon","app"]
+cmd ["nodemon","bin/www"]
