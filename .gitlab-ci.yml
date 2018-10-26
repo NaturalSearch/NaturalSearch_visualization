@@ -18,5 +18,5 @@ cache:
 
 test_async:
   script:
-   - node ./NaturalSearch/test/test.js 
-
+   - npm install
+   - npm test
