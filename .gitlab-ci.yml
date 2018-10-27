@@ -15,8 +15,9 @@ services:
 cache:
   paths:
   - node_modules/
+before_script:
+  - npm install
 
-test_async:
+test_node:
   script:
-   - npm install
    - npm test
