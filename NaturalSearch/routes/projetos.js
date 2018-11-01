@@ -14,27 +14,35 @@ router.get('/', function (req, res, next) {
     var projetos ='projetos1.json';   
     json = JSON.parse(fs.readFileSync('./public/projects/' + projetos, 'utf8'));      
     for(var i=0;i<json.quantidade;i++){
-        session
+        session//1
             .run('CREATE(n:NomeProjeto{nome:{nome}}) RETURN n.nome', {
                 nome: json.projetos[i].nome,
             });
             console.log(json.projetos[i].nome);
-        session
+        session//2
             .run('CREATE(n:ProponenteProjeto{proponente:{proponente}}) RETURN n.proponente', {
                 proponente:json.projetos[i].proponente,
             });
-        session
+        session//3
             .run('CREATE(n:SegmentoProjeto{segmento:{segmento}}) RETURN n.segmento', {
                 segmento: json.projetos[i].segmento,
             });
-        session
+        session//4
             .run('CREATE(n:AreaProjeto{area:{area}}) RETURN n.area', {
                 area: json.projetos[i].area,
             });
-        /* session
+        session//5
             .run('CREATE(n:UFProjeto{UF:{UF}}) RETURN n.UF', {
                 UF: json.projetos[i].UF,
-            }); */
+            });
+        session//6
+            .run('CREATE(n:ANOProjeto{ano_projeto:{ano_projeto}}) RETURN n.ano_projeto', {
+                ano_projeto: json.projetos[i].ano_projeto,
+            });
+        session//7
+            .run('CREATE(n:VPROJProjeto{valor_projeto:{valor_projeto}}) RETURN n.valor_projeto', {
+                valor_projeto: json.projetos[i].valor_projeto,
+            }); 
         session
             .run('MATCH(a:NomeProjeto{nome: {nomeParam}}), (b:ProponenteProjeto{proponente: {proponenteParam}}) MERGE(b)-[r:PROPONENTE]-(a) RETURN b,a', {
                 nomeParam: json.projetos[i].nome,
@@ -49,6 +57,16 @@ router.get('/', function (req, res, next) {
             .run('MATCH(d:AreaProjeto{area:{area}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(d)-[r:AREA]-(a) RETURN d,a', {
                 nomeParam: json.projetos[i].nome,
                 area: json.projetos[i].area,
+            });
+        session
+            .run('MATCH(e:UFProjeto{UF:{UF}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(e)-[r:UF]-(a) RETURN e,a', {
+                nomeParam: json.projetos[i].nome,
+                UF: json.projetos[i].UF,
+            });
+        session
+            .run('MATCH(f:ANOProjeto{ano_projeto:{ano_projeto}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(f)-[r:ANO_PROJETO]-(a) RETURN f,a', {
+                nomeParam: json.projetos[i].nome,
+                ano_projeto: json.projetos[i].ano_projeto,
             });
         
     }
