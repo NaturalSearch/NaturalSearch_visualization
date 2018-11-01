@@ -42,7 +42,23 @@ router.get('/', function (req, res, next) {
         session//7
             .run('CREATE(n:VPROJProjeto{valor_projeto:{valor_projeto}}) RETURN n.valor_projeto', {
                 valor_projeto: json.projetos[i].valor_projeto,
-            }); 
+            });
+        session//8
+            .run('CREATE(n:VSOLProjeto{valor_solicitado:{valor_solicitado}}) RETURN n.valor_solicitado', {
+                valor_solicitado: json.projetos[i].valor_solicitado,
+            });
+        session//9
+            .run('CREATE(n:VCAPProjeto{valor_captado:{valor_captado}}) RETURN n.valor_captado', {
+                valor_captado: json.projetos[i].valor_captado,
+            });  
+        session//10
+            .run('CREATE(n:VAProjeto{valor_aprovado:{valor_aprovado}}) RETURN n.valor_aprovado', {
+                valor_aprovado: json.projetos[i].valor_aprovado,
+            });  
+        session//11
+            .run('CREATE(n:VPROProjeto{valor_proposta:{valor_proposta}}) RETURN n.valor_proposta', {
+                valor_proposta: json.projetos[i].valor_proposta,
+            });  
         session
             .run('MATCH(a:NomeProjeto{nome: {nomeParam}}), (b:ProponenteProjeto{proponente: {proponenteParam}}) MERGE(b)-[r:PROPONENTE]-(a) RETURN b,a', {
                 nomeParam: json.projetos[i].nome,
@@ -67,6 +83,31 @@ router.get('/', function (req, res, next) {
             .run('MATCH(f:ANOProjeto{ano_projeto:{ano_projeto}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(f)-[r:ANO_PROJETO]-(a) RETURN f,a', {
                 nomeParam: json.projetos[i].nome,
                 ano_projeto: json.projetos[i].ano_projeto,
+            });
+        session
+            .run('MATCH(g:VPROJProjeto{valor_projeto:{valor_projeto}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(g)-[r:VALOR_PROJETO]-(a) RETURN g,a', {
+                nomeParam: json.projetos[i].nome,
+                valor_projeto: json.projetos[i].valor_projeto,
+            });
+        session
+            .run('MATCH(h:VSOLProjeto{valor_solicitado:{valor_solicitado}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(h)-[r:VALOR_SOLICITADO]-(a) RETURN h,a', {
+                nomeParam: json.projetos[i].nome,
+                valor_solicitado: json.projetos[i].valor_solicitado,
+            });
+        session
+            .run('MATCH(i:VCAPProjeto{valor_captado:{valor_captado}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(i)-[r:VALOR_CAPTADO]-(a) RETURN i,a', {
+                nomeParam: json.projetos[i].nome,
+                valor_captado: json.projetos[i].valor_captado,
+            });
+        session
+            .run('MATCH(j:VAProjeto{valor_aprovado:{valor_aprovado}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(j)-[r:VALOR_APROVADO]-(a) RETURN j,a', {
+                nomeParam: json.projetos[i].nome,
+                valor_aprovado: json.projetos[i].valor_aprovado,
+            });
+        session
+            .run('MATCH(k:VPROProjeto{valor_proposta:{valor_proposta}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(k)-[r:VALOR_PROPOSTA]-(a) RETURN k,a', {
+                nomeParam: json.projetos[i].nome,
+                valor_proposta: json.projetos[i].valor_proposta,
             });
         
     }
