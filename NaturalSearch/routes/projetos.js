@@ -10,8 +10,9 @@ var fs = require('fs');
 //Alterar quantidade por count
 
 router.get('/', function (req, res, next) {
-        
+    
     var projetos ='projetos1.json';   
+    var seg = [];
     json = JSON.parse(fs.readFileSync('./public/projects/' + projetos, 'utf8'));      
     for(var i=0;i<json.quantidade;i++){
         session//1
@@ -19,23 +20,32 @@ router.get('/', function (req, res, next) {
                 nome: json.projetos[i].nome,
             });
             console.log(json.projetos[i].nome);
-        session//2
-            .run('CREATE(n:ProponenteProjeto{proponente:{proponente}}) RETURN n.proponente', {
+        session
+            .run('MATCH(a:NomeProjeto{nome: {nomeParam}}) CREATE UNIQUE (b:Proponente {proponente: {proponente}})-[r:PROPONENTE]->(a) RETURN a,b', {
+                nomeParam: json.projetos[i].nome,
                 proponente:json.projetos[i].proponente,
             });
-        session//3
-            .run('CREATE(n:SegmentoProjeto{segmento:{segmento}}) RETURN n.segmento', {
+        session
+            .run('MATCH(a:NomeProjeto{nome: {nomeParam}}) CREATE UNIQUE (c:SegmentoProjeto{segmento:{segmento}})-[r:SEGMENTO]->(a) RETURN a,c', {
+                nomeParam: json.projetos[i].nome,
                 segmento: json.projetos[i].segmento,
             });
-        session//4
-            .run('CREATE(n:AreaProjeto{area:{area}}) RETURN n.area', {
+        session
+            .run('MATCH(a:NomeProjeto{nome: {nomeParam}}) CREATE UNIQUE (d:AreaProjeto{area:{area}})-[r:AREA]->(a) RETURN a,d', {
+                nomeParam: json.projetos[i].nome,
                 area: json.projetos[i].area,
-            });
-        session//5
-            .run('CREATE(n:UFProjeto{UF:{UF}}) RETURN n.UF', {
+        });
+        session
+            .run('MATCH(a:NomeProjeto{nome: {nomeParam}}) CREATE UNIQUE (e:UFProjeto{UF:{UF}})-[r:UF]->(a) RETURN a,e', {
+                nomeParam: json.projetos[i].nome,
                 UF: json.projetos[i].UF,
-            });
-        session//6
+        });
+        session
+            .run('MATCH(a:NomeProjeto{nome: {nomeParam}}) CREATE UNIQUE (f:ANOProjeto{ano_projeto:{ano_projeto}})-[r:ANO_PROJETO]->(a) RETURN a,f', {
+                nomeParam: json.projetos[i].nome,
+                ano_projeto: json.projetos[i].ano_projeto,
+        });
+        /*session//6
             .run('CREATE(n:ANOProjeto{ano_projeto:{ano_projeto}}) RETURN n.ano_projeto', {
                 ano_projeto: json.projetos[i].ano_projeto,
             });
@@ -108,36 +118,10 @@ router.get('/', function (req, res, next) {
             .run('MATCH(k:VPROProjeto{valor_proposta:{valor_proposta}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(k)-[r:VALOR_PROPOSTA]-(a) RETURN k,a', {
                 nomeParam: json.projetos[i].nome,
                 valor_proposta: json.projetos[i].valor_proposta,
-            });
+            });*/
         
-    }
-res.send("teste projeto");
-
+    } 
+        res.send("teste projeto");
 });
-
-/* router.get('/', function (req, res, next) {
-        
-        var projetos ='projetos1.json';   
-        json = JSON.parse(fs.readFileSync('./public/projects/' + projetos, 'utf8'));      
-        for(var i=0;i<json.quantidade;i++){
-            session
-                .run('CREATE(n:TesteProjeto{nome:{nome},proponente:{proponente},segmento:{segmento},area:{area},UF:{UF},ano_projeto:{ano_projeto},valor_projeto:{valor_projeto},valor_solicitado:{valor_solicitado},valor_captado:{valor_captado},valor_aprovado:{valor_aprovado},valor_proposta:{valor_proposta}}) RETURN n.nome', {
-                    nome: json.projetos[i].nome,
-                    proponente:json.projetos[i].proponente,
-                    segmento: json.projetos[i].segmento,
-                    area: json.projetos[i].area,
-                    UF: json.projetos[i].UF,
-                    ano_projeto: json.projetos[i].ano_projeto,
-                    valor_projeto: json.projetos[i].valor_projeto,
-                    valor_solicitado: json.projetos[i].valor_solicitado,
-                    valor_captado: json.projetos[i].valor_captado,
-                    valor_aprovado: json.projetos[i].valor_aprovado,
-                    valor_proposta: json.projetos[i].valor_proposta,
-                });
-                console.log(json.projetos[i].nome);
-        }
-    res.send("teste projeto");
-
-}); */
 
 module.exports = router;
