@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  app:
+    build: .     ## node.js v3
+    volumes:          ## adds app folder to the container
+    - .:/code
+    links:            ## connects neo4j to app container
+    - neo4j
+    ports:            ## publish ports
+    - "3000:3000"
+
+
+  neo4j:
+    image: neo4j:3.0          ## we use neo4j v3
+    ports:                    ## publish ports to have Web UI
+    - "7474:7474"
+    volumes:                  ## adds folder with login/password
+    - ./db/dbms:/data/dbms
