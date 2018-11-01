@@ -20,13 +20,35 @@ router.get('/', function (req, res, next) {
             });
             console.log(json.projetos[i].nome);
         session
-            .run('CREATE(p:ProponenteProjeto{proponente:{proponente}}) RETURN p.proponente', {
+            .run('CREATE(n:ProponenteProjeto{proponente:{proponente}}) RETURN n.proponente', {
                 proponente:json.projetos[i].proponente,
             });
+        session
+            .run('CREATE(n:SegmentoProjeto{segmento:{segmento}}) RETURN n.segmento', {
+                segmento: json.projetos[i].segmento,
+            });
+        session
+            .run('CREATE(n:AreaProjeto{area:{area}}) RETURN n.area', {
+                area: json.projetos[i].area,
+            });
+        /* session
+            .run('CREATE(n:UFProjeto{UF:{UF}}) RETURN n.UF', {
+                UF: json.projetos[i].UF,
+            }); */
         session
             .run('MATCH(a:NomeProjeto{nome: {nomeParam}}), (b:ProponenteProjeto{proponente: {proponenteParam}}) MERGE(b)-[r:PROPONENTE]-(a) RETURN b,a', {
                 nomeParam: json.projetos[i].nome,
                 proponenteParam: json.projetos[i].proponente,
+            });
+        session
+            .run('MATCH(c:SegmentoProjeto{segmento:{segmento}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(c)-[r:SEGMENTO]-(a) RETURN c,a', {
+                nomeParam: json.projetos[i].nome,
+                segmento: json.projetos[i].segmento,
+            });
+        session
+            .run('MATCH(d:AreaProjeto{area:{area}}), (a:NomeProjeto{nome: {nomeParam}}) MERGE(d)-[r:AREA]-(a) RETURN d,a', {
+                nomeParam: json.projetos[i].nome,
+                area: json.projetos[i].area,
             });
         
     }
