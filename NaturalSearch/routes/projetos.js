@@ -11,6 +11,31 @@ var fs = require('fs');
 
 router.get('/', function (req, res, next) {
         
+    var projetos ='projetos1.json';   
+    json = JSON.parse(fs.readFileSync('./public/projects/' + projetos, 'utf8'));      
+    for(var i=0;i<json.quantidade;i++){
+        session
+            .run('CREATE(n:NomeProjeto{nome:{nome}}) RETURN n.nome', {
+                nome: json.projetos[i].nome,
+            });
+            console.log(json.projetos[i].nome);
+        session
+            .run('CREATE(p:ProponenteProjeto{proponente:{proponente}}) RETURN p.proponente', {
+                proponente:json.projetos[i].proponente,
+            });
+        session
+            .run('MATCH(a:NomeProjeto{nome: {nomeParam}}), (b:ProponenteProjeto{proponente: {proponenteParam}}) MERGE(b)-[r:PROPONENTE]-(a) RETURN b,a', {
+                nomeParam: json.projetos[i].nome,
+                proponenteParam: json.projetos[i].proponente,
+            });
+        
+    }
+res.send("teste projeto");
+
+});
+
+/* router.get('/', function (req, res, next) {
+        
         var projetos ='projetos1.json';   
         json = JSON.parse(fs.readFileSync('./public/projects/' + projetos, 'utf8'));      
         for(var i=0;i<json.quantidade;i++){
@@ -32,6 +57,6 @@ router.get('/', function (req, res, next) {
         }
     res.send("teste projeto");
 
-});
+}); */
 
 module.exports = router;
