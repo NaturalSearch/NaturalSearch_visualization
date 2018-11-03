@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
     for (var count = 1; count <=443; count++) {
         
         var proponentes ='proponentes'+count+'.json';   
-        json = JSON.parse(fs.readFileSync('./public/javascripts/' + proponentes, 'utf8'));      
+        json = JSON.parse(fs.readFileSync('./public/proponents/' + proponentes, 'utf8'));      
         for(var i=0;i<json.quantidade;i++){
             session
                 .run('CREATE(n:Nó_Proponentes{tipo_pessoa:{tipo_pessoa},uf:{uf},municipio:{municipio},nome:{nome}}) RETURN n.nome', {
@@ -27,7 +27,7 @@ router.get('/', function (req, res, next) {
                 console.log(json.proponentes[i].nome);
         }
     }
-    res.send("teste");
+    res.send("teste proponentes");
 
 });
 /*

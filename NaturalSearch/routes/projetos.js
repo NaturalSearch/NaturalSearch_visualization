@@ -11,11 +11,13 @@ var fs = require('fs');
 
 router.get('/', function (req, res, next) {
     
-    var projetos ='projetos1.json';
+    for (var count = 1; count <=922; count++) {
+        
+        var proponentes ='projetos'+count+'.json'; 
     json = JSON.parse(fs.readFileSync('./public/projects/' + projetos, 'utf8'));      
     for(var i=0;i<json.quantidade;i++){
         session    
-            .run('CREATE(n:TesteProjeto{nome:{nome},proponente:{proponente},segmento:{segmento},area:{area},UF:{UF},ano_projeto:{ano_projeto},valor_projeto:{valor_projeto},valor_solicitado:{valor_solicitado},valor_captado:{valor_captado},valor_aprovado:{valor_aprovado},valor_proposta:{valor_proposta}}) RETURN n.nome', {
+            .run('CREATE(n:Nó_Projeto{nome:{nome},proponente:{proponente},segmento:{segmento},area:{area},UF:{UF},ano_projeto:{ano_projeto},valor_projeto:{valor_projeto},valor_solicitado:{valor_solicitado},valor_captado:{valor_captado},valor_aprovado:{valor_aprovado},valor_proposta:{valor_proposta}}) RETURN n.nome', {
                 nome: json.projetos[i].nome,
                 proponente:json.projetos[i].proponente,
                 segmento: json.projetos[i].segmento,
@@ -28,9 +30,12 @@ router.get('/', function (req, res, next) {
                 valor_aprovado: json.projetos[i].valor_aprovado,
                 valor_proposta: json.projetos[i].valor_proposta,
             });
-        console.log(json.projetos[i].nome);
+        session
+
+            console.log(json.projetos[i].nome);
+        }
     }
-        res.send("teste projeto");
+        res.send("teste projetos");
 });
 
 
