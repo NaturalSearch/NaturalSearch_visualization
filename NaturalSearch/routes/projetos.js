@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
     
     for (var count = 1; count <=922; count++) {
         
-        var proponentes ='projetos'+count+'.json'; 
+        var projetos ='projetos'+count+'.json'; 
     json = JSON.parse(fs.readFileSync('./public/projects/' + projetos, 'utf8'));      
     for(var i=0;i<json.quantidade;i++){
         session    
