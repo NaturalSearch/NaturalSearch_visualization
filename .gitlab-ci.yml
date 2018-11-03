@@ -1,18 +1,17 @@
 # This file is a template, and might need editing before it works on your project.
 # Official framework image. Look for the different tagged releases at:
 # https://hub.docker.com/r/library/node/tags/
-image: node:8.12
+
 
 stages:
   - test
-
-# This folder is cached between builds
-# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+  - publish
 cache:
   paths:
   - node_modules/
 
 test_with_lab:
+  image: node:8.12
   stage: test
   script:
     - cd NaturalSearch && npm install
@@ -22,4 +21,32 @@ test_with_lab:
     paths:
       - node_modules/
 
+.publish_docker_hub:
+  image: docker
+  services:
+    - docker:dind
+  script:
+    - docker login -p $DOCKERPASSWORD -u $DOCKERLOGIN
+    - docker build . -t zero101010/NSvis:$VERSION
+    - docker push zero101010/NSvis:$VERSION
+  tags:
+    - docker
 
+publish_master:
+  extends: .publish_docker_hub
+  environment: master
+  only: 
+    - master
+
+publish_development:
+  extends: .publish_docker_hub
+  environment: development
+  only: 
+    - development
+
+deploy:
+  script:
+    - apt-get -y update
+    - apt-get -y install sshpass
+    - ./deploy.sh $IP $PASSWORD
+  
