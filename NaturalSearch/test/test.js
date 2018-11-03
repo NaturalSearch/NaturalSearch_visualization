@@ -40,6 +40,15 @@ describe('Get the urls is working', function () {
         done()
       });
   })
+  it('test if the example is not working', function (done) {
+    request(app)
+      .get('/example404')
+      .expect(404)
+      .end(function (err, res) {
+        if (err) return done(err);
+        done()
+      });
+  })
   it('test if the load_json is working', function (done) {
     request(app)
       .get('/load_json')
@@ -78,3 +87,4 @@ describe('Test of the methos into index', function () {
     done();
   })
 });
+
