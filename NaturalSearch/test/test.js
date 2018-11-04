@@ -81,6 +81,17 @@ describe('Test of the methos into load_json', function () {
 
 });
 
+describe('Test of the methos into users', function () {
+  it('Test if the message of users is ok ', function () {
+    return request(app)
+      .get('/users')
+      .then(function (response) {
+        expect(response.text).to.contain('respond with a resource');
+      })
+  });
+
+});
+
 describe('Test of the methos into index', function () {
   it('test titleize method', function (done) {
     assert.equal(titleize('teste unitario'), 'Teste Unitario')
