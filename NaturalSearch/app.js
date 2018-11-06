@@ -18,6 +18,7 @@ var usersRouter = require('./routes/users');
 var resultRouter = require('./routes/result');
 var loadRouter = require('./routes/load_json');
 var exampleRouter = require('./routes/example');
+var projectsRouter = require('./routes/projects');
 var proponentesRoutes = require('./routes/proponentes');
 
 
@@ -34,11 +35,11 @@ app.use(cookieParser());
 app.use('/static',express.static(__dirname + '/public'));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/result',resultRouter);
-app.use('/example',exampleRouter);
-app.use('/load_json',loadRouter);
+app.use('/result', resultRouter);
+app.use('/example', exampleRouter);
+app.use('/load_json', loadRouter);
+app.use('/projects', projectsRouter);
 app.use('/proponentes',proponentesRoutes);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
