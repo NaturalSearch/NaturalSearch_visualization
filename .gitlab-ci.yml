@@ -6,6 +6,7 @@
 stages:
   - test
   - publish
+  - deploy
 cache:
   paths:
   - node_modules/
@@ -23,6 +24,7 @@ test_with_lab:
 
 .publish_docker_hub:
   image: docker
+  stage: publish
   services:
     - docker:dind
   script:
@@ -46,6 +48,7 @@ publish_development:
     - development
 
 deploy:
+  stage: deploy
   script:
     - apt-get update 
     - apt-get -y install sshpass
