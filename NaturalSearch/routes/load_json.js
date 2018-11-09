@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
         return null;
       }
     
-      // capturar os dados dos filmes
+      
       var nodes=[], links=[];
       data_movie.results[0].data.forEach(function (row) {
          row.graph.nodes.forEach(function (n) {
@@ -32,7 +32,6 @@ router.get('/', function(req, res, next) {
         viz = {nodes:nodes, links:links};
       });
       
-      //create a new file json to use in d3
       var fs = require('fs');
     
       fs.writeFileSync('public/javascripts/graph_d3.json', JSON.stringify(viz));
