@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var data_movie = require('../public/javascripts/movie_complete.json');
+var data_movie = require('../public/javascripts/ligacoes/ligacaoProjProp.json');
 /* GET home page. */
 router.get('/', function(req, res, next) {
     function idIndex(a,id) {
@@ -11,18 +11,18 @@ router.get('/', function(req, res, next) {
     
       // capturar os dados dos filmes
       var nodes=[], links=[];
-      data_movie.results[0].data.forEach(function (row) {
+      data_movie.data[0].forEach(function (row) {
          row.graph.nodes.forEach(function (n) {
            if (idIndex(nodes,n.id) == null)
             group=n.labels[0];
-            if (group=="Movie"){
+            if (group=="Nó_Proponentes"){
                 group=1;
-              title=n.properties.title
-              nodes.push({id:n.id,title:title,group:group});
-            }else if (group=="Person"){
+              nome=n.properties.nome
+              nodes.push({id:n.id,nome:nome,group:group});
+            }else if (group=="Nó_Projeto"){
               group=2;
-              name=n.properties.name;
-              nodes.push({id:n.id,name:name,group:group});
+              proponente=n.properties.proponente;
+              nodes.push({id:n.id,proponente:proponente,group:group});
             }
              
          });
@@ -35,7 +35,7 @@ router.get('/', function(req, res, next) {
       //create a new file json to use in d3
       var fs = require('fs');
     
-      fs.writeFileSync('public/javascripts/graph_d3.json', JSON.stringify(viz));
+      fs.writeFileSync('public/javascripts/ligacoes/ligacao.json', JSON.stringify(viz));
     
         console.log("Arquivo salvo");  
     res.send('Carregar arquivo');
