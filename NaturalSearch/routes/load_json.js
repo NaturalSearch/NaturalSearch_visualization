@@ -18,20 +18,31 @@ router.get('/', function(req, res, next) {
           if (r.labels=='Nó_Proponentes'){            
             nodes.push({id:r.id,nome:r.properties.nome,group:1});
             nodes.push({id:1,area:r.properties.tipo_pessoa,group:2});
-            nodes.push({id:3,uf:r.properties.uf,group:3});
-            nodes.push({id:4,area:r.properties.municipio,group:4});
-            console.log(nodes);
+            nodes.push({id:2,uf:r.properties.uf,group:3});
+            nodes.push({id:3,area:r.properties.municipio,group:4});
+            
           }
           else if (r.labels == "Nó_Projeto"){
-            //console.log(r.properties.ano_projeto)
+            nodes.push({id:r.id,nome:r.properties.nome,group:5});  
+            nodes.push({id:5,area:r.properties.area,group:6});
+            nodes.push({id:6,valor_aprovado:r.properties.valor_aprovado,group:7});
+            nodes.push({id:7,UF:r.properties.UF,group:8});
+            nodes.push({id:8,proponente:r.properties.proponente,group:9});
+            nodes.push({id:9,segmento:r.properties.segmento,group:10});
+            nodes.push({id:10,ano_projeto:r.properties.ano_projeto,group:11});
+            nodes.push({id:11,valor_proposta:r.properties.valor_proposta,group:12});
+            nodes.push({id:12,valor_projeto:r.properties.valor_projeto,group:13});
+            nodes.push({id:13,valor_solicitado:r.properties.valor_solicitado,group:14});            
+            nodes.push({id:14,valor_captado:r.properties.valor_captado,group:15});
           }
-
           
-          res.send('teste');
+          
+          
           //links = links.concat( row.graph.relationships.map(function(r) {
             //return {source:r.startNode,target:r.endNode,value:30};
           });
-      
+          console.log(nodes);
+  res.send('teste');  
         //viz = {nodes:nodes, links:links};
       });
       
