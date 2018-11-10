@@ -20,6 +20,7 @@ var loadRouter = require('./routes/load_json');
 var exampleRouter = require('./routes/example');
 var proponentesRoutes = require('./routes/proponentes');
 var projetosRoutes = require('./routes/projetos');
+//var relacionamentoRoutes = require('./routes/relacionamento');
 
 
 var app = express();
