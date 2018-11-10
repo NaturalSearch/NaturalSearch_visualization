@@ -46,7 +46,28 @@ router.get('/', function(req, res, next) {
     console.log(err);
   });
   */
+  session
+    .run(
+      'match (project:Project) \
+      where (any(prop in keys(project) where tostring(project[prop]) CONTAINS {title})) \
+      RETURN project.PRONAC as PRONAC, project.nome as Nome, project.area as Área \
+      ORDER BY project.PRONAC',
+      {title: '"+ search_result+ "'}
+    )
+    .then(function(result){
+      result.records.forEach(function(record){
+        list_result = [];
+        list_result.push(record._fields[0].properties.PRONAC,
+                         record._fields[0].properties.nome,
+                         record._fields[0].properties.segmento);
+        console.log(list_result);  
+      });
+    })
+    .catch(function(err){
+      console.log(err);
+    });
   res.render('index', { title: 'Express' });
+
 });
 
 module.exports = router;
