@@ -1,21 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var data_movie = require('../public/javascripts/ligacoes/ligacaoProjProp.json');
+var json_neo4j = require('../public/javascripts/ligacoes/ligacaoProjProp.json');
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  function idIndex(a, id) {
-    for (var i = 0; i < a.length; i++) {
-      if (a[i].id == id) return i;
-    }
-    return null;
-  }
-
-  // create a json file to convert to d3 format
+  // read nodes in json
   var nodes = [], links = [];
   var i = 0;
-  var count = data_movie.stats.relationships_created;
+  var count = json_neo4j.stats.relationships_created;
   //read Proponentes in json
-  data_movie.data[i].graph.nodes.forEach(function (r) {
+  json_neo4j.data[i].graph.nodes.forEach(function (r) {
     if (r.labels == 'Nó_Proponentes') {
       nodes.push({ id: r.id, nome: r.properties.nome, group: 0 });
       nodes.push({ id: 1, area: r.properties.tipo_pessoa, group: 0 });
@@ -25,7 +18,7 @@ router.get('/', function (req, res, next) {
   });
   //read Projetos in json
   while (i < count){
-    data_movie.data[i].graph.nodes.forEach(function (r) {
+    json_neo4j.data[i].graph.nodes.forEach(function (r) {
       if (r.labels == "Nó_Projeto") {
         nodes.push({ id: r.id, nome: r.properties.nome, group: i+1 });
         nodes.push({ id: 5, area: r.properties.area, group: i+1 });
@@ -40,14 +33,22 @@ router.get('/', function (req, res, next) {
         nodes.push({ id: 14, valor_captado: r.properties.valor_captado, group: i+1 });
       }
     });
+   //create link to json    
+  json_neo4j.data[i].graph.relationships.forEach(function (l) {
+    links.push({ source: l.startNode, target: l.endNode, value: 2});
+  }); 
   i++;
-  }    
+  }
+  var convert_to_d3= {nodes:nodes, links:links};
   
+  //create json
+  var fs = require('fs');
+    
+      fs.writeFileSync('public/javascripts/d3_prop_proj.json', JSON.stringify(convert_to_d3));
+    
   //links = links.concat( row.graph.relationships.map(function(r) {
   //return {source:r.startNode,target:r.endNode,value:30};
-  
-console.log(nodes);
-res.send('teste');
+res.send('Arquivo criado com sucesso');
         //viz = {nodes:nodes, links:links};
 });
 
