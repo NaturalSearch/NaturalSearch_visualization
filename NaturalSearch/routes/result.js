@@ -6,15 +6,12 @@ var session = driver.session();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  search_result = req.query.q;
- 
- var drinks = [
-  { name: 'Bloody Mary', drunkness: 3 },
-  { name: 'Martini', drunkness: 5 },
-  { name: 'Scotch', drunkness: 10 }
-  ];
+search_result = req.query.q;
+
  session
- .run('MATCH (n:Project) RETURN n LIMIT 25')
+    .run('match (project:Project) where (any(prop in keys(project) where tostring(project[prop]) CONTAINS {title})) RETURN project ',
+    {'title':  search_result }
+    )
  .then(function(result){
   var list_result = [];
   result.records.forEach(function(record){   
@@ -22,10 +19,10 @@ router.get('/', function(req, res, next) {
                      nome: record._fields[0].properties.nome,
                      segmento: record._fields[0].properties.segmento
     });
-    console.log(list_result);  
+    console.log(list_result); 
   });
   res.render('result', { list_result: list_result , 
-      title: 'Express', drinks: drinks });
+      title: 'Express' });
  })
  .catch(function(err){
    console.log(err);
