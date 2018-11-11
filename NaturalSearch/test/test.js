@@ -40,6 +40,15 @@ describe('Get the urls is working', function () {
         done()
       });
   })
+  it('test if the example is not working', function (done) {
+    request(app)
+      .get('/example404')
+      .expect(404)
+      .end(function (err, res) {
+        if (err) return done(err);
+        done()
+      });
+  })
   it('test if the load_json is working', function (done) {
     request(app)
       .get('/load_json')
@@ -72,9 +81,21 @@ describe('Test of the methos into load_json', function () {
 
 });
 
+describe('Test of the methos into users', function () {
+  it('Test if the message of users is ok ', function () {
+    return request(app)
+      .get('/users')
+      .then(function (response) {
+        expect(response.text).to.contain('respond with a resource');
+      })
+  });
+
+});
+
 describe('Test of the methos into index', function () {
   it('test titleize method', function (done) {
     assert.equal(titleize('teste unitario'), 'Teste Unitario')
     done();
   })
 });
+

@@ -27,11 +27,13 @@ router.get('/', function (req, res, next) {
                 console.log(json.proponentes[i].nome);
         }
     }
-    res.send("teste");
+    res.send("vai funcionar caramba");
 
 });
-/*
 
+module.exports = router;
+
+/*
 router.get('/', function (req, res, next) {
         
         var proponentes ='proponentes1.json';   
@@ -69,9 +71,10 @@ router.get('/', function (req, res, next) {
                     nome: json.proponentes[i].nome,
                     municipio: json.proponentes[i].municipio,
                 });
+
+
         }
     res.send("teste proponente");
+
 });
 **/
-
-module.exports = router;
