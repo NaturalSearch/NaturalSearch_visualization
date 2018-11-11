@@ -6,20 +6,32 @@ var session = driver.session();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  session
-  .run('MATCH (n:Project) RETURN n LIMIT 25')
-  .then(function(result){
-    result.records.forEach(function(record){
-      console.log(record._fields[0].properties);
+  search_result = req.query.q;
+ 
+ var drinks = [
+  { name: 'Bloody Mary', drunkness: 3 },
+  { name: 'Martini', drunkness: 5 },
+  { name: 'Scotch', drunkness: 10 }
+  ];
+ session
+ .run('MATCH (n:Project) RETURN n LIMIT 25')
+ .then(function(result){
+  var list_result = [];
+  result.records.forEach(function(record){   
+    list_result.push({pronac: record._fields[0].properties.PRONAC,
+                     nome: record._fields[0].properties.nome,
+                     segmento: record._fields[0].properties.segmento
     });
-  })
-  .catch(function(err){
-    console.log(err);
+    console.log(list_result);  
   });
-console.log(req.query.q);
-search_result = req.query.q;
+  res.render('result', { list_result: list_result , 
+      title: 'Express', drinks: drinks });
+ })
+ .catch(function(err){
+   console.log(err);
+ });
 
-  res.send('respond with a resource');
+  
 });
 
 module.exports = router;

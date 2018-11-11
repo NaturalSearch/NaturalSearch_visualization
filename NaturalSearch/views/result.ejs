@@ -155,109 +155,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                            <% list_result.forEach(function(project) { %>
                         <tr>
-                            <td>PRONAC1</td>
-                            <td>Nome1</td>
-                            <td>Área1</td>
+                            <td><%= project.pronac %></td>
+                            <td><%= project.nome %></td>
+                            <td><%= project.segmento %></td>
                             <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"> </td>
-                        </tr>
-                        <tr>
-                            <td>PRONAC2</td>
-                            <td>Nome2</td>
-                            <td>Área2</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                           
-                        </tr>
-                        <tr>
-                            <td>PRONAC3</td>
-                            <td>Nome3</td>
-                            <td>Área3</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                         
-                        </tr>
-                        <tr>
-                            <td>PRONAC4</td>
-                            <td>Nome4</td>
-                            <td>Área4</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                         
-                        </tr>
-                        <tr>
-                            <td>PRONAC5</td>
-                            <td>Nome5</td>
-                            <td>Área5</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                       
-                        </tr>
-                        <tr>
-                            <td>PRONAC6</td>
-                            <td>Nome6</td>
-                            <td>Área6</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                           
-                        </tr>
-                        <tr>
-                            <td>PRONAC7</td>
-                            <td>Nome7</td>
-                            <td>Área7</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>PRONAC8</td>
-                            <td>Nome8</td>
-                            <td>Área8</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                        
-                        </tr>
-                        <tr>
-                            <td>PRONAC9</td>
-                            <td>Nome9</td>
-                            <td>Área9</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                      
-                        </tr>
-                        <tr>
-                            <td>PRONAC10</td>
-                            <td>Nome10</td>
-                            <td>Área10</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                           
-                        </tr>
-                        <tr>
-                            <td>PRONAC11</td>
-                            <td>Nome11</td>
-                            <td>Área11</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                         
-                        </tr>
-                        <tr>
-                            <td>PRONAC12</td>
-                            <td>Nome12</td>
-                            <td>Área12</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                         
-                        </tr>
-                        <tr>
-                            <td>PRONAC13</td>
-                            <td>Nome13</td>
-                            <td>Área13</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                         
-                        </tr>
-                        <tr>
-                            <td>PRONAC14</td>
-                            <td>Nome14</td>
-                            <td>Área14</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                           
-                        </tr>
-                        <tr>
-                            <td>PRONAC15</td>
-                            <td>Nome15</td>
-                            <td>Área15</td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"></button></td>
-                           
+                            <% }); %>
                         </tr>
                     </tbody>
                 </table>
