@@ -16,7 +16,7 @@ router.get('/', function (req, res, next) {
         json = JSON.parse(fs.readFileSync('./public/javascripts/' + proponentes, 'utf8'));      
         for(var i=0;i<json.quantidade;i++){
             session
-                .run('CREATE(n:TesteFinalVerdadeiro{tipo_pessoa:{tipo_pessoa},uf:{uf},municipio:{municipio},nome:{nome}}) RETURN n.nome', {
+                .run('CREATE(n:Nó_Proponentes{tipo_pessoa:{tipo_pessoa},uf:{uf},municipio:{municipio},nome:{nome}}) RETURN n.nome', {
                     tipo_pessoa:json.proponentes[i].tipo_pessoa,
                     uf: json.proponentes[i].UF,
                     municipio: json.proponentes[i].municipio,
