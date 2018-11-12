@@ -21,6 +21,7 @@ var exampleRouter = require('./routes/example');
 var projectsRouter = require('./routes/projects');
 var proponentesRoutes = require('./routes/proponentes');
 var projetosRoutes = require('./routes/projetos');
+//var relacionamentoRoutes = require('./routes/relacionamento');
 
 
 var app = express();
