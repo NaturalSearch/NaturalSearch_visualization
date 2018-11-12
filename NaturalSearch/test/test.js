@@ -75,7 +75,7 @@ describe('Test of the methos into load_json', function () {
     return request(app)
       .get('/load_json')
       .then(function (response) {
-        expect(response.text).to.contain('Carregar arquivo');
+        expect(response.text).to.contain('Arquivo criado com sucesso');
       })
   });
 
