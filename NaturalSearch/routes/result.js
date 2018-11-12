@@ -19,7 +19,7 @@ search_result = req.query.q;
                      nome: record._fields[0].properties.nome,
                      segmento: record._fields[0].properties.segmento
     });
-    console.log(list_result); 
+    //console.log(list_result); 
   });
   res.render('result', { list_result: list_result , 
       title: 'Express' });
