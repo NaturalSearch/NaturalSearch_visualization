@@ -69,21 +69,25 @@
           </div>
           <div class="col"></div>
       </div-->
+      <div>
+          <svg width="1340" height="0" viewBox="0 0 100 100"></svg>
+      </div>
+
 
   <script>
-      var width=1450;
-      var height=500;
+      var svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
       var color = d3.scaleOrdinal(d3.schemeCategory10);
-    // posicionamento
-    var svg = d3.select("body")
+      
+      var svg = d3.select("body")
       .append("svg")
-      .attr("width", width)
-      .attr("height", height)
+      .attr("width", "1300  ")
+      .attr("height", "1000")
       .call(d3.zoom().on("zoom", function () {
-        svg.attr("transform", d3.event.transform)
-        .append("g")
+         svg.attr("transform", d3.event.transform)
       }))
-
+      .append("g")
     // setar distance de forma diferente
     var simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function (d) { return d.id; }).distance(100).strength(1))
@@ -106,8 +110,8 @@
         .selectAll("circle")
         .data(graph.nodes)
         .enter().append("circle")
-        .attr("r", 15)
         .attr("fill", function (d) { return color(d.group); })
+        .attr("r", 15)
         .call(d3.drag()
           .on("start", dragstarted)
           .on("drag", dragged)
