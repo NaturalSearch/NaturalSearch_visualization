@@ -58,7 +58,7 @@ describe('Get the urls is working', function () {
         done()
       });
   })
-  it('test if the results is working', function (done) {
+  /*it('test if the results is working', function (done) {
     request(app)
       .get('/result')
       .expect(200)
@@ -66,7 +66,7 @@ describe('Get the urls is working', function () {
         if (err) return done(err);
         done()
       });
-  })
+  })*/
 });
 
 
@@ -75,7 +75,7 @@ describe('Test of the methos into load_json', function () {
     return request(app)
       .get('/load_json')
       .then(function (response) {
-        expect(response.text).to.contain('Carregar arquivo');
+        expect(response.text).to.contain('Arquivo criado com sucesso');
       })
   });
 
