@@ -71,8 +71,8 @@
       </div-->
 
   <script>
-      var width=800;
-      var height=100;
+      var width=1450;
+      var height=500;
       var color = d3.scaleOrdinal(d3.schemeCategory10);
     // posicionamento
     var svg = d3.select("body")
@@ -81,8 +81,8 @@
       .attr("height", height)
       .call(d3.zoom().on("zoom", function () {
         svg.attr("transform", d3.event.transform)
+        .append("g")
       }))
-      .append("g")
 
     // setar distance de forma diferente
     var simulation = d3.forceSimulation()
