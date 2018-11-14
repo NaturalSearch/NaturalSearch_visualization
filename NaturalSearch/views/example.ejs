@@ -51,6 +51,8 @@
   }
 </style>
 
+
+
 <body>
 
   <!--div class="container-fluid">
@@ -76,6 +78,14 @@
           </div>
           <div class="col"></div>
       </div-->
+  <div id="scaleFactorSettings">
+    <p>Scale of the groups: <span id='scaleFactorLabel'>1.2</span></p>
+    <input type="range" min="1" max="3" value="1.2" step=".1" 
+      oninput="scaleFactor = value; d3.select('#scaleFactorLabel').text(scaleFactor); updateGroups()">
+  </div>
+  <!-- <div id="curveSettings">
+    <p>Type of curve: <span id='curveLabel'>curveCatmullRomClosed</span></p>
+  </div> -->    
   <div>
     <svg width="1340" height="0" viewBox="0 0 100 100"></svg>
   </div>
@@ -85,6 +95,10 @@
     var svg = d3.select("svg"),
       width = +svg.attr("width"),
       height = +svg.attr("height"),
+      valueline = d3.line()
+        .x(function(d) { return d[0]; })
+        .y(function(d) { return d[1]; })
+        .curve(d3.curveCatmullRomClosed),
       paths,
       groups,
       groupIds,
@@ -98,14 +112,8 @@
         .force('link', d3.forceLink().id(function (d) { return d.id; }))
         .force('charge', d3.forceManyBody())
         .force('center', d3.forceCenter(width / 2, height / 2));
-    valueline = d3.line()
-      .x(function (d) { return d[0]; })
-      .y(function (d) { return d[1]; })
-      .curve(d3.curveCatmullRomClosed);
       
     var color = d3.scaleOrdinal(d3.schemeCategory10);
-
-    groups = svg.append('g').attr('class', 'groups');
 
 
     var svg = d3.select("body")
@@ -116,24 +124,35 @@
         svg.attr("transform", d3.event.transform)
       }))
       .append("g")
-    // setar distance de forma diferente
-    var simulation = d3.forceSimulation()
-      .force("link", d3.forceLink().id(function (d) { return d.id; }).distance(100).strength(1))
-      .force("charge", d3.forceManyBody())
-      .force("center", d3.forceCenter(width / 2, height / 2));
 
     d3.json("../static/javascripts/d3_prop_proj.json", function (error, graph) {
       if (error) throw error;
 
-      var link = svg.append("g")
+      var select = d3.select('#curveSettings')
+        .append('select')
+        .attr('class','select')
+        .on('change', function() {
+          var val = d3.select('select').property('value');
+          d3.select('#curveLabel').text(val);
+          valueline.curve(d3[val]);
+          updateGroups();
+        });
+      var options = select
+          .selectAll('option')
+          .data(curveTypes).enter()
+          .append('option')
+            .text(function (d) { return d; });
+
+      groups = svg.append('g').attr('class', 'groups');
+      
+      link = svg.append("g")
         .attr("class", "links")
         .selectAll("line")
         .data(graph.links)
         .enter().append("line")
-
         .attr("stroke-width", function (d) { return Math.sqrt(d.value) });
 
-      var node = svg.append("g")
+      node = svg.append("g")
         .attr("class", "nodes")
         .selectAll("circle")
         .data(graph.nodes)
@@ -145,36 +164,17 @@
           .on("drag", dragged)
           .on("end", dragended));
 
-      groups.selectAll('.path_placeholder')
-        .call(d3.drag()
-          .on('start', group_dragstarted)
-          .on('drag', group_dragged)
-          .on('end', group_dragended)
-        );
-
-      node = svg.append('g')
-        .attr('class', 'nodes')
-        .selectAll('circle')
-        .data(graph.nodes)
-        .enter().append('circle')
-        .attr('r', 5)
-        .attr('fill', function (d) { return color(d.group); })
-        .call(d3.drag()
-          .on('start', dragstarted)
-          .on('drag', dragged)
-          .on('end', dragended));
-
       groupIds = d3.set(graph.nodes.map(function (n) { return +n.group; }))
-        .values()
-        .map(function (groupId) {
-          return {
-            groupId: groupId,
-            count: graph.nodes.filter(function (n) { return +n.group == groupId; }).length
-          };
-        })
-        .filter(function (group) { return group.count > 2; })
-        .map(function (group) { return group.groupId; });
-      console.log(groupId);
+      .values()
+      .map(function (groupId) {
+        return {
+          groupId: groupId,
+          count: graph.nodes.filter(function (n) { return +n.group == groupId; }).length
+        };
+      })
+      .filter(function (group) { return group.count > 2; })
+      .map(function (group) { return group.groupId; });
+      
       paths = groups.selectAll('.path_placeholder')
         .data(groupIds, function (d) { return +d; })
         .enter()
@@ -189,6 +189,14 @@
         .transition()
         .duration(2000)
         .attr('opacity', 1);
+
+      groups.selectAll('.path_placeholder')
+        .call(d3.drag()
+          .on('start', group_dragstarted)
+          .on('drag', group_dragged)
+          .on('end', group_dragended)
+        );
+
       node.append("title")
         .text(function (d) { return d.title || d.name; });
 
@@ -214,74 +222,75 @@
       updateGroups();
     });
 
-    var polygonGenerator = function (groupId) {
-      var node_coords = node
-        .filter(function (d) { return d.group == groupId; })
-        .data()
-        .map(function (d) { return [d.x, d.y]; });
+var polygonGenerator = function (groupId) {
+  var node_coords = node
+    .filter(function (d) { return d.group == groupId; })
+    .data()
+    .map(function (d) { return [d.x, d.y]; });
 
-      return d3.polygonHull(node_coords);
-    }
+  return d3.polygonHull(node_coords);
+}
 
-    function updateGroups() {
-      groupIds.forEach(function (groupId) {
-        var path = paths.filter(function (d) { return d == groupId; })
-          .attr('transform', 'scale(1) translate(0,0)')
-          .attr('d', function (d) {
-            polygon = polygonGenerator(d);
-            centroid = d3.polygonCentroid(polygon);
+function updateGroups() {
+  groupIds.forEach(function (groupId) {
+    var path = paths.filter(function (d) { return d == groupId; })
+      .attr('transform', 'scale(1) translate(0,0)')
+      .attr('d', function (d) {
+        polygon = polygonGenerator(d);
+        centroid = d3.polygonCentroid(polygon);
 
-            // to scale the shape properly around its points:
-            // move the 'g' element to the centroid point, translate
-            // all the path around the center of the 'g' and then
-            // we can scale the 'g' element properly
-            return valueline(
-              polygon.map(function (point) {
-                return [point[0] - centroid[0], point[1] - centroid[1]];
-              })
-            );
-          });
-
-        d3.select(path.node().parentNode).attr('transform', 'translate(' + centroid[0] + ',' + (centroid[1]) + ') scale(' + scaleFactor + ')');
+        // to scale the shape properly around its points:
+        // move the 'g' element to the centroid point, translate
+        // all the path around the center of the 'g' and then
+        // we can scale the 'g' element properly
+        return valueline(
+          polygon.map(function (point) {
+            return [point[0] - centroid[0], point[1] - centroid[1]];
+          })
+        );
       });
-    }
-
-    function group_dragstarted(groupId) {
-      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-      d3.select(this).select('path').style('stroke-width', 3);
-    }
-
-    function group_dragged(groupId) {
-      node
-        .filter(function (d) { return d.group == groupId; })
-        .each(function (d) {
-          d.x += d3.event.dx;
-          d.y += d3.event.dy;
-        })
-    }
-
-    function group_dragended(groupId) {
-      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-      d3.select(this).select('path').style('stroke-width', 1);
-    }
+    d3.select(path.node().parentNode).attr('transform', 'translate(' + centroid[0] + ',' + (centroid[1]) + ') scale(' + scaleFactor + ')');
+  });
+}
 
 
-    function dragstarted(d) {
-      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-      d.fx = d.x;
-      d.fy = d.y;
-    }
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
 
-    function dragged(d) {
-      d.fx = d3.event.x;
-      d.fy = d3.event.y;
-    }
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
 
-    function dragended(d) {
-      if (!d3.event.active) simulation.alphaTarget(0);
-      d.fx = null;
-      d.fy = null;
-    }
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+
+// drag groups
+function group_dragstarted(groupId) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d3.select(this).select('path').style('stroke-width', 3);
+}
+
+function group_dragged(groupId) {
+  node
+    .filter(function(d) { return d.group == groupId; })
+    .each(function(d) {
+      d.x += d3.event.dx;
+      d.y += d3.event.dy;
+    })
+}
+
+function group_dragended(groupId) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d3.select(this).select('path').style('stroke-width', 1);
+}
+
 
   </script>
 
