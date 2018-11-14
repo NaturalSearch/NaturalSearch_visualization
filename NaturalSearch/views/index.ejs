@@ -4,12 +4,14 @@
 <head>
   <title>Natural Search</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.cs	s">
+  
   <!--Font awesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
@@ -21,20 +23,26 @@
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; /* Add some padding */
     border: 2px solid #7B68EE; /* Add a grey border */
-    margin-bottom: 2px; /* Add some space below the input */
+    margin-bottom: 5px; /* Add some space below the input */
     border-radius: 10px;
     background-color: #fff;
     
   }
   .check-box{
     color: #fff;
-    font-size: 20px;
+    font-size: 3vw;
   }
+    @media(min-width:768px){
+      .check-box{
+        font-size: 1.5vw;
+      }
+    }
   body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
     color: #818181;
   }
+
   h2 {
     font-size: 24px;
     text-transform: uppercase;
@@ -52,10 +60,14 @@
   /*background de search*/ 
   .bg-search {
       background-image: url('../static/images/graph.jpg');
-      background-repeat: no-repeat;
-      
       color: #000;
+      /*full height*/
       padding: 200px 150px;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       font-family: Montserrat, sans-serif;
   }
   /* radio buttuns */
@@ -92,7 +104,7 @@
   }
   .container-fluid-1 {
     background-color:#e1eaea; 
-    padding: 60px 50px;   
+    padding: 60px 50px;  
   }
   .container-fluid-2{
     background-color:#d1e0e0; 
@@ -204,7 +216,7 @@
 
       </div>
       <div class="col-sm-4">
-        <img class="img-thumbnail" src="../static/images/search.jpg" width="100%" height="100%" alt="grafo">
+        <img class="img-thumbnail" src="../static/images/search.jpg" style="max-width:100%;height:auto;" alt="grafo">
       </div>
     </div>
   </div>
@@ -212,7 +224,7 @@
   <div class="container-fluid-1">
     <div class="row">
       <div class="col-sm-4">
-        <svg width="500" height="500"></svg>
+        <svg width="350" height="500"></svg>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script>
         
