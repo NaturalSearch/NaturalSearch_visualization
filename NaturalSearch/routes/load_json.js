@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
   //read Proponentes in json
   json_neo4j.data[i].graph.nodes.forEach(function (r) {
     if (r.labels == 'Nó_Proponentes') {
-      nodes.push({ id: r.id, nome: r.properties.nome, group: 0 });
+      nodes.push({ id: r.id, nome: r.properties.nome, group: 0,group_color:0});
       //nodes.push({ id: 1, area: r.properties.tipo_pessoa, group: 0 });
       //nodes.push({ id: 2, uf: r.properties.uf, group: 0 });
       //nodes.push({ id: 3, area: r.properties.municipio, group: 0 });
@@ -20,17 +20,17 @@ router.get('/', function (req, res, next) {
   while (i < count){
     json_neo4j.data[i].graph.nodes.forEach(function (r) {
       if (r.labels == "Nó_Projeto") {
-        nodes.push({ id: r.id, nome: r.properties.nome, group: i+1 });
-        nodes.push({ id: "area"+i, area: r.properties.area, group: i+1 });
-        nodes.push({ id: "valor"+i, valor_aprovado: r.properties.valor_aprovado, group: i+1});
-        nodes.push({ id: "UF"+i, UF: r.properties.UF, group: i+1});
-        nodes.push({ id: "proponente"+i, proponente: r.properties.proponente, group: i+1});
-        nodes.push({ id: "segmento"+i, segmento: r.properties.segmento, group: i+1 });
-        nodes.push({ id: "ano_projeto"+i, ano_projeto: r.properties.ano_projeto, group: i+1 });
-        nodes.push({ id: "valor_proposta"+i, valor_proposta: r.properties.valor_proposta, group: i+1 });
-        nodes.push({ id: "valor_projeto"+i, valor_projeto: r.properties.valor_projeto, group: i+1 });
-        nodes.push({ id: "valor_solicitado"+i, valor_solicitado: r.properties.valor_solicitado, group: i+1 });
-        nodes.push({ id: "valor_captado"+i, valor_captado: r.properties.valor_captado, group: i+1 });
+        nodes.push({ id: r.id, nome: r.properties.nome, group: i+1,group_color:1 });
+        nodes.push({ id: "area"+i, area: r.properties.area, group: i+1,group_color:2 });
+        nodes.push({ id: "valor"+i, valor_aprovado: r.properties.valor_aprovado, group: i+1,group_color:3});
+        nodes.push({ id: "UF"+i, UF: r.properties.UF, group: i+1,group_color:3});
+        nodes.push({ id: "proponente"+i, proponente: r.properties.proponente, group: i+1,group_color:4});
+        nodes.push({ id: "segmento"+i, segmento: r.properties.segmento, group: i+1,group_color:5});
+        nodes.push({ id: "ano_projeto"+i, ano_projeto: r.properties.ano_projeto, group: i+1,group_color:6 });
+        nodes.push({ id: "valor_proposta"+i, valor_proposta: r.properties.valor_proposta, group: i+1,group_color:7 });
+        nodes.push({ id: "valor_projeto"+i, valor_projeto: r.properties.valor_projeto, group: i+1,group_color:8 });
+        nodes.push({ id: "valor_solicitado"+i, valor_solicitado: r.properties.valor_solicitado, group: i+1,group_color:9 });
+        nodes.push({ id: "valor_captado"+i, valor_captado: r.properties.valor_captado, group: i+1,group_color:10 });
         
         links.push({ source: "area"+i, target: r.id, value: 3});    
         links.push({ source: "valor"+i, target: r.id, value: 3});
@@ -46,7 +46,7 @@ router.get('/', function (req, res, next) {
     });
    //create link to json    
   json_neo4j.data[i].graph.relationships.forEach(function (l) {
-    links.push({ source: l.startNode, target: l.endNode, value: 6});
+    links.push({ source: l.startNode, target: l.endNode, value: 4});
     
   }); 
   i++;

@@ -14,19 +14,16 @@
     stroke: black;
     opacity: 2;
   }
-
   .nodes circle {
     stroke: black;
     stroke-width: 1.5px;
     width: 100%;
   }
-
   body {
   font-family: sans-serif, Arial;  
   font-size: 12px;
   font-weight: bold;
 }
-
   .navbar {
     margin-bottom: 10;
     background: url('http://thecodeplayer.com/u/m/b1.png');
@@ -38,23 +35,19 @@
     border-radius: 4px;
     text-transform: uppercase;
   }
-
   .button-search {
     border-radius: 15px;
-
   }
   path {
     fill-opacity: 0.5;
     stroke-opacity: 10;
   }
-
   body{
     overflow:hidden;
     margin:0;
     width: 100%;
     height: 100%;
   }
-
   svg {
     display: block;
     margin: 0 auto;
@@ -120,24 +113,27 @@
       link,
       curveTypes = ['curveBasisClosed', 'curveCardinalClosed', 'curveCatmullRomClosed', 'curveLinearClosed'],
       simulation = d3.forceSimulation()
+        //linkar pelo id
         .force('link', d3.forceLink().id(function(d) { return d.id; }))
+        //espalhar
         .force('charge', d3.forceManyBody())
-        .force('center', d3.forceCenter(width / 2, height / 2));
+        //colocar no centro
+        .force('center', d3.forceCenter(width/2, height/2));
       
     var svg = d3.select("body")
       .append("svg")
+      //definir tamanho da tela 
       .attr("width", "1300")
       .attr("height", "1000")
+      //aplicar zoom
       .call(d3.zoom().on("zoom", function () {
         svg.attr("transform", d3.event.transform)
       }))
       .append("g")
       
-      
-
+    //carregar json  
     d3.json("../static/javascripts/d3_prop_proj.json", function (error, graph) {
       if (error) throw error;
-
       var select = d3.select('#curveSettings')
         .append('select')
         .attr('class','select')
@@ -152,30 +148,24 @@
         .data(curveTypes).enter()
         .append('option')
           .text(function (d) { return d; });
-
-
       groups = svg.append('g').attr('class', 'groups');
-
       link = svg.append('g')
         .attr('class', 'links')
         .selectAll('line')
         .data(graph.links)
         .enter().append('line')
         .attr('stroke-width', function(d) { return Math.sqrt(d.value); });
-
       node = svg.append('g')
           .attr('class', 'nodes')
         .selectAll('circle')
         .data(graph.nodes)
         .enter().append('circle')
           .attr('r', 10)
-          .attr('fill', function(d) { return color(d.group); })
+          .attr('fill', function(d) { return color(d.group_color); })
           .call(d3.drag()
               .on('start', dragstarted)
               .on('drag', dragged)
               .on('end', dragended));
-
-
       groupIds = d3.set(graph.nodes.map(function(n) { return +n.group; }))
         .values()
         .map( function(groupId) {
@@ -196,36 +186,35 @@
           .attr('stroke', function(d) { return color(d); })
           .attr('fill', function(d) { return color(d); })
           //.attr('opacity', 100);
-
         paths
           .transition()
           .duration(2000)
           //.attr('opacity', 100);
-
-
       groups.selectAll('.path_placeholder')
         .call(d3.drag()
           .on('start', group_dragstarted)
           .on('drag', group_dragged)
           .on('end', group_dragended)
         );
-
       groups.selectAll('.path_placeholder')
       .call(d3.drag()
       .on('start', group_dragstarted)
       .on('drag', group_dragged)
       .on('end', group_dragended)
       );
-
+      //nome que aparece nos nodes 
       node.append('title')
-          .text(function(d) { return d.id; });
-
+          .text(function(d) { return d.nome||d.area||d.valor_aprovado||
+                                     d.UF||d.proponente||d.segmento||
+                                     d.ano_projeto||d.valor_proposta||
+                                     d.valor_projeto||d.valor_solicitado||
+                                     d.valor_captado; 
+                            });
       simulation
           .nodes(graph.nodes)
           .on('tick', ticked)
           .force('link')
           .links(graph.links);
-
       function ticked() {
         link
             .attr('x1', function(d) { return d.source.x; })
@@ -239,16 +228,13 @@
         updateGroups();
       }
     });
-
 var polygonGenerator = function (groupId) {
   var node_coords = node
     .filter(function (d) { return d.group == groupId; })
     .data()
     .map(function (d) { return [d.x, d.y]; });
-
   return d3.polygonHull(node_coords);
 }
-
 function updateGroups() {
   groupIds.forEach(function (groupId) {
     var path = paths.filter(function (d) { return d == groupId; })
@@ -256,7 +242,6 @@ function updateGroups() {
       .attr('d', function (d) {
         polygon = polygonGenerator(d);
         centroid = d3.polygonCentroid(polygon);
-
         // to scale the shape properly around its points:
         // move the 'g' element to the centroid point, translate
         // all the path around the center of the 'g' and then
@@ -270,31 +255,26 @@ function updateGroups() {
     d3.select(path.node().parentNode).attr('transform', 'translate(' + centroid[0] + ',' + (centroid[1]) + ') scale(' + scaleFactor + ')');
   });
 }
-
 // drag nodes
 function dragstarted(d) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
   d.fx = d.x;
   d.fy = d.y;
 }
-
 function dragged(d) {
   d.fx = d3.event.x;
   d.fy = d3.event.y;
 }
-
 function dragended(d) {
   if (!d3.event.active) simulation.alphaTarget(0);
   d.fx = null;
   d.fy = null;
 }
-
 // drag groups
 function group_dragstarted(groupId) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
   d3.select(this).select('path').style('stroke-width', 3);
 }
-
 function group_dragged(groupId) {
   node
     .filter(function(d) { return d.group == groupId; })
@@ -303,13 +283,10 @@ function group_dragged(groupId) {
       d.y += d3.event.dy;
     })
 }
-
 function group_dragended(groupId) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
   d3.select(this).select('path').style('stroke-width', 1);
 }
-
-
   </script>
 
 </body>
