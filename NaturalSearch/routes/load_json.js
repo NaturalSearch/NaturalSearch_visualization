@@ -23,7 +23,7 @@ router.get('/', function (req, res, next) {
         nodes.push({ id: r.id, nome: r.properties.nome, group: i+1,group_color:1 });
         nodes.push({ id: "area"+i, area: r.properties.area, group: i+1,group_color:2 });
         nodes.push({ id: "valor"+i, valor_aprovado: r.properties.valor_aprovado, group: i+1,group_color:3});
-        nodes.push({ id: "UF"+i, UF: r.properties.UF, group: i+1,group_color:3});
+        nodes.push({ id: "UF"+i, UF: r.properties.UF, group: i+1,group_color:11});
         nodes.push({ id: "proponente"+i, proponente: r.properties.proponente, group: i+1,group_color:4});
         nodes.push({ id: "segmento"+i, segmento: r.properties.segmento, group: i+1,group_color:5});
         nodes.push({ id: "ano_projeto"+i, ano_projeto: r.properties.ano_projeto, group: i+1,group_color:6 });

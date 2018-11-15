@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
   <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
 </head>
 
 <style>
@@ -68,16 +70,6 @@
                   </div>
                   <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
               </div>
-              <div class="form-check-inline">
-                  <label class="form-check-label text-white">
-                      <input type="checkbox" class="form-check-input" value="">Projetos
-                  </label>
-              </div>
-              <div class="form-check-inline">
-                  <label class="form-check-label text-white">
-                      <input type="checkbox" class="form-check-input" value="">Propostas
-                  </label>
-              </div>
           </div>
           <div class="col"></div>
         </div> -->
@@ -116,9 +108,10 @@
         //linkar pelo id
         .force('link', d3.forceLink().id(function(d) { return d.id; }))
         //espalhar
-        .force('charge', d3.forceManyBody())
+        .force("charge",d3.forceManyBody().strength(-100))
+                         .force("collide",d3.forceCollide())
         //colocar no centro
-        .force('center', d3.forceCenter(width/2, height/2));
+        .force('center', d3.forceCenter(width/2, 600/2))
       
     var svg = d3.select("body")
       .append("svg")
@@ -223,11 +216,16 @@
             .attr('y2', function(d) { return d.target.y; });
         node
             .attr('cx', function(d) { return d.x; })
-            .attr('cy', function(d) { return d.y; });
+            .attr('cy', function(d) { return d.y; })
+            .append('circle')
+            .attr('r', function(d) {
+              return d.radius
+            });
         
         updateGroups();
       }
     });
+
 var polygonGenerator = function (groupId) {
   var node_coords = node
     .filter(function (d) { return d.group == groupId; })
