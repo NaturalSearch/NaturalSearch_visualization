@@ -16,12 +16,16 @@
   }
 
   .nodes circle {
-    stroke: #21eb1f;
+    stroke: black;
     stroke-width: 1.5px;
     width: 100%;
   }
 
-  body {}
+  body {
+  font-family: sans-serif, Arial;  
+  font-size: 12px;
+  font-weight: bold;
+}
 
   .navbar {
     margin-bottom: 10;
@@ -40,14 +44,20 @@
 
   }
   path {
-    fill-opacity: .1;
-    stroke-opacity: 1;
+    fill-opacity: 0.5;
+    stroke-opacity: 10;
   }
 
-  body,
-  html {
-    height: 100%;
+  body{
+    overflow:hidden;
+    margin:0;
     width: 100%;
+    height: 100%;
+  }
+
+  svg {
+    display: block;
+    margin: 0 auto;
   }
 </style>
 
@@ -55,7 +65,7 @@
 
 <body>
 
-  <!--div class="container-fluid">
+  <!-- <div class="container-fluid">
       <div class="row py-4 navbar">
           <div class="col"></div>
           <div class="col col-lg-8">
@@ -77,24 +87,25 @@
               </div>
           </div>
           <div class="col"></div>
-      </div-->
+        </div> -->
   <div id="scaleFactorSettings">
     <p>Scale of the groups: <span id='scaleFactorLabel'>1.2</span></p>
-    <input type="range" min="1" max="3" value="1.2" step=".1" 
+    <input type="range" min="1" max="3" value="1.5" step=".1" 
       oninput="scaleFactor = value; d3.select('#scaleFactorLabel').text(scaleFactor); updateGroups()">
   </div>
   <!-- <div id="curveSettings">
     <p>Type of curve: <span id='curveLabel'>curveCatmullRomClosed</span></p>
   </div> -->    
   <div>
-    <svg width="1340" height="0" viewBox="0 0 100 100"></svg>
+    <svg width="1340" height="0"></svg>
   </div>
 
 
   <script>
-    var svg = d3.select("svg"),
-      width = +svg.attr("width"),
-      height = +svg.attr("height"),
+    var svg = d3.select('svg'),
+      width = +svg.attr('width'),
+      height = +svg.attr('height'),
+      color = d3.scaleOrdinal(d3.schemeCategory20),
       valueline = d3.line()
         .x(function(d) { return d[0]; })
         .y(function(d) { return d[1]; })
@@ -102,28 +113,27 @@
       paths,
       groups,
       groupIds,
-      scaleFactor = 1.2,
+      scaleFactor = 1.5,
       polygon,
       centroid,
       node,
       link,
       curveTypes = ['curveBasisClosed', 'curveCardinalClosed', 'curveCatmullRomClosed', 'curveLinearClosed'],
       simulation = d3.forceSimulation()
-        .force('link', d3.forceLink().id(function (d) { return d.id; }))
+        .force('link', d3.forceLink().id(function(d) { return d.id; }))
         .force('charge', d3.forceManyBody())
         .force('center', d3.forceCenter(width / 2, height / 2));
       
-    var color = d3.scaleOrdinal(d3.schemeCategory10);
-
-
     var svg = d3.select("body")
       .append("svg")
-      .attr("width", "1300  ")
+      .attr("width", "1300")
       .attr("height", "1000")
       .call(d3.zoom().on("zoom", function () {
         svg.attr("transform", d3.event.transform)
       }))
       .append("g")
+      
+      
 
     d3.json("../static/javascripts/d3_prop_proj.json", function (error, graph) {
       if (error) throw error;
@@ -138,57 +148,60 @@
           updateGroups();
         });
       var options = select
-          .selectAll('option')
-          .data(curveTypes).enter()
-          .append('option')
-            .text(function (d) { return d; });
+        .selectAll('option')
+        .data(curveTypes).enter()
+        .append('option')
+          .text(function (d) { return d; });
+
 
       groups = svg.append('g').attr('class', 'groups');
-      
-      link = svg.append("g")
-        .attr("class", "links")
-        .selectAll("line")
+
+      link = svg.append('g')
+        .attr('class', 'links')
+        .selectAll('line')
         .data(graph.links)
-        .enter().append("line")
-        .attr("stroke-width", function (d) { return Math.sqrt(d.value) });
+        .enter().append('line')
+        .attr('stroke-width', function(d) { return Math.sqrt(d.value); });
 
-      node = svg.append("g")
-        .attr("class", "nodes")
-        .selectAll("circle")
+      node = svg.append('g')
+          .attr('class', 'nodes')
+        .selectAll('circle')
         .data(graph.nodes)
-        .enter().append("circle")
-        .attr("fill", function (d) { return color(d.group); })
-        .attr("r", 15)
-        .call(d3.drag()
-          .on("start", dragstarted)
-          .on("drag", dragged)
-          .on("end", dragended));
+        .enter().append('circle')
+          .attr('r', 10)
+          .attr('fill', function(d) { return color(d.group); })
+          .call(d3.drag()
+              .on('start', dragstarted)
+              .on('drag', dragged)
+              .on('end', dragended));
 
-      groupIds = d3.set(graph.nodes.map(function (n) { return +n.group; }))
-      .values()
-      .map(function (groupId) {
-        return {
-          groupId: groupId,
-          count: graph.nodes.filter(function (n) { return +n.group == groupId; }).length
-        };
-      })
-      .filter(function (group) { return group.count > 2; })
-      .map(function (group) { return group.groupId; });
+
+      groupIds = d3.set(graph.nodes.map(function(n) { return +n.group; }))
+        .values()
+        .map( function(groupId) {
+          return { 
+            groupId : groupId,
+            count : graph.nodes.filter(function(n) { return +n.group == groupId; }).length
+          };
+        })
+        .filter( function(group) { return group.count > 2;})
+        .map( function(group) { return group.groupId; });
       
-      paths = groups.selectAll('.path_placeholder')
-        .data(groupIds, function (d) { return +d; })
-        .enter()
-        .append('g')
-        .attr('class', 'path_placeholder')
-        .append('path')
-        .attr('stroke', function (d) { return color(d); })
-        .attr('fill', function (d) { return color(d); })
-        .attr('opacity', 0);
+        paths = groups.selectAll('.path_placeholder')
+          .data(groupIds, function(d) { return +d; })
+          .enter()
+          .append('g')
+          .attr('class', 'path_placeholder')
+          .append('path')
+          .attr('stroke', function(d) { return color(d); })
+          .attr('fill', function(d) { return color(d); })
+          //.attr('opacity', 100);
 
-      paths
-        .transition()
-        .duration(2000)
-        .attr('opacity', 1);
+        paths
+          .transition()
+          .duration(2000)
+          //.attr('opacity', 100);
+
 
       groups.selectAll('.path_placeholder')
         .call(d3.drag()
@@ -197,29 +210,34 @@
           .on('end', group_dragended)
         );
 
-      node.append("title")
-        .text(function (d) { return d.title || d.name; });
+      groups.selectAll('.path_placeholder')
+      .call(d3.drag()
+      .on('start', group_dragstarted)
+      .on('drag', group_dragged)
+      .on('end', group_dragended)
+      );
+
+      node.append('title')
+          .text(function(d) { return d.id; });
 
       simulation
-        .nodes(graph.nodes)
-        .on("tick", ticked);
-
-      simulation.force("link")
-        .links(graph.links);
+          .nodes(graph.nodes)
+          .on('tick', ticked)
+          .force('link')
+          .links(graph.links);
 
       function ticked() {
         link
-          .attr("x1", function (d) { return d.source.x; })
-          .attr("y1", function (d) { return d.source.y; })
-          .attr("x2", function (d) { return d.target.x; })
-          .attr("y2", function (d) { return d.target.y; });
-
+            .attr('x1', function(d) { return d.source.x; })
+            .attr('y1', function(d) { return d.source.y; })
+            .attr('x2', function(d) { return d.target.x; })
+            .attr('y2', function(d) { return d.target.y; });
         node
-          .attr("cx", function (d) { return d.x; })
-          .attr("cy", function (d) { return d.y; });
+            .attr('cx', function(d) { return d.x; })
+            .attr('cy', function(d) { return d.y; });
+        
+        updateGroups();
       }
-
-      updateGroups();
     });
 
 var polygonGenerator = function (groupId) {
@@ -253,7 +271,7 @@ function updateGroups() {
   });
 }
 
-
+// drag nodes
 function dragstarted(d) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
   d.fx = d.x;

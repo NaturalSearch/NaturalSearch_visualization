@@ -32,21 +32,21 @@ router.get('/', function (req, res, next) {
         nodes.push({ id: "valor_solicitado"+i, valor_solicitado: r.properties.valor_solicitado, group: i+1 });
         nodes.push({ id: "valor_captado"+i, valor_captado: r.properties.valor_captado, group: i+1 });
         
-        links.push({ source: "area"+i, target: r.id, value: 2});    
-        links.push({ source: "valor"+i, target: r.id, value: 2});
-        links.push({ source: "UF"+i, target: r.id, value: 2});
-        links.push({ source: "proponente"+i, target: r.id, value: 2});
-        links.push({ source: "segmento"+i, target: r.id, value: 2});
-        links.push({ source: "ano_projeto"+i, target: r.id, value: 2});
-        links.push({ source: "valor_proposta"+i, target: r.id, value: 2});
-        links.push({ source: "valor_projeto"+i, target: r.id, value: 2});
-        links.push({ source: "valor_captado"+i, target: r.id, value: 2});
-        links.push({ source: "valor_solicitado"+i, target: r.id, value: 2});
+        links.push({ source: "area"+i, target: r.id, value: 3});    
+        links.push({ source: "valor"+i, target: r.id, value: 3});
+        links.push({ source: "UF"+i, target: r.id, value: 3});
+        links.push({ source: "proponente"+i, target: r.id, value: 3});
+        links.push({ source: "segmento"+i, target: r.id, value: 3});
+        links.push({ source: "ano_projeto"+i, target: r.id, value: 3});
+        links.push({ source: "valor_proposta"+i, target: r.id, value: 3});
+        links.push({ source: "valor_projeto"+i, target: r.id, value: 3});
+        links.push({ source: "valor_captado"+i, target: r.id, value: 3});
+        links.push({ source: "valor_solicitado"+i, target: r.id, value: 3});
       }
     });
    //create link to json    
   json_neo4j.data[i].graph.relationships.forEach(function (l) {
-    links.push({ source: l.startNode, target: l.endNode, value: 2});
+    links.push({ source: l.startNode, target: l.endNode, value: 6});
     
   }); 
   i++;
