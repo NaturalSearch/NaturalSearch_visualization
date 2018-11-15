@@ -105,7 +105,7 @@
       link,
       simulation = d3.forceSimulation()
         //linkar pelo id
-        .force('link', d3.forceLink().id(function (d) { return d.id; }))
+        .force('link', d3.forceLink().id(function (d) { return d.id; }).distance(function (d) { return d.distance_link;}).strength(2))
         //espalhar com colisao
         .force("charge", d3.forceManyBody().strength(-100))
         .force("collide", d3.forceCollide())
