@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const fetch = require('node-fetch');
 var neo4j = require('neo4j-driver').v1;
 var driver = neo4j.driver('bolt://neo4j', neo4j.auth.basic('neo4j', 'eps'));
 var session = driver.session();
@@ -17,8 +16,13 @@ router.get('/', function(req, res, next) {
     });*/
     var result = session
         .run(
-            "MATCH (n:Person {name: 'Joel Silver'})-[r]-()\
-            RETURN n")
+           'MATCH (p:Nó_Proponentes), (pr:Nó_Projeto)\
+            WHERE p.nome="Isaque Ribeiro" AND pr.proponente="Isaque Ribeiro"\
+            MERGE (p)-[f:LIGADOS]->(pr)\
+            RETURN p,f,pr')
+
+            //'MATCH p=()-[r:LIGADOS]->() RETURN p LIMIT 25')
+
         .then(function(result){
             //console.log(result.records._fields);
             /*result.records.forEach(function(record){
@@ -27,7 +31,7 @@ router.get('/', function(req, res, next) {
                 console.log(resultado)
             });*/ 
             console.log(result.records[0]._fields.labels);
-            fs.writeFile("./object.json", JSON.stringify(result), (err) => {
+            fs.writeFile("./exemplo2.json", JSON.stringify(result), (err) => {
                 if (err) {
                     console.error(err);
                     return;

@@ -3,26 +3,48 @@ var router = express.Router();
 var neo4j = require('neo4j-driver').v1;
 var driver = neo4j.driver('bolt://neo4j', neo4j.auth.basic('neo4j', 'eps'));
 var session = driver.session();
-var fs = require('fs');
+var fs = require("fs");
 
-        // get the data from neo4j
-        
-        session{
-        $.ajax({
-            url: "http://localhost:7474/db/data/transaction/commit",
-            type: 'POST',
-            data: JSON.stringify({ "statements": [{ "MATCH (p:Nó_Proponentes), (pr:Nó_Projeto) WHERE p.nome= "Marco de Vita Campos"
-                                                             AND pr.proponente= "Marco de Vita Campos"
-                                                             MERGE (p)-[f:LIGADOS]->(pr) RETURN p, f, pr": $('null').val() }] }),                
-            contentType: 'application/json',
-            accept: 'application/json; charset=UTF-8',
-            success: function () { },
-            error: function (jqXHR, textStatus, errorThrown) { $('#messageArea').html('<h3>' + textStatus + ' : ' + errorThrown + '</h3>') },
-            complete: function () { }
-        }).then(function (data) {
+/* GET home page. */
+router.get('/', function(req, res, next) {
+    /*fetch('http://localhost:7474/db/data/transaction/1/commit')
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(json){
+        console.log(json);
+    });*/
+    var result = session
+        .run(
+           'MATCH (p:Nó_Proponentes), (pr:Nó_Projeto)\
+            WHERE p.nome="Isaque Ribeiro" AND pr.proponente="Isaque Ribeiro"\
+            MERGE (p)-[f:LIGADOS]->(pr)\
+            RETURN p,f,pr')
 
-        }session
+            //'MATCH p=()-[r:LIGADOS]->() RETURN p LIMIT 25')
 
+        .then(function(result){
+            //console.log(result.records._fields);
+            /*result.records.forEach(function(record){
+                console.log(record._fields);
+                var resultado = record._fields
+                console.log(resultado)
+            });*/ 
+            console.log(result.records[0]._fields.labels);
+            fs.writeFile("./object.json", JSON.stringify(result), (err) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                };
+                console.log("File has been created");
+            });
+            //console.log(result);
+        });
+    session
 
+    console.log(result);         
 
-http -b -j localhost:7474/db/data/transaction/commit statements:='[{"statement": "MATCH (p:Nó_Proponentes), (pr:Nó_Projeto)\nWHERE p.nome=\"Marco de Vita Campos\" AND pr.proponente=\"Marco de Vita Campos\"\nMERGE (p)-[f:LIGADOS]->(pr)\nRETURN p, f, pr"", "parameters": { null }]'
+    res.render('example', { title: 'Express' });
+});
+
+module.exports = router;

@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
     json = JSON.parse(fs.readFileSync('./public/projects/' + projetos, 'utf8'));      
     for(var i=0;i<json.quantidade;i++){
         session    
-            .run('CREATE(n:Nó_Projeto{nome:{nome},proponente:{proponente},segmento:{segmento},area:{area},UF:{UF},ano_projeto:{ano_projeto},valor_projeto:{valor_projeto},valor_solicitado:{valor_solicitado},valor_captado:{valor_captado},valor_aprovado:{valor_aprovado},valor_proposta:{valor_proposta}}) RETURN n.nome', {
+            .run('MERGE(n:Nó_Projeto{nome:{nome},proponente:{proponente},segmento:{segmento},area:{area},UF:{UF},ano_projeto:{ano_projeto},valor_projeto:{valor_projeto},valor_solicitado:{valor_solicitado},valor_captado:{valor_captado},valor_aprovado:{valor_aprovado},valor_proposta:{valor_proposta}}) RETURN n.nome', {
                 nome: json.projetos[i].nome,
                 proponente:json.projetos[i].proponente,
                 segmento: json.projetos[i].segmento,

@@ -18,10 +18,10 @@ var usersRouter = require('./routes/users');
 var resultRouter = require('./routes/result');
 var loadRouter = require('./routes/load_json');
 var exampleRouter = require('./routes/example');
-var projectsRouter = require('./routes/projects');
+//var projectsRouter = require('./routes/projects');
 var proponentesRoutes = require('./routes/proponentes');
 var projetosRoutes = require('./routes/projetos');
-//var relacionamentoRoutes = require('./routes/relacionamento');
+var relacionamentoRoutes = require('./routes/relacionamento');
 
 
 var app = express();
@@ -40,9 +40,10 @@ app.use('/users', usersRouter);
 app.use('/result', resultRouter);
 app.use('/example', exampleRouter);
 app.use('/load_json', loadRouter);
-app.use('/projects', projectsRouter);
+//app.use('/projects', projectsRouter);
 app.use('/proponentes',proponentesRoutes);
 app.use('/projetos', projetosRoutes);
+app.use('/relacionamento',relacionamentoRoutes);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
