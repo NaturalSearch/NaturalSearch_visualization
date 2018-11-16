@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <meta charset="utf-8">
 
 <head>
@@ -8,6 +9,13 @@
     crossorigin="anonymous">
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <!--Navbar-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--Font awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
 
 </head>
 
@@ -16,19 +24,42 @@
     stroke: black;
     opacity: 2;
   }
+
   .nodes circle {
     stroke: black;
     stroke-width: 1.5px;
     width: 100%;
   }
+
   body {
-  font-family: sans-serif, Arial;  
-  font-size: 12px;
-  font-weight: bold;
-}
+    font-family: sans-serif, Arial;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  path {
+    fill-opacity: 0.5;
+    stroke-opacity: 10;
+  }
+
+  svg {
+    display: block;
+    margin: 0 auto;
+  }
+
+  text {
+  font-family: sans-serif;
+  font-size: 15px;
+  }
+  /*nav-design*/
   .navbar {
     margin-bottom: 10;
     background: url('http://thecodeplayer.com/u/m/b1.png');
+    background-color: #000;
     z-index: 9999;
     border: 100px;
     font-size: 14px !important;
@@ -36,42 +67,47 @@
     letter-spacing: 4px;
     border-radius: 4px;
     text-transform: uppercase;
+
   }
-  .button-search {
+
+  /* animation nav-bar mouse*/
+  .navbar li a,
+  .navbar .navbar-brand {
+    color: #fff !important;
+  }
+
+  .navbar-nav li a:hover,
+  .navbar-nav li.active a {
+    color: black !important;
+    background-color: #fff !important;
     border-radius: 15px;
-  }
-  path {
-    fill-opacity: 0.5;
-    stroke-opacity: 10;
-  }
-  body{
-    overflow:hidden;
-    margin:0;
-    width: 100%;
-    height: 100%;
-  }
-  svg {
-    display: block;
-    margin: 0 auto;
   }
 </style>
 
 <body>
 
-  <!-- <div class="container-fluid">
-      <div class="row py-4 navbar">
-          <div class="col"></div>
-          <div class="col col-lg-8">
-              <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                          <button type="button" class="btn btn-primary">Pesquisar</button>
-                  </div>
-                  <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-              </div>
-          </div>
-          <div class="col"></div>
-        </div> -->
- <!--  <div id="scaleFactorSettings">
+  <!--Navbar-->
+  <!--  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand " href="#myPage">NaturalSearch</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a class="fas fa-search" href="#search">PESQUISAR</a></li>
+          <li><a class="fas fa-laptop-code" href="#howtouse">COMO USAR</a></li>
+          <li><a class="fas fa-users-cog" href="#whoare"> QUEM SOMOS </a> </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+  <!--  <div id="scaleFactorSettings">
     <p>Scale of the groups: <span id='scaleFactorLabel'>1.2</span></p>
     <input type="range" min="1" max="3" value="1.5" step=".1" oninput="scaleFactor = value; d3.select('#scaleFactorLabel').text(scaleFactor); updateGroups()">
   </div> -->
@@ -105,13 +141,13 @@
       link,
       simulation = d3.forceSimulation()
         //linkar pelo id
-        .force('link', d3.forceLink().id(function (d) { return d.id; }).distance(function (d) { return d.distance_link;}).strength(2))
+        .force('link', d3.forceLink().id(function (d) { return d.id; }).distance(function (d) { return d.distance_link; }).strength(2))
         //espalhar com colisao
         .force("charge", d3.forceManyBody().strength(-100))
         .force("collide", d3.forceCollide())
         //colocar no centro
         .force('center', d3.forceCenter((jQuery(window).width()) / 2, (jQuery(window).height()) / 2))
-        
+
 
     var svg = d3.select("body")
       .append("svg")
@@ -146,19 +182,35 @@
         .data(graph.links)
         .enter().append('line')
         .attr('stroke-width', function (d) { return Math.sqrt(d.value); })
-        .attr('distance', function(d){return (d.value);});
+        .attr('distance', function (d) { return (d.value); });
 
-      node = svg.append('g')
+      node = svg.selectAll('.node')
         .attr('class', 'nodes')
-        .selectAll('circle')
+        /* .selectAll('circle') */
         .data(graph.nodes)
-        .enter().append('circle')
-        .attr('r',function (d) { return (d.length_node);})
+        .enter().append('g')
+      
+      node.append('circle')
+        .attr('r', function (d) { return (d.length_node); })
         .attr('fill', function (d) { return color(d.group_color); })
         .call(d3.drag()
           .on('start', dragstarted)
           .on('drag', dragged)
           .on('end', dragended));
+
+
+      var lables = node.append("text")
+        .text(function (d) {
+          return d.nome || d.area || d.valor_aprovado ||
+            d.UF || d.proponente || d.segmento ||
+            d.ano_projeto || d.valor_proposta ||
+            d.valor_projeto || d.valor_solicitado ||
+            d.valor_captado;;
+        })
+        .attr('x', 6)
+        .attr('y', 3);
+
+
 
       groupIds = d3.set(graph.nodes.map(function (n) { return +n.group; }))
         .values()
@@ -218,12 +270,7 @@
           .attr('x2', function (d) { return d.target.x; })
           .attr('y2', function (d) { return d.target.y; });
         node
-          .attr('cx', function (d) { return d.x; })
-          .attr('cy', function (d) { return d.y; })
-          .append('circle')
-          .attr('r', function (d) {
-            return d.radius
-          });
+          .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
 
         updateGroups();
       }
@@ -288,6 +335,8 @@
       if (!d3.event.active) simulation.alphaTarget(0.3).restart();
       d3.select(this).select('path').style('stroke-width', 1);
     }
+
+    
   </script>
 
 </body>
