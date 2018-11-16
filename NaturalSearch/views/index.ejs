@@ -19,7 +19,7 @@
 
   <style>
   #inputGroup-sizing-lg {
-    width: 80%; /* Full-width */
+    width: 70%; /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; /* Add some padding */
     border: 2px solid #7B68EE; /* Add a grey border */
@@ -63,11 +63,13 @@
       color: #000;
       /*full height*/
       padding: 200px 150px;
+      resize: both;
+      overflow: auto;
 
       /* Center and scale the image nicely */
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: auto;
       font-family: Montserrat, sans-serif;
   }
   /* radio buttuns */
@@ -104,15 +106,39 @@
   }
   .container-fluid-1 {
     background-color:#e1eaea; 
-    padding: 60px 50px;  
+    padding: 60px 50px; 
+    resize: both;
+    overflow: auto;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto;
   }
   .container-fluid-2{
     background-color:#d1e0e0; 
-    padding: 60px 50px;   
+    padding: 60px 50px; 
+    resize: both;
+    overflow: auto;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto; 
   }
   .container-fluid-3{
     background-color:#fff; 
-    padding: 60px 50px;   
+    padding: 60px 50px;  
+    resize: both;
+    overflow: auto;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto;
   }
   .item h4 {
       font-size: 19px;
@@ -194,7 +220,6 @@
           <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox" />
           <label for="campo-checkbox">Propostas</label>
       </div>
-      <br>
     <button class="fas fa-search btn btn-info btn-lg" type="submit" value="result" onclick="search_form(q)">PESQUISAR
   </button>
   </form>
@@ -204,10 +229,11 @@
   <div id="howtouse" class="container-fluid-2">
     <div class="row">
       <div class="col-sm-8">
-        <h2>Como funciona a Pesquisa</h2>
-        <h4>Para realizar a pesquisa necessário digitar qualquer palavra, frase e/ou
-          numero que interessar. A pesquisa retornará as informações encontradas como os
-          projetos e proponentes, por meio da visualização de grafos de uma forma intuitiva e atrativa.</h4><br>
+        <h2>Como funciona o Natural Search</h2>
+        <h4>Para realizar a pesquisa é necessário digitar qualquer palavra, frase e/ou
+          numero que interessar na barra de pesquisa.COLOCAR PRINT DA TELA
+           A pesquisa retornará as informações encontradas por meio de uma tabela.....COLOCAR PRINT DA TELA 
+          O resultado também gera uma visualização de grafos onde é posivel observar as conexções entre a pesquisa de interesse e seu projeto e proponentes. COLOCAR PRINT DA TELA</h4><br>
         <p></p>
 
       </div>
