@@ -17,8 +17,8 @@ router.get('/', function(req, res, next) {
     var result = session
         .run(
            'MATCH (p:Nó_Proponentes), (pr:Nó_Projeto)\
-            WHERE p.nome="Isaque Ribeiro" AND pr.proponente="Isaque Ribeiro"\
-            MERGE (p)-[f:LIGADOS]->(pr)\
+            WHERE p.nome="Daiane Baumgartner de Souza" AND pr.proponente="Daiane Baumgartner de Souza"\
+            CREATE (p)-[f:LIGADOS]->(pr)\
             RETURN p,f,pr')
 
             //'MATCH p=()-[r:LIGADOS]->() RETURN p LIMIT 25')
@@ -42,7 +42,14 @@ router.get('/', function(req, res, next) {
         });
     session
 
-    console.log(result);         
+    console.log(result); 
+
+    var result = session
+    .run(
+        'MATCH (:Nó_Proponentes)-[f:LIGADOS]-(:Nó_Projeto)\
+        DELETE f'
+    )
+    session       
 
     res.render('example', { title: 'Express' });
 });

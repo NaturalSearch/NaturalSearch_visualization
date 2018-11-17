@@ -21,10 +21,7 @@ function titleize(text) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    
-  console.log(req.query.q);
   search_result = req.query.q;
-  
   if(search_result!=null){
     search_result=titleize(search_result);
     console.log(search_result);
@@ -46,7 +43,7 @@ router.get('/', function(req, res, next) {
     console.log(err);
   });
   */
-  res.render('index', { title: 'Express' });
+ res.render('index', { title: 'Express' });
 });
 
 module.exports = router;

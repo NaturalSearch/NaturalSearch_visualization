@@ -1,0 +1,386 @@
+{
+    "nodes": [
+        {
+            "id": "46481",
+            "nome": "Marco de Vita Campos",
+            "group": 0
+        },
+        {
+            "id": 1,
+            "area": "fisica",
+            "group": 0
+        },
+        {
+            "id": 2,
+            "uf": "SP",
+            "group": 0
+        },
+        {
+            "id": 3,
+            "area": "São Paulo",
+            "group": 0
+        },
+        {
+            "id": "58",
+            "nome": "AOI",
+            "group": 1
+        },
+        {
+            "id": 5,
+            "area": "Música",
+            "group": 1
+        },
+        {
+            "id": 6,
+            "valor_aprovado": 855846.8,
+            "group": 1
+        },
+        {
+            "id": 7,
+            "UF": "SP",
+            "group": 1
+        },
+        {
+            "id": 8,
+            "proponente": "Marco de Vita Campos",
+            "group": 1
+        },
+        {
+            "id": 9,
+            "segmento": "Música Instrumental",
+            "group": 1
+        },
+        {
+            "id": 10,
+            "ano_projeto": "18",
+            "group": 1
+        },
+        {
+            "id": 11,
+            "valor_proposta": 855846.8,
+            "group": 1
+        },
+        {
+            "id": 12,
+            "valor_projeto": 855846.8,
+            "group": 1
+        },
+        {
+            "id": 13,
+            "valor_solicitado": 855846.8,
+            "group": 1
+        },
+        {
+            "id": 14,
+            "valor_captado": 0,
+            "group": 1
+        },
+        {
+            "id": "24684",
+            "nome": "AOI",
+            "group": 2
+        },
+        {
+            "id": 5,
+            "area": "Música",
+            "group": 2
+        },
+        {
+            "id": 6,
+            "valor_aprovado": 855846.8,
+            "group": 2
+        },
+        {
+            "id": 7,
+            "UF": "SP",
+            "group": 2
+        },
+        {
+            "id": 8,
+            "proponente": "Marco de Vita Campos",
+            "group": 2
+        },
+        {
+            "id": 9,
+            "segmento": "Música Instrumental",
+            "group": 2
+        },
+        {
+            "id": 10,
+            "ano_projeto": "18",
+            "group": 2
+        },
+        {
+            "id": 11,
+            "valor_proposta": 855846.8,
+            "group": 2
+        },
+        {
+            "id": 12,
+            "valor_projeto": 855846.8,
+            "group": 2
+        },
+        {
+            "id": 13,
+            "valor_solicitado": 855846.8,
+            "group": 2
+        },
+        {
+            "id": 14,
+            "valor_captado": 0,
+            "group": 2
+        },
+        {
+            "id": "77960",
+            "nome": "MATA PAULISTANA INSTRUMENTAL",
+            "group": 3
+        },
+        {
+            "id": 5,
+            "area": "Música",
+            "group": 3
+        },
+        {
+            "id": 6,
+            "valor_aprovado": 454289.87,
+            "group": 3
+        },
+        {
+            "id": 7,
+            "UF": "SP",
+            "group": 3
+        },
+        {
+            "id": 8,
+            "proponente": "Marco de Vita Campos",
+            "group": 3
+        },
+        {
+            "id": 9,
+            "segmento": "Música Instrumental",
+            "group": 3
+        },
+        {
+            "id": 10,
+            "ano_projeto": "14",
+            "group": 3
+        },
+        {
+            "id": 11,
+            "valor_proposta": 507897.87,
+            "group": 3
+        },
+        {
+            "id": 12,
+            "valor_projeto": 454289.87,
+            "group": 3
+        },
+        {
+            "id": 13,
+            "valor_solicitado": 507897.87,
+            "group": 3
+        },
+        {
+            "id": 14,
+            "valor_captado": 454289.87,
+            "group": 3
+        },
+        {
+            "id": "119763",
+            "nome": "OLB",
+            "group": 4
+        },
+        {
+            "id": 5,
+            "area": "Música",
+            "group": 4
+        },
+        {
+            "id": 6,
+            "valor_aprovado": 227086.97,
+            "group": 4
+        },
+        {
+            "id": 7,
+            "UF": "SP",
+            "group": 4
+        },
+        {
+            "id": 8,
+            "proponente": "Marco de Vita Campos",
+            "group": 4
+        },
+        {
+            "id": 9,
+            "segmento": "Música Instrumental",
+            "group": 4
+        },
+        {
+            "id": 10,
+            "ano_projeto": "11",
+            "group": 4
+        },
+        {
+            "id": 11,
+            "valor_proposta": 255586.97,
+            "group": 4
+        },
+        {
+            "id": 12,
+            "valor_projeto": 227086.97,
+            "group": 4
+        },
+        {
+            "id": 13,
+            "valor_solicitado": 255586.97,
+            "group": 4
+        },
+        {
+            "id": 14,
+            "valor_captado": 227086.97,
+            "group": 4
+        },
+        {
+            "id": "140445",
+            "nome": "Alma Brasileira",
+            "group": 5
+        },
+        {
+            "id": 5,
+            "area": "Música",
+            "group": 5
+        },
+        {
+            "id": 6,
+            "valor_aprovado": 139999.97,
+            "group": 5
+        },
+        {
+            "id": 7,
+            "UF": "SP",
+            "group": 5
+        },
+        {
+            "id": 8,
+            "proponente": "Marco de Vita Campos",
+            "group": 5
+        },
+        {
+            "id": 9,
+            "segmento": "Música Instrumental",
+            "group": 5
+        },
+        {
+            "id": 10,
+            "ano_projeto": "09",
+            "group": 5
+        },
+        {
+            "id": 11,
+            "valor_proposta": 139999.97,
+            "group": 5
+        },
+        {
+            "id": 12,
+            "valor_projeto": 139999.97,
+            "group": 5
+        },
+        {
+            "id": 13,
+            "valor_solicitado": 139999.97,
+            "group": 5
+        },
+        {
+            "id": 14,
+            "valor_captado": 0,
+            "group": 5
+        },
+        {
+            "id": "140966",
+            "nome": "AOI",
+            "group": 6
+        },
+        {
+            "id": 5,
+            "area": "Música",
+            "group": 6
+        },
+        {
+            "id": 6,
+            "valor_aprovado": 855846.8,
+            "group": 6
+        },
+        {
+            "id": 7,
+            "UF": "SP",
+            "group": 6
+        },
+        {
+            "id": 8,
+            "proponente": "Marco de Vita Campos",
+            "group": 6
+        },
+        {
+            "id": 9,
+            "segmento": "Música Instrumental",
+            "group": 6
+        },
+        {
+            "id": 10,
+            "ano_projeto": "18",
+            "group": 6
+        },
+        {
+            "id": 11,
+            "valor_proposta": 855846.8,
+            "group": 6
+        },
+        {
+            "id": 12,
+            "valor_projeto": 855846.8,
+            "group": 6
+        },
+        {
+            "id": 13,
+            "valor_solicitado": 855846.8,
+            "group": 6
+        },
+        {
+            "id": 14,
+            "valor_captado": 0,
+            "group": 6
+        }
+    ],
+    "links": [
+        {
+            "source": "46481",
+            "target": "58",
+            "value": 2
+        },
+        {
+            "source": "46481",
+            "target": "24684",
+            "value": 2
+        },
+        {
+            "source": "46481",
+            "target": "77960",
+            "value": 2
+        },
+        {
+            "source": "46481",
+            "target": "119763",
+            "value": 2
+        },
+        {
+            "source": "46481",
+            "target": "140445",
+            "value": 2
+        },
+        {
+            "source": "46481",
+            "target": "140966",
+            "value": 2
+        }
+    ]
+}
