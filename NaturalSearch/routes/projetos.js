@@ -31,7 +31,11 @@ router.get('/', function (req, res, next) {
                 for(let json_position = 0; json_position < elements_quantity; json_position++) {
                     console.log(json.results[json_position].url);
                         session    
-                        .run('MERGE(n:Projeto{nome:{nome},proponente:{proponente},segmento:{segmento},area:{area},UF:{UF},ano_projeto:{ano_projeto},valor_projeto:{valor_projeto},valor_solicitado:{valor_solicitado},valor_captado:{valor_captado},valor_aprovado:{valor_aprovado},valor_proposta:{valor_proposta}}) RETURN n.nome', {
+                        .run('MERGE(n:Projeto{nome:{nome},proponente:{proponente},segmento:{segmento}, \
+                            area:{area},UF:{UF},ano_projeto:{ano_projeto},valor_projeto:{valor_projeto}, \
+                            valor_solicitado:{valor_solicitado},valor_captado:{valor_captado}, \
+                            valor_aprovado:{valor_aprovado},valor_proposta:{valor_proposta}}) \
+                            RETURN n.nome', {
                             nome: json.results[json_position].nome,
                             proponente:json.results[json_position].proponente,
                             segmento: json.results[json_position].segmento,

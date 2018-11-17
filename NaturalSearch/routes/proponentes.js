@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var neo4j = require('neo4j-driver').v1;
+var driver = neo4j.driver('bolt://neo4j', neo4j.auth.basic('neo4j', 'eps'));
+var session = driver.session();
 const fetch = require('node-fetch');
     
     
@@ -26,6 +29,16 @@ router.get('/', function (req, res, next) {
                 }
                 for(let json_position = 0; json_position < elements_quantity; json_position++) {
                     console.log(json.results[json_position].url);
+                         session    
+                        .run('MERGE(n:Proponentes{tipo_pessoa:{tipo_pessoa},uf:{uf}, \
+                             municipio:{municipio},nome:{nome}}) \
+                             RETURN n.nome', {
+                            tipo_pessoa:json.results[json_position].tipo_pessoa,
+                            uf: json.results[json_position].UF,
+                            municipio: json.results[json_position].municipio,
+                            nome: json.results[json_position].nome
+                            });
+                        session 
                 }
             })
         }
