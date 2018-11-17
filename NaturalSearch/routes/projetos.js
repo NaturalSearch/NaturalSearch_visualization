@@ -10,7 +10,7 @@ const fetch = require('node-fetch');
 //Alterar quantidade por count
 
 router.get('/', function (req, res, next) {
-    fetch("http://68.183.107.229:8000/projeto/?limit=&offset=0").then((res)=>{
+    fetch("http://68.183.107.229:8000/projeto/?limit100=&offset=0").then((res)=>{
         return res.json();
     }).then((json)=>{
         total = json.count;
@@ -31,7 +31,7 @@ router.get('/', function (req, res, next) {
                 for(let json_position = 0; json_position < elements_quantity; json_position++) {
                     console.log(json.results[json_position].url);
                         session    
-                        .run('MERGE(n:Nó_Projeto{nome:{nome},proponente:{proponente},segmento:{segmento},area:{area},UF:{UF},ano_projeto:{ano_projeto},valor_projeto:{valor_projeto},valor_solicitado:{valor_solicitado},valor_captado:{valor_captado},valor_aprovado:{valor_aprovado},valor_proposta:{valor_proposta}}) RETURN n.nome', {
+                        .run('MERGE(n:Projeto{nome:{nome},proponente:{proponente},segmento:{segmento},area:{area},UF:{UF},ano_projeto:{ano_projeto},valor_projeto:{valor_projeto},valor_solicitado:{valor_solicitado},valor_captado:{valor_captado},valor_aprovado:{valor_aprovado},valor_proposta:{valor_proposta}}) RETURN n.nome', {
                             nome: json.results[json_position].nome,
                             proponente:json.results[json_position].proponente,
                             segmento: json.results[json_position].segmento,
