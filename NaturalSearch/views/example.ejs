@@ -9,7 +9,7 @@
     crossorigin="anonymous">
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <!--Navbar-->
@@ -34,7 +34,8 @@
     width: 100%;
   }
 
-  body,html {
+  body,
+  html {
     font-family: sans-serif, Arial;
     font-size: 12px;
     font-weight: bold;
@@ -54,7 +55,7 @@
     margin: 0 auto;
   }
 
- /*  text {
+  /*  text {
     stroke: white; 
     stroke-width: 0.1px;
     font-family: "Arial Black", Gadget, sans-serif;
@@ -74,6 +75,19 @@
     border-radius: 4px;
     text-transform: uppercase;
 
+  }
+
+  div.tooltip {
+    position: absolute;
+    background-color: white;
+    max-width: 200px;
+    height: auto;
+    padding: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+    pointer-events: none;
   }
 
   /* animation nav-bar mouse*/
@@ -113,7 +127,7 @@
       </div>
     </div>
   </nav> -->
-   <!-- <div id="scaleFactorSettings">
+  <!-- <div id="scaleFactorSettings">
     <p>Scale of the groups: <span id='scaleFactorLabel'>1.2</span></p>
     <input type="range" min="1" max="3" value="1.2" step=".1" oninput="scaleFactor = value; d3.select('#scaleFactorLabel').text(scaleFactor); updateGroups()">
   </div> -->
@@ -167,6 +181,12 @@
     color('valor_captado');
     color('projeto'); */
 
+
+    var tooltip = d3.select("body")
+      .append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
+
     var svg = d3.select("body")
       .append("svg")
       //definir tamanho da tela 
@@ -214,8 +234,13 @@
         .call(d3.drag()
           .on('start', dragstarted)
           .on('drag', dragged)
-          .on('end', dragended));
-
+          .on('end', dragended))
+        .on('mouseover.fade', fade(0.1))
+        .on('mouseout.fade', fade(1))
+        .on("mousemove", function () {
+          tooltip.style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY + 10) + "px");
+        });
 
       var lables = node.append("text")
         .text(function (d) {
@@ -227,8 +252,6 @@
         })
         .attr('x', 6)
         .attr('y', 3);
-
-
 
       groupIds = d3.set(graph.nodes.map(function (n) { return +n.group; }))
         .values()
@@ -288,10 +311,31 @@
           .attr('x2', function (d) { return d.target.x; })
           .attr('y2', function (d) { return d.target.y; });
         node
-          .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
+          .attr('transform', d => `translate(${d.x},${d.y})`);
 
         updateGroups();
       }
+      const linkedByIndex = {};
+      graph.links.forEach(d => {
+        linkedByIndex[`${d.source.index},${d.target.index}`] = 1;
+      });
+      
+      function isConnected(a, b) {
+        return linkedByIndex[`${a.index},${b.index}`] || linkedByIndex[`${b.index},${a.index}`] || a.index === b.index;
+      }
+      function fade(opacity) {
+        return d => {
+          node.style('stroke-opacity', function (o) {
+            const thisOpacity = isConnected(d, o) ? 1 : opacity;
+            this.setAttribute('fill-opacity', thisOpacity);
+            return thisOpacity;
+          });
+
+          link.style('stroke-opacity', o => (o.source === d || o.target === d ? 1 : opacity));
+
+        };
+      }
+
     });
 
     var polygonGenerator = function (groupId) {
@@ -354,24 +398,24 @@
       d3.select(this).select('path').style('stroke-width', 1);
     }
 
- var sequentialScale = d3.scaleOrdinal(d3.schemeCategory20)
-  .domain(['Nome do proponente', 'Nome do projeto', 'Área','Valor Aprovado' , 'UF', 'Proponente', 'Segmento', 'Ano do projeto', 'Valor da proposta', 'Valor do projeto', 'Valor solicitado', 'Valor Captado']);
+    var sequentialScale = d3.scaleOrdinal(d3.schemeCategory20)
+      .domain(['Nome do proponente', 'Nome do projeto', 'Área', 'Valor Aprovado', 'UF', 'Proponente', 'Segmento', 'Ano do projeto', 'Valor da proposta', 'Valor do projeto', 'Valor solicitado', 'Valor Captado']);
 
 
-svg.append("g")
-  .attr("class", "legendSequential")
-  .attr("transform", "translate("+(width-1250)+","+(height + 400)+")");
+    svg.append("g")
+      .attr("class", "legendSequential")
+      .attr("transform", "translate(" + (width - 1250) + "," + (height + 400) + ")");
 
-var legendSequential = d3.legendColor()
-    .shapeWidth(30)
-    .cells(11)
-    .orient("vertical")
-		.title("Legenda:")
-		.titleWidth(100)
-    .scale(sequentialScale) 
+    var legendSequential = d3.legendColor()
+      .shapeWidth(30)
+      .cells(11)
+      .orient("vertical")
+      .title("Legenda:")
+      .titleWidth(100)
+      .scale(sequentialScale)
 
-svg.select(".legendSequential")
-  .call(legendSequential); 
+    svg.select(".legendSequential")
+      .call(legendSequential);
 
   </script>
 
