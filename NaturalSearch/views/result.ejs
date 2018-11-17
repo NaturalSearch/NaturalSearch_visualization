@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="br">
 
 <head>
 
@@ -12,6 +12,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"></script>
 
   <!--Chama a tabela-->
       <script>
@@ -26,10 +27,16 @@
                 { "width": "30%", "targets": 1 },
                 { "width": "10%", "targets": 2 },
                 { "width": "10%", "targets": 3 }
-            ]
-        } );
+            ], "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"}
+        } );  
+        
     });
       </script>
+
+      
+
+
       
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.cs	s">
   <!--Font awesome-->
@@ -118,6 +125,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#myPage">NaturalSearch</a>
       </div>
@@ -125,6 +133,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a class="fas fa-search" href="/#search">PESQUISAR</a></li>
           <li><a class="fas fa-laptop-code" href="/#howtouse">COMO USAR</a></li>
+          <li><a class="fas fa-users-cog" href="#works"> COMO FUNCIONA </a> </li>
           <li><a class="fas fa-users-cog" href="/#whoare"> QUEM SOMOS </a> </li>
 
         </ul>
