@@ -263,7 +263,7 @@
   <div class="container-fluid-1">
     <div class="row">
       <div class="col-sm-4">
-        <svg width="400" height="500"></svg>
+        <svg width="300" height="350"></svg>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script>
         
@@ -278,7 +278,7 @@
             .force("charge", d3.forceManyBody())
             .force("center", d3.forceCenter(width / 2, height / 2));
         
-        d3.json("../static/javascripts/miserables.json", function(error, graph) {
+        d3.json("../static/javascripts/miserables_less_nodes.json", function(error, graph) {
           if (error) throw error;
         
           var link = svg.append("g")
@@ -293,7 +293,7 @@
             .selectAll("circle")
             .data(graph.nodes)
             .enter().append("circle")
-              .attr("r", 5)
+              .attr("r", 10)
               .attr("fill", function(d) { return color(d.group); })
               .call(d3.drag()
                   .on("start", dragstarted)
