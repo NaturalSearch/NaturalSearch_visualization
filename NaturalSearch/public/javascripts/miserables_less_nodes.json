@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {"id": "Labarre", "group": 2},
+    {"id": "Valjean", "group": 2},
+    {"id": "Listolier", "group": 3},
+    {"id": "Blacheville", "group": 3},
+    {"id": "Zephine", "group": 3},
+    {"id": "Fantine", "group": 3},
+    {"id": "Mme.Thenardier", "group": 4},
+    {"id": "Cosette", "group": 5},
+    {"id": "Brevet", "group": 2},
+    {"id": "Eponine", "group": 4},
+    {"id": "Anzelma", "group": 4}
+  ],
+  "links": [
+    {"source": "Valjean", "target": "Labarre", "value": 1},
+    {"source": "Blacheville", "target": "Listolier", "value": 4},
+    {"source": "Zephine", "target": "Listolier", "value": 3},
+    {"source": "Zephine", "target": "Blacheville", "value": 3},
+    {"source": "Fantine", "target": "Listolier", "value": 3},
+    {"source": "Fantine", "target": "Blacheville", "value": 3},
+    {"source": "Fantine", "target": "Zephine", "value": 4},
+    {"source": "Fantine", "target": "Valjean", "value": 9},
+    {"source": "Mme.Thenardier", "target": "Fantine", "value": 2},
+    {"source": "Mme.Thenardier", "target": "Valjean", "value": 7},
+    {"source": "Cosette", "target": "Mme.Thenardier", "value": 4},
+    {"source": "Cosette", "target": "Valjean", "value": 31},
+    {"source": "Brevet", "target": "Valjean", "value": 2},
+    {"source": "Eponine", "target": "Mme.Thenardier", "value": 2},
+    {"source": "Anzelma", "target": "Eponine", "value": 2},
+    {"source": "Anzelma", "target": "Mme.Thenardier", "value": 1}
+  ]
+}
