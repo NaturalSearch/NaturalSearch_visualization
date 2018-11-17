@@ -9,9 +9,8 @@ router.get('/', function(req, res, next) {
 search_result = req.query.q;
 
  session
-    .run('match (project:Project) where (any(prop in keys(project) where tostring(project[prop]) CONTAINS {title})) RETURN project ',
-    {'title':  search_result }
-    )
+    .run("match (project:Project) where (any(prop in keys(project) where tostring(project[prop]) =~ '(?i).*"
+    + search_result + ".*' )) RETURN project ")
  .then(function(result){
   var list_result = [];
   result.records.forEach(function(record){   
@@ -26,6 +25,7 @@ search_result = req.query.q;
  })
  .catch(function(err){
    console.log(err);
+   session
  });
 
   
