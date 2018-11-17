@@ -18,7 +18,7 @@ var usersRouter = require('./routes/users');
 var resultRouter = require('./routes/result');
 var loadRouter = require('./routes/load_json');
 var exampleRouter = require('./routes/example');
-var projectsRouter = require('./routes/projects');
+var projetosRouter = require('./routes/projetos');
 var proponentesRoutes = require('./routes/proponentes');
 
 
@@ -38,7 +38,7 @@ app.use('/users', usersRouter);
 app.use('/result', resultRouter);
 app.use('/example', exampleRouter);
 app.use('/load_json', loadRouter);
-app.use('/projects', projectsRouter);
+app.use('/projetos', projetosRouter);
 app.use('/proponentes',proponentesRoutes);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
