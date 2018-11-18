@@ -4,12 +4,14 @@
 <head>
   <title>Natural Search</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.cs	s">
+  
   <!--Font awesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
@@ -17,24 +19,31 @@
 
   <style>
   #inputGroup-sizing-lg {
-    width: 80%; /* Full-width */
+    width: 70%; /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; /* Add some padding */
     border: 2px solid #7B68EE; /* Add a grey border */
-    margin-bottom: 2px; /* Add some space below the input */
+    margin-bottom: 5px; /* Add some space below the input */
     border-radius: 10px;
     background-color: #fff;
+    float:center;
     
   }
   .check-box{
     color: #fff;
-    font-size: 20px;
+    font-size: 3vw;
   }
+    @media(min-width:768px){
+      .check-box{
+        font-size: 1.5vw;
+      }
+    }
   body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
     color: #818181;
   }
+
   h2 {
     font-size: 24px;
     text-transform: uppercase;
@@ -52,10 +61,16 @@
   /*background de search*/ 
   .bg-search {
       background-image: url('../static/images/graph.jpg');
-      background-repeat: no-repeat;
-      
       color: #000;
+      /*full height*/
       padding: 200px 150px;
+      resize: both;
+      overflow: auto;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto;
       font-family: Montserrat, sans-serif;
   }
   /* radio buttuns */
@@ -92,15 +107,39 @@
   }
   .container-fluid-1 {
     background-color:#e1eaea; 
-    padding: 60px 50px;   
+    padding: 60px 50px; 
+    resize: both;
+    overflow: auto;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto;
   }
   .container-fluid-2{
     background-color:#d1e0e0; 
-    padding: 60px 50px;   
+    padding: 60px 50px; 
+    resize: both;
+    overflow: auto;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto; 
   }
   .container-fluid-3{
     background-color:#fff; 
-    padding: 60px 50px;   
+    padding: 60px 50px;  
+    resize: both;
+    overflow: auto;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto;
   }
   .item h4 {
       font-size: 19px;
@@ -136,8 +175,8 @@
 
 /*exemple of visualization*/
 .links line {
-  stroke: #999;
-  stroke-opacity: 0.6;
+  stroke: rgb(107, 107, 107);
+  stroke-opacity: 0.9;
 }
 
 .nodes circle {
@@ -157,6 +196,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#myPage">NaturalSearch</a>
       </div>
@@ -164,7 +204,10 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a class="fas fa-search" href="#search">PESQUISAR</a></li>
           <li><a class="fas fa-laptop-code" href="#howtouse">COMO USAR</a></li>
+          <li><a class="fas fa-users-cog" href="#works"> COMO FUNCIONA </a> </li>
           <li><a class="fas fa-users-cog" href="#whoare"> QUEM SOMOS </a> </li>
+          
+          
 
         </ul>
       </div>
@@ -182,7 +225,6 @@
           <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox" />
           <label for="campo-checkbox">Propostas</label>
       </div>
-      <br>
     <button class="fas fa-search btn btn-info btn-lg" type="submit" value="result" onclick="search_form(q)">PESQUISAR
   </button>
   </form>
@@ -192,27 +234,37 @@
   <div id="howtouse" class="container-fluid-2">
     <div class="row">
       <div class="col-sm-8">
-        <h2>Como funciona a Pesquisa</h2>
-        <h4>Para realizar a pesquisa deve digitar qualquer palavra, frase e/ou
-          numero que interessar. A pesquisa retornará as informações encontradas como os
-          projetos e propostas, por meio da visualização de grafos, sendo utilizando o recurso
-          de Marchine Learning pois é um método de análise de dados que automatiza a construção
-          de modelos analíticos. O sistema então irá exibir de uma forma automática os
-          projetos e propostas que se assemelham por: Resumo, justificativa, objetivo,
-          sinopse e entre outros. Mostrando os dados de uma forma intuitiva e atrativa.</h4><br>
-        <p></p>
+        <h2>Como usar Natural Search</h2>
+        <h4>
+          <p align = "justify">
+          Para realizar a pesquisa é necessário digitar qualquer palavra, frase e/ou numero que interessar na barra de pesquisa, selecionar um dos quadradinhos(projeto/propostas) e clicar no botão azul de pesquisar.
+        <br>
+          A pesquisa retornará as informações encontradas por meio de uma tabela, onde é possivel visualizar o Nome e a Área do valor pesquisado.         
+           <br> 
+          Além da tabela e gerado uma visualização em grafo onde é posivel observar as conexções entre a pesquisa de interesse e seus projetos e propostas.
+         <br>
+        </p>
+                 
+       </h4>
+      
+         
+          <p></p>
 
       </div>
       <div class="col-sm-4">
-        <img class="img-thumbnail" src="../static/images/search.jpg" width="100%" height="100%" alt="grafo">
-      </div>
+          <div style="width:100%;height:0;padding-bottom:60%;position:relative;">
+            <iframe src="https://giphy.com/embed/DNwX7za7rlNYXuT5hv" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen>
+            </iframe>
+          </div>
+          <p>
+          </p>
     </div>
   </div>
 
   <div class="container-fluid-1">
     <div class="row">
       <div class="col-sm-4">
-        <svg width="500" height="500"></svg>
+        <svg width="300" height="350"></svg>
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script>
         
@@ -220,41 +272,41 @@
             width = +svg.attr("width"),
             height = +svg.attr("height");
         
-        var color = d3.scaleOrdinal(d3.schemeCategory20);
+        var color = d3.scaleOrdinal(d3.schemeCategory10);
         
         var simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(function(d) { return d.id; }))
             .force("charge", d3.forceManyBody())
             .force("center", d3.forceCenter(width / 2, height / 2));
         
-        d3.json("../static/javascripts/miserables.json", function(error, graph) {
+        d3.json("../static/javascripts/miserables_less_nodes.json", function(error, graph) {
           if (error) throw error;
         
           var link = svg.append("g")
-              .attr("class", "links")
+            .attr("class", "links")
             .selectAll("line")
             .data(graph.links)
             .enter().append("line")
-              .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+            .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
         
           var node = svg.append("g")
-              .attr("class", "nodes")
+            .attr("class", "nodes")
             .selectAll("circle")
             .data(graph.nodes)
             .enter().append("circle")
-              .attr("r", 5)
-              .attr("fill", function(d) { return color(d.group); })
-              .call(d3.drag()
-                  .on("start", dragstarted)
-                  .on("drag", dragged)
-                  .on("end", dragended));
-        
+            .attr("r", 10)
+            .attr("fill", function(d) { return color(d.group); })
+            .call(d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended));
+  
           node.append("title")
-              .text(function(d) { return d.id; });
+            .text(function(d) { return d.id; });
         
           simulation
-              .nodes(graph.nodes)
-              .on("tick", ticked);
+            .nodes(graph.nodes)
+            .on("tick", ticked);
         
           simulation.force("link")
               .links(graph.links);
@@ -273,7 +325,7 @@
         });
         
         function dragstarted(d) {
-          if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+          if (!d3.event.active) simulation.alphaTarget(0.5).restart();
           d.fx = d.x;
           d.fy = d.y;
         }
@@ -291,13 +343,28 @@
         
         </script>
       </div>
-      <div class="col-sm-8"><br><br>
+      <div id="works" class="col-sm-8"><br><br>
         <h2>Como funciona o grafo </h2>
-        <h4>O NaturalSearch explora os dados, realiza o pré-processamento adequado, encontrar os melhores parâmetros de
-          seus modelos e apresentar os dados de maneira efetiva junto aos seus dados semelhantes.
-          Essa ferramenta permite a navegação através dos projetos culturais que recebe incentivos fiscais do
-          Ministério da Cultura. Com habilidades inteligentes de automatizar as interações e serviços ao cliente.
-          O código deste sistema está disponível no repositório github.com/2018-2NaturalSearch.</h4>
+        
+        <h4>
+        <p align = "justify">
+          Os gráfos são úteis porque podem resumir muitas informações em uma imagem.
+          Quando você faz pesquisas, os gráfos geralmente são a única maneira de representar dados que foram coletados.
+          Quando alguém coleta dados, muitas vezes não sabe a relação exata e a interdependência entre as várias quantidades que estão sendo mostradas.
+          O gráfo ao lado pode dar uma idéia sobre como as bolinhas se relacionam umas às outras.
+          <br>
+          Por essa razão, o Natural Search usa gráfos para informações conectadas.
+          <br>
+              Existem duas partes principais no gráfo do Natural Search:
+              <br>
+                  Os vértices (nós) onde os dados são armazenados, ou seja, as bolas circulares coloridas, que representam <em>Nome, Área, Segmento, UF, Ano do projeto e Valores diversos</em> de um projeto ou proposta.
+                  <br>
+                  As Arestas (conexões) que conectam os nós, são as linhas entre as esferas circulares coloridas, representam os<em>valores em comum</em> de um mesmo projeto ou proposta.
+              <br>
+          <h3><a href="https://github.com/fga-eps-mds/2018.2-NaturalSearch">O código deste sistema está disponível no repositório github.com/fga-eps-mds/2018.2-NaturalSearch.</a></h3>
+        </p>
+        </h4>
+        
         <p></p>
       </div>
     </div>
@@ -308,15 +375,32 @@
 
   <!-- Container (Contact Section) -->
   <div id="whoare" class="container-fluid-3">
-    Este Produto deu Inicio no dia 14 de agosto de 2018, sendo resultado da interdisciplinaridade
     <h2>Quem somos?</h2>
     <h4>
-      entre duas disciplinas ministrada pela professora Carla, da Universidade de Brasília(UnB),
-      sendo Engenharia de Produto de Software(EPS) e Métodos de Desenvolvimento de Software(MDS).
-      Somos alunos da UnB do curso de Engenharia de Software, a equipe do projeto é composta por 10 alunos,
-      sendo 4 de EPS, e 6 de MDS, os 4 representam os gerentes do projeto, que para o desenvolvimento utilizaram
-      metodologias ágeis como SCRUM e XP, utilizando papeis como Scrum Master, Product Owner, Arquiteto e Devops.
-      E os 6 de MDS representam os desenvolvedores do produto.
+    <p align = "justify">
+        Este Projeto deu Inicio no dia 14 de agosto de 2018, resultado da interdisciplinaridade
+        entre duas disciplinas, ministrada na <a href="http://www.unb.br/">Universidade de Brasília</a>(<em>UnB</em>), do curso de engenharia de software,
+        sendo Engenharia de Produto de Software(<em>EPS</em>) e Métodos de Desenvolvimento de Software(<em>MDS</em>).
+      <br>
+        O produto, este apresentado, é resultado do desempenho de 10 alunos durante o semestre.
+        O problema foi apresentado pela professora da disciplina, sendo necessário, por parte dos alunos, aprender novas tecnologias
+        e assim colocar em prática o seus conhecimentos.
+        <br>
+        No decorrer do projeto, para obter-se um bom resultado e um produto de qualidade, foram executados técnicas de Engenharia de Software,
+        algumas metodologias ágeis, sendo <em>XP</em> e <em>SCRUM</em>.
+        <br>
+        O <em>SCRUM</em>, possibilitou a equipe assumir posições durante o desenvolvimento do produto, sendo eles Scrum Master, Product Owner, Arquiteto e 
+        Devops.
+        <br>
+        O resultado de todo o projeto é esse web app voltado a pesquisa e visualização em grafo de projetos e propostas
+        pertencentes ao Ministério da Cultura e incentivados pela <a href="http://rouanet.cultura.gov.br/o-que-e/">Lei Rouanet</a>, também conhecida como Lei 8.313/91.
+    </p>
+      <p></p>
+      <h3>
+        <p
+          style="color:rgb(37, 122, 192);">Para mais informações entre em contato com: equipe.naturalsearch@gmail.com
+        </p>
+      </h3>
     </h4>
   </div>
 
