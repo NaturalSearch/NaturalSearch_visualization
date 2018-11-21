@@ -53,9 +53,7 @@ router.get('/', function (req, res, next) {
             })
         }
     })
-
         res.send("teste projetos");
 });
-
 
 module.exports = router;

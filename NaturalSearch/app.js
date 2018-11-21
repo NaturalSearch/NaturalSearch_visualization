@@ -10,17 +10,15 @@ var bodyParser = require('body-parser');
 
 var url = require('url');
 
-
-
 //routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var resultRouter = require('./routes/result');
 var loadRouter = require('./routes/load_json');
 var exampleRouter = require('./routes/example');
-var projetosRouter = require('./routes/projetos');
 var proponentesRoutes = require('./routes/proponentes');
-
+var projetosRoutes = require('./routes/projetos');
+var relacionamentoRoutes = require('./routes/relacionamento');
 
 var app = express();
 
@@ -38,8 +36,9 @@ app.use('/users', usersRouter);
 app.use('/result', resultRouter);
 app.use('/example', exampleRouter);
 app.use('/load_json', loadRouter);
-app.use('/projetos', projetosRouter);
 app.use('/proponentes',proponentesRoutes);
+app.use('/projetos', projetosRoutes);
+app.use('/relacionamento',relacionamentoRoutes);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
