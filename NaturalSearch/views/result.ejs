@@ -165,12 +165,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <% list_result.forEach(function(project) { %>
+                            <% list_result.forEach(function(proponentes) { %>
                         <tr>
-                            <td><%= project.pronac %></td>
-                            <td><%= project.nome %></td>
-                            <td><%= project.segmento %></td>
-                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"> </td>
+                            <td><%= proponentes.pronac %></td>
+                            <td><%= proponentes.nome %></td>
+                            <td><%= proponentes.segmento %></td>
+                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit" value="<%= proponentes.nome %>"> </td>
                             <% }); %>
                         </tr>
                     </tbody>
