@@ -1,0 +1,533 @@
+{
+    "columns": [
+        "p",
+        "f",
+        "pr"
+    ],
+    "data": [
+        {
+            "row": [
+                {
+                    "uf": "SP",
+                    "tipo_pessoa": "fisica",
+                    "municipio": "São Paulo",
+                    "nome": "Marco de Vita Campos"
+                },
+                {},
+                {
+                    "area": "Música",
+                    "valor_aprovado": 855846.8,
+                    "UF": "SP",
+                    "proponente": "Marco de Vita Campos",
+                    "segmento": "Música Instrumental",
+                    "ano_projeto": "18",
+                    "valor_proposta": 855846.8,
+                    "valor_projeto": 855846.8,
+                    "nome": "AOI",
+                    "valor_solicitado": 855846.8,
+                    "valor_captado": 0
+                }
+            ],
+            "meta": [
+                {
+                    "id": 46481,
+                    "type": "node",
+                    "deleted": false
+                },
+                {
+                    "id": 0,
+                    "type": "relationship",
+                    "deleted": false
+                },
+                {
+                    "id": 58,
+                    "type": "node",
+                    "deleted": false
+                }
+            ],
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "46481",
+                        "labels": [
+                            "Nó_Proponentes"
+                        ],
+                        "properties": {
+                            "uf": "SP",
+                            "tipo_pessoa": "fisica",
+                            "municipio": "São Paulo",
+                            "nome": "Marco de Vita Campos"
+                        }
+                    },
+                    {
+                        "id": "58",
+                        "labels": [
+                            "Nó_Projeto"
+                        ],
+                        "properties": {
+                            "area": "Música",
+                            "valor_aprovado": 855846.8,
+                            "UF": "SP",
+                            "proponente": "Marco de Vita Campos",
+                            "segmento": "Música Instrumental",
+                            "ano_projeto": "18",
+                            "valor_proposta": 855846.8,
+                            "valor_projeto": 855846.8,
+                            "nome": "AOI",
+                            "valor_solicitado": 855846.8,
+                            "valor_captado": 0
+                        }
+                    }
+                ],
+                "relationships": [
+                    {
+                        "id": "0",
+                        "type": "LIGADOS",
+                        "startNode": "46481",
+                        "endNode": "58",
+                        "properties": {}
+                    }
+                ]
+            }
+        },
+        {
+            "row": [
+                {
+                    "uf": "SP",
+                    "tipo_pessoa": "fisica",
+                    "municipio": "São Paulo",
+                    "nome": "Marco de Vita Campos"
+                },
+                {},
+                {
+                    "area": "Música",
+                    "valor_aprovado": 855846.8,
+                    "UF": "SP",
+                    "proponente": "Marco de Vita Campos",
+                    "segmento": "Música Instrumental",
+                    "ano_projeto": "18",
+                    "valor_proposta": 855846.8,
+                    "valor_projeto": 855846.8,
+                    "nome": "AOI",
+                    "valor_solicitado": 855846.8,
+                    "valor_captado": 0
+                }
+            ],
+            "meta": [
+                {
+                    "id": 46481,
+                    "type": "node",
+                    "deleted": false
+                },
+                {
+                    "id": 1,
+                    "type": "relationship",
+                    "deleted": false
+                },
+                {
+                    "id": 24684,
+                    "type": "node",
+                    "deleted": false
+                }
+            ],
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "46481",
+                        "labels": [
+                            "Nó_Proponentes"
+                        ],
+                        "properties": {
+                            "uf": "SP",
+                            "tipo_pessoa": "fisica",
+                            "municipio": "São Paulo",
+                            "nome": "Marco de Vita Campos"
+                        }
+                    },
+                    {
+                        "id": "24684",
+                        "labels": [
+                            "Nó_Projeto"
+                        ],
+                        "properties": {
+                            "area": "Música",
+                            "valor_aprovado": 855846.8,
+                            "UF": "SP",
+                            "proponente": "Marco de Vita Campos",
+                            "segmento": "Música Instrumental",
+                            "ano_projeto": "18",
+                            "valor_proposta": 855846.8,
+                            "valor_projeto": 855846.8,
+                            "nome": "AOI",
+                            "valor_solicitado": 855846.8,
+                            "valor_captado": 0
+                        }
+                    }
+                ],
+                "relationships": [
+                    {
+                        "id": "1",
+                        "type": "LIGADOS",
+                        "startNode": "46481",
+                        "endNode": "24684",
+                        "properties": {}
+                    }
+                ]
+            }
+        },
+        {
+            "row": [
+                {
+                    "uf": "SP",
+                    "tipo_pessoa": "fisica",
+                    "municipio": "São Paulo",
+                    "nome": "Marco de Vita Campos"
+                },
+                {},
+                {
+                    "area": "Música",
+                    "valor_aprovado": 454289.87,
+                    "UF": "SP",
+                    "proponente": "Marco de Vita Campos",
+                    "segmento": "Música Instrumental",
+                    "ano_projeto": "14",
+                    "valor_proposta": 507897.87,
+                    "valor_projeto": 454289.87,
+                    "nome": "MATA PAULISTANA INSTRUMENTAL",
+                    "valor_solicitado": 507897.87,
+                    "valor_captado": 454289.87
+                }
+            ],
+            "meta": [
+                {
+                    "id": 46481,
+                    "type": "node",
+                    "deleted": false
+                },
+                {
+                    "id": 2,
+                    "type": "relationship",
+                    "deleted": false
+                },
+                {
+                    "id": 77960,
+                    "type": "node",
+                    "deleted": false
+                }
+            ],
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "46481",
+                        "labels": [
+                            "Nó_Proponentes"
+                        ],
+                        "properties": {
+                            "uf": "SP",
+                            "tipo_pessoa": "fisica",
+                            "municipio": "São Paulo",
+                            "nome": "Marco de Vita Campos"
+                        }
+                    },
+                    {
+                        "id": "77960",
+                        "labels": [
+                            "Nó_Projeto"
+                        ],
+                        "properties": {
+                            "area": "Música",
+                            "valor_aprovado": 454289.87,
+                            "UF": "SP",
+                            "proponente": "Marco de Vita Campos",
+                            "segmento": "Música Instrumental",
+                            "ano_projeto": "14",
+                            "valor_proposta": 507897.87,
+                            "valor_projeto": 454289.87,
+                            "nome": "MATA PAULISTANA INSTRUMENTAL",
+                            "valor_solicitado": 507897.87,
+                            "valor_captado": 454289.87
+                        }
+                    }
+                ],
+                "relationships": [
+                    {
+                        "id": "2",
+                        "type": "LIGADOS",
+                        "startNode": "46481",
+                        "endNode": "77960",
+                        "properties": {}
+                    }
+                ]
+            }
+        },
+        {
+            "row": [
+                {
+                    "uf": "SP",
+                    "tipo_pessoa": "fisica",
+                    "municipio": "São Paulo",
+                    "nome": "Marco de Vita Campos"
+                },
+                {},
+                {
+                    "area": "Música",
+                    "valor_aprovado": 227086.97,
+                    "UF": "SP",
+                    "proponente": "Marco de Vita Campos",
+                    "segmento": "Música Instrumental",
+                    "ano_projeto": "11",
+                    "valor_proposta": 255586.97,
+                    "valor_projeto": 227086.97,
+                    "nome": "OLB",
+                    "valor_solicitado": 255586.97,
+                    "valor_captado": 227086.97
+                }
+            ],
+            "meta": [
+                {
+                    "id": 46481,
+                    "type": "node",
+                    "deleted": false
+                },
+                {
+                    "id": 3,
+                    "type": "relationship",
+                    "deleted": false
+                },
+                {
+                    "id": 119763,
+                    "type": "node",
+                    "deleted": false
+                }
+            ],
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "46481",
+                        "labels": [
+                            "Nó_Proponentes"
+                        ],
+                        "properties": {
+                            "uf": "SP",
+                            "tipo_pessoa": "fisica",
+                            "municipio": "São Paulo",
+                            "nome": "Marco de Vita Campos"
+                        }
+                    },
+                    {
+                        "id": "119763",
+                        "labels": [
+                            "Nó_Projeto"
+                        ],
+                        "properties": {
+                            "area": "Música",
+                            "valor_aprovado": 227086.97,
+                            "UF": "SP",
+                            "proponente": "Marco de Vita Campos",
+                            "segmento": "Música Instrumental",
+                            "ano_projeto": "11",
+                            "valor_proposta": 255586.97,
+                            "valor_projeto": 227086.97,
+                            "nome": "OLB",
+                            "valor_solicitado": 255586.97,
+                            "valor_captado": 227086.97
+                        }
+                    }
+                ],
+                "relationships": [
+                    {
+                        "id": "3",
+                        "type": "LIGADOS",
+                        "startNode": "46481",
+                        "endNode": "119763",
+                        "properties": {}
+                    }
+                ]
+            }
+        },
+        {
+            "row": [
+                {
+                    "uf": "SP",
+                    "tipo_pessoa": "fisica",
+                    "municipio": "São Paulo",
+                    "nome": "Marco de Vita Campos"
+                },
+                {},
+                {
+                    "area": "Música",
+                    "valor_aprovado": 139999.97,
+                    "UF": "SP",
+                    "proponente": "Marco de Vita Campos",
+                    "segmento": "Música Instrumental",
+                    "ano_projeto": "09",
+                    "valor_proposta": 139999.97,
+                    "valor_projeto": 139999.97,
+                    "nome": "Alma Brasileira",
+                    "valor_solicitado": 139999.97,
+                    "valor_captado": 0
+                }
+            ],
+            "meta": [
+                {
+                    "id": 46481,
+                    "type": "node",
+                    "deleted": false
+                },
+                {
+                    "id": 4,
+                    "type": "relationship",
+                    "deleted": false
+                },
+                {
+                    "id": 140445,
+                    "type": "node",
+                    "deleted": false
+                }
+            ],
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "46481",
+                        "labels": [
+                            "Nó_Proponentes"
+                        ],
+                        "properties": {
+                            "uf": "SP",
+                            "tipo_pessoa": "fisica",
+                            "municipio": "São Paulo",
+                            "nome": "Marco de Vita Campos"
+                        }
+                    },
+                    {
+                        "id": "140445",
+                        "labels": [
+                            "Nó_Projeto"
+                        ],
+                        "properties": {
+                            "area": "Música",
+                            "valor_aprovado": 139999.97,
+                            "UF": "SP",
+                            "proponente": "Marco de Vita Campos",
+                            "segmento": "Música Instrumental",
+                            "ano_projeto": "09",
+                            "valor_proposta": 139999.97,
+                            "valor_projeto": 139999.97,
+                            "nome": "Alma Brasileira",
+                            "valor_solicitado": 139999.97,
+                            "valor_captado": 0
+                        }
+                    }
+                ],
+                "relationships": [
+                    {
+                        "id": "4",
+                        "type": "LIGADOS",
+                        "startNode": "46481",
+                        "endNode": "140445",
+                        "properties": {}
+                    }
+                ]
+            }
+        },
+        {
+            "row": [
+                {
+                    "uf": "SP",
+                    "tipo_pessoa": "fisica",
+                    "municipio": "São Paulo",
+                    "nome": "Marco de Vita Campos"
+                },
+                {},
+                {
+                    "area": "Música",
+                    "valor_aprovado": 855846.8,
+                    "UF": "SP",
+                    "proponente": "Marco de Vita Campos",
+                    "segmento": "Música Instrumental",
+                    "ano_projeto": "18",
+                    "valor_proposta": 855846.8,
+                    "valor_projeto": 855846.8,
+                    "nome": "AOI",
+                    "valor_solicitado": 855846.8,
+                    "valor_captado": 0
+                }
+            ],
+            "meta": [
+                {
+                    "id": 46481,
+                    "type": "node",
+                    "deleted": false
+                },
+                {
+                    "id": 5,
+                    "type": "relationship",
+                    "deleted": false
+                },
+                {
+                    "id": 140966,
+                    "type": "node",
+                    "deleted": false
+                }
+            ],
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "46481",
+                        "labels": [
+                            "Nó_Proponentes"
+                        ],
+                        "properties": {
+                            "uf": "SP",
+                            "tipo_pessoa": "fisica",
+                            "municipio": "São Paulo",
+                            "nome": "Marco de Vita Campos"
+                        }
+                    },
+                    {
+                        "id": "140966",
+                        "labels": [
+                            "Nó_Projeto"
+                        ],
+                        "properties": {
+                            "area": "Música",
+                            "valor_aprovado": 855846.8,
+                            "UF": "SP",
+                            "proponente": "Marco de Vita Campos",
+                            "segmento": "Música Instrumental",
+                            "ano_projeto": "18",
+                            "valor_proposta": 855846.8,
+                            "valor_projeto": 855846.8,
+                            "nome": "AOI",
+                            "valor_solicitado": 855846.8,
+                            "valor_captado": 0
+                        }
+                    }
+                ],
+                "relationships": [
+                    {
+                        "id": "5",
+                        "type": "LIGADOS",
+                        "startNode": "46481",
+                        "endNode": "140966",
+                        "properties": {}
+                    }
+                ]
+            }
+        }
+    ],
+    "stats": {
+        "contains_updates": true,
+        "nodes_created": 0,
+        "nodes_deleted": 0,
+        "properties_set": 0,
+        "relationships_created": 6,
+        "relationship_deleted": 0,
+        "labels_added": 0,
+        "labels_removed": 0,
+        "indexes_added": 0,
+        "indexes_removed": 0,
+        "constraints_added": 0,
+        "constraints_removed": 0
+    }
+}

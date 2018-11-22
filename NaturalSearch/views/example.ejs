@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <!--Navbar-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--Font awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
+
+</head>
+
+<style>
+  .links line {
+    stroke: black;
+    opacity: 2;
+  }
+
+  .nodes circle {
+    stroke: black;
+    stroke-width: 1.5px;
+    width: 100%;
+  }
+
+  body,
+  html {
+    font-family: sans-serif, Arial;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  path {
+    fill-opacity: 0.5;
+    stroke-opacity: 10;
+  }
+
+  svg {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /*  text {
+    stroke: white; 
+    stroke-width: 0.1px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 15px;
+  } */
+
+  /*nav-design*/
+  .navbar {
+    margin-bottom: 10;
+    background: url('http://thecodeplayer.com/u/m/b1.png');
+    background-color: #000;
+    z-index: 9999;
+    border: 100px;
+    font-size: 14px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 4px;
+    text-transform: uppercase;
+
+  }
+
+  div.tooltip {
+    position: absolute;
+    background-color: white;
+    max-width: 200px;
+    height: auto;
+    padding: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+    pointer-events: none;
+  }
+
+  /* animation nav-bar mouse*/
+  .navbar li a,
+  .navbar .navbar-brand {
+    color: #fff !important;
+  }
+
+  .navbar-nav li a:hover,
+  .navbar-nav li.active a {
+    color: black !important;
+    background-color: #fff !important;
+    border-radius: 15px;
+  }
+</style>
+
+<body>
+
+  <!--Navbar-->
+  <!--  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand " href="#myPage">NaturalSearch</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a class="fas fa-search" href="#search">PESQUISAR</a></li>
+          <li><a class="fas fa-laptop-code" href="#howtouse">COMO USAR</a></li>
+          <li><a class="fas fa-users-cog" href="#whoare"> QUEM SOMOS </a> </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+  <!-- <div id="scaleFactorSettings">
+    <p>Scale of the groups: <span id='scaleFactorLabel'>1.2</span></p>
+    <input type="range" min="1" max="3" value="1.2" step=".1" oninput="scaleFactor = value; d3.select('#scaleFactorLabel').text(scaleFactor); updateGroups()">
+  </div> -->
+  <div>
+    <svg width="1340" height="0"></svg>
+  </div>
+  <!-- <script>
+    jQuery(document).ready(function () {
+      var alturaTela = jQuery(window).height();
+      alert(alturaTela);
+    });
+  </script> -->
+
+
+  <script>
+    var svg = d3.select('svg'),
+      width = +svg.attr('width'),
+      height = +svg.attr('height'),
+      valueline = d3.line()
+        .x(function (d) { return d[0]; })
+        .y(function (d) { return d[1]; })
+        .curve(d3.curveCatmullRomClosed),
+      paths,
+      groups,
+      groupIds,
+      scaleFactor = 1.1,
+      polygon,
+      centroid,
+      node,
+      link,
+      simulation = d3.forceSimulation()
+        //linkar pelo id
+        .force('link', d3.forceLink().id(function (d) { return d.id; }).distance(function (d) { return d.distance_link; }).strength(2))
+        //espalhar com colisao
+        .force("charge", d3.forceManyBody().strength(-100))
+        .force("collide", d3.forceCollide())
+        //colocar no centro
+        .force('center', d3.forceCenter((jQuery(window).width()) / 2, (jQuery(window).height()) / 2))
+
+    var color = d3.scaleOrdinal(d3.schemeCategory20);
+    /* color('Valor da proposta'); */
+    /* color('Área');
+    color('Valor Solicitado');
+    color('Valor Captado');
+    color('proponente');
+    color('segmento');
+    color('ano_projeto');
+    color('valor_proposta');
+    color('valor_projeto');
+    color('valor_solicitado');
+    color('valor_captado');
+    color('projeto'); */
+
+
+    var tooltip = d3.select("body")
+      .append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
+
+    var svg = d3.select("body")
+      .append("svg")
+      //definir tamanho da tela 
+      .attr("width", "1300")
+      .attr("height", "1000")
+      //aplicar zoom
+      .call(d3.zoom().on("zoom", function () {
+        svg.attr("transform", d3.event.transform)
+      }))
+      .append("g")
+
+    //carregar json  
+    d3.json("../static/javascripts/d3_prop_proj.json", function (error, graph) {
+      if (error) throw error;
+
+      var select = d3.select('#curveSettings')
+        .append('select')
+        .attr('class', 'select')
+        .on('change', function () {
+          var val = d3.select('select').property('value');
+          d3.select('#curveLabel').text(val);
+          valueline.curve(d3[val]);
+          updateGroups();
+        });
+
+      groups = svg.append('g').attr('class', 'groups');
+
+      link = svg.append('g')
+        .attr('class', 'links')
+        .selectAll('line')
+        .data(graph.links)
+        .enter().append('line')
+        .attr('stroke-width', function (d) { return Math.sqrt(d.value); })
+        .attr('distance', function (d) { return (d.value); });
+
+      node = svg.selectAll('.node')
+        .attr('class', 'nodes')
+        /* .selectAll('circle') */
+        .data(graph.nodes)
+        .enter().append('g')
+
+      node.append('circle')
+        .attr('r', function (d) { return (d.length_node); })
+        .attr('fill', function (d) { return color(d.group_color); })
+        .call(d3.drag()
+          .on('start', dragstarted)
+          .on('drag', dragged)
+          .on('end', dragended))
+        .on('mouseover.fade', fade(0.1))
+        .on('mouseout.fade', fade(1))
+        .on("mousemove", function () {
+          tooltip.style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY + 10) + "px");
+        });
+
+      var lables = node.append("text")
+        .text(function (d) {
+          return d.nome || d.area || d.valor_aprovado ||
+            d.UF || d.proponente || d.segmento ||
+            d.ano_projeto || d.valor_proposta ||
+            d.valor_projeto || d.valor_solicitado ||
+            d.valor_captado;;
+        })
+        .attr('x', 6)
+        .attr('y', 3);
+
+      groupIds = d3.set(graph.nodes.map(function (n) { return +n.group; }))
+        .values()
+        .map(function (groupId) {
+          return {
+            groupId: groupId,
+            count: graph.nodes.filter(function (n) { return +n.group == groupId; }).length
+          };
+        })
+        .filter(function (group) { return group.count > 2; })
+        .map(function (group) { return group.groupId; });
+
+      paths = groups.selectAll('.path_placeholder')
+        .data(groupIds, function (d) { return +d; })
+        .enter()
+        .append('g')
+        .attr('class', 'path_placeholder')
+        .append('path')
+        .attr('stroke', function (d) { return color(d); })
+        .attr('fill', function (d) { return color(d); })
+        .attr('opacity', 100);
+      paths
+        .transition()
+        .duration(2000)
+        .attr('opacity', 100);
+      groups.selectAll('.path_placeholder')
+        .call(d3.drag()
+          .on('start', group_dragstarted)
+          .on('drag', group_dragged)
+          .on('end', group_dragended)
+        );
+      groups.selectAll('.path_placeholder')
+        .call(d3.drag()
+          .on('start', group_dragstarted)
+          .on('drag', group_dragged)
+          .on('end', group_dragended)
+        );
+      //nome que aparece nos nodes 
+      node.append('title')
+        .text(function (d) {
+          return d.nome || d.area || d.valor_aprovado ||
+            d.UF || d.proponente || d.segmento ||
+            d.ano_projeto || d.valor_proposta ||
+            d.valor_projeto || d.valor_solicitado ||
+            d.valor_captado;
+        });
+      simulation
+        .nodes(graph.nodes)
+        .on('tick', ticked)
+        .force('link')
+        .links(graph.links);
+
+      function ticked() {
+        link
+          .attr('x1', function (d) { return d.source.x; })
+          .attr('y1', function (d) { return d.source.y; })
+          .attr('x2', function (d) { return d.target.x; })
+          .attr('y2', function (d) { return d.target.y; });
+        node
+          .attr('transform', d => `translate(${d.x},${d.y})`);
+
+        updateGroups();
+      }
+      const linkedByIndex = {};
+      graph.links.forEach(d => {
+        linkedByIndex[`${d.source.index},${d.target.index}`] = 1;
+      });
+      
+      function isConnected(a, b) {
+        return linkedByIndex[`${a.index},${b.index}`] || linkedByIndex[`${b.index},${a.index}`] || a.index === b.index;
+      }
+      function fade(opacity) {
+        return d => {
+          node.style('stroke-opacity', function (o) {
+            const thisOpacity = isConnected(d, o) ? 1 : opacity;
+            this.setAttribute('fill-opacity', thisOpacity);
+            return thisOpacity;
+          });
+
+          link.style('stroke-opacity', o => (o.source === d || o.target === d ? 1 : opacity));
+
+        };
+      }
+
+    });
+
+    var polygonGenerator = function (groupId) {
+      var node_coords = node
+        .filter(function (d) { return d.group == groupId; })
+        .data()
+        .map(function (d) { return [d.x, d.y]; });
+      return d3.polygonHull(node_coords);
+    }
+    function updateGroups() {
+      groupIds.forEach(function (groupId) {
+        var path = paths.filter(function (d) { return d == groupId; })
+          .attr('transform', 'scale(1) translate(0,0)')
+          .attr('d', function (d) {
+            polygon = polygonGenerator(d);
+            centroid = d3.polygonCentroid(polygon);
+            // to scale the shape properly around its points:
+            // move the 'g' element to the centroid point, translate
+            // all the path around the center of the 'g' and then
+            // we can scale the 'g' element properly
+            return valueline(
+              polygon.map(function (point) {
+                return [point[0] - centroid[0], point[1] - centroid[1]];
+              })
+            );
+          });
+        d3.select(path.node().parentNode).attr('transform', 'translate(' + centroid[0] + ',' + (centroid[1]) + ') scale(' + scaleFactor + ')');
+      });
+    }
+    // drag nodes
+    function dragstarted(d) {
+      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+    function dragged(d) {
+      d.fx = d3.event.x;
+      d.fy = d3.event.y;
+    }
+    function dragended(d) {
+      if (!d3.event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+    // drag groups
+    function group_dragstarted(groupId) {
+      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+      d3.select(this).select('path').style('stroke-width', 3);
+    }
+    function group_dragged(groupId) {
+      node
+        .filter(function (d) { return d.group == groupId; })
+        .each(function (d) {
+          d.x += d3.event.dx;
+          d.y += d3.event.dy;
+        })
+    }
+    function group_dragended(groupId) {
+      if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+      d3.select(this).select('path').style('stroke-width', 1);
+    }
+
+    var sequentialScale = d3.scaleOrdinal(d3.schemeCategory20)
+      .domain(['Nome do proponente', 'Nome do projeto', 'Área', 'Valor Aprovado', 'UF', 'Proponente', 'Segmento', 'Ano do projeto', 'Valor da proposta', 'Valor do projeto', 'Valor solicitado', 'Valor Captado']);
+
+
+    svg.append("g")
+      .attr("class", "legendSequential")
+      .attr("transform", "translate(" + (width - 1250) + "," + (height + 400) + ")");
+
+    var legendSequential = d3.legendColor()
+      .shapeWidth(30)
+      .cells(11)
+      .orient("vertical")
+      .title("Legenda:")
+      .titleWidth(100)
+      .scale(sequentialScale)
+
+    svg.select(".legendSequential")
+      .call(legendSequential);
+
+  </script>
+
+</body>
