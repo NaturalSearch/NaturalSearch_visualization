@@ -41,6 +41,12 @@ publish_master:
   only: 
     - master
 
+publish_development:
+  extends: .publish_docker_hub
+  environment: development
+  only: 
+    - development
+
 deploy:
   stage: deploy
   script:
