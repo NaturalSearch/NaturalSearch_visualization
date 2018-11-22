@@ -9,7 +9,6 @@ const fetch = require('node-fetch');
 /* GET home page. */
 
 router.get('/', function (req, res, next) {
-
     fetch("http://68.183.107.229:8000/proponente/?limit=100&offset=").then((res)=>{
         return res.json();
     }).then((json)=>{
