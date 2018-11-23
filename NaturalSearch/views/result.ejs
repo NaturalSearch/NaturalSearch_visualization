@@ -169,7 +169,7 @@
                     function reply_click(clicked_value) {
                         
                         
-                            var url = "load_json/" + clicked_value;
+                            var url = "relacionamento/" + clicked_value;
                             document.location = url;
                         
                     }
@@ -181,12 +181,12 @@
                             <%= proponentes.pronac %>
                         </td>
                         <td>
-                            <%= proponentes.nome %>
+                            <%= proponentes.proponente %>
                         </td>
                         <td>
                             <%= proponentes.segmento %>
                         </td>
-                        <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit" value="<%= proponentes.nome %>"
+                        <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit" value="<%= proponentes.proponente %>"
                                 onclick=reply_click(this.value)> </td>
                         <% }); %>
                     </tr>

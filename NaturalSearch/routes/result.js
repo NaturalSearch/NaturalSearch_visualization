@@ -17,7 +17,8 @@ search_result = req.query.q;
   result.records.forEach(function(record){   
     list_result.push({pronac: record._fields[0].properties.PRONAC,
                      nome: record._fields[0].properties.nome,
-                     segmento: record._fields[0].properties.segmento
+                     segmento: record._fields[0].properties.segmento,
+                     proponente: record._fields[0].properties.proponente
     });
     console.log(list_result); 
   });
