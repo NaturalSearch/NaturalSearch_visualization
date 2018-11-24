@@ -4,6 +4,7 @@ var neo4j = require('neo4j-driver').v1;
 var driver = neo4j.driver("bolt://kunze-vista-teal-jess.graphstory.services/", neo4j.auth.basic("kunze_vista_teal_jess", "MPSbPSW1AuQX5B49eQOPnKPD8Q"));
 var session = driver.session();
 var fs = require("fs");
+var sleep = require('sleep');
 
 /* GET home page. */
 router.get('/:proponente', function (req, res, next) {
@@ -63,9 +64,23 @@ router.get('/:proponente', function (req, res, next) {
                 });
             }
             var convert_to_d3 = { nodes: nodes, links: links };
+            //var rendering = res.render('example',{title:'Express'});
             var fs = require('fs');
-            fs.writeFileSync('public/javascripts/d3_prop_proj_teste3.json', JSON.stringify(convert_to_d3));        
-            console.log(convert_to_d3);
+            var arquivo = 'public/javascripts/d3_prop_proj_teste3.json'
+
+            
+            //fs.writeFileSync('public/javascripts/d3_prop_proj_teste3.json', JSON.stringify(convert_to_d3))
+            function createD3Mode(segunds, convert_to_d3){        
+                return new Promise ((resolve, reject) => {
+                    setTimeout(() =>{
+                        resolve(convert_to_d3)
+                    }, segunds * 1000)
+                })
+            }
+            
+            createD3Mode(3, fs.writeFileSync(arquivo, JSON.stringify(convert_to_d3)))
+                .then((convert_to_d3) => convert_to_d3)
+                .then(res.render('relacionamento',{title:'Express'}))
         });
     session
     //console.log(result); 
@@ -75,7 +90,8 @@ router.get('/:proponente', function (req, res, next) {
         DELETE f'
         )
     session
-    //res.render('example',{title:'Express'});
+    
+    //res.render('relacionamento',{title:'Express'});
     //res.send("funcionou");
     //res.redirect("/example");
 });
