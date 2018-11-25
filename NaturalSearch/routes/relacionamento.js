@@ -4,7 +4,6 @@ var neo4j = require('neo4j-driver').v1;
 var driver = neo4j.driver("bolt://kunze-vista-teal-jess.graphstory.services/", neo4j.auth.basic("kunze_vista_teal_jess", "MPSbPSW1AuQX5B49eQOPnKPD8Q"));
 var session = driver.session();
 var fs = require("fs");
-var sleep = require('sleep');
 
 /* GET home page. */
 router.get('/:proponente', function (req, res, next) {
@@ -26,7 +25,7 @@ router.get('/:proponente', function (req, res, next) {
             });
             //CREATE NODES THAT USE GROUPS TO LINK PROPERTIES
             for (i = 0; i < count; i++) {
-                result.records[0]._fields.forEach(function (r) {
+                result.records[i]._fields.forEach(function (r) {
                     if (r.labels == 'Nó_Projeto') {
                         nodes.push({ id: r.identity.low, nome: r.properties.nome, group: i + 1, group_color: 4, length_node: 20 });
                         nodes.push({ id: "area" + i, area: r.properties.area, group: i + 1, group_color: 5, length_node: 15 });
@@ -56,7 +55,7 @@ router.get('/:proponente', function (req, res, next) {
 
             //CREATE LINKS THAT USE NODES TO LINK
             for (i = 0; i < count; i++) {
-                result.records[0]._fields.forEach(function (l) {
+                result.records[i]._fields.forEach(function (l) {
                     if (l.type == "LIGADOS") {
                         links.push({ source: l.start.low, target: l.end.low, value: 4, distance_link: 150 });
                         //console.log(links)
