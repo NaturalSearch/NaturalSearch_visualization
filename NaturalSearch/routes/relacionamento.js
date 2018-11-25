@@ -81,7 +81,11 @@ router.get('/:proponente', function (req, res, next) {
             createD3Mode(3, fs.writeFileSync(arquivo, JSON.stringify(convert_to_d3)))
                 .then((convert_to_d3) => convert_to_d3)
                 .then(res.render('relacionamento',{title:'Express'}))
+                .catch(function(err){
+                    console.log(err);
+                  });
         });
+        
     session
     //console.log(result); 
     var result = session
