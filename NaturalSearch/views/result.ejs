@@ -145,15 +145,25 @@
 
     <!--Search div-->
     <div id="search" class="bg-search text-center ">
-        <form action="" method="GET">
+        <form id="form1" name="form1" method="get" action="" onsubmit="return valida_form(this)">
+            <label for="q"></label>
             <br>
             <br>
-            <input id="inputGroup-sizing-lg" name='q' type="text" placeholder="Digite aqui..">
-            <button class="fas fa-search btn btn-info btn-lg" type="submit" onclick="search_form(q)">PESQUISAR
+            <input id="q" name='q' type="text" size="60" style="height: 43px;" placeholder="Digite aqui..">
+            <button class="fas fa-search btn btn-info btn-lg" type="submit">PESQUISAR
             </button>
         </form>
         <br>
         <br>
+        <script type="text/javascript" language="javascript">
+            function valida_form (){
+                if(document.getElementById("q").value == ""){
+                    alert('Por favor, preencha o campo de pesquisa!');
+                    document.getElementById("q").focus();
+                return false
+                }
+            }
+        </script>        
 
         <div class="table text-center">
             <table id="example" class="stripe" style="width:100%">
