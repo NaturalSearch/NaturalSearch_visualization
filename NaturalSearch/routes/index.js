@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
     session
     .run("MATCH (project:Projeto) RETURN project.nome as Projeto , project.proponente as Proponente ,  \
           SUM (toFloat(project.valor_captado)) \
-          as Total_Captado ORDER BY Total_Captado DESC LIMIT 10")
+          as Total_Captado ORDER BY Total_Captado DESC LIMIT 7")
       .then(function(result2){
     var list_result2 = [];
           result2.records.forEach(function (record) {
