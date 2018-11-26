@@ -5,8 +5,12 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "mocha",
+    "test-with-coverage": "nyc --reporter=text mocha",
     "coverage": "istanbul cover _mocha -- ./test/* --recursive",
     "test:coverage": "nyc --reporter=html --reporter=text npm run test"
+  },
+  "nodemonConfig": {
+    "ignore": ["public/javascripts/d3_prop_proj_teste3.json"]
   },
   "nyc": {
     "exclude": [
@@ -25,8 +29,8 @@
     "morgan": "~1.9.0",
     "neo4j-driver": "^1.6.3",
     "node-fetch": "^2.3.0",
-    "nodemon": "^1.18.4"
-
+    "nodemon": "^1.18.4",
+    "sleep": "^5.2.3"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -37,3 +41,4 @@
     "nyc": "^13.1.0"
   }
 }
+
