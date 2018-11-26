@@ -201,10 +201,30 @@
     background: #00b5e9;
 }
 
+.dot--yellow {
+    background: #ffb732;
+}
+
 .dot--green {
     background: #00ad5f;
 }
 
 .dot--red {
     background: #fa4251;
+}
+
+.dot--browm{
+    background: #460a0f;
+}
+
+.dot--pink{
+    background: #ffc0cb;
+}
+
+.dot--purple{
+    background: #6a368b;
+}
+
+.dot--blue2{
+    background: #021d2f;
 }
