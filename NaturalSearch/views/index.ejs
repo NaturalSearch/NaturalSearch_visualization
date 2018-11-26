@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.cs	s">
   <script src="../static/vendor/chartjs/Chart.bundle.min.js"></script>
   <!-- Fontfaces CSS-->
-  <link href="../static/css/font-face.css" rel="stylesheet" media="all">
   <link href="../static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
   <link href="../static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
@@ -312,7 +311,7 @@
 
       <!--charts-->
       <div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
           <div class="au-card chart-percent-card">
             <div class="au-card-inner">
               <h6>Captação dos projetos</h6>
@@ -354,8 +353,8 @@
             </div>
           </div>
         </div>
-        
-        <div class="col-lg-4">
+
+        <div class="col-lg-3">
           <div class="au-card chart-percent-card">
             <div class="au-card-inner">
               <h6>Captação por área %</h6>
@@ -405,6 +404,15 @@
             </div>
           </div>
         </div>
+        <!--another table-->
+        <div class="col-lg-6">
+          <div class="au-card m-b-30">
+              <div class="au-card-inner">
+                  <h3 class="title-2 m-b-40">Single Bar Chart</h3>
+                  <canvas id="singelBarChart"></canvas>
+              </div>
+          </div>
+      </div>
       </div>
       <!--table-->
       <div class="row">
@@ -440,9 +448,11 @@
           </div>
         </div>
       </div>
+
+
     </div>
   </div>
-  </div>
+
   <!-- Como usar  -->
   <div id="howtouse" class="container-fluid-2">
     <div class="row">
@@ -734,6 +744,52 @@
       }
     });
   }
+</script>
+
+<script>
+// single bar chart
+    var ctx = document.getElementById("singelBarChart");
+    if (ctx) {
+      ctx.height = 150;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["Art Cênicas","Audiovisual","Música","Artes Visuais","Patrimônio Cultural","Humanidades","Artes Integradas","Museus e Memória"],
+          datasets: [
+            {
+              label: "Área",
+              data: [900, 1200, 3000, 2500, 1000, 10000, 250,20000],
+              borderColor: "rgba(0, 123, 255, 0.9)",
+              borderWidth: "0",
+              backgroundColor: "rgba(0, 123, 255, 0.5)"
+            }
+          ]
+        },
+        options: {
+          legend: {
+            position: 'top',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          scales: {
+            xAxes: [{
+              ticks: {
+                fontFamily: "Poppins"
+
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                fontFamily: "Poppins"
+              }
+            }]
+          }
+        }
+      });
+    }
 </script>
 
 <script>
