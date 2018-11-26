@@ -158,17 +158,17 @@
             <table id="example" class="stripe" style="width:100%">
                     <thead>
                         <tr>
-                            <th>PRONAC</th>
                             <th>Nome</th>
-                            <th>Área</th>
+                            <th>Proponente</th>
+                            <th>Segmento</th>
                             <th data-orderable="false">Visualizar</th>
                         </tr>
                     </thead>
                     <tbody>
                             <% list_result.forEach(function(project) { %>
                         <tr>
-                            <td><%= project.pronac %></td>
                             <td><%= project.nome %></td>
+                            <td><%= project.proponente %></td>
                             <td><%= project.segmento %></td>
                             <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"> </td>
                             <% }); %>

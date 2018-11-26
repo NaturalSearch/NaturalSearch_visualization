@@ -9,13 +9,15 @@ router.get('/', function(req, res, next) {
 search_result = req.query.q;
 
  session
-    .run("match (project:Projeto) where (any(prop in keys(project) where tostring(project[prop]) =~ '(?i).*"
+    .run("match (project:Projeto) \
+          where (any(prop in keys(project) \
+          where tostring(project[prop]) =~ '(?i).*"
     + search_result + ".*' )) RETURN project ")
  .then(function(result){
   var list_result = [];
   result.records.forEach(function(record){   
-    list_result.push({pronac: record._fields[0].properties.PRONAC,
-                     nome: record._fields[0].properties.nome,
+    list_result.push({nome: record._fields[0].properties.nome,
+                     proponente: record._fields[0].properties.proponente,
                      segmento: record._fields[0].properties.segmento
     });
     console.log(list_result); 
