@@ -18,11 +18,151 @@
   <!--Font awesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
-
-
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
 
 <style>
+  /* style nav*/
+  body {
+
+    margin: 0;
+    padding: 0;
+  }
+
+  a.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 29px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #0088ff;
+    font-family: cursive;
+    font-weight: 700;
+
+  }
+
+  nav.main-navigation {
+    position: relative;
+  }
+
+  nav.main-navigation ul.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    text-align: right;
+  }
+
+  .nav-list li.nav-list-item {
+    display: inline-block;
+    line-height: 40px;
+    margin-left: 30px;
+    margin-top: 15px;
+  }
+
+  a.nav-link {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    color: #404040;
+  }
+
+  @keyframes FadeIn {
+    0% {
+      opacity: 0;
+      -webkit-transition-duration: 0.8s;
+      transition-duration: 0.8s;
+      -webkit-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+
+
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+      pointer-events: auto;
+      transition: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  .nav-list li {
+    animation: FadeIn 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+    animation-fill-mode: both;
+  }
+
+  .nav-list li:nth-child(1) {
+    animation-delay: .3s;
+  }
+
+  .nav-list li:nth-child(2) {
+    animation-delay: .6s;
+  }
+
+  .nav-list li:nth-child(3) {
+    animation-delay: .9s;
+  }
+
+  .nav-list li:nth-child(4) {
+    animation-delay: 1.2s;
+  }
+
+  .nav-list li:nth-child(5) {
+    animation-delay: 1.5s;
+  }
+
+  /* Animation */
+
+  @keyframes fadeInUp {
+    from {
+      transform: translate3d(0, 40px, 0)
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1
+    }
+  }
+
+  @-webkit-keyframes fadeInUp {
+
+    from {
+      transform: translate3d(0, 40px, 0)
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1
+    }
+  }
+
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+  }
+
+  .animatedFadeInUp {
+    opacity: 0
+  }
+
+  .fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+  }
+
+  /*d3 visualization */
   .links line {
     stroke: black;
     opacity: 2;
@@ -62,20 +202,7 @@
     font-size: 15px;
   } */
 
-  /*nav-design*/
-  .navbar {
-    margin-bottom: 10;
-    background: url('http://thecodeplayer.com/u/m/b1.png');
-    background-color: #000;
-    z-index: 9999;
-    border: 100px;
-    font-size: 14px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 4px;
-    text-transform: uppercase;
 
-  }
 
   div.tooltip {
     position: absolute;
@@ -105,6 +232,30 @@
 </style>
 
 <body>
+
+
+  <nav class="main-navigation">
+    <div class="navbar-header animated fadeInUp">
+      <a class="navbar-brand" href="#">Natural Search</a>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-list-item ">
+        <a href="#" class="nav-link ">PESQUISAR</a>
+      </li>
+      <li class="nav-list-item">
+        <a href="#" class="nav-link">COMO USAR</a>
+      </li>
+      <li class="nav-list-item">
+        <a href="#" class="nav-link">COMO FUNCIONA</a>
+      </li>
+      <li class="nav-list-item">
+        <a href="#" class="nav-link">QUEM SOMOS</a>
+      </li>
+
+    </ul>
+
+    
+  </nav>
 
   <!--Navbar-->
   <!--  <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -319,7 +470,7 @@
       graph.links.forEach(d => {
         linkedByIndex[`${d.source.index},${d.target.index}`] = 1;
       });
-      
+
       function isConnected(a, b) {
         return linkedByIndex[`${a.index},${b.index}`] || linkedByIndex[`${b.index},${a.index}`] || a.index === b.index;
       }

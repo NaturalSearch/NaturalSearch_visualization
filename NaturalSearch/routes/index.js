@@ -27,22 +27,6 @@ router.get('/', function(req, res, next) {
     console.log(search_result);
   }
   
-  //uppercase the first letter of some words
-  /*
-  session
-  .run("MATCH (p:Person) WHERE ANY(prop in keys(p) where TOSTRING(p[prop]) CONTAINS '"+ search_result+ "')RETURN p;")
-  .then(function(result){
-    result.records.forEach(function(record){
-      list_result = [];
-      list_result.push(record._fields[0].properties.name,
-                       record._fields[0].properties.born.low);
-      console.log(list_result);  
-    });
-  })
-  .catch(function(err){
-    console.log(err);
-  });
-  */
  res.render('index', { title: 'Express' });
 });
 
