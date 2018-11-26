@@ -25,6 +25,12 @@
 
 
   <style>
+    .row-centered {text-align:center;}
+
+    .col-centered { display:inline-block;
+    float:none; 
+    margin-right:-4px;}
+
     #inputGroup-sizing-lg {
     width: 70%; /* Full-width */
     font-size: 16px; /* Increase font-size */
@@ -311,7 +317,7 @@
 
       <!--charts-->
       <div>
-        <div class="col-lg-3">
+        <div class="col-lg-6">
           <div class="au-card chart-percent-card">
             <div class="au-card-inner">
               <h6>Captação dos projetos</h6>
@@ -354,7 +360,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-6">
           <div class="au-card chart-percent-card">
             <div class="au-card-inner">
               <h6>Captação por área %</h6>
@@ -404,11 +410,14 @@
             </div>
           </div>
         </div>
+        
+      </div>
+      <div class="row row-centered">
         <!--another table-->
-        <div class="col-lg-6">
+        <div class="col-lg-8 col-centered">
           <div class="au-card m-b-30">
               <div class="au-card-inner">
-                  <h3 class="title-2 m-b-40">Single Bar Chart</h3>
+                  <h3 class="title-2 m-b-40">Quantidade de projetos por área</h3>
                   <canvas id="singelBarChart"></canvas>
               </div>
           </div>
@@ -416,7 +425,7 @@
       </div>
       <!--table-->
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 ">
           <div class="top-campaign">
             <h5 class="title-3 m-b-30">Top Projetos que mais arrecadaram</h5>
             <div class="table-responsive">
