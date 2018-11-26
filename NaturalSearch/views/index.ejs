@@ -68,6 +68,14 @@
      margin-bottom: 20px;
   }
 
+  h5 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
   h4 {
     font-size: 19px;
     line-height: 1.375em;
@@ -75,6 +83,7 @@
     font-weight: 400;
     margin-bottom: 30px;
   } 
+
   /*background de search*/ 
   .bg-search {
       background-image: url('../static/images/graph.jpg');
@@ -202,57 +211,6 @@
 }
 </style>
 </head>
-<script>
-  try {
-
-    //doughut chart
-    var ctx = document.getElementById("doughutChart");
-    if (ctx) {
-      ctx.height = 150;
-      var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          datasets: [{
-            data: [45, 25, 20, 10],
-            backgroundColor: [
-              "rgba(0, 123, 255,0.9)",
-              "rgba(0, 123, 255,0.7)",
-              "rgba(0, 123, 255,0.5)",
-              "rgba(0,0,0,0.07)"
-            ],
-            hoverBackgroundColor: [
-              "rgba(0, 123, 255,0.9)",
-              "rgba(0, 123, 255,0.7)",
-              "rgba(0, 123, 255,0.5)",
-              "rgba(0,0,0,0.07)"
-            ]
-
-          }],
-          labels: [
-            "Green",
-            "Green",
-            "Green",
-            "Green"
-          ]
-        },
-        options: {
-          legend: {
-            position: 'top',
-            labels: {
-              fontFamily: 'Poppins'
-            }
-
-          },
-          responsive: true
-        }
-      });
-    }
-
-
-  } catch (error) {
-    console.log(error);
-  }
-</script>
 
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -342,35 +300,32 @@
               </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <!-- DATA TABLE-->
-                    <div class="table-responsive m-b-40">
-                          <div style="text-align: center">
-                            <h3>Projetos com maiores captações</h3>
-                          </dib>
-                        <table class="table table-borderless table-data3">                
-                            <thead>                          
+                <div class="col-lg-6">
+                    <div class="top-campaign">
+                        <h5 class="title-3 m-b-30">Top Projetos que mais arrecadaram</h5>
+                        <div class="table-responsive">
+                            <table class="table table-top-campaign">
+                                <thead>                         
+                                    <tr>
+                                        <th>Projeto</th>
+                                        <th>Proponente</th>
+                                        <th>Total Captado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% list_result2.forEach(function(project) { %>
                                 <tr>
-                                    <th>Projeto</th>
-                                    <th>Proponente</th>
-                                    <th>Total Captado</th>
+                                    <td><%= project.Projeto %></td>
+                                    <td><%= project.Proponente %></td>
+                                    <td><%= project.Total_Captado %></td>
+                                    <% }); %>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <% list_result2.forEach(function(project) { %>
-                            <tr>
-                                <td><%= project.Projeto %></td>
-                                <td><%= project.Proponente %></td>
-                                <td><%= project.Total_Captado %></td>
-                                <% }); %>
-                            </tr>
-                        </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <!-- END DATA TABLE-->
-                  </div>
-            </div>
-            <div class="col-lg-4">
+                </div>
+            <div class="col-lg-3">
                 <div class="au-card chart-percent-card">
                     <div class="au-card-inner">
                         <h3>Captação dos projetos</h3>
@@ -400,7 +355,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="au-card chart-percent-card">
                     <div class="au-card-inner">
                         <h3 class="title-2 tm-b-5">Captação por área %</h3>
