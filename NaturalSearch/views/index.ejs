@@ -1,436 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title>Natural Search</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.cs	s">
+<html>
+<title>Natural Search</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <!--Font awesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
+<body>
 
-
-  <style>
-  #inputGroup-sizing-lg {
-    width: 70%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 2px solid #7B68EE; /* Add a grey border */
-    margin-bottom: 5px; /* Add some space below the input */
-    border-radius: 10px;
-    background-color: #fff;
-    float:center;
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><font color="#0EADBD"><b>NS</b></font> NaturalSearch</a>
     
-  }
-  .check-box{
-    color: #fff;
-    font-size: 3vw;
-  }
-    @media(min-width:768px){
-      .check-box{
-        font-size: 1.5vw;
-      }
-    }
-  body {
-    font: 400 15px Lato, sans-serif;
-    line-height: 1.8;
-    color: #818181;
-  }
-  h2 {
-    font-size: 24px;
-    text-transform: uppercase;
-    color: #303030;
-    font-weight: 600;
-     margin-bottom: 30px;
-  }
-  h4 {
-    font-size: 19px;
-    line-height: 1.375em;
-    color: #303030;
-    font-weight: 400;
-    margin-bottom: 30px;
-  } 
-  /*background de search*/ 
-  .bg-search {
-      background-image: url('../static/images/graph.jpg');
-      color: #000;
-      /*full height*/
-      padding: 200px 150px;
-      resize: both;
-      overflow: auto;
-      /* Center and scale the image nicely */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: auto;
-      font-family: Montserrat, sans-serif;
-  }
-  /* radio buttuns */
-  .check-box input[type=radio], .check-box input[type=checkbox]{
-      display:none; /* Esconde os inputs */
-  }
- 
-  .check-box label {
-      cursor: pointer;
-  }
-  .check-box input[type="radio"] + label:before, .check-box input[type="checkbox"] + label:before {
-      border: 1px solid #5D5C5C;
-      background-color: #FFF;
-      content: "\00a0";
-      display: inline-block;
-      font: 16px/1em sans-serif;
-      height: 20px;
-      margin: 0 .25em 0 0;
-      padding:0;
-      vertical-align: top;
-      width: 20px;
-      border-radius:4px;
-  }
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#home" class="fas fa-search w3-bar-item w3-button">Pesquisar</a>
+      <a href="#statistics" class="fa fa-bar-chart w3-bar-item w3-button">Estatisticas</a>
+      <a href="#howtouse" class="fas fa-laptop-code w3-bar-item w3-button">Como usar NS</a>
+      <a href="#howitworks" class="fas fa-project-diagram w3-bar-item w3-button">Como funciona o grafo</a>
+      <a href="#whoarewe" class="fas fa-users w3-bar-item w3-button">Quem somos</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="../static/images/graph.jpg" alt="Graph" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-aqua w3-opacity-min"><b>NS</b></span> <span class="w3-hide-small w3-text-light-grey">NaturalSearch</span></h1>
+   
+    <!--Search div-->
+    <div class="w3-padding-16"  id="home">
+        <div class="bg-search text-center ">
+        <form action="result" method="GET">
+            <input id="inputGroup-sizing-lg" name='q' type="text" placeholder="Digite aqui..">
+          <button class="fas fa-search btn btn-info btn-lg w3-cyan" type="submit" value="result" onclick="search_form(q)">PESQUISAR
+        </button>
+        </form>
+        </div>
+    </div> 
+  </div>
+<style>
+
+#inputGroup-sizing-lg {
+  width: 70%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 2px solid rgb(7, 151, 187); /* Add a grey border */
+  margin-bottom: 5px; /* Add some space below the input */
+  border-radius: 10px;
+  background-color: #fff;
+  float:center;
   
-  .check-box input[type="radio"]:checked + label:before, .check-box input[type="checkbox"]:checked + label:before {
-      background:#3CB371;
-      color: #FFF;
-      content: "\2714";
-      text-align: center ;
-  }
-  
-  .check-box input[type=radio]:checked + label:after, .check-box input[type="checkbox"]:checked + label:after {
-      font-weight: bold;
-  }
-  .container-fluid-1 {
-    background-color:#e1eaea; 
-    padding: 60px 50px; 
-    resize: both;
-    overflow: auto;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: auto;
-  }
-  .container-fluid-2{
-    background-color:#d1e0e0; 
-    padding: 60px 50px; 
-    resize: both;
-    overflow: auto;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: auto; 
-  }
-  .container-fluid-3{
-    background-color:#fff; 
-    padding: 60px 50px;  
-    resize: both;
-    overflow: auto;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: auto;
-  }
-  .item h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      font-weight: 400;
-      font-style: italic;
-      margin: 70px 0;
-  }
-  /*nav-design*/ 
-  .navbar {
-      margin-bottom: 10;
-      background:url('http://thecodeplayer.com/u/m/b1.png');
-      background-color: #000;
-      z-index: 9999;
-      border: 100px;
-      font-size: 14px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 4px;
-      text-transform: uppercase;
-  }
-  /* animation nav-bar mouse*/
-  .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: black !important;
-      background-color: #fff !important;
-      border-radius: 15px;
-    }
+}
 /*JS*/
-  .slideanim {visibility:hidden;}
+.slideanim {visibility:hidden;}
+
 /*exemple of visualization*/
 .links line {
   stroke: rgb(107, 107, 107);
   stroke-opacity: 0.9;
 }
+
 .nodes circle {
   stroke: #fff;
   stroke-width: 1.5px;
 }
+
+.photos{
+  width: 100%;
+  height: auto;
+}
+
+.wrong-photos{
+  width: 100%;
+  height: 193px;
+}
+
 </style>
-</head>
+</header>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
 
-  <!--Navbar-->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#myPage">NaturalSearch</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a class="fas fa-search" href="#search">PESQUISAR</a></li>
-          <li><a class="fas fa-laptop-code" href="#howtouse">COMO USAR</a></li>
-          <li><a class="fas fa-users-cog" href="#works"> COMO FUNCIONA </a> </li>
-          <li><a class="fas fa-users-cog" href="#whoare"> QUEM SOMOS </a> </li>
-          
-          
 
-        </ul>
-      </div>
-    </div>
-  </nav>
+<!-- Statistics Section -->
+<div class="w3-row-padding w3-grayscale"></div>
+<div class="w3-container w3-padding-32 " id="statistics">
+    <h3 class="w3-border-bottom w3-border-light-blue w3-padding-16">Estatisticas do Natural Search</h3>
 
-  <!--Search div-->
-  <div id="search" class="bg-search text-center ">
-    <form action="result" method="GET">
-      <input id="inputGroup-sizing-lg" name='q' type="text" placeholder="Digite aqui..">
-      <div class="check-box center">  
-          <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox1" />
-          <label for="campo-checkbox1">Projetos</label>
-          &ensp;&ensp;
-          <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox" />
-          <label for="campo-checkbox">Propostas</label>
-      </div>
-    <button class="fas fa-search btn btn-info btn-lg" type="submit" value="result" onclick="search_form(q)">PESQUISAR
-  </button>
-  </form>
+    <!-- Statistics vusialization Section -->
+    <p>
+    </p>
   </div>
 
-  <!-- Como usar  -->
-  <div id="howtouse" class="container-fluid-2">
-    <div class="row">
-      <div class="col-sm-8">
-        <h2>Como usar Natural Search</h2>
+  <!-- How to use Natural Search Section -->
+  <div class="w3-row-padding w3-grayscale"></div>
+  <div class="w3-container w3-padding-32" id="howtouse">
+      <h3 class="w3-border-bottom w3-border-light-blue w3-padding-16">Como usar o NaturalSearch</h3>
+
+    <!-- How to use Natural Search text Section -->
+    <p>
+      <br>
+      <h4>
+        <p align = "justify">
+        Para realizar a pesquisa é necessário digitar qualquer palavra, frase e/ou número que interessar na barra de pesquisa e clicar no botão azul de pesquisar.
+      <br>
+      <br>
+        A pesquisa retornará as informações encontradas por meio de uma tabela, onde é possivel visualizar o Nome do projeto, Nome do proponete e a Área do item pesquisado.         
+         <br> 
+         <br>
+        Além da tabela e gerado uma visualização em grafo onde é possível observar as conexões entre a pesquisa de interesse e seus projetos e proponentes.
+      </p>
+               
+     </h4>
+    </p>
+  </div>
+
+  <!-- How graphs works Section -->
+  <div class="w3-row-padding w3-grayscale"></div>
+  <div class="w3-container w3-padding-32" id="howitworks">
+      <h3 class="w3-border-bottom w3-border-light-blue w3-padding-16">Como funciona o grafo</h3>
+
+      <!-- Graph visualization Section -->
+      <div class="container-fluid-1">
+            <div class="col-sm-4">
+              <svg width="390" height="230"></svg>
+              <script src="https://d3js.org/d3.v4.min.js"></script>
+              <script>
+              
+              var svg = d3.select("svg"),
+                  width = +svg.attr("width"),
+                  height = +svg.attr("height");
+              
+              var color = d3.scaleOrdinal(d3.schemeCategory10);
+              
+              var simulation = d3.forceSimulation()
+                  .force("link", d3.forceLink().id(function(d) { return d.id; }))
+                  .force("charge", d3.forceManyBody())
+                  .force("center", d3.forceCenter(width / 2, height / 2));
+              
+              d3.json("../static/javascripts/miserables_less_nodes.json", function(error, graph) {
+                if (error) throw error;
+              
+                var link = svg.append("g")
+                  .attr("class", "links")
+                  .selectAll("line")
+                  .data(graph.links)
+                  .enter().append("line")
+                  .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+              
+                var node = svg.append("g")
+                  .attr("class", "nodes")
+                  .selectAll("circle")
+                  .data(graph.nodes)
+                  .enter().append("circle")
+                  .attr("r", 10)
+                  .attr("fill", function(d) { return color(d.group); })
+                  .call(d3.drag()
+                  .on("start", dragstarted)
+                  .on("drag", dragged)
+                  .on("end", dragended));
+        
+                node.append("title")
+                  .text(function(d) { return d.id; });
+              
+                simulation
+                  .nodes(graph.nodes)
+                  .on("tick", ticked);
+              
+                simulation.force("link")
+                    .links(graph.links);
+              
+                function ticked() {
+                  link
+                      .attr("x1", function(d) { return d.source.x; })
+                      .attr("y1", function(d) { return d.source.y; })
+                      .attr("x2", function(d) { return d.target.x; })
+                      .attr("y2", function(d) { return d.target.y; });
+              
+                  node
+                      .attr("cx", function(d) { return d.x; })
+                      .attr("cy", function(d) { return d.y; });
+                }
+              });
+              
+              function dragstarted(d) {
+                if (!d3.event.active) simulation.alphaTarget(0.5).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+              }
+              
+              function dragged(d) {
+                d.fx = d3.event.x;
+                d.fy = d3.event.y;
+              }
+              
+              function dragended(d) {
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+              }
+              
+              </script>
+            </div>
+      </div>
+      <!-- How graphs works text Section -->
+      <p>
+        <br>
         <h4>
           <p align = "justify">
-          Para realizar a pesquisa é necessário digitar qualquer palavra, frase e/ou numero que interessar na barra de pesquisa, selecionar um dos quadradinhos(projeto/propostas) e clicar no botão azul de pesquisar.
-        <br>
-          A pesquisa retornará as informações encontradas por meio de uma tabela, onde é possivel visualizar o Nome e a Área do valor pesquisado.         
-           <br> 
-          Além da tabela e gerado uma visualização em grafo onde é posivel observar as conexções entre a pesquisa de interesse e seus projetos e propostas.
-         <br>
-        </p>
-                 
-       </h4>
-      
-         
-          <p></p>
-
-      </div>
-      <div class="col-sm-4">
-          <div style="width:100%;height:0;padding-bottom:60%;position:relative;">
-            <iframe src="https://giphy.com/embed/DNwX7za7rlNYXuT5hv" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen>
-            </iframe>
-          </div>
-          <p>
-          </p>
+            </p>
+            <br>
+            <p align = "justify">
+                Existem duas partes principais no grafo do Natural Search:
+                <br>
+                <br>
+                    Os <strong>vértices</strong> (nós) onde os dados são armazenados, ou seja, as bolas circulares coloridas, que representam <em>Nome, Área, Segmento, UF, Ano do projeto e Valores diversos</em> de um projeto ou proponente.
+                    <br>
+                    <br>
+                    As <strong>Arestas</strong> (conexões) que conectam os nós, são as linhas entre as esferas circulares coloridas, representam os<em>valores em comum</em> de um mesmo projeto ou proponente.
+                <br>
+                <p>O grafo ao lado pode dar uma idéia sobre como os nós se relacionam uns com os outros.</p>
+            </p>
+          </h4>
+      </p>
     </div>
-  </div>
 
-  <div class="container-fluid-1">
-    <div class="row">
-      <div class="col-sm-4">
-        <svg width="300" height="350"></svg>
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script>
-        
-        var svg = d3.select("svg"),
-            width = +svg.attr("width"),
-            height = +svg.attr("height");
-        
-        var color = d3.scaleOrdinal(d3.schemeCategory10);
-        
-        var simulation = d3.forceSimulation()
-            .force("link", d3.forceLink().id(function(d) { return d.id; }))
-            .force("charge", d3.forceManyBody())
-            .force("center", d3.forceCenter(width / 2, height / 2));
-        
-        d3.json("../static/javascripts/miserables_less_nodes.json", function(error, graph) {
-          if (error) throw error;
-        
-          var link = svg.append("g")
-            .attr("class", "links")
-            .selectAll("line")
-            .data(graph.links)
-            .enter().append("line")
-            .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
-        
-          var node = svg.append("g")
-            .attr("class", "nodes")
-            .selectAll("circle")
-            .data(graph.nodes)
-            .enter().append("circle")
-            .attr("r", 10)
-            .attr("fill", function(d) { return color(d.group); })
-            .call(d3.drag()
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended));
-  
-          node.append("title")
-            .text(function(d) { return d.id; });
-        
-          simulation
-            .nodes(graph.nodes)
-            .on("tick", ticked);
-        
-          simulation.force("link")
-              .links(graph.links);
-        
-          function ticked() {
-            link
-                .attr("x1", function(d) { return d.source.x; })
-                .attr("y1", function(d) { return d.source.y; })
-                .attr("x2", function(d) { return d.target.x; })
-                .attr("y2", function(d) { return d.target.y; });
-        
-            node
-                .attr("cx", function(d) { return d.x; })
-                .attr("cy", function(d) { return d.y; });
-          }
-        });
-        
-        function dragstarted(d) {
-          if (!d3.event.active) simulation.alphaTarget(0.5).restart();
-          d.fx = d.x;
-          d.fy = d.y;
-        }
-        
-        function dragged(d) {
-          d.fx = d3.event.x;
-          d.fy = d3.event.y;
-        }
-        
-        function dragended(d) {
-          if (!d3.event.active) simulation.alphaTarget(0);
-          d.fx = null;
-          d.fy = null;
-        }
-        
-        </script>
-      </div>
-      <div id="works" class="col-sm-8"><br><br>
-        <h2>Como funciona o grafo </h2>
-        
+    <!-- Who are we Section -->
+  <div class="w3-container  w3-light-cyan w3-padding-32" id="whoarewe">
+      <h3 class="w3-border-bottom w3-border-light-blue w3-padding-16">Quem somos</h3>
+
+      <!-- Who are we text Section -->
+      <p>
+        <br>
         <h4>
-        <p align = "justify">
-          Os gráfos são úteis porque podem resumir muitas informações em uma imagem.
-          Quando você faz pesquisas, os gráfos geralmente são a única maneira de representar dados que foram coletados.
-          Quando alguém coleta dados, muitas vezes não sabe a relação exata e a interdependência entre as várias quantidades que estão sendo mostradas.
-          O gráfo ao lado pode dar uma idéia sobre como as bolinhas se relacionam umas às outras.
-          <br>
-          Por essa razão, o Natural Search usa gráfos para informações conectadas.
-          <br>
-              Existem duas partes principais no gráfo do Natural Search:
-              <br>
-                  Os vértices (nós) onde os dados são armazenados, ou seja, as bolas circulares coloridas, que representam <em>Nome, Área, Segmento, UF, Ano do projeto e Valores diversos</em> de um projeto ou proposta.
-                  <br>
-                  As Arestas (conexões) que conectam os nós, são as linhas entre as esferas circulares coloridas, representam os<em>valores em comum</em> de um mesmo projeto ou proposta.
-              <br>
-          <h3><a href="https://github.com/fga-eps-mds/2018.2-NaturalSearch">O código deste sistema está disponível no repositório github.com/fga-eps-mds/2018.2-NaturalSearch.</a></h3>
-        </p>
-        </h4>
-        
-        <p></p>
-      </div>
+          <p align = "justify">
+              Este Projeto deu Início no dia 14 de agosto de 2018, resultado da interdisciplinaridade
+              entre duas disciplinas, ministrada na <a href="http://www.unb.br/">Universidade de Brasília</a>(<em>UnB</em>), do curso de engenharia de software,
+              sendo Engenharia de Produto de Software(<em>EPS</em>) e Métodos de Desenvolvimento de Software(<em>MDS</em>).
+          </p>
+          <p align = "justify">
+              O resultado de todo o projeto é esse web app voltado a pesquisa, tratamento de informações disponibilizadas na API Salic e visualização em grafo de projetos e propostas. 
+              pertencentes ao Ministério da Cultura e incentivados pela <strong>Lei 8.313/91</strong> , também conhecida como <a href="http://rouanet.cultura.gov.br/o-que-e/">Lei Rouanet</a>.
+          </p>
+            <p></p>
+          </h4>
+      </p>
     </div>
+
+    <!-- Team Section -->
+  <div class="w3-row-padding w3-light-cyan">
+
+    <div class="w3-col l2 m4 w3-margin-bottom">
+      <img class="wrong-photos" src="../static/images/igor.jpg" alt="Igor">
+      <h3>Igor Araújo</h3>
+      <p class="w3-opacity">Devops</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+    </div>
+
+    <div class="w3-col l2 m3 w3-margin-bottom">
+      <img class="wrong-photos" src="../static/images/filipe.jpg" alt="Filipe">
+      <h3>Filipe Barcelos</h3>
+      <p class="w3-opacity">Arquiteto</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+    </div>
+
+    <div class="w3-col l2 m3 w3-margin-bottom">
+      <img class="photos" src="../static/images/sherman.jpg" alt="Sherman">
+      <h3>Shermam Lima</h3>
+      <p class="w3-opacity">P.O</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+    </div>
+
+    <div class="w3-col l2 m3 w3-margin-bottom">
+      <img class="photos" src="../static/images/gustavo.jpg" alt="Gustavo">
+      <h3>Gustavo Moreira </h3>
+      <p class="w3-opacity">Desenvolvedor</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+    </div>
+
+    <div class="w3-col l2 m3 w3-margin-bottom">
+        <img class="photos" src="../static/images/fabiana.jpg" alt="Fabiana">
+        <h3>Fabiana Ribas</h3>
+        <p class="w3-opacity">Desenvolvedora</p>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      </div>
+
+    <div class="w3-col l2 m3 w3-margin-bottom">
+        <img class="photos" src="../static/images/mikhaelle.jpg" alt="Mikhaelle">
+        <h3>Mikhaelle Bueno</h3>
+        <p class="w3-opacity">Desenvolvedora</p>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      </div>
+
+    <div class="w3-col l2 m3 w3-margin-bottom">
+        <img class="photos" src="../static/images/marcos.jpg" alt="Marcos">
+        <h3>Marcos Rodrigues</h3>
+        <p class="w3-opacity">Desenvolvedor</p>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      </div>
+
+    <div class="w3-col l2 m3 w3-margin-bottom">
+        <img class="wrong-photos" src="../static/images/michel.jpg" alt="Michel">
+        <h3>Michel de Camargo</h3>
+        <p class="w3-opacity">Desenvolvedor</p>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      </div>
+
   </div>
 
-
-
-
-  <!-- Container (Contact Section) -->
-  <div id="whoare" class="container-fluid-3">
-    <h2>Quem somos?</h2>
-    <h4>
-    <p align = "justify">
-        Este Projeto deu Inicio no dia 14 de agosto de 2018, resultado da interdisciplinaridade
-        entre duas disciplinas, ministrada na <a href="http://www.unb.br/">Universidade de Brasília</a>(<em>UnB</em>), do curso de engenharia de software,
-        sendo Engenharia de Produto de Software(<em>EPS</em>) e Métodos de Desenvolvimento de Software(<em>MDS</em>).
-      <br>
-        O produto, este apresentado, é resultado do desempenho de 10 alunos durante o semestre.
-        O problema foi apresentado pela professora da disciplina, sendo necessário, por parte dos alunos, aprender novas tecnologias
-        e assim colocar em prática o seus conhecimentos.
-        <br>
-        No decorrer do projeto, para obter-se um bom resultado e um produto de qualidade, foram executados técnicas de Engenharia de Software,
-        algumas metodologias ágeis, sendo <em>XP</em> e <em>SCRUM</em>.
-        <br>
-        O <em>SCRUM</em>, possibilitou a equipe assumir posições durante o desenvolvimento do produto, sendo eles Scrum Master, Product Owner, Arquiteto e 
-        Devops.
-        <br>
-        O resultado de todo o projeto é esse web app voltado a pesquisa e visualização em grafo de projetos e propostas
-        pertencentes ao Ministério da Cultura e incentivados pela <a href="http://rouanet.cultura.gov.br/o-que-e/">Lei Rouanet</a>, também conhecida como Lei 8.313/91.
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-blue w3-padding-16">Contato</h3>
+     <!-- Contact text Section -->
+    <p>
+          <h3><p style="color:rgb(37, 122, 192)" align = "justify">Para mais informações entre em contato com: equipe.naturalsearch@gmail.com</h3>
+          </p>
     </p>
-      <p></p>
-      <h3>
-        <p
-          style="color:rgb(37, 122, 192);">Para mais informações entre em contato com: equipe.naturalsearch@gmail.com
-        </p>
-      </h3>
-    </h4>
   </div>
 
-  </footer>
+<!-- End page content -->
+</div>
 
-  <script>
-    $(document).ready(function () {
-      // Add smooth scrolling to all links in navbar + footer link
-      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-          // Store hash
-          var hash = this.hash;
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 900, function () {
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
-      });
-      $(window).scroll(function () {
-        $(".slideanim").each(function () {
-          var pos = $(this).offset().top;
-          var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
-            $(this).addClass("slide");
-          }
-        });
-      });
-    })
-  </script>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <h4><p>Projeto disponivel no <a href="https://github.com/fga-eps-mds/2018.2-NaturalSearch" title="GitHub" target="_blank" class="w3-hover-text-cyan">GitHub</a></p></h4>
+</footer>
 
 </body>
-
 </html>
