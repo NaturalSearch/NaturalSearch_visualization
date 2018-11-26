@@ -4,46 +4,46 @@ var neo4j = require('neo4j-driver').v1;
 var driver = neo4j.driver('bolt://neo4j', neo4j.auth.basic('neo4j','eps'));
 var session = driver.session();
 
-function titleize(text) {
-  // change the first letter to upper.
-  text = text.charAt(0).toUpperCase() + text.slice(1);
-
-  for (var i = 0; i < text.length; i++) {
-    if (text.charAt(i) ===" ") {
-        var charToUper = text.charAt(i+1).toUpperCase();
-        var sliceBegin = text.slice(0, (i+1));
-        var sliceEnd = text.slice(i + 2);
-        text = sliceBegin + charToUper + sliceEnd;
-    }
-  }
-  return text;
-}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   search_result = req.query.q;
-  if(search_result!=null){
-    search_result=titleize(search_result);
-    console.log(search_result);
-  }
-  
-  //uppercase the first letter of some words
-  /*
+
   session
-  .run("MATCH (p:Person) WHERE ANY(prop in keys(p) where TOSTRING(p[prop]) CONTAINS '"+ search_result+ "')RETURN p;")
-  .then(function(result){
-    result.records.forEach(function(record){
-      list_result = [];
-      list_result.push(record._fields[0].properties.name,
-                       record._fields[0].properties.born.low);
+    .run("MATCH (project:Projeto) RETURN count(distinct project.nome) as Total_Projetos, \
+          count(distinct project.proponente) as Total_Proponentes, \
+          SUM (toFloat(project.valor_captado)) as Total_Captado")
+      .then(function(result){
+    var list_result = [];
+          result.records.forEach(function (record) {
+            list_result.push({Total_projetos: record.get('Total_Projetos'),
+                              Total_Proponentes: record.get('Total_Proponentes'),
+                              Total_Captado: record.get('Total_Captado')
+                            });
       console.log(list_result);  
+      });
+      session.close();
+      res.render('index', { list_result: list_result ,  
+        title: 'Express' });
+  
+    })
+   
+
+/* 
+    result.records.forEach(function(record){   
+    list_result.push({Total_Projetos: record._fields[0].properties.Total_Projetos,
+                      Total_Proponentes: record._fields[0].properties.Total_Proponentes,
+                      Total_Captado: record._fields[0].properties.Total_Captado
     });
-  })
-  .catch(function(err){
-    console.log(err);
+    console.log(list_result);  
   });
-  */
- res.render('index', { title: 'Express' });
+  res.render('index', { list_result: list_result ,  
+                        title: 'Express' });
+  }) */
+  .catch(function(err){
+  console.log(err);
+  });
+ 
 });
 
 module.exports = router;

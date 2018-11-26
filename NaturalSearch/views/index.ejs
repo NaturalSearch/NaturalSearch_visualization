@@ -303,7 +303,11 @@
           <div class="row">
               <div class="col-md-6 col-lg-4">
                   <div class="statistic__item statistic__item--green">
-                      <h2 class="number">10,368</h2>
+                      <h2 class="number">
+                        <% list_result.forEach(function(project) { %>
+                        <%= project.Total_Proponentes %>
+                        <% }); %>
+                      </h2>
                       <span class="desc">Proponentes</span>
                       <div class="icon">
                           <i class="zmdi zmdi-account-o"></i>
@@ -312,7 +316,11 @@
               </div>
               <div class="col-md-6 col-lg-4">
                   <div class="statistic__item statistic__item--blue">
-                      <h2 class="number">1,086</h2>
+                      <h2 class="number">
+                          <% list_result.forEach(function(project) { %>
+                          <%= project.Total_projetos %>
+                          <% }); %>
+                      </h2>
                       <span class="desc">Projetos</span>
                       <div class="icon">
                           <i class="zmdi zmdi-calendar-note"></i>
@@ -321,7 +329,11 @@
               </div>
               <div class="col-md-6 col-lg-4">
                   <div class="statistic__item statistic__item--orange">
-                      <h2 class="number">$1,060,386</h2>
+                      <h2 class="number">
+                          <% list_result.forEach(function(project) { %>
+                          <%= project.Total_Captado %>
+                           <% }); %>
+                      </h2>
                       <span class="desc">Total Captado</span>
                       <div class="icon">
                           <i class="zmdi zmdi-money"></i>
