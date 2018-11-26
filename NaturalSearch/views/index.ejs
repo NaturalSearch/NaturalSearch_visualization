@@ -11,14 +11,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.cs	s">
-  
- <!-- Fontfaces CSS-->
- <link href="../static/css/font-face.css" rel="stylesheet" media="all">
- <link href="../static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
- <link href="../static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+  <script src="../static/vendor/chartjs/Chart.bundle.min.js"></script>
+  <!-- Fontfaces CSS-->
+  <link href="../static/css/font-face.css" rel="stylesheet" media="all">
+  <link href="../static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+  <link href="../static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
  <!-- Main CSS-->
- <link href="../static/css/theme.css" rel="stylesheet" media="all">
+ <link href="../static/css/theme2.css" rel="stylesheet" media="all">
+ <!-- <link href="../static/css/theme.css" rel="stylesheet" media="all"> -->
  
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
@@ -64,7 +65,7 @@
     text-transform: uppercase;
     color: #303030;
     font-weight: 600;
-     margin-bottom: 30px;
+     margin-bottom: 20px;
   }
 
   h4 {
@@ -201,6 +202,58 @@
 }
 </style>
 </head>
+<script>
+  try {
+
+    //doughut chart
+    var ctx = document.getElementById("doughutChart");
+    if (ctx) {
+      ctx.height = 150;
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [45, 25, 20, 10],
+            backgroundColor: [
+              "rgba(0, 123, 255,0.9)",
+              "rgba(0, 123, 255,0.7)",
+              "rgba(0, 123, 255,0.5)",
+              "rgba(0,0,0,0.07)"
+            ],
+            hoverBackgroundColor: [
+              "rgba(0, 123, 255,0.9)",
+              "rgba(0, 123, 255,0.7)",
+              "rgba(0, 123, 255,0.5)",
+              "rgba(0,0,0,0.07)"
+            ]
+
+          }],
+          labels: [
+            "Green",
+            "Green",
+            "Green",
+            "Green"
+          ]
+        },
+        options: {
+          legend: {
+            position: 'top',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          responsive: true
+        }
+      });
+    }
+
+
+  } catch (error) {
+    console.log(error);
+  }
+</script>
+
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -337,6 +390,62 @@
                     </div>
                     <!-- END DATA TABLE-->
                   </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="au-card chart-percent-card">
+                    <div class="au-card-inner">
+                        <h3>Captação dos projetos</h3>
+                        <div class="row no-gutters">
+                            <div class="col-xl-6">
+                                <div class="chart-note-wrap">
+                                    <div class="chart-note mr-0 d-block">
+                                        <span class="dot dot--blue"></span>
+                                        <span>0$</span>
+                                    </div>
+                                    <div class="chart-note mr-0 d-block">
+                                        <span class="dot dot--red"></span>
+                                        <span>0-10.000$</span>
+                                    </div>
+                                    <div class="chart-note mr-0 d-block">
+                                        <span class="dot dot--green"></span>
+                                        <span>10.000-50.000$</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="percent-chart">
+                                    <canvas id="percent-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="au-card chart-percent-card">
+                    <div class="au-card-inner">
+                        <h3 class="title-2 tm-b-5">Captação por área %</h3>
+                        <div class="row no-gutters">
+                            <div class="col-xl-6">
+                                <div class="chart-note-wrap">
+                                    <div class="chart-note mr-0 d-block">
+                                        <span class="dot dot--blue"></span>
+                                        <span>products</span>
+                                    </div>
+                                    <div class="chart-note mr-0 d-block">
+                                        <span class="dot dot--red"></span>
+                                        <span>services</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="percent-chart">
+                                    <canvas id="percent-chart2"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
   </div>
@@ -547,8 +656,125 @@
         });
       });
     })
+  
+    
   </script>
+
+
+</script>
+
 
 </body>
 
 </html>
+
+<script>
+   var ctx = document.getElementById("percent-chart");
+    if (ctx) {
+      ctx.height = 200;
+      var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [
+            {
+              label: "My First dataset",
+              data: [20, 40, 40],
+              backgroundColor: [
+                '#00b5e9',
+                '#fa4251',
+                '#009900'
+              
+              ],
+              hoverBackgroundColor: [
+                '#00b5e9',
+                '#fa4251',
+                '#009900'
+              
+              ],
+              borderWidth: [
+                0, 0
+              ],
+              hoverBorderColor: [
+                'transparent',
+                'transparent',
+                'transparent'
+              ]
+            }
+          ],
+          labels: [
+            'Products',
+            'Services',
+            'Project'
+          ]
+        },
+        options: {
+          maintainAspectRatio: false,
+          responsive: true,
+          cutoutPercentage: 55,
+          animation: {
+            animateScale: true,
+            animateRotate: true
+          },
+          legend: {
+            display: false
+          },
+        }
+      });
+    }
+</script>
+
+<script>
+    var ctx = document.getElementById("percent-chart2");
+     if (ctx) {
+       ctx.height = 200;
+       var myChart = new Chart(ctx, {
+         type: 'doughnut',
+         data: {
+           datasets: [
+             {
+               label: "My First dataset",
+               data: [20, 40, 40],
+               backgroundColor: [
+                 '#00b5e9',
+                 '#fa4251',
+                 '#009900'
+               
+               ],
+               hoverBackgroundColor: [
+                 '#00b5e9',
+                 '#fa4251',
+                 '#009900'
+               
+               ],
+               borderWidth: [
+                 0, 0
+               ],
+               hoverBorderColor: [
+                 'transparent',
+                 'transparent',
+                 'transparent'
+               ]
+             }
+           ],
+           labels: [
+             'Products',
+             'Services',
+             'Project'
+           ]
+         },
+         options: {
+           maintainAspectRatio: false,
+           responsive: true,
+           cutoutPercentage: 55,
+           animation: {
+             animateScale: true,
+             animateRotate: true
+           },
+           legend: {
+             display: false
+           },
+         }
+       });
+     }
+ </script>
+ 
