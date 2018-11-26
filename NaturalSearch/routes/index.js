@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
           count(distinct project.proponente) as Total_Proponentes, \
           SUM (toFloat(project.valor_captado)) as Total_Captado")
       .then(function(result){
-    var list_result = [];
+          var list_result = [];
           result.records.forEach(function (record) {
             list_result.push({Total_projetos: record.get('Total_Projetos'),
                               Total_Proponentes: record.get('Total_Proponentes'),
@@ -22,24 +22,27 @@ router.get('/', function(req, res, next) {
                             });
       console.log(list_result);  
       });
+     
+    
+    session
+    .run("MATCH (project:Projeto) RETURN project.nome as Projeto , project.proponente as Proponente ,  \
+          SUM (toFloat(project.valor_captado)) \
+          as Total_Captado ORDER BY Total_Captado DESC LIMIT 10")
+      .then(function(result2){
+    var list_result2 = [];
+          result2.records.forEach(function (record) {
+            list_result2.push({Projeto: record.get('Projeto'),
+                              Proponente: record.get('Proponente'),
+                              Total_Captado: record.get('Total_Captado')
+                            });
+      console.log(list_result2);  
+      });
       session.close();
-      res.render('index', { list_result: list_result ,  
+      res.render('index', { list_result: list_result ,  list_result2: list_result2 , 
         title: 'Express' });
-  
+      })
+      
     })
-   
-
-/* 
-    result.records.forEach(function(record){   
-    list_result.push({Total_Projetos: record._fields[0].properties.Total_Projetos,
-                      Total_Proponentes: record._fields[0].properties.Total_Proponentes,
-                      Total_Captado: record._fields[0].properties.Total_Captado
-    });
-    console.log(list_result);  
-  });
-  res.render('index', { list_result: list_result ,  
-                        title: 'Express' });
-  }) */
   .catch(function(err){
   console.log(err);
   });

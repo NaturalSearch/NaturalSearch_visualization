@@ -357,47 +357,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>2018-09-29 05:57</td>
-                                    <td>Mobile</td>
-                                    <td>$999.00</td>
-                                </tr>
-                                <tr>
-                                    <td>2018-09-28 01:22</td>
-                                    <td>Mobile</td>
-                                    <td>$756.00</td>
-                                </tr>
-                                <tr>
-                                    <td>2018-09-27 02:12</td>
-                                    <td>Game</td>
-                                    <td>$22.00</td>
-                                </tr>
-                                <tr>
-                                    <td>2018-09-26 23:06</td>
-                                    <td>Mobile</td>
-                                    <td>$1199.00</td>
-                                </tr>
-                                <tr>
-                                    <td>2018-09-25 19:03</td>
-                                    <td>Accessories</td>
-                                    <td>$10.00</td>
-                                </tr>
-                                <tr>
-                                    <td>2018-09-29 05:57</td>
-                                    <td>Accesories</td>
-                                    <td>$199.00</td>
-                                </tr>
-                                <tr>
-                                    <td>2018-09-24 19:10</td>
-                                    <td>Camera</td>
-                                    <td>$699.00</td>
-                                </tr>
-                                <tr>
-                                    <td>2018-09-22 00:43</td>
-                                    <td>Computer</td>
-                                    <td>$10.00</td>
-                                </tr>
-                            </tbody>
+                                <% list_result2.forEach(function(project) { %>
+                            <tr>
+                                <td><%= project.Projeto %></td>
+                                <td><%= project.Proponente %></td>
+                                <td><%= project.Total_Captado %></td>
+                                <% }); %>
+                            </tr>
+                        </tbody>
                         </table>
                     </div>
                     <!-- END DATA TABLE-->
