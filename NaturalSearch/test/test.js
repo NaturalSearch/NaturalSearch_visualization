@@ -31,7 +31,7 @@ describe('Get the urls is working', function () {
         done()
       });
   })
-  
+  /*
   it('test if the results is working', function (done) {
     request(app)
       .get('/result')
@@ -41,7 +41,7 @@ describe('Get the urls is working', function () {
         done()
       });
   })
-  
+  */
 });
 
 describe('Test of the methos into users', function () {

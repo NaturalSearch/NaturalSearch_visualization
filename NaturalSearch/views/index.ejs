@@ -254,18 +254,23 @@
 
   <!--Search div-->
   <div id="search" class="bg-search text-center ">
-    <form action="result" method="GET">
-      <input id="inputGroup-sizing-lg" name='q' type="text" placeholder="Digite aqui..">
-      <div class="check-box center">
-        <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox1" />
-        <label for="campo-checkbox1">Projetos</label>
-        &ensp;&ensp;
-        <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox" />
-        <label for="campo-checkbox">Propostas</label>
-      </div>
-      <button class="fas fa-search btn btn-info btn-lg" type="submit" value="result" onclick="search_form(q)">PESQUISAR
+    <form id="form1" name="form1" method="get" action="result" onsubmit="return valida_form(this)">
+      <label for="q"></label>
+      <br>
+      <br>
+      <input id="q" name='q' type="text" size="60" style="height: 43px;" placeholder="Digite aqui..">
+      <button class="fas fa-search btn btn-info btn-lg" type="submit">PESQUISAR
       </button>
-    </form>
+  </form>
+   <script type="text/javascript" language="javascript">
+        function valida_form (){
+            if(document.getElementById("q").value == ""){
+                alert('Por favor, preencha o campo de pesquisa!');
+                document.getElementById("q").focus();
+            return false
+            }
+        }
+    </script>
   </div>
 
 
@@ -595,34 +600,33 @@
 
 
 
-    <!-- Container (Contact Section) -->
-    <div id="whoare" class="container-fluid-3">
-      Este Produto deu Inicio no dia 14 de agosto de 2018, sendo resultado da interdisciplinaridade
-      <h2>Quem somos?</h2>
-      <h4>
-        <p align="justify">
-          Este Projeto deu Inicio no dia 14 de agosto de 2018, resultado da interdisciplinaridade
-          entre duas disciplinas, ministrada na <a href="http://www.unb.br/">Universidade de Brasília</a>(<em>UnB</em>),
-          do curso de engenharia de software,
-          sendo Engenharia de Produto de Software(<em>EPS</em>) e Métodos de Desenvolvimento de Software(<em>MDS</em>).
-          <br>
-          O produto, este apresentado, é resultado do desempenho de 10 alunos durante o semestre.
-          O problema foi apresentado pela professora da disciplina, sendo necessário, por parte dos alunos, aprender
-          novas tecnologias
-          e assim colocar em prática o seus conhecimentos.
-          <br>
-          No decorrer do projeto, para obter-se um bom resultado e um produto de qualidade, foram executados técnicas
-          de Engenharia de Software,
-          algumas metodologias ágeis, sendo <em>XP</em> e <em>SCRUM</em>.
-          <br>
-          O <em>SCRUM</em>, possibilitou a equipe assumir posições durante o desenvolvimento do produto, sendo eles
-          Scrum Master, Product Owner, Arquiteto e
-          Devops.
-          <br>
-          O resultado de todo o projeto é esse web app voltado a pesquisa e visualização em grafo de projetos e
-          propostas
-          pertencentes ao Ministério da Cultura e incentivados pela <a href="http://rouanet.cultura.gov.br/o-que-e/">Lei
-            Rouanet</a>, também conhecida como Lei 8.313/91.
+  <!-- Container (Contact Section) -->
+  <div id="whoare" class="container-fluid-3">
+
+    <h2>Quem somos?</h2>
+    <h4>
+    <p align = "justify">
+        Este Projeto deu Inicio no dia 14 de agosto de 2018, resultado da interdisciplinaridade
+        entre duas disciplinas, ministrada na <a href="http://www.unb.br/">Universidade de Brasília</a>(<em>UnB</em>), do curso de engenharia de software,
+        sendo Engenharia de Produto de Software(<em>EPS</em>) e Métodos de Desenvolvimento de Software(<em>MDS</em>).
+      <br>
+        O produto, este apresentado, é resultado do desempenho de 10 alunos durante o semestre.
+        O problema foi apresentado pela professora da disciplina, sendo necessário, por parte dos alunos, aprender novas tecnologias
+        e assim colocar em prática o seus conhecimentos.
+        <br>
+        No decorrer do projeto, para obter-se um bom resultado e um produto de qualidade, foram executados técnicas de Engenharia de Software,
+        algumas metodologias ágeis, sendo <em>XP</em> e <em>SCRUM</em>.
+        <br>
+        O <em>SCRUM</em>, possibilitou a equipe assumir posições durante o desenvolvimento do produto, sendo eles Scrum Master, Product Owner, Arquiteto e 
+        Devops.
+        <br>
+        O resultado de todo o projeto é esse web app voltado a pesquisa e visualização em grafo de projetos e propostas
+        pertencentes ao Ministério da Cultura e incentivados pela <a href="http://rouanet.cultura.gov.br/o-que-e/">Lei Rouanet</a>, também conhecida como Lei 8.313/91.
+    </p>
+      <p></p>
+      <h3>
+        <p
+          style="color:rgb(37, 122, 192);">Para mais informações entre em contato com: equipe.naturalsearch@gmail.com
         </p>
         <p></p>
         <h3>
