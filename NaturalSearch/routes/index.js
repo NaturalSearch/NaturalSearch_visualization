@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   session
     .run("MATCH (project:Projeto) RETURN count(distinct project.nome) as Total_Projetos, \
           count(distinct project.proponente) as Total_Proponentes, \
-          SUM (toFloat(project.valor_captado)) as Total_Captado")
+          round(SUM (toFloat(project.valor_captado))) as Total_Captado")
       .then(function(result){
           var list_result = [];
           result.records.forEach(function (record) {
