@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
@@ -17,30 +18,37 @@
     crossorigin="anonymous">
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><font color="#0EADBD"><b>NS</b></font> NaturalSearch</a>
-    
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#home" class="fas fa-search w3-bar-item w3-button">Pesquisar</a>
-      <a href="#statistics" class="fa fa-bar-chart w3-bar-item w3-button">Estatisticas</a>
-      <a href="#howtouse" class="fas fa-laptop-code w3-bar-item w3-button">Como usar NS</a>
-      <a href="#howitworks" class="fas fa-project-diagram w3-bar-item w3-button">Como funciona o grafo</a>
-      <a href="#whoarewe" class="fas fa-users w3-bar-item w3-button">Quem somos</a>
-    </div>
-  </div>
-</div>
+  <!-- Navbar (sit on top) -->
+  <nav class="navbar w3-white w3-wide w3-padding navbar-fixed-top navbar-expand-md">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#home">
+            <spanx class="icon-bar"></spanx>
+            <spanx class="icon-bar"></spanx>
+            <spanx class="icon-bar"></spanx>
+          </button>
+          <a href="#home" class="navbar-brand"><font color="#0EADBD"><b>NS</b></font> NaturalSearch</a>
+        </div>
+
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="collapse navbar-collapse" id="home">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#search" class="fas fa-search w3-bar-item w3-button">Pesquisar</a></li>
+            <li><a href="#statistics" class="fa fa-bar-chart w3-bar-item w3-button">Estatisticas</a></li>
+            <li><a href="#howtouse" class="fas fa-laptop-code w3-bar-item w3-button">Como usar NS</a></li>
+            <li><a href="#howitworks" class="fas fa-project-diagram w3-bar-item w3-button">Como funciona o grafo</a></li>
+            <li><a href="#whoarewe" class="fas fa-users w3-bar-item w3-button">Quem somos</a></li>
+           </ul>
+        </div>
+    </nav>
 
 <!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="search">
   <img class="w3-image" src="../static/images/graph.jpg" alt="Graph" width="1500" height="800">
   <div class="w3-display-middle w3-margin-top w3-center">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-aqua w3-opacity-min"><b>NS</b></span> <span class="w3-hide-small w3-text-light-grey">NaturalSearch</span></h1>
    
     <!--Search div-->
-    <div class="w3-padding-16"  id="home">
+    <div class="w3-padding-16"  id="search">
         <div class="bg-search text-center ">
         <form action="result" method="GET">
             <input id="inputGroup-sizing-lg" name='q' type="text" placeholder="Digite aqui..">
@@ -52,6 +60,7 @@
   </div>
 <style>
 
+/*search div*/
 #inputGroup-sizing-lg {
   width: 70%; /* Full-width */
   font-size: 16px; /* Increase font-size */
@@ -63,8 +72,6 @@
   float:center;
   
 }
-/*JS*/
-.slideanim {visibility:hidden;}
 
 /*exemple of visualization*/
 .links line {
@@ -77,14 +84,10 @@
   stroke-width: 1.5px;
 }
 
+/*photos size*/
 .photos{
   width: 100%;
   height: auto;
-}
-
-.wrong-photos{
-  width: 100%;
-  height: 293px;
 }
 
 .w3-theme-gradient {
@@ -108,6 +111,26 @@
   background: linear-gradient(top,#64B5F6 25%,#42A5F5 75%)
   }
 
+/* animation nav-bar mouse*/
+.navbar li a, .navbar .navbar-brand {
+  color: black !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #fff !important;
+  background-color: #0EADBD !important;
+  border-radius: 15px;
+}
+/*JS*/
+.slideanim {visibility:hidden;}
+
+/*item bars from nav-bar*/
+.spanx {
+    width: 35px;
+    height: 5px;
+    background-color: #0EADBD;
+    margin: 6px 0;
+}
+
 </style>
 </header>
 
@@ -118,17 +141,18 @@
 <!-- Statistics Section -->
 <div class="w3-row-padding w3-grayscale"></div>
 <div class="w3-container  w3-padding-32 " id="statistics">
-    <h3 class="w3-border-bottom w3-border-light-blue w3-padding-16">Estatisticas do Natural Search</h3>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Estatisticas do Natural Search</h3>
 
     <!-- Statistics vusialization Section -->
     <p>
+      
     </p>
   </div>
 
   <!-- How to use Natural Search Section -->
   <div class="w3-row-padding w3-grayscale"></div>
   <div class="w3-container w3-theme-l5 w3-padding-32" id="howtouse">
-      <h3 class="w3-border-bottom w3-border-light-blue w3-padding-16">Como usar o NaturalSearch</h3>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Como usar o NaturalSearch</h3>
 
     <!-- How to use Natural Search text Section -->
     <p>
@@ -151,12 +175,12 @@
   <!-- How graphs works Section -->
   <div class="w3-row-padding w3-grayscale"></div>
   <div class="w3-container w3-theme-l4 w3-padding-32" id="howitworks">
-      <h3 class="w3-border-bottom w3-border-light-blue w3-padding-16">Como funciona o grafo</h3>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Como funciona o grafo</h3>
 
       <!-- Graph visualization Section -->
       <div class="container-fluid-1">
             <div class="col-sm-4">
-              <svg width="390" height="230"></svg>
+              <svg width="390" height="250"></svg>
               <script src="https://d3js.org/d3.v4.min.js"></script>
               <script>
               
@@ -236,31 +260,29 @@
               </script>
             </div>
       </div>
+      
       <!-- How graphs works text Section -->
-      <p>
-        <br>
-        <h4>
-          <p align = "justify">
-            </p>
-            <br>
-            <p align = "justify">
-                Existem duas partes principais no grafo do Natural Search:
-                <br>
-                <br>
-                    Os <strong>vértices</strong> (nós) onde os dados são armazenados, ou seja, as bolas circulares coloridas, que representam <em>Nome, Área, Segmento, UF, Ano do projeto e Valores diversos</em> de um projeto ou proponente.
-                    <br>
-                    <br>
-                    As <strong>Arestas</strong> (conexões) que conectam os nós, são as linhas entre as esferas circulares coloridas, representam os<em>valores em comum</em> de um mesmo projeto ou proponente.
-                <br>
-                <p>O grafo ao lado pode dar uma idéia sobre como os nós se relacionam uns com os outros.</p>
-            </p>
-          </h4>
-      </p>
+  <p>
+    <br>
+    <h4>
+    <br>
+      <p align = "justify">Existem duas partes principais no grafo do Natural Search:
+      <br>
+      <br>
+      Os <strong>vértices</strong> (nós) onde os dados são armazenados, ou seja, as bolas circulares coloridas, que representam <em>Nome, Área, Segmento, UF, Ano do projeto e Valores diversos</em> de um projeto ou proponente.
+      <br>
+      <br>
+      As <strong>Arestas</strong> (conexões) que conectam os nós, são as linhas entre as esferas circulares coloridas, representam os<em>valores em comum</em> de um mesmo projeto ou proponente.
+      <br>
+        <p>O grafo ao lado pode dar uma idéia sobre como os nós se relacionam uns com os outros.</p>
+        </p>
+    </h4>
+  </p>
     </div>
 
     <!-- Who are we Section -->
   <div class="w3-row-padding w3-theme-l3 w3-padding-32" id="whoarewe">
-      <h3 class="w3-border-bottom w3-border-light-blue w3-padding-16">Quem somos</h3>
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Quem somos</h3>
 
       <!-- Who are we text Section -->
       <p>
@@ -343,7 +365,7 @@
 
   <!-- Contact Section -->
   <div class="w3-container w3-theme-gradient w3-padding-16" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-blue w3-padding-16">Contato</h3>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contato</h3>
      <!-- Contact text Section -->
     <p>
           <h3><p style="color: black" align = "justify">Para mais informações entre em contato com: equipe.naturalsearch@gmail.com</h3>
@@ -361,6 +383,38 @@
   <p> 2018 - Equipe Natural Search</p>
   </h4>
 </footer>
+
+<script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+          // Store hash
+          var hash = this.hash;
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+      $(window).scroll(function () {
+        $(".slideanim").each(function () {
+          var pos = $(this).offset().top;
+          var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+          }
+        });
+      });
+    })
+  </script>
 
 </body>
 </html>
