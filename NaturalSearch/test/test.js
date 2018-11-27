@@ -21,7 +21,7 @@ function titleize(text) {
   return text;
 }
 
-describe('Get the urls is working', function () {
+/* describe('Get the urls is working', function () {
   it('test if the index is working', function (done) {
     request(app)
       .get('/')
@@ -31,7 +31,7 @@ describe('Get the urls is working', function () {
         done()
       });
   })
-  /*
+  
   it('test if the results is working', function (done) {
     request(app)
       .get('/result')
@@ -41,8 +41,8 @@ describe('Get the urls is working', function () {
         done()
       });
   })
-  */
-});
+ 
+}); */
 
 describe('Test of the methos into users', function () {
   it('Test if the message of users is ok ', function () {

@@ -169,8 +169,8 @@
             <table id="example" class="stripe" style="width:100%">
                 <thead>
                     <tr>
-                        <th>PRONAC</th>
-                        <th>Nome</th>
+                        <th>Projeto</th>
+                        <th>Proponente</th>
                         <th>Área</th>
                         <th data-orderable="false">Visualizar</th>
                     </tr>
@@ -185,18 +185,12 @@
                     }
                 </script>
                 <tbody>
-                    <% list_result.forEach(function(proponentes) { %>
-                    <tr>
-                        <td>
-                            <%= proponentes.pronac %>
-                        </td>
-                        <td>
-                            <%= proponentes.proponente %>
-                        </td>
-                        <td>
-                            <%= proponentes.segmento %>
-                        </td>
-                        <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit" value="<%= proponentes.proponente %>"
+                    <% list_result.forEach(function(project) { %>
+                        <tr>
+                            <td><%= project.nome %></td>
+                            <td><%= project.proponente %></td>
+                            <td><%= project.segmento %></td>
+                        <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit" value="<%= project.proponente %>"
                                 onclick=reply_click(this.value)> </td>
                         <% }); %>
                     </tr>
