@@ -755,7 +755,13 @@
   }
 </script>
 
+<!-- EJS for graph Captacao por Area -->
+<% totalArea = []; %> 
+<%= totalArea.push(list_result4) ; %> // variable created by ejs
+
 <script>
+  var getTotalArea = [<%= totalArea %>]; 
+  console.log(getTotalArea);
 // single bar chart
     var ctx = document.getElementById("singelBarChart");
     if (ctx) {
@@ -763,11 +769,18 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["Art Cênicas","Audiovisual","Música","Artes Visuais","Patrimônio Cultural","Humanidades","Artes Integradas","Museus e Memória"],
+          labels: ['Artes Cênicas',
+             'Artes Integradas',
+             'Artes Visuais',
+             'Audiovisual',
+             'Humanidades',
+             'Museus e Memória',
+             'Música', 
+             'Patrimônio Cultural'],
           datasets: [
             {
               label: "Área",
-              data: [900, 1200, 3000, 2500, 1000, 10000, 250,20000],
+              data: getTotalArea,
               borderColor: "rgba(0, 123, 255, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 123, 255, 0.5)"
