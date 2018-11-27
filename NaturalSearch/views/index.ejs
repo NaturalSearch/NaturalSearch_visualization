@@ -41,12 +41,12 @@
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="search">
-  <img class="w3-image" src="../static/images/graph.jpg" alt="Graph" width="1500" height="800">
+  <img class="img" >
   <div class="w3-display-middle w3-margin-top w3-center">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-aqua w3-opacity-min"><b>NS</b></span> <span class="w3-hide-small w3-text-light-grey">NaturalSearch</span></h1>
    
     <!--Search div-->
-    <div class="w3-padding-16"  id="search">
+    <div class="w3-padding-16 "  id="search">
         <div class="bg-search text-center ">
         <form action="result" method="GET">
             <input id="inputGroup-sizing-lg" name='q' type="text" placeholder="Digite aqui..">
@@ -58,11 +58,19 @@
   </div>
 <style>
 
+.img{
+  width: 100%;
+  height: 565px;
+  background-image: url('../static/images/graph.jpg');
+  background-size: auto;
+}
+
 /*search div*/
 #inputGroup-sizing-lg {
-  width: 70%; /* Full-width */
+
+  width: 100%; /* Full-width */
   font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
+  padding: 12px 20px 12px 40px; /* Sizeof the box */
   border: 2px solid rgb(7, 151, 187); /* Add a grey border */
   margin-bottom: 5px; /* Add some space below the input */
   border-radius: 10px;
@@ -366,7 +374,8 @@
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contato</h3>
      <!-- Contact text Section -->
     <p>
-          <h3><p style="color: black" align = "justify">Para mais informações entre em contato com: equipe.naturalsearch@gmail.com</h3>
+          <h3><p style="color: black" align = "justify">Para mais informações entre em contato com:
+            <br> equipe.naturalsearch@gmail.com</h3>
           </p>
     </p>
   </div>
