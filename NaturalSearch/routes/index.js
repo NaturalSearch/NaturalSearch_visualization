@@ -49,7 +49,7 @@ router.get('/', function(req, res, next) {
                       list_result3.push(result3.records[i]._fields[1] );
                   
                   }
-                console.log(list_result3); 
+                //console.log(list_result3); 
               session.close();
               
               
@@ -64,7 +64,7 @@ router.get('/', function(req, res, next) {
                     list_result4.push(result4.records[i]._fields[1] );
                 
                 } 
-                console.log(list_result4); 
+                //console.log(list_result4); 
               session.close();
               res.render('index', { list_result: list_result ,  
                                     list_result2: list_result2 , 
