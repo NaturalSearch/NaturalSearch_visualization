@@ -31,34 +31,8 @@ describe('Get the urls is working', function () {
         done()
       });
   })
-  it('test if the example is working', function (done) {
-    request(app)
-      .get('/example')
-      .expect(200)
-      .end(function (err, res) {
-        if (err) return done(err);
-        done()
-      });
-  })
-  it('test if the example is not working', function (done) {
-    request(app)
-      .get('/example404')
-      .expect(404)
-      .end(function (err, res) {
-        if (err) return done(err);
-        done()
-      });
-  })
-  it('test if the load_json is working', function (done) {
-    request(app)
-      .get('/load_json')
-      .expect(200)
-      .end(function (err, res) {
-        if (err) return done(err);
-        done()
-      });
-  })
-  /*it('test if the results is working', function (done) {
+  
+  it('test if the results is working', function (done) {
     request(app)
       .get('/result')
       .expect(200)
@@ -66,19 +40,8 @@ describe('Get the urls is working', function () {
         if (err) return done(err);
         done()
       });
-  })*/
-});
-
-
-describe('Test of the methos into load_json', function () {
-  it('Test if the message of load_json is ok ', function () {
-    return request(app)
-      .get('/load_json')
-      .then(function (response) {
-        expect(response.text).to.contain('Arquivo criado com sucesso');
-      })
-  });
-
+  })
+  
 });
 
 describe('Test of the methos into users', function () {
@@ -98,4 +61,3 @@ describe('Test of the methos into index', function () {
     done();
   })
 });
-

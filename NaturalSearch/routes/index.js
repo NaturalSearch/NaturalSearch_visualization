@@ -64,13 +64,28 @@ router.get('/', function(req, res, next) {
                     list_result4.push(result4.records[i]._fields[1] );
                 
                 } 
-                //console.log(list_result4); 
+              session
+              .run("MATCH (n:Projeto) WHERE (toFloat(n.valor_captado)) = 0 \
+                    WITH count(n.nome) AS total_projetos_zero \
+                    MATCH (b:Projeto) WHERE (toFloat(b.valor_captado)) > 0  \
+                    RETURN total_projetos_zero, count(b.nome) AS total_projetos_maior_zero")
+              .then(function(result5){
+                var list_result5 = [];
+                result5.records.forEach(function (record) {
+                  list_result5.push(record.get('total_projetos_zero'),
+                                     record.get('total_projetos_maior_zero')
+                                     );
+                  //console.log(list_result5); 
+                });
+               
               session.close();
               res.render('index', { list_result: list_result ,  
                                     list_result2: list_result2 , 
                                     list_result3: list_result3 , 
                                     list_result4: list_result4 ,
+                                    list_result5: list_result5,
                                     title: 'Express' });
+              })
               })
       })
     })

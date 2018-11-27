@@ -326,27 +326,11 @@
                   <div class="chart-note-wrap">
                     <div class="chart-note mr-0 d-block">
                       <span class="dot dot--blue"></span>
-                      <span>0$</span>
+                      <span>Projetos sem valor Captado</span>
                     </div>
                     <div class="chart-note mr-0 d-block">
                       <span class="dot dot--red"></span>
-                      <span>0-50.000$</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--green"></span>
-                      <span>50.000-150.000$</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--yellow"></span>
-                      <span>150.000-500.000$</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--purple"></span>
-                      <span>500.000-1.000.000$</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--browm"></span>
-                      <span>1.000.000$+</span>
+                      <span>Projetos com valor Captado</span>
                     </div>
                   </div>
                 </div>
@@ -693,7 +677,13 @@
 
 </html>
 
+<!-- EJS for graph Captacao por Projeto -->
+<% var  projetos01 = [] %>
+<%= projetos01.push(list_result5) ; %> 
+
 <script>
+  var getProjetos = [<%= projetos01 %>]; 
+  console.log(getProjetos);
   var ctx = document.getElementById("percent-chart");
   if (ctx) {
     ctx.height = 200;
@@ -703,7 +693,7 @@
         datasets: [
           {
             label: "My First dataset",
-            data: [30, 20, 10, 20, 10, 20],
+            data: getProjetos,
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -731,12 +721,8 @@
           }
         ],
         labels: [
-          '0$',
-          '0-50.000$',
-          '50.000-150.000$',
-          '150.000-500.000$',
-          '500.000-1.000.000$',
-          '1.000.000$',
+          'Projetos sem valor Captado',
+          'Projetos com valor Captado',
         ]
       },
       options: {
