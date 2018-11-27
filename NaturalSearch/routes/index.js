@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var neo4j = require('neo4j-driver').v1;
-var driver = neo4j.driver('bolt://neo4j', neo4j.auth.basic('neo4j','eps'));
+var driver = neo4j.driver("bolt://pat-dorris-springs-black.graphstory.services:7687", neo4j.auth.basic("pat_dorris_springs_black", "sfbzr75A1wvkMnGBWpdn8X5bCPi4q"));
 var session = driver.session();
 
 
@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
     session
     .run("MATCH (project:Projeto) RETURN project.nome as Projeto , project.proponente as Proponente ,  \
           SUM (toFloat(project.valor_captado)) \
-          as Total_Captado ORDER BY Total_Captado DESC LIMIT 7")
+          as Total_Captado ORDER BY Total_Captado DESC LIMIT 10")
       .then(function(result2){
     var list_result2 = [];
           result2.records.forEach(function (record) {

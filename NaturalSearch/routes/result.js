@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var neo4j = require('neo4j-driver').v1;
-var driver = neo4j.driver('bolt://neo4j', neo4j.auth.basic('neo4j','eps'));
+var driver = neo4j.driver("bolt://pat-dorris-springs-black.graphstory.services:7687", neo4j.auth.basic("pat_dorris_springs_black", "sfbzr75A1wvkMnGBWpdn8X5bCPi4q"));
 var session = driver.session();
 
 /* GET users listing. */
