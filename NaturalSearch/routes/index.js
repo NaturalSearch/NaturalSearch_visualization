@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
                               Total_Proponentes: record.get('Total_Proponentes'),
                               Total_Captado: record.get('Total_Captado')
                             });
-      console.log(list_result);  
+      //console.log(list_result);  
       });
      
     
@@ -35,11 +35,27 @@ router.get('/', function(req, res, next) {
                               Proponente: record.get('Proponente'),
                               Total_Captado: record.get('Total_Captado')
                             });
-      console.log(list_result2);  
+      //console.log(list_result2);  
       });
+     
+         // % Result AREA
+      session
+      .run("MATCH (n:Projeto) WITH SUM (toFloat(n.valor_captado)) as Valor_Total_Captado \
+            MATCH (b:Projeto) RETURN b.area as Area, \
+            round((SUM (toFloat(b.valor_captado))) / Valor_Total_Captado * 100) as Percentual order by Area")
+      .then(function(result3){
+           var list_result3 = [];
+           for(i=0; i < 8 ;i++){
+              list_result3.push(result3.records[i]._fields[1] );
+          
+           }
+        console.log(list_result3); 
       session.close();
-      res.render('index', { list_result: list_result ,  list_result2: list_result2 , 
-        title: 'Express' });
+      res.render('index', { list_result: list_result ,  
+                            list_result2: list_result2 , 
+                            list_result3: list_result3 , 
+                            title: 'Express' });
+                        })
       })
       
     })

@@ -373,31 +373,31 @@
                     </div>
                     <div class="chart-note mr-0 d-block">
                       <span class="dot dot--red"></span>
-                      <span>Audiovisual</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--green"></span>
-                      <span>Música</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--yellow"></span>
-                      <span>Artes Visuais</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--purple"></span>
-                      <span>Patrimônio Cultural</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--browm"></span>
-                      <span>Humanidades</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--pink"></span>
                       <span>Artes Integradas</span>
                     </div>
                     <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--blue2"></span>
+                      <span class="dot dot--green"></span>
+                      <span>Artes Visuais</span>
+                    </div>
+                    <div class="chart-note mr-0 d-block">
+                      <span class="dot dot--yellow"></span>
+                      <span>Audiovisual</span>
+                    </div>
+                    <div class="chart-note mr-0 d-block">
+                      <span class="dot dot--purple"></span>
+                      <span>Humanidades</span>
+                    </div>
+                    <div class="chart-note mr-0 d-block">
+                      <span class="dot dot--browm"></span>
                       <span>Museus e Memória</span>
+                    </div>
+                    <div class="chart-note mr-0 d-block">
+                      <span class="dot dot--pink"></span>
+                      <span>Música</span>
+                    </div>
+                    <div class="chart-note mr-0 d-block">
+                      <span class="dot dot--blue2"></span>
+                      <span>Patrimônio Cultural</span>
                     </div>
                   </div>
                 </div>
@@ -801,7 +801,14 @@
     }
 </script>
 
+<!-- EJS for graph Captacao por Area -->
+<% test = []; %> 
+<%= test.push(list_result3) ; %> // variable created by ejs
+
 <script>
+  
+  var getTest = [<%= test %>]; 
+  console.log(getTest);
   var ctx = document.getElementById("percent-chart2");
   if (ctx) {
     ctx.height = 200;
@@ -811,7 +818,7 @@
         datasets: [
           {
             label: "My First dataset",
-            data: [40, 20, 20, 20, 20, 20, 20, 20],
+            data: getTest,
             backgroundColor: [
               '#00b5e9',
               '#fa4251',
@@ -843,14 +850,14 @@
           }
         ],
         labels: [
-          'Artes Cênicas',
-          'Audiovisual',
-          'Música',
-          'Artes Visuais',
-          'Patrimônio Cultural',
-          'Humanidades',
-          'Artes Integradas',
-          'Museus e Memória'
+             'Artes Cênicas',
+             'Artes Integradas',
+             'Artes Visuais',
+             'Audiovisual',
+             'Humanidades',
+             'Museus e Memória',
+             'Música', 
+             'Patrimônio Cultural'
         ]
       },
       options: {
