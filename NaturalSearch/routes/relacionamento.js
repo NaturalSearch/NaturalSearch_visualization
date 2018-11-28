@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var neo4j = require('neo4j-driver').v1;
-var driver = neo4j.driver("bolt://kunze-vista-teal-jess.graphstory.services/", neo4j.auth.basic("kunze_vista_teal_jess", "MPSbPSW1AuQX5B49eQOPnKPD8Q"));
+var fs = require('fs');
+
+link = fs.readFileSync('./NEO4J_LINK.txt', 'utf8');
+user_name = fs.readFileSync('./USER_NAME.txt', 'utf8');
+password = fs.readFileSync('./PASSWORD.txt', 'utf8');
+
+var driver = neo4j.driver(link, neo4j.auth.basic(user_name, user_name));
 var session = driver.session();
 var fs = require("fs");
 
