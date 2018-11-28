@@ -26,9 +26,10 @@
             "autoWidth": true,
             //width from columns
             "columnDefs": [
-                { "width": "35%", "targets": 0 },
-                { "width": "20%", "targets": 1 },
-                { "width": "10%", "targets": 2 }
+                { "width": "30%", "targets": 0 },
+                { "width": "30%", "targets": 1 },
+                { "width": "10%", "targets": 2 },
+                { "width": "10%", "targets": 3 }
             ], "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"}
         } );  
@@ -42,6 +43,7 @@
     crossorigin="anonymous">
 
 <style>
+
   #inputGroup-sizing-lg {
     width: 70%; /* Full-width */
     font-size: 16px; /* Increase font-size */
@@ -145,6 +147,7 @@
 
     <!-- SEARCH Section -->
     <div class="w3-row-padding w3-grayscale"></div>
+    
     <div class="w3-container background-image=../static/images/graph.jpg  w3-padding-32 id=statistics">
         <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16"></h3>
     
@@ -156,13 +159,27 @@
                   <span class="w3-hide-small w3-text-white"><b>Resultados</b></span>
                   </h1>
                   </div>
+
                 <div class="bg-search text-center ">
-                <form action="result" method="GET">
-                    <input id="inputGroup-sizing-lg" name='q' type="text" placeholder="Digite aqui..">
-                  <button class="fas fa-search btn btn-info btn-lg w3-cyan" type="submit" value="result" onclick="search_form(q)">PESQUISAR
-                </button>
-                </form>
+                    <form method="get" action="result" onsubmit="return valida_form(this)">
+                        <label for="q"></label>
+                        <br>
+                    <br>
+                        <input id="inputGroup-sizing-lg" name='q' type="text" size="60" style="height: 43px;" placeholder="Digite aqui..">
+                        <button class="fas fa-search btn btn-info btn-lg w3-cyan" type="submit" value="result" onclick="search_form(q)">PESQUISAR
+                        </button>
+                    </form>
+                    <script type="text/javascript" language="javascript">
+                        function valida_form (){
+                            if(document.getElementById("inputGroup-sizing-lg").value == ""){
+                                alert('Por favor, preencha o campo de pesquisa!');
+                                document.getElementById("inputGroup-sizing-lg").focus();
+                            return false
+                            }
+                        }
+                    </script>   
                 </div>
+
               <br>
                 <br>
         
@@ -170,23 +187,34 @@
               <table id="example" class="stripe" style="width:100%">
                 <thead>
                     <tr>
-                      <th>Nome</th>
-                      <th>Área</th>
+                        <th>Projeto</th>
+                        <th>Proponente</th>
+                        <th>Área</th>
                       <th data-orderable="false">Visualizar</th>
                     </tr>
                 </thead>
+                <script type="text/javascript">
+                    function reply_click(clicked_value) {
+                        
+                        
+                            var url = "relacionamento/" + clicked_value;
+                            document.location = url;
+                        
+                    }
+                </script>
                 <tbody>
-                      <% list_result.forEach(function(project) { %>
-                    <tr>
-                      <td><%= project.nome %></td>
-                      <td><%= project.segmento %></td>
-                      <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit"> </td>
-                      <% }); %>
-                    </tr>
-                </tbody>
+                        <% list_result.forEach(function(project) { %>
+                            <tr>
+                                <td><%= project.nome %></td>
+                                <td><%= project.proponente %></td>
+                                <td><%= project.segmento %></td>
+                            <td><button class="fas fa-search-plus btn btn-info btn-lg" type="submit" value="<%= project.proponente %>"
+                                    onclick=reply_click(this.value)> </td>
+                            <% }); %>
+                        </tr>
+                    </tbody>
                   </table>
             </div>
-          
         </p>
       </div>
   
@@ -201,4 +229,5 @@
 </footer>
       
 </body>
+
 </html>

@@ -1,533 +1,319 @@
 {
-    "columns": [
-        "p",
-        "f",
-        "pr"
-    ],
-    "data": [
+    "records": [
         {
-            "row": [
-                {
-                    "uf": "SP",
-                    "tipo_pessoa": "fisica",
-                    "municipio": "São Paulo",
-                    "nome": "Marco de Vita Campos"
-                },
-                {},
-                {
-                    "area": "Música",
-                    "valor_aprovado": 855846.8,
-                    "UF": "SP",
-                    "proponente": "Marco de Vita Campos",
-                    "segmento": "Música Instrumental",
-                    "ano_projeto": "18",
-                    "valor_proposta": 855846.8,
-                    "valor_projeto": 855846.8,
-                    "nome": "AOI",
-                    "valor_solicitado": 855846.8,
-                    "valor_captado": 0
-                }
+            "keys": [
+                "p",
+                "f",
+                "pr"
             ],
-            "meta": [
+            "length": 3,
+            "_fields": [
                 {
-                    "id": 46481,
-                    "type": "node",
-                    "deleted": false
-                },
-                {
-                    "id": 0,
-                    "type": "relationship",
-                    "deleted": false
-                },
-                {
-                    "id": 58,
-                    "type": "node",
-                    "deleted": false
-                }
-            ],
-            "graph": {
-                "nodes": [
-                    {
-                        "id": "46481",
-                        "labels": [
-                            "Nó_Proponentes"
-                        ],
-                        "properties": {
-                            "uf": "SP",
-                            "tipo_pessoa": "fisica",
-                            "municipio": "São Paulo",
-                            "nome": "Marco de Vita Campos"
-                        }
+                    "identity": {
+                        "low": 48677,
+                        "high": 0
                     },
-                    {
-                        "id": "58",
-                        "labels": [
-                            "Nó_Projeto"
-                        ],
-                        "properties": {
-                            "area": "Música",
-                            "valor_aprovado": 855846.8,
-                            "UF": "SP",
-                            "proponente": "Marco de Vita Campos",
-                            "segmento": "Música Instrumental",
-                            "ano_projeto": "18",
-                            "valor_proposta": 855846.8,
-                            "valor_projeto": 855846.8,
-                            "nome": "AOI",
-                            "valor_solicitado": 855846.8,
-                            "valor_captado": 0
-                        }
+                    "labels": [
+                        "Nó_Proponentes"
+                    ],
+                    "properties": {
+                        "uf": "SP",
+                        "tipo_pessoa": "fisica",
+                        "municipio": "São Paulo",
+                        "nome": "Daiane Baumgartner de Souza"
                     }
-                ],
-                "relationships": [
-                    {
-                        "id": "0",
-                        "type": "LIGADOS",
-                        "startNode": "46481",
-                        "endNode": "58",
-                        "properties": {}
+                },
+                {
+                    "identity": {
+                        "low": 60,
+                        "high": 0
+                    },
+                    "start": {
+                        "low": 48677,
+                        "high": 0
+                    },
+                    "end": {
+                        "low": 60767,
+                        "high": 0
+                    },
+                    "type": "LIGADOS",
+                    "properties": {}
+                },
+                {
+                    "identity": {
+                        "low": 60767,
+                        "high": 0
+                    },
+                    "labels": [
+                        "Nó_Projeto"
+                    ],
+                    "properties": {
+                        "area": "Artes Integradas",
+                        "valor_aprovado": 0,
+                        "UF": "SP",
+                        "proponente": "Daiane Baumgartner de Souza",
+                        "segmento": "Cultura Popular",
+                        "ano_projeto": "15",
+                        "valor_proposta": 0,
+                        "valor_projeto": 0,
+                        "nome": "Apresentação Mini - Espetáculo Infantil E a Casa Caiu!",
+                        "valor_solicitado": 0,
+                        "valor_captado": 0
                     }
-                ]
+                }
+            ],
+            "_fieldLookup": {
+                "p": 0,
+                "f": 1,
+                "pr": 2
             }
         },
         {
-            "row": [
-                {
-                    "uf": "SP",
-                    "tipo_pessoa": "fisica",
-                    "municipio": "São Paulo",
-                    "nome": "Marco de Vita Campos"
-                },
-                {},
-                {
-                    "area": "Música",
-                    "valor_aprovado": 855846.8,
-                    "UF": "SP",
-                    "proponente": "Marco de Vita Campos",
-                    "segmento": "Música Instrumental",
-                    "ano_projeto": "18",
-                    "valor_proposta": 855846.8,
-                    "valor_projeto": 855846.8,
-                    "nome": "AOI",
-                    "valor_solicitado": 855846.8,
-                    "valor_captado": 0
-                }
+            "keys": [
+                "p",
+                "f",
+                "pr"
             ],
-            "meta": [
+            "length": 3,
+            "_fields": [
                 {
-                    "id": 46481,
-                    "type": "node",
-                    "deleted": false
-                },
-                {
-                    "id": 1,
-                    "type": "relationship",
-                    "deleted": false
-                },
-                {
-                    "id": 24684,
-                    "type": "node",
-                    "deleted": false
-                }
-            ],
-            "graph": {
-                "nodes": [
-                    {
-                        "id": "46481",
-                        "labels": [
-                            "Nó_Proponentes"
-                        ],
-                        "properties": {
-                            "uf": "SP",
-                            "tipo_pessoa": "fisica",
-                            "municipio": "São Paulo",
-                            "nome": "Marco de Vita Campos"
-                        }
+                    "identity": {
+                        "low": 48677,
+                        "high": 0
                     },
-                    {
-                        "id": "24684",
-                        "labels": [
-                            "Nó_Projeto"
-                        ],
-                        "properties": {
-                            "area": "Música",
-                            "valor_aprovado": 855846.8,
-                            "UF": "SP",
-                            "proponente": "Marco de Vita Campos",
-                            "segmento": "Música Instrumental",
-                            "ano_projeto": "18",
-                            "valor_proposta": 855846.8,
-                            "valor_projeto": 855846.8,
-                            "nome": "AOI",
-                            "valor_solicitado": 855846.8,
-                            "valor_captado": 0
-                        }
+                    "labels": [
+                        "Nó_Proponentes"
+                    ],
+                    "properties": {
+                        "uf": "SP",
+                        "tipo_pessoa": "fisica",
+                        "municipio": "São Paulo",
+                        "nome": "Daiane Baumgartner de Souza"
                     }
-                ],
-                "relationships": [
-                    {
-                        "id": "1",
-                        "type": "LIGADOS",
-                        "startNode": "46481",
-                        "endNode": "24684",
-                        "properties": {}
+                },
+                {
+                    "identity": {
+                        "low": 61,
+                        "high": 0
+                    },
+                    "start": {
+                        "low": 48677,
+                        "high": 0
+                    },
+                    "end": {
+                        "low": 63887,
+                        "high": 0
+                    },
+                    "type": "LIGADOS",
+                    "properties": {}
+                },
+                {
+                    "identity": {
+                        "low": 63887,
+                        "high": 0
+                    },
+                    "labels": [
+                        "Nó_Projeto"
+                    ],
+                    "properties": {
+                        "area": "Artes Integradas",
+                        "valor_aprovado": 0,
+                        "UF": "SP",
+                        "proponente": "Daiane Baumgartner de Souza",
+                        "segmento": "Cultura Popular",
+                        "ano_projeto": "15",
+                        "valor_proposta": 0,
+                        "valor_projeto": 0,
+                        "nome": "Damas Fantasmas: Vozes Femininas no Horror Gótico do séc. XIX",
+                        "valor_solicitado": 0,
+                        "valor_captado": 0
                     }
-                ]
+                }
+            ],
+            "_fieldLookup": {
+                "p": 0,
+                "f": 1,
+                "pr": 2
             }
         },
         {
-            "row": [
-                {
-                    "uf": "SP",
-                    "tipo_pessoa": "fisica",
-                    "municipio": "São Paulo",
-                    "nome": "Marco de Vita Campos"
-                },
-                {},
-                {
-                    "area": "Música",
-                    "valor_aprovado": 454289.87,
-                    "UF": "SP",
-                    "proponente": "Marco de Vita Campos",
-                    "segmento": "Música Instrumental",
-                    "ano_projeto": "14",
-                    "valor_proposta": 507897.87,
-                    "valor_projeto": 454289.87,
-                    "nome": "MATA PAULISTANA INSTRUMENTAL",
-                    "valor_solicitado": 507897.87,
-                    "valor_captado": 454289.87
-                }
+            "keys": [
+                "p",
+                "f",
+                "pr"
             ],
-            "meta": [
+            "length": 3,
+            "_fields": [
                 {
-                    "id": 46481,
-                    "type": "node",
-                    "deleted": false
-                },
-                {
-                    "id": 2,
-                    "type": "relationship",
-                    "deleted": false
-                },
-                {
-                    "id": 77960,
-                    "type": "node",
-                    "deleted": false
-                }
-            ],
-            "graph": {
-                "nodes": [
-                    {
-                        "id": "46481",
-                        "labels": [
-                            "Nó_Proponentes"
-                        ],
-                        "properties": {
-                            "uf": "SP",
-                            "tipo_pessoa": "fisica",
-                            "municipio": "São Paulo",
-                            "nome": "Marco de Vita Campos"
-                        }
+                    "identity": {
+                        "low": 48677,
+                        "high": 0
                     },
-                    {
-                        "id": "77960",
-                        "labels": [
-                            "Nó_Projeto"
-                        ],
-                        "properties": {
-                            "area": "Música",
-                            "valor_aprovado": 454289.87,
-                            "UF": "SP",
-                            "proponente": "Marco de Vita Campos",
-                            "segmento": "Música Instrumental",
-                            "ano_projeto": "14",
-                            "valor_proposta": 507897.87,
-                            "valor_projeto": 454289.87,
-                            "nome": "MATA PAULISTANA INSTRUMENTAL",
-                            "valor_solicitado": 507897.87,
-                            "valor_captado": 454289.87
-                        }
+                    "labels": [
+                        "Nó_Proponentes"
+                    ],
+                    "properties": {
+                        "uf": "SP",
+                        "tipo_pessoa": "fisica",
+                        "municipio": "São Paulo",
+                        "nome": "Daiane Baumgartner de Souza"
                     }
-                ],
-                "relationships": [
-                    {
-                        "id": "2",
-                        "type": "LIGADOS",
-                        "startNode": "46481",
-                        "endNode": "77960",
-                        "properties": {}
+                },
+                {
+                    "identity": {
+                        "low": 62,
+                        "high": 0
+                    },
+                    "start": {
+                        "low": 48677,
+                        "high": 0
+                    },
+                    "end": {
+                        "low": 72125,
+                        "high": 0
+                    },
+                    "type": "LIGADOS",
+                    "properties": {}
+                },
+                {
+                    "identity": {
+                        "low": 72125,
+                        "high": 0
+                    },
+                    "labels": [
+                        "Nó_Projeto"
+                    ],
+                    "properties": {
+                        "area": "Artes Cênicas",
+                        "valor_aprovado": 609532,
+                        "UF": "SP",
+                        "proponente": "Daiane Baumgartner de Souza",
+                        "segmento": "Teatro",
+                        "ano_projeto": "15",
+                        "valor_proposta": 637900,
+                        "valor_projeto": 609532,
+                        "nome": "Circulação Memento Mori",
+                        "valor_solicitado": 637900,
+                        "valor_captado": 0
                     }
-                ]
+                }
+            ],
+            "_fieldLookup": {
+                "p": 0,
+                "f": 1,
+                "pr": 2
             }
         },
         {
-            "row": [
-                {
-                    "uf": "SP",
-                    "tipo_pessoa": "fisica",
-                    "municipio": "São Paulo",
-                    "nome": "Marco de Vita Campos"
-                },
-                {},
-                {
-                    "area": "Música",
-                    "valor_aprovado": 227086.97,
-                    "UF": "SP",
-                    "proponente": "Marco de Vita Campos",
-                    "segmento": "Música Instrumental",
-                    "ano_projeto": "11",
-                    "valor_proposta": 255586.97,
-                    "valor_projeto": 227086.97,
-                    "nome": "OLB",
-                    "valor_solicitado": 255586.97,
-                    "valor_captado": 227086.97
-                }
+            "keys": [
+                "p",
+                "f",
+                "pr"
             ],
-            "meta": [
+            "length": 3,
+            "_fields": [
                 {
-                    "id": 46481,
-                    "type": "node",
-                    "deleted": false
-                },
-                {
-                    "id": 3,
-                    "type": "relationship",
-                    "deleted": false
-                },
-                {
-                    "id": 119763,
-                    "type": "node",
-                    "deleted": false
-                }
-            ],
-            "graph": {
-                "nodes": [
-                    {
-                        "id": "46481",
-                        "labels": [
-                            "Nó_Proponentes"
-                        ],
-                        "properties": {
-                            "uf": "SP",
-                            "tipo_pessoa": "fisica",
-                            "municipio": "São Paulo",
-                            "nome": "Marco de Vita Campos"
-                        }
+                    "identity": {
+                        "low": 48677,
+                        "high": 0
                     },
-                    {
-                        "id": "119763",
-                        "labels": [
-                            "Nó_Projeto"
-                        ],
-                        "properties": {
-                            "area": "Música",
-                            "valor_aprovado": 227086.97,
-                            "UF": "SP",
-                            "proponente": "Marco de Vita Campos",
-                            "segmento": "Música Instrumental",
-                            "ano_projeto": "11",
-                            "valor_proposta": 255586.97,
-                            "valor_projeto": 227086.97,
-                            "nome": "OLB",
-                            "valor_solicitado": 255586.97,
-                            "valor_captado": 227086.97
-                        }
+                    "labels": [
+                        "Nó_Proponentes"
+                    ],
+                    "properties": {
+                        "uf": "SP",
+                        "tipo_pessoa": "fisica",
+                        "municipio": "São Paulo",
+                        "nome": "Daiane Baumgartner de Souza"
                     }
-                ],
-                "relationships": [
-                    {
-                        "id": "3",
-                        "type": "LIGADOS",
-                        "startNode": "46481",
-                        "endNode": "119763",
-                        "properties": {}
-                    }
-                ]
-            }
-        },
-        {
-            "row": [
-                {
-                    "uf": "SP",
-                    "tipo_pessoa": "fisica",
-                    "municipio": "São Paulo",
-                    "nome": "Marco de Vita Campos"
-                },
-                {},
-                {
-                    "area": "Música",
-                    "valor_aprovado": 139999.97,
-                    "UF": "SP",
-                    "proponente": "Marco de Vita Campos",
-                    "segmento": "Música Instrumental",
-                    "ano_projeto": "09",
-                    "valor_proposta": 139999.97,
-                    "valor_projeto": 139999.97,
-                    "nome": "Alma Brasileira",
-                    "valor_solicitado": 139999.97,
-                    "valor_captado": 0
-                }
-            ],
-            "meta": [
-                {
-                    "id": 46481,
-                    "type": "node",
-                    "deleted": false
                 },
                 {
-                    "id": 4,
-                    "type": "relationship",
-                    "deleted": false
-                },
-                {
-                    "id": 140445,
-                    "type": "node",
-                    "deleted": false
-                }
-            ],
-            "graph": {
-                "nodes": [
-                    {
-                        "id": "46481",
-                        "labels": [
-                            "Nó_Proponentes"
-                        ],
-                        "properties": {
-                            "uf": "SP",
-                            "tipo_pessoa": "fisica",
-                            "municipio": "São Paulo",
-                            "nome": "Marco de Vita Campos"
-                        }
+                    "identity": {
+                        "low": 63,
+                        "high": 0
                     },
-                    {
-                        "id": "140445",
-                        "labels": [
-                            "Nó_Projeto"
-                        ],
-                        "properties": {
-                            "area": "Música",
-                            "valor_aprovado": 139999.97,
-                            "UF": "SP",
-                            "proponente": "Marco de Vita Campos",
-                            "segmento": "Música Instrumental",
-                            "ano_projeto": "09",
-                            "valor_proposta": 139999.97,
-                            "valor_projeto": 139999.97,
-                            "nome": "Alma Brasileira",
-                            "valor_solicitado": 139999.97,
-                            "valor_captado": 0
-                        }
-                    }
-                ],
-                "relationships": [
-                    {
-                        "id": "4",
-                        "type": "LIGADOS",
-                        "startNode": "46481",
-                        "endNode": "140445",
-                        "properties": {}
-                    }
-                ]
-            }
-        },
-        {
-            "row": [
-                {
-                    "uf": "SP",
-                    "tipo_pessoa": "fisica",
-                    "municipio": "São Paulo",
-                    "nome": "Marco de Vita Campos"
-                },
-                {},
-                {
-                    "area": "Música",
-                    "valor_aprovado": 855846.8,
-                    "UF": "SP",
-                    "proponente": "Marco de Vita Campos",
-                    "segmento": "Música Instrumental",
-                    "ano_projeto": "18",
-                    "valor_proposta": 855846.8,
-                    "valor_projeto": 855846.8,
-                    "nome": "AOI",
-                    "valor_solicitado": 855846.8,
-                    "valor_captado": 0
-                }
-            ],
-            "meta": [
-                {
-                    "id": 46481,
-                    "type": "node",
-                    "deleted": false
-                },
-                {
-                    "id": 5,
-                    "type": "relationship",
-                    "deleted": false
-                },
-                {
-                    "id": 140966,
-                    "type": "node",
-                    "deleted": false
-                }
-            ],
-            "graph": {
-                "nodes": [
-                    {
-                        "id": "46481",
-                        "labels": [
-                            "Nó_Proponentes"
-                        ],
-                        "properties": {
-                            "uf": "SP",
-                            "tipo_pessoa": "fisica",
-                            "municipio": "São Paulo",
-                            "nome": "Marco de Vita Campos"
-                        }
+                    "start": {
+                        "low": 48677,
+                        "high": 0
                     },
-                    {
-                        "id": "140966",
-                        "labels": [
-                            "Nó_Projeto"
-                        ],
-                        "properties": {
-                            "area": "Música",
-                            "valor_aprovado": 855846.8,
-                            "UF": "SP",
-                            "proponente": "Marco de Vita Campos",
-                            "segmento": "Música Instrumental",
-                            "ano_projeto": "18",
-                            "valor_proposta": 855846.8,
-                            "valor_projeto": 855846.8,
-                            "nome": "AOI",
-                            "valor_solicitado": 855846.8,
-                            "valor_captado": 0
-                        }
+                    "end": {
+                        "low": 91122,
+                        "high": 0
+                    },
+                    "type": "LIGADOS",
+                    "properties": {}
+                },
+                {
+                    "identity": {
+                        "low": 91122,
+                        "high": 0
+                    },
+                    "labels": [
+                        "Nó_Projeto"
+                    ],
+                    "properties": {
+                        "area": "Artes Cênicas",
+                        "valor_aprovado": 156640,
+                        "UF": "SP",
+                        "proponente": "Daiane Baumgartner de Souza",
+                        "segmento": "Teatro",
+                        "ano_projeto": "14",
+                        "valor_proposta": 156640,
+                        "valor_projeto": 156640,
+                        "nome": "Luz, Sombra e Meio Ambiente",
+                        "valor_solicitado": 156640,
+                        "valor_captado": 0
                     }
-                ],
-                "relationships": [
-                    {
-                        "id": "5",
-                        "type": "LIGADOS",
-                        "startNode": "46481",
-                        "endNode": "140966",
-                        "properties": {}
-                    }
-                ]
+                }
+            ],
+            "_fieldLookup": {
+                "p": 0,
+                "f": 1,
+                "pr": 2
             }
         }
     ],
-    "stats": {
-        "contains_updates": true,
-        "nodes_created": 0,
-        "nodes_deleted": 0,
-        "properties_set": 0,
-        "relationships_created": 6,
-        "relationship_deleted": 0,
-        "labels_added": 0,
-        "labels_removed": 0,
-        "indexes_added": 0,
-        "indexes_removed": 0,
-        "constraints_added": 0,
-        "constraints_removed": 0
+    "summary": {
+        "statement": {
+            "text": "MATCH (p:Nó_Proponentes), (pr:Nó_Projeto)            WHERE p.nome=\"Daiane Baumgartner de Souza\" AND pr.proponente=\"Daiane Baumgartner de Souza\"            CREATE (p)-[f:LIGADOS]->(pr)            RETURN p,f,pr",
+            "parameters": {}
+        },
+        "statementType": "rw",
+        "counters": {
+            "_stats": {
+                "nodesCreated": 0,
+                "nodesDeleted": 0,
+                "relationshipsCreated": 4,
+                "relationshipsDeleted": 0,
+                "propertiesSet": 0,
+                "labelsAdded": 0,
+                "labelsRemoved": 0,
+                "indexesAdded": 0,
+                "indexesRemoved": 0,
+                "constraintsAdded": 0,
+                "constraintsRemoved": 0
+            }
+        },
+        "updateStatistics": {
+            "_stats": {
+                "nodesCreated": 0,
+                "nodesDeleted": 0,
+                "relationshipsCreated": 4,
+                "relationshipsDeleted": 0,
+                "propertiesSet": 0,
+                "labelsAdded": 0,
+                "labelsRemoved": 0,
+                "indexesAdded": 0,
+                "indexesRemoved": 0,
+                "constraintsAdded": 0,
+                "constraintsRemoved": 0
+            }
+        },
+        "plan": false,
+        "profile": false,
+        "notifications": [],
+        "server": {
+            "address": "neo4j:7687"
+        }
     }
 }

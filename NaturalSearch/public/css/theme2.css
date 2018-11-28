@@ -1,0 +1,231 @@
+.statistic__item {
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    padding: 20px 30px;
+    position: relative;
+    min-height: 180px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .statistic__item {
+        padding: 20px 10px;
+    }
+}
+
+.statistic__item h2 {
+    font-size: 36px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .statistic__item h2 {
+        font-size: 22px;
+    }
+}
+
+.statistic__item .desc {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .statistic__item .desc {
+        font-size: 13px;
+    }
+}
+
+.statistic__item .icon {
+    display: inline-block;
+    position: absolute;
+    bottom: -50px;
+    right: -7px;
+}
+
+.statistic__item .icon i {
+    font-size: 180px;
+    color: #585858;
+    opacity: .2;
+    line-height: 1;
+    vertical-align: baseline;
+}
+
+.statistic__item--green {
+    background: #00b26f;
+}
+
+.statistic__item--orange {
+    background: #ff8300;
+}
+
+.statistic__item--blue {
+    background: #00b5e9;
+}
+
+.statistic__item--red {
+    background: #fa4251;
+}
+
+/* ----- Statistic 2 ----- */
+.statistic2 {
+    padding-top: 50px;
+}
+
+.statistic2 .statistic__item {
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+}
+
+.statistic2 .statistic__item h2 {
+    color: #fff;
+}
+
+.statistic2 .statistic__item .desc {
+    color: #585858(255, 255, 255, 0.6);
+}
+
+/*tabela*/
+
+.table {
+    margin: 0;
+}
+
+.statistic-chart-1, .top-campaign, .chart-percent-2 {
+    background: #fff;
+    padding: 0 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.top-campaign {
+    padding-bottom: 97px;
+    margin-bottom: 40px;
+}
+
+.table-top-campaign.table td {
+    border-top: none;
+    color: #808080;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 14px;
+    padding: 12px 6px;
+}
+
+.table-top-campaign.table th {
+    border-top: none;
+    color: #202020;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 16px;
+    padding: 12px 6px;
+}
+
+.table-top-campaign.table tr td:first-child {
+    color: #808080;
+}
+
+.table-top-campaign.table tr td:last-child {
+    color: #4272d7;
+    text-align: right;
+}
+
+.table-responsive {
+    padding-right: 1px;
+}
+
+.title-3 {
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 24px;
+    color: #202020;
+}
+
+/*char*/
+
+/* ----- Card ----- */
+.au-card {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.chart-note {
+    text-transform: capitalize;
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 14px;
+}
+
+.chart-percent-card .chart-note {
+    margin-bottom: 2px;
+}
+
+.chart-note-wrap {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.chart-note .dot {
+    margin-right: 5px;
+} 
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.dot--blue {
+    background: #00b5e9;
+}
+
+.dot--yellow {
+    background: #ffff66;
+}
+
+.dot--green {
+    background: #00ad5f;
+}
+
+.dot--red {
+    background: #fa4251;
+}
+
+.dot--browm{
+    background: #460a0f;
+}
+
+.dot--pink{
+    background: #ffc0cb;
+}
+
+.dot--purple{
+    background: #6a368b;
+}
+
+.dot--blue2{
+    background: #ffa500;
+}

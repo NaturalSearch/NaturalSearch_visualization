@@ -2,7 +2,7 @@
 <html>
 <title>Natural Search</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
@@ -11,36 +11,45 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../static/vendor/chartjs/Chart.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <!--Font awesome-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
+
+<!-- Fontfaces CSS-->
+<link href="../static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+<link href="../static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+ 
+<!-- Main CSS-->
+ <link href="../static/css/theme2.css" rel="stylesheet" media="all">
+ <!-- <link href="../static/css/theme.css" rel="stylesheet" media="all"> -->
+
+ <!--Font awesome-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <body>
 
-  <!-- Navbar (sit on top) -->
-  <nav class="navbar w3-white w3-wide w3-padding navbar-fixed-top navbar-expand-md">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#home">
-            <i class="fa fa-bars" style="font-size:35px;color:#0EADBD"></i>
-          </button>
-          <a href="http://localhost:3000/#home" class="navbar-brand"><font color="#0EADBD"><b>NS</b></font> NaturalSearch</a>
-        </div>
+   <!-- Navbar (sit on top) -->
+<nav class="navbar w3-white w3-wide w3-padding navbar-fixed-top navbar-expand-md">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#home">
+        <i class="fa fa-bars" style="font-size:35px;color:#0EADBD"></i>
+      </button>
+      <a href="http://localhost:3000/#home" class="navbar-brand"><font color="#0EADBD"><b>NS</b></font> NaturalSearch</a>
+    </div>
 
-        <!-- Float links to the right. Hide them on small screens -->
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#search" class="fas fa-search w3-bar-item w3-button">Pesquisar</a></li>
-            <li><a href="http://localhost:3000/#statistics" class="fa fa-bar-chart w3-bar-item w3-button">Estatisticas</a></li>
-            <li><a href="http://localhost:3000/#howtouse" class="fas fa-laptop-code w3-bar-item w3-button">Como usar NS</a></li>
-            <li><a href="http://localhost:3000/#howitworks" class="fas fa-project-diagram w3-bar-item w3-button">Como funciona o grafo</a></li>
-            <li><a href="http://localhost:3000/#whoarewe" class="fas fa-users w3-bar-item w3-button">Quem somos</a></li>
-           </ul>
-        </div>
-    </nav>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="collapse navbar-collapse" id="home">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#search" class="fas fa-search w3-bar-item w3-button">Pesquisar</a></li>
+        <li><a href="http://localhost:3000/#statistics" class="fa fa-bar-chart w3-bar-item w3-button">Estatisticas</a></li>
+        <li><a href="http://localhost:3000/#howtouse" class="fas fa-laptop-code w3-bar-item w3-button">Como usar NS</a></li>
+        <li><a href="http://localhost:3000/#howitworks" class="fas fa-project-diagram w3-bar-item w3-button">Como funciona o grafo</a></li>
+        <li><a href="http://localhost:3000/#whoarewe" class="fas fa-users w3-bar-item w3-button">Quem somos</a></li>
+       </ul>
+    </div>
+  </nav>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+
     <div id="search">
   <img class="img" >
   <div class="w3-display-middle w3-margin-top w3-center">
@@ -48,17 +57,86 @@
    
     <!--Search div-->
     <div class="w3-padding-16 ">
-        <div class="bg-search text-center ">
-        <form action="result" method="GET">
-            <input id="inputGroup-sizing-lg" name='q' type="text" placeholder="Digite aqui..">
-          <button class="fas fa-search btn btn-info btn-lg w3-cyan" type="submit" value="result" onclick="search_form(q)">PESQUISAR
-        </button>
-        </form>
-        </div>
+        <div id="search" class="bg-search text-center ">
+            <form id="form1" name="form1" method="get" action="result" onsubmit="return valida_form(this)">
+              <label for="q"></label>
+              <br>
+              <br>
+              <input id="inputGroup-sizing-lg" name='q' type="text" size="60" style="height: 43px;" placeholder="Digite aqui..">
+              <button class="fas fa-search btn btn-info btn-lg w3-cyan" type="submit"value="result" onclick="search_form(q)">PESQUISAR
+              </button>
+          </form>
+           <script type="text/javascript" language="javascript">
+                function valida_form (){
+                    if(document.getElementById("inputGroup-sizing-lg").value == ""){
+                        alert('Por favor, preencha o campo de pesquisa!');
+                        document.getElementById("inputGroup-sizing-lg").focus();
+                    return false
+                    }
+                }
+            </script>
+          </div> 
       </div>
     </div>
+    
   </div>
 <style>
+
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  h5 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  h6 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  } 
+  
+.row-centered{
+  text-align:center;
+  }
+
+.col-centered {
+   display:inline-block;
+   float:none; 
+   margin-right:-4px;
+   }
 
 .img{
   width: 100%;
@@ -153,7 +231,181 @@
 
     <!-- Statistics vusialization Section -->
     <p>
-      
+        <!--dashboard-->
+  <div id="dashboard" class="container-fluid-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="statistic__item statistic__item--green">
+              <h2 class="number">
+                <% list_result.forEach(function(project) { %>
+                <%= project.Total_Proponentes %>
+                <% }); %>
+              </h2>
+              <span class="desc">Proponentes</span>
+              <div class="icon">
+                <i class="zmdi zmdi-account-o"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="statistic__item statistic__item--blue">
+              <h2 class="number">
+                <% list_result.forEach(function(project) { %>
+                <%= project.Total_projetos %>
+                <% }); %>
+              </h2>
+              <span class="desc">Projetos</span>
+              <div class="icon">
+                <i class="zmdi zmdi-calendar-note"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="statistic__item statistic__item--orange">
+              <h2 class="number">
+                <% list_result.forEach(function(project) { %>
+                <%= "R$ " + project.Total_Captado %>
+                <% }); %>
+              </h2>
+              <span class="desc">Total Captado</span>
+              <div class="icon">
+                <i class="zmdi zmdi-money"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!--charts-->
+        <div>
+          <div class="col-lg-6">
+            <div class="au-card chart-percent-card">
+              <div class="au-card-inner">
+                <h6>Captação dos projetos</h6>
+                <div class="row no-gutters">
+                  <div class="col-xl-6">
+                    <div class="chart-note-wrap">
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--blue"></span>
+                        <span>Projetos sem valor Captado</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--red"></span>
+                        <span>Projetos com valor Captado</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="percent-chart">
+                      <canvas id="percent-chart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-6">
+            <div class="au-card chart-percent-card">
+              <div class="au-card-inner">
+                <h6>Captação por área %</h6>
+                <div class="row no-gutters">
+                  <div class="col-xl-6">
+                    <div class="chart-note-wrap">
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--blue"></span>
+                        <span>Artes Cênicas</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--red"></span>
+                        <span>Artes Integradas</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--green"></span>
+                        <span>Artes Visuais</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--yellow"></span>
+                        <span>Audiovisual</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--purple"></span>
+                        <span>Humanidades</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--browm"></span>
+                        <span>Museus e Memória</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--pink"></span>
+                        <span>Música</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--blue2"></span>
+                        <span>Patrimônio Cultural</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="percent-chart">
+                      <canvas id="percent-chart2"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="row row-centered">
+          <!--another table-->
+          <div class="col-lg-8 col-centered">
+            <div class="au-card m-b-30">
+                <div class="au-card-inner">
+                    <h3 class="title-2 m-b-40">Quantidade de projetos por área</h3>
+                    <canvas id="singelBarChart"></canvas>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--table-->
+        <div class="row">
+          <div class="col-lg-12 ">
+            <div class="top-campaign">
+              <h5 class="title-3 m-b-30">Top Projetos que mais arrecadaram</h5>
+              <div class="table-responsive">
+                <table class="table table-top-campaign">
+                  <thead>
+                    <tr>
+                      <th>Projeto</th>
+                      <th>Proponente</th>
+                      <th>Total Captado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% list_result2.forEach(function(project) { %>
+                    <tr>
+                      <td>
+                        <%= project.Projeto %>
+                      </td>
+                      <td>
+                        <%= project.Proponente %>
+                      </td>
+                      <td>
+                        <%= "R$ " + project.Total_Captado %>
+                      </td>
+                      <% }); %>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+      </div>
+    </div>      
     </p>
   </div>
 
@@ -411,19 +663,224 @@
             // Add hash (#) to URL when done scrolling (default click behavior)
             window.location.hash = hash;
           });
-        } // End if
-      });
-      $(window).scroll(function () {
-        $(".slideanim").each(function () {
-          var pos = $(this).offset().top;
-          var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
-            $(this).addClass("slide");
-          }
+          } // End if
         });
-      });
-    })
-  </script>
+        $(window).scroll(function () {
+          $(".slideanim").each(function () {
+            var pos = $(this).offset().top;
+            var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+          });
+        });
+      })
+
+
+    </script>
+
+
+    </script>
+
 
 </body>
+
 </html>
+
+<!-- EJS for graph Captacao por Projeto -->
+<% var  projetos01 = [] %>
+<%= projetos01.push(list_result5) ; %> 
+
+<script>
+  var getProjetos = [<%= projetos01 %>]; 
+  console.log(getProjetos);
+  var ctx = document.getElementById("percent-chart");
+  if (ctx) {
+    ctx.height = 200;
+    var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [
+          {
+            label: "My First dataset",
+            data: getProjetos,
+            backgroundColor: [
+              '#00b5e9',
+              '#fa4251',
+              '#00ad5f',
+              '#ffff66',
+              '#6a368b',
+              '#460a0f'
+            ],
+            hoverBackgroundColor: [
+              '#00b5e9',
+              '#fa4251',
+              '#00ad5f',
+              '#ffff66',
+              '#6a368b',
+              '#460a0f'
+            ],
+            borderWidth: [
+              0, 0
+            ],
+            hoverBorderColor: [
+              'transparent',
+              'transparent',
+              'transparent'
+            ]
+          }
+        ],
+        labels: [
+          'Projetos sem valor Captado',
+          'Projetos com valor Captado',
+        ]
+      },
+      options: {
+        maintainAspectRatio: false,
+        responsive: true,
+        cutoutPercentage: 55,
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        },
+        legend: {
+          display: false
+        },
+      }
+    });
+  }
+</script>
+
+<!-- EJS for graph Captacao por Area -->
+<% totalArea = []; %> 
+<%= totalArea.push(list_result4) ; %> // variable created by ejs
+
+<script>
+  var getTotalArea = [<%= totalArea %>]; 
+  console.log(getTotalArea);
+// single bar chart
+    var ctx = document.getElementById("singelBarChart");
+    if (ctx) {
+      ctx.height = 150;
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Artes Cênicas',
+             'Artes Integradas',
+             'Artes Visuais',
+             'Audiovisual',
+             'Humanidades',
+             'Museus e Memória',
+             'Música', 
+             'Patrimônio Cultural'],
+          datasets: [
+            {
+              label: "Área",
+              data: getTotalArea,
+              borderColor: "rgba(0, 123, 255, 0.9)",
+              borderWidth: "0",
+              backgroundColor: "rgba(0, 123, 255, 0.5)"
+            }
+          ]
+        },
+        options: {
+          legend: {
+            position: 'top',
+            labels: {
+              fontFamily: 'Poppins'
+            }
+
+          },
+          scales: {
+            xAxes: [{
+              ticks: {
+                fontFamily: "Poppins"
+
+              }
+            }],
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                fontFamily: "Poppins"
+              }
+            }]
+          }
+        }
+      });
+    }
+</script>
+
+<!-- EJS for graph Captacao por Area -->
+<% test = []; %> 
+<%= test.push(list_result3) ; %> // variable created by ejs
+
+<script>
+  
+  var getTest = [<%= test %>]; 
+  console.log(getTest);
+  var ctx = document.getElementById("percent-chart2");
+  if (ctx) {
+    ctx.height = 200;
+    var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [
+          {
+            label: "My First dataset",
+            data: getTest,
+            backgroundColor: [
+              '#00b5e9',
+              '#fa4251',
+              '#00ad5f',
+              '#ffff66',
+              '#6a368b',
+              '#460a0f',
+              '#ffc0cb',
+              '#ffa500'
+            ],
+            hoverBackgroundColor: [
+              '#00b5e9',
+              '#fa4251',
+              '#00ad5f',
+              '#ffff66',
+              '#6a368b',
+              '#460a0f',
+              '#ffc0cb',
+              '#ffa500'
+            ],
+            borderWidth: [
+              0, 0
+            ],
+            hoverBorderColor: [
+              'transparent',
+              'transparent',
+              'transparent'
+            ]
+          }
+        ],
+        labels: [
+             'Artes Cênicas',
+             'Artes Integradas',
+             'Artes Visuais',
+             'Audiovisual',
+             'Humanidades',
+             'Museus e Memória',
+             'Música', 
+             'Patrimônio Cultural'
+        ]
+      },
+      options: {
+        maintainAspectRatio: false,
+        responsive: true,
+        cutoutPercentage: 55,
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        },
+        legend: {
+          display: false
+        },
+      }
+    });
+  }
+</script>
