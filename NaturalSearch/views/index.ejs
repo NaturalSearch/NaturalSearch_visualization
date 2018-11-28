@@ -1,57 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<title>Natural Search</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../static/vendor/chartjs/Chart.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<head>
-  <title>Natural Search</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.cs	s">
-  <script src="../static/vendor/chartjs/Chart.bundle.min.js"></script>
-  <!-- Fontfaces CSS-->
-  <link href="../static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-  <link href="../static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+<!-- Fontfaces CSS-->
+<link href="../static/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+<link href="../static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+ 
+<!-- Main CSS-->
+ <link href="../static/css/theme2.css" rel="stylesheet" media="all">
+ <!-- <link href="../static/css/theme.css" rel="stylesheet" media="all"> -->
 
-  <!-- Main CSS-->
-  <link href="../static/css/theme2.css" rel="stylesheet" media="all">
-  <!-- <link href="../static/css/theme.css" rel="stylesheet" media="all"> -->
+ <!--Font awesome-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<body>
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-    crossorigin="anonymous">
+   <!-- Navbar (sit on top) -->
+<nav class="navbar w3-white w3-wide w3-padding navbar-fixed-top navbar-expand-md">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#home">
+        <i class="fa fa-bars" style="font-size:35px;color:#0EADBD"></i>
+      </button>
+      <a href="http://localhost:3000/#home" class="navbar-brand"><font color="#0EADBD"><b>NS</b></font> NaturalSearch</a>
+    </div>
 
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="collapse navbar-collapse" id="home">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#search" class="fas fa-search w3-bar-item w3-button">Pesquisar</a></li>
+        <li><a href="http://localhost:3000/#statistics" class="fa fa-bar-chart w3-bar-item w3-button">Estatisticas</a></li>
+        <li><a href="http://localhost:3000/#howtouse" class="fas fa-laptop-code w3-bar-item w3-button">Como usar NS</a></li>
+        <li><a href="http://localhost:3000/#howitworks" class="fas fa-project-diagram w3-bar-item w3-button">Como funciona o grafo</a></li>
+        <li><a href="http://localhost:3000/#whoarewe" class="fas fa-users w3-bar-item w3-button">Quem somos</a></li>
+       </ul>
+    </div>
+  </nav>
 
-  <style>
-    .row-centered {text-align:center;}
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
 
-    .col-centered { display:inline-block;
-    float:none; 
-    margin-right:-4px;}
-
-    #inputGroup-sizing-lg {
-    width: 70%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 2px solid #7B68EE; /* Add a grey border */
-    margin-bottom: 5px; /* Add some space below the input */
-    border-radius: 10px;
-    background-color: #fff;
-    float:center;
+    <div id="search">
+  <img class="img" >
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-aqua w3-opacity-min"><b>NS</b></span> <span class="w3-hide-small w3-text-light-grey">NaturalSearch</span></h1>
+   
+    <!--Search div-->
+    <div class="w3-padding-16 ">
+        <div id="search" class="bg-search text-center ">
+            <form id="form1" name="form1" method="get" action="result" onsubmit="return valida_form(this)">
+              <label for="q"></label>
+              <br>
+              <br>
+              <input id="inputGroup-sizing-lg" name='q' type="text" size="60" style="height: 43px;" placeholder="Digite aqui..">
+              <button class="fas fa-search btn btn-info btn-lg w3-cyan" type="submit"value="result" onclick="search_form(q)">PESQUISAR
+              </button>
+          </form>
+           <script type="text/javascript" language="javascript">
+                function valida_form (){
+                    if(document.getElementById("inputGroup-sizing-lg").value == ""){
+                        alert('Por favor, preencha o campo de pesquisa!');
+                        document.getElementById("inputGroup-sizing-lg").focus();
+                    return false
+                    }
+                }
+            </script>
+          </div> 
+      </div>
+    </div>
     
-  }
-  .check-box{
-    color: #fff;
-    font-size: 3vw;
-  }
-    @media(min-width:768px){
-      .check-box{
-        font-size: 1.5vw;
-      }
-    }
-  body {
+  </div>
+<style>
+
+body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
     color: #818181;
@@ -96,121 +127,37 @@
     font-weight: 400;
     margin-bottom: 30px;
   } 
-
-  /*background de search*/ 
-  .bg-search {
-      background-image: url('../static/images/graph.jpg');
-      color: #000;
-      /*full height*/
-      padding: 200px 150px;
-      resize: both;
-      overflow: auto;
-
-      /* Center and scale the image nicely */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: auto;
-      font-family: Montserrat, sans-serif;
-  }
-  /* radio buttuns */
-  .check-box input[type=radio], .check-box input[type=checkbox]{
-      display:none; /* Esconde os inputs */
-  }
- 
-  .check-box label {
-      cursor: pointer;
-  }
-  .check-box input[type="radio"] + label:before, .check-box input[type="checkbox"] + label:before {
-      border: 1px solid #5D5C5C;
-      background-color: #FFF;
-      content: "\00a0";
-      display: inline-block;
-      font: 16px/1em sans-serif;
-      height: 20px;
-      margin: 0 .25em 0 0;
-      padding:0;
-      vertical-align: top;
-      width: 20px;
-      border-radius:4px;
-  }
   
-  .check-box input[type="radio"]:checked + label:before, .check-box input[type="checkbox"]:checked + label:before {
-      background:#3CB371;
-      color: #FFF;
-      content: "\2714";
-      text-align: center ;
+.row-centered{
+  text-align:center;
   }
+
+.col-centered {
+   display:inline-block;
+   float:none; 
+   margin-right:-4px;
+   }
+
+.img{
+  width: 100%;
+  height: 565px;
+  background-image: url('../static/images/graph.jpg');
+  background-size: auto;
+}
+
+/*search div*/
+#inputGroup-sizing-lg {
+
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Sizeof the box */
+  border: 2px solid rgb(7, 151, 187); /* Add a grey border */
+  margin-bottom: 5px; /* Add some space below the input */
+  border-radius: 10px;
+  background-color: #fff;
+  float:center;
   
-  .check-box input[type=radio]:checked + label:after, .check-box input[type="checkbox"]:checked + label:after {
-      font-weight: bold;
-  }
-  .container-fluid-1 {
-    background-color:#e1eaea; 
-    padding: 60px 50px; 
-    resize: both;
-    overflow: auto;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: auto;
-  }
-  .container-fluid-2{
-    background-color:#d1e0e0; 
-    padding: 60px 50px; 
-    resize: both;
-    overflow: auto;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: auto; 
-  }
-  .container-fluid-3{
-    background-color:#fff; 
-    padding: 60px 50px;  
-    resize: both;
-    overflow: auto;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: auto;
-  }
-  .item h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      font-weight: 400;
-      font-style: italic;
-      margin: 70px 0;
-  }
-  /*nav-design*/ 
-  .navbar {
-      margin-bottom: 10;
-      background:url('http://thecodeplayer.com/u/m/b1.png');
-      background-color: #000;
-      z-index: 9999;
-      border: 100px;
-      font-size: 14px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 4px;
-      text-transform: uppercase;
-  }
-  /* animation nav-bar mouse*/
-  .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: black !important;
-      background-color: #fff !important;
-      border-radius: 15px;
-    }
-/*JS*/
-  .slideanim {visibility:hidden;}
+}
 
 /*exemple of visualization*/
 .links line {
@@ -222,441 +169,500 @@
   stroke: #fff;
   stroke-width: 1.5px;
 }
+
+/*photos size*/
+.photos{
+  width: 100%;
+  height: auto;
+}
+
+.w3-theme-gradient {
+  color: #000 !important;
+  background:-webkit-linear-gradient(top,#64B5F6 25%,#42A5F5 75%)
+}
+.w3-theme-gradient {
+  color: #000 !important;
+  background:-moz-linear-gradient(top,#64B5F6 25%,#42A5F5 75%)
+}
+.w3-theme-gradient {
+  color: #000 !important;
+  background:-o-linear-gradient(top,#64B5F6 25%,#42A5F5 75%)
+}
+.w3-theme-gradient {
+  color: #000 !important;
+  background:-ms-linear-gradient(top,#64B5F6 25%,#42A5F5 75%)
+}
+.w3-theme-gradient {
+  color: #000 !important;
+  background: linear-gradient(top,#64B5F6 25%,#42A5F5 75%)
+  }
+
+/* animation nav-bar mouse*/
+.navbar li a, .navbar .navbar-brand {
+  color: black !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #fff !important;
+  background-color: #0EADBD !important;
+  border-radius: 15px;
+}
+/*JS*/
+.slideanim {visibility:hidden;}
+
+/*item bars from nav-bar*/
+.icon {
+    width: 35px;
+    height: 5px;
+    background-color: #0EADBD;
+    margin: 6px 0;
+}
+
 </style>
-</head>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
 
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- Statistics Section -->
+<div class="w3-row-padding w3-grayscale"></div>
+<div class="w3-container  w3-padding-32 " id="statistics">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Estatisticas do Natural Search</h3>
 
-  <!--Navbar-->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#myPage">NaturalSearch</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a class="fas fa-search" href="#search">PESQUISAR</a></li>
-          <li><a class="fas fa-laptop-code" href="#howtouse">COMO USAR</a></li>
-          <li><a class="fas fa-users-cog" href="#works"> COMO FUNCIONA </a> </li>
-          <li><a class="fas fa-users-cog" href="#whoare"> QUEM SOMOS </a> </li>
-
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!--Search div-->
-  <div id="search" class="bg-search text-center ">
-    <form id="form1" name="form1" method="get" action="result" onsubmit="return valida_form(this)">
-      <label for="q"></label>
-      <br>
-      <br>
-      <input id="q" name='q' type="text" size="60" style="height: 43px;" placeholder="Digite aqui..">
-      <button class="fas fa-search btn btn-info btn-lg" type="submit">PESQUISAR
-      </button>
-  </form>
-   <script type="text/javascript" language="javascript">
-        function valida_form (){
-            if(document.getElementById("q").value == ""){
-                alert('Por favor, preencha o campo de pesquisa!');
-                document.getElementById("q").focus();
-            return false
-            }
-        }
-    </script>
-  </div>
-
-
-
-  <!--dashboard-->
+    <!-- Statistics vusialization Section -->
+    <p>
+        <!--dashboard-->
   <div id="dashboard" class="container-fluid-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-4">
-          <div class="statistic__item statistic__item--green">
-            <h2 class="number">
-              <% list_result.forEach(function(project) { %>
-              <%= project.Total_Proponentes %>
-              <% }); %>
-            </h2>
-            <span class="desc">Proponentes</span>
-            <div class="icon">
-              <i class="zmdi zmdi-account-o"></i>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="statistic__item statistic__item--green">
+              <h2 class="number">
+                <% list_result.forEach(function(project) { %>
+                <%= project.Total_Proponentes %>
+                <% }); %>
+              </h2>
+              <span class="desc">Proponentes</span>
+              <div class="icon">
+                <i class="zmdi zmdi-account-o"></i>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="statistic__item statistic__item--blue">
-            <h2 class="number">
-              <% list_result.forEach(function(project) { %>
-              <%= project.Total_projetos %>
-              <% }); %>
-            </h2>
-            <span class="desc">Projetos</span>
-            <div class="icon">
-              <i class="zmdi zmdi-calendar-note"></i>
+          <div class="col-md-6 col-lg-4">
+            <div class="statistic__item statistic__item--blue">
+              <h2 class="number">
+                <% list_result.forEach(function(project) { %>
+                <%= project.Total_projetos %>
+                <% }); %>
+              </h2>
+              <span class="desc">Projetos</span>
+              <div class="icon">
+                <i class="zmdi zmdi-calendar-note"></i>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="statistic__item statistic__item--orange">
-            <h2 class="number">
-              <% list_result.forEach(function(project) { %>
-              <%= "R$ " + project.Total_Captado %>
-              <% }); %>
-            </h2>
-            <span class="desc">Total Captado</span>
-            <div class="icon">
-              <i class="zmdi zmdi-money"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--charts-->
-      <div>
-        <div class="col-lg-6">
-          <div class="au-card chart-percent-card">
-            <div class="au-card-inner">
-              <h6>Captação dos projetos</h6>
-              <div class="row no-gutters">
-                <div class="col-xl-6">
-                  <div class="chart-note-wrap">
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--blue"></span>
-                      <span>Projetos sem valor Captado</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--red"></span>
-                      <span>Projetos com valor Captado</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-6">
-                  <div class="percent-chart">
-                    <canvas id="percent-chart"></canvas>
-                  </div>
-                </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="statistic__item statistic__item--orange">
+              <h2 class="number">
+                <% list_result.forEach(function(project) { %>
+                <%= "R$ " + project.Total_Captado %>
+                <% }); %>
+              </h2>
+              <span class="desc">Total Captado</span>
+              <div class="icon">
+                <i class="zmdi zmdi-money"></i>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-6">
-          <div class="au-card chart-percent-card">
-            <div class="au-card-inner">
-              <h6>Captação por área %</h6>
-              <div class="row no-gutters">
-                <div class="col-xl-6">
-                  <div class="chart-note-wrap">
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--blue"></span>
-                      <span>Artes Cênicas</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--red"></span>
-                      <span>Artes Integradas</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--green"></span>
-                      <span>Artes Visuais</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--yellow"></span>
-                      <span>Audiovisual</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--purple"></span>
-                      <span>Humanidades</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--browm"></span>
-                      <span>Museus e Memória</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--pink"></span>
-                      <span>Música</span>
-                    </div>
-                    <div class="chart-note mr-0 d-block">
-                      <span class="dot dot--blue2"></span>
-                      <span>Patrimônio Cultural</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-6">
-                  <div class="percent-chart">
-                    <canvas id="percent-chart2"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-      <div class="row row-centered">
-        <!--another table-->
-        <div class="col-lg-8 col-centered">
-          <div class="au-card m-b-30">
+  
+        <!--charts-->
+        <div>
+          <div class="col-lg-6">
+            <div class="au-card chart-percent-card">
               <div class="au-card-inner">
-                  <h3 class="title-2 m-b-40">Quantidade de projetos por área</h3>
-                  <canvas id="singelBarChart"></canvas>
+                <h6>Captação dos projetos</h6>
+                <div class="row no-gutters">
+                  <div class="col-xl-6">
+                    <div class="chart-note-wrap">
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--blue"></span>
+                        <span>Projetos sem valor Captado</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--red"></span>
+                        <span>Projetos com valor Captado</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="percent-chart">
+                      <canvas id="percent-chart"></canvas>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
-      </div>
-      </div>
-      <!--table-->
-      <div class="row">
-        <div class="col-lg-12 ">
-          <div class="top-campaign">
-            <h5 class="title-3 m-b-30">Top Projetos que mais arrecadaram</h5>
-            <div class="table-responsive">
-              <table class="table table-top-campaign">
-                <thead>
-                  <tr>
-                    <th>Projeto</th>
-                    <th>Proponente</th>
-                    <th>Total Captado</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% list_result2.forEach(function(project) { %>
-                  <tr>
-                    <td>
-                      <%= project.Projeto %>
-                    </td>
-                    <td>
-                      <%= project.Proponente %>
-                    </td>
-                    <td>
-                      <%= "R$ " + project.Total_Captado %>
-                    </td>
-                    <% }); %>
-                  </tr>
-                </tbody>
-              </table>
+  
+          <div class="col-lg-6">
+            <div class="au-card chart-percent-card">
+              <div class="au-card-inner">
+                <h6>Captação por área %</h6>
+                <div class="row no-gutters">
+                  <div class="col-xl-6">
+                    <div class="chart-note-wrap">
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--blue"></span>
+                        <span>Artes Cênicas</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--red"></span>
+                        <span>Artes Integradas</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--green"></span>
+                        <span>Artes Visuais</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--yellow"></span>
+                        <span>Audiovisual</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--purple"></span>
+                        <span>Humanidades</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--browm"></span>
+                        <span>Museus e Memória</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--pink"></span>
+                        <span>Música</span>
+                      </div>
+                      <div class="chart-note mr-0 d-block">
+                        <span class="dot dot--blue2"></span>
+                        <span>Patrimônio Cultural</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="percent-chart">
+                      <canvas id="percent-chart2"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="row row-centered">
+          <!--another table-->
+          <div class="col-lg-8 col-centered">
+            <div class="au-card m-b-30">
+                <div class="au-card-inner">
+                    <h3 class="title-2 m-b-40">Quantidade de projetos por área</h3>
+                    <canvas id="singelBarChart"></canvas>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!--table-->
+        <div class="row">
+          <div class="col-lg-12 ">
+            <div class="top-campaign">
+              <h5 class="title-3 m-b-30">Top Projetos que mais arrecadaram</h5>
+              <div class="table-responsive">
+                <table class="table table-top-campaign">
+                  <thead>
+                    <tr>
+                      <th>Projeto</th>
+                      <th>Proponente</th>
+                      <th>Total Captado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% list_result2.forEach(function(project) { %>
+                    <tr>
+                      <td>
+                        <%= project.Projeto %>
+                      </td>
+                      <td>
+                        <%= project.Proponente %>
+                      </td>
+                      <td>
+                        <%= "R$ " + project.Total_Captado %>
+                      </td>
+                      <% }); %>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
+  
+  
       </div>
-
-
-    </div>
+    </div>      
+    </p>
   </div>
 
-  <!-- Como usar  -->
-  <div id="howtouse" class="container-fluid-2">
-    <div class="row">
-      <div class="col-sm-8">
-        <h2>Como usar Natural Search</h2>
-        <h4>
-          <p align="justify">
-            Para realizar a pesquisa é necessário digitar qualquer palavra, frase e/ou numero que interessar na barra
-            de pesquisa, selecionar um dos quadradinhos(projeto/propostas) e clicar no botão azul de pesquisar.
-            <br>
-            A pesquisa retornará as informações encontradas por meio de uma tabela, onde é possivel visualizar o Nome
-            e a Área do valor pesquisado.
-            <br>
-            Além da tabela e gerado uma visualização em grafo onde é posivel observar as conexções entre a pesquisa
-            de interesse e seus projetos e propostas.
-            <br>
-          </p>
-        </h4>
-        <p></p>
-      </div>
-      <div class="col-sm-4">
-        <div style="width:100%;height:0;padding-bottom:60%;position:relative;">
-          <iframe src="https://giphy.com/embed/DNwX7za7rlNYXuT5hv" width="100%" height="100%" style="position:absolute"
-            frameBorder="0" class="giphy-embed" allowFullScreen>
-          </iframe>
-        </div>
-        <p>
-        </p>
-      </div>
-    </div>
+  <!-- How to use Natural Search Section -->
+  <div class="w3-row-padding w3-grayscale"></div>
+  <div class="w3-container w3-theme-l5 w3-padding-32" id="howtouse">
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Como usar o NaturalSearch</h3>
 
-    <div class="container-fluid-1">
-      <div class="row">
-        <div class="col-sm-4">
-          <svg width="300" height="350"></svg>
-          <script src="https://d3js.org/d3.v4.min.js"></script>
-          <script>
+    <!-- How to use Natural Search text Section -->
+    <p>
+      <br>
+      <h4>
+        <p align = "justify">
+        Para realizar a pesquisa é necessário digitar qualquer palavra, frase e/ou número que interessar na barra de pesquisa e clicar no botão azul de pesquisar.
+      <br>
+      <br>
+        A pesquisa retornará as informações encontradas por meio de uma tabela, onde é possivel visualizar o Nome do projeto, Nome do proponete e a Área do item pesquisado.         
+         <br> 
+         <br>
+        Além da tabela e gerado uma visualização em grafo onde é possível observar as conexões entre a pesquisa de interesse e seus projetos e proponentes.
+      </p>
+               
+     </h4>
+    </p>
+  </div>
 
-            var svg = d3.select("svg"),
-              width = +svg.attr("width"),
-              height = +svg.attr("height");
+  <!-- How graphs works Section -->
+  <div class="w3-row-padding w3-grayscale"></div>
+  <div class="w3-container w3-theme-l4 w3-padding-32" id="howitworks">
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Como funciona o grafo</h3>
 
-            var color = d3.scaleOrdinal(d3.schemeCategory10);
-
-            var simulation = d3.forceSimulation()
-              .force("link", d3.forceLink().id(function (d) { return d.id; }))
-              .force("charge", d3.forceManyBody())
-              .force("center", d3.forceCenter(width / 2, height / 2));
-
-            d3.json("../static/javascripts/miserables_less_nodes.json", function (error, graph) {
-              if (error) throw error;
-
-              var link = svg.append("g")
-                .attr("class", "links")
-                .selectAll("line")
-                .data(graph.links)
-                .enter().append("line")
-                .attr("stroke-width", function (d) { return Math.sqrt(d.value); });
-
-              var node = svg.append("g")
-                .attr("class", "nodes")
-                .selectAll("circle")
-                .data(graph.nodes)
-                .enter().append("circle")
-                .attr("r", 10)
-                .attr("fill", function (d) { return color(d.group); })
-                .call(d3.drag()
+      <!-- Graph visualization Section -->
+      <div class="container-fluid-1">
+            <div class="col-sm-4">
+              <svg width="390" height="250"></svg>
+              <script src="https://d3js.org/d3.v4.min.js"></script>
+              <script>
+              
+              var svg = d3.select("svg"),
+                  width = +svg.attr("width"),
+                  height = +svg.attr("height");
+              
+              var color = d3.scaleOrdinal(d3.schemeCategory10);
+              
+              var simulation = d3.forceSimulation()
+                  .force("link", d3.forceLink().id(function(d) { return d.id; }))
+                  .force("charge", d3.forceManyBody())
+                  .force("center", d3.forceCenter(width / 2, height / 2));
+              
+              d3.json("../static/javascripts/miserables_less_nodes.json", function(error, graph) {
+                if (error) throw error;
+              
+                var link = svg.append("g")
+                  .attr("class", "links")
+                  .selectAll("line")
+                  .data(graph.links)
+                  .enter().append("line")
+                  .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+              
+                var node = svg.append("g")
+                  .attr("class", "nodes")
+                  .selectAll("circle")
+                  .data(graph.nodes)
+                  .enter().append("circle")
+                  .attr("r", 10)
+                  .attr("fill", function(d) { return color(d.group); })
+                  .call(d3.drag()
                   .on("start", dragstarted)
                   .on("drag", dragged)
                   .on("end", dragended));
-
-              node.append("title")
-                .text(function (d) { return d.id; });
-
-              simulation
-                .nodes(graph.nodes)
-                .on("tick", ticked);
-
-              simulation.force("link")
-                .links(graph.links);
-
-              function ticked() {
-                link
-                  .attr("x1", function (d) { return d.source.x; })
-                  .attr("y1", function (d) { return d.source.y; })
-                  .attr("x2", function (d) { return d.target.x; })
-                  .attr("y2", function (d) { return d.target.y; });
-
-                node
-                  .attr("cx", function (d) { return d.x; })
-                  .attr("cy", function (d) { return d.y; });
+        
+                node.append("title")
+                  .text(function(d) { return d.id; });
+              
+                simulation
+                  .nodes(graph.nodes)
+                  .on("tick", ticked);
+              
+                simulation.force("link")
+                    .links(graph.links);
+              
+                function ticked() {
+                  link
+                      .attr("x1", function(d) { return d.source.x; })
+                      .attr("y1", function(d) { return d.source.y; })
+                      .attr("x2", function(d) { return d.target.x; })
+                      .attr("y2", function(d) { return d.target.y; });
+              
+                  node
+                      .attr("cx", function(d) { return d.x; })
+                      .attr("cy", function(d) { return d.y; });
+                }
+              });
+              
+              function dragstarted(d) {
+                if (!d3.event.active) simulation.alphaTarget(0.5).restart();
+                d.fx = d.x;
+                d.fy = d.y;
               }
-            });
-
-            function dragstarted(d) {
-              if (!d3.event.active) simulation.alphaTarget(0.5).restart();
-              d.fx = d.x;
-              d.fy = d.y;
-            }
-
-            function dragged(d) {
-              d.fx = d3.event.x;
-              d.fy = d3.event.y;
-            }
-
-            function dragended(d) {
-              if (!d3.event.active) simulation.alphaTarget(0);
-              d.fx = null;
-              d.fy = null;
-            }
-
-          </script>
-        </div>
-        <div id="works" class="col-sm-8"><br><br>
-          <h2>Como funciona o grafo </h2>
-
-          <h4>
-            <p align="justify">
-              Os gráfos são úteis porque podem resumir muitas informações em uma imagem.
-              Quando você faz pesquisas, os gráfos geralmente são a única maneira de representar dados que foram
-              coletados.
-              Quando alguém coleta dados, muitas vezes não sabe a relação exata e a interdependência entre as várias
-              quantidades que estão sendo mostradas.
-              O gráfo ao lado pode dar uma idéia sobre como as bolinhas se relacionam umas às outras.
-              <br>
-              Por essa razão, o Natural Search usa gráfos para informações conectadas.
-              <br>
-              Existem duas partes principais no gráfo do Natural Search:
-              <br>
-              Os vértices (nós) onde os dados são armazenados, ou seja, as bolas circulares coloridas, que
-              representam <em>Nome, Área, Segmento, UF, Ano do projeto e Valores diversos</em> de um projeto ou
-              proposta.
-              <br>
-              As Arestas (conexões) que conectam os nós, são as linhas entre as esferas circulares coloridas,
-              representam os<em>valores em comum</em> de um mesmo projeto ou proposta.
-              <br>
-              <h3><a href="https://github.com/fga-eps-mds/2018.2-NaturalSearch">O código deste sistema está
-                  disponível no repositório github.com/fga-eps-mds/2018.2-NaturalSearch.</a></h3>
-            </p>
-          </h4>
-
-          <p></p>
-        </div>
+              
+              function dragged(d) {
+                d.fx = d3.event.x;
+                d.fy = d3.event.y;
+              }
+              
+              function dragended(d) {
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+              }
+              
+              </script>
+            </div>
       </div>
-    </div>
-
-
-
-
-  <!-- Container (Contact Section) -->
-  <div id="whoare" class="container-fluid-3">
-
-    <h2>Quem somos?</h2>
+      
+      <!-- How graphs works text Section -->
+  <p>
+    <br>
     <h4>
-    <p align = "justify">
-        Este Projeto deu Inicio no dia 14 de agosto de 2018, resultado da interdisciplinaridade
-        entre duas disciplinas, ministrada na <a href="http://www.unb.br/">Universidade de Brasília</a>(<em>UnB</em>), do curso de engenharia de software,
-        sendo Engenharia de Produto de Software(<em>EPS</em>) e Métodos de Desenvolvimento de Software(<em>MDS</em>).
+    <br>
+      <p align = "justify">Existem duas partes principais no grafo do Natural Search:
       <br>
-        O produto, este apresentado, é resultado do desempenho de 10 alunos durante o semestre.
-        O problema foi apresentado pela professora da disciplina, sendo necessário, por parte dos alunos, aprender novas tecnologias
-        e assim colocar em prática o seus conhecimentos.
-        <br>
-        No decorrer do projeto, para obter-se um bom resultado e um produto de qualidade, foram executados técnicas de Engenharia de Software,
-        algumas metodologias ágeis, sendo <em>XP</em> e <em>SCRUM</em>.
-        <br>
-        O <em>SCRUM</em>, possibilitou a equipe assumir posições durante o desenvolvimento do produto, sendo eles Scrum Master, Product Owner, Arquiteto e 
-        Devops.
-        <br>
-        O resultado de todo o projeto é esse web app voltado a pesquisa e visualização em grafo de projetos e propostas
-        pertencentes ao Ministério da Cultura e incentivados pela <a href="http://rouanet.cultura.gov.br/o-que-e/">Lei Rouanet</a>, também conhecida como Lei 8.313/91.
-    </p>
-      <p></p>
-      <h3>
-        <p
-          style="color:rgb(37, 122, 192);">Para mais informações entre em contato com: equipe.naturalsearch@gmail.com
+      <br>
+      Os <strong>vértices</strong> (nós) onde os dados são armazenados, ou seja, as bolas circulares coloridas, que representam <em>Nome, Área, Segmento, UF, Ano do projeto e Valores diversos</em> de um projeto ou proponente.
+      <br>
+      <br>
+      As <strong>Arestas</strong> (conexões) que conectam os nós, são as linhas entre as esferas circulares coloridas, representam os<em>valores em comum</em> de um mesmo projeto ou proponente.
+      <br>
+        <p>O grafo ao lado pode dar uma idéia sobre como os nós se relacionam uns com os outros.</p>
         </p>
-        <p></p>
-        <h3>
-          <p style="color:rgb(37, 122, 192);">Para mais informações entre em contato com:
-            equipe.naturalsearch@gmail.com
-          </p>
-        </h3>
-      </h4>
+    </h4>
+  </p>
     </div>
 
-    </footer>
+    <!-- Who are we Section -->
+  <div class="w3-row-padding w3-theme-l3 w3-padding-32" id="whoarewe">
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Quem somos</h3>
 
-    <script>
-      $(document).ready(function () {
-        // Add smooth scrolling to all links in navbar + footer link
-        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
-          // Make sure this.hash has a value before overriding default behavior
-          if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
-            // Store hash
-            var hash = this.hash;
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-              scrollTop: $(hash).offset().top
-            }, 900, function () {
-              // Add hash (#) to URL when done scrolling (default click behavior)
-              window.location.hash = hash;
-            });
+      <!-- Who are we text Section -->
+      <p>
+        <br>
+        <h4>
+          <p align = "justify">
+              Este Projeto deu Início no dia 14 de agosto de 2018, resultado da interdisciplinaridade
+              entre duas disciplinas, ministrada na <a href="http://www.unb.br/">Universidade de Brasília</a>(<em>UnB</em>), do curso de engenharia de software,
+              sendo Engenharia de Produto de Software(<em>EPS</em>) e Métodos de Desenvolvimento de Software(<em>MDS</em>).
+          </p>
+          <p align = "justify">
+              O resultado de todo o projeto é esse web app voltado a pesquisa, tratamento de informações disponibilizadas na API Salic e visualização em grafo de projetos e propostas. 
+              pertencentes ao Ministério da Cultura e incentivados pela <strong>Lei 8.313/91</strong> , também conhecida como <a href="http://rouanet.cultura.gov.br/o-que-e/">Lei Rouanet</a>.
+          </p>
+            <p></p>
+          </h4>
+      </p>
+    </div>
+
+    <!-- Team Section -->
+  <div class="w3-row-padding w3-theme-l3">
+
+    <div class="w3-col m3 w3-margin-bottom">
+      <img class="photos" src="../static/images/igor.jpg" alt="Igor">
+      <h3>Igor Araújo</h3>
+      <p class="w3-opacity">Devops</p>
+      <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/zero101010" title="Contato">Contatos</a></button></p>
+    </div>
+
+    <div class="w3-col m3 w3-margin-bottom">
+      <img class="photos" src="../static/images/filipe.jpg" alt="Filipe">
+      <h3>Filipe Barcelos</h3>
+      <p class="w3-opacity">Arquiteto</p>
+      <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/FilipeKN4" title="Contato">Contatos</a></button></p>
+    </div>
+
+    <div class="w3-col m3 w3-margin-bottom">
+      <img class="photos" src="../static/images/sherman.jpg" alt="Sherman">
+      <h3>Shermam Lima</h3>
+      <p class="w3-opacity">Scrum Master</p>
+      <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/tacia68" title="Contato">Contatos</a></button></p>
+    </div>
+
+    <div class="w3-col m3 w3-margin-bottom">
+      <img class="photos" src="../static/images/gustavo.jpg" alt="Gustavo">
+      <h3>Gustavo Moreira </h3>
+      <p class="w3-opacity">Desenvolvedor</p>
+      <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/gustavoduartemoreira" title="Contato">Contatos</a></button></p>
+    </div>
+
+    <div class="w3-col m3 w3-margin-bottom">
+        <img class="photos" src="../static/images/fabiana.jpg" alt="Fabiana">
+        <h3>Fabiana Ribas</h3>
+        <p class="w3-opacity">Desenvolvedora</p>
+        <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/fabianaribas" title="Contato">Contatos</a></button></p>
+      </div>
+
+    <div class="w3-col m3 w3-margin-bottom">
+        <img class="photos" src="../static/images/mikhaelle.jpg" alt="Mikhaelle">
+        <h3>Mikhaelle Bueno</h3>
+        <p class="w3-opacity">Desenvolvedora</p>
+        <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/Mikhaelle" title="Contato">Contatos</a></button></p>
+      </div>
+
+    <div class="w3-col m3 w3-margin-bottom">
+        <img class="photos" src="../static/images/marcos.jpg" alt="Marcos">
+        <h3>Marcos Rodrigues</h3>
+        <p class="w3-opacity">Desenvolvedor</p>
+        <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/marcos-mv" title="Contato">Contatos</a></button></p>
+      </div>
+
+    <div class="w3-col m3 w3-margin-bottom">
+        <img class="photos" src="../static/images/michel.jpg" alt="Michel">
+        <h3>Michel de Camargo</h3>
+        <p class="w3-opacity">Desenvolvedor</p>
+        <p><button class="w3-button w3-light-grey w3-block"><a href="https://github.com/micheldcamargo" title="Contato">Contatos</a></button></p>
+      </div>
+
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-theme-gradient w3-padding-16" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contato</h3>
+     <!-- Contact text Section -->
+    <p>
+          <h3><p style="color: black" align = "justify">Para mais informações entre em contato com:
+            <br> equipe.naturalsearch@gmail.com</h3>
+          </p>
+    </p>
+  </div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <h4><p>Projeto disponivel no <a href="https://github.com/fga-eps-mds/2018.2-NaturalSearch" title="GitHub" target="_blank" class="w3-hover-text-cyan">GitHub</a></p>
+  <p> 2018 - Equipe Natural Search</p>
+  </h4>
+</footer>
+
+<script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+          // Store hash
+          var hash = this.hash;
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
           } // End if
         });
         $(window).scroll(function () {
