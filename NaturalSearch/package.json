@@ -11,7 +11,7 @@
   },
   "nodemonConfig": {
     "ignore": [
-      "public/javascripts/d3_prop_proj_teste3.json"
+      "public/javascripts/"
     ]
   },
   "nyc": {

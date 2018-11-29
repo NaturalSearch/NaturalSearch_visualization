@@ -35,7 +35,7 @@
     color:#0066ff;
     font-family: cursive;
     font-weight: 700;
-    
+
   }
 
   nav.main-navigation {
@@ -178,16 +178,16 @@
     margin: 0;
     width: 100%;
     height: 100%;
-    
+
   }
 
-  path {  
+  path {
     fill-opacity: 0.5;
     stroke-opacity: 10;
   }
 
   svg {
-    
+
     background-color:white;
     border-radius: 40px;
     display: block;
@@ -195,7 +195,7 @@
   }
 
   /*  text {
-    stroke: white; 
+    stroke: white;
     stroke-width: 0.1px;
     font-family: "Arial Black", Gadget, sans-serif;
     font-size: 15px;
@@ -338,7 +338,7 @@
 
     var svg = d3.select("body")
       .append("svg")
-      //definir tamanho da tela 
+      //definir tamanho da tela
       .attr("width", "1300")
       .attr("height", "1000")
       //aplicar zoom
@@ -347,8 +347,9 @@
       }))
       .append("g")
 
-    //carregar json  
-    d3.json("../static/javascripts/d3_prop_proj_teste3.json", function (error, graph) {
+    var file = '<%- title %>';
+    //carregar json
+    d3.json(file, function (error, graph) {
       if (error) throw error;
 
       var select = d3.select('#curveSettings')
@@ -438,7 +439,7 @@
           .on('drag', group_dragged)
           .on('end', group_dragended)
         );
-      //nome que aparece nos nodes 
+      //nome que aparece nos nodes
       node.append('title')
         .text(function (d) {
           return d.nome || d.area || d.valor_aprovado ||
@@ -550,7 +551,7 @@
     var sequentialScale = d3.scaleOrdinal(d3.schemeCategory20)
       .domain(['Nome do proponente', 'Nome do projeto', 'Área', 'Valor Aprovado', 'UF', 'Segmento', 'Ano do projeto', 'Valor do projeto', 'Valor solicitado', 'Valor Captado']);
 
-//area ok, segmento ok, nome do proponente ok, nome do projeto ok, UF ok, valor aprovado ok, 
+//area ok, segmento ok, nome do proponente ok, nome do projeto ok, UF ok, valor aprovado ok,
 
     svg.append("g")
       .attr("class", "legendSequential")
