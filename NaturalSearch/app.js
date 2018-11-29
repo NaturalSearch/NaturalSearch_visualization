@@ -13,7 +13,7 @@ var url = require('url');
 //routes
 var indexRouter = require('./routes/index').indexRouter;
 var usersRouter = require('./routes/users');
-var resultRouter = require('./routes/result');
+var resultRouter = require('./routes/result').resultRouter;
 var proponentesRoutes = require('./routes/proponentes');
 var projetosRoutes = require('./routes/projetos');
 var relacionamentoRoutes = require('./routes/relacionamento');
