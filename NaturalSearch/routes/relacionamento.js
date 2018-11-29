@@ -62,7 +62,8 @@ function get_relacionamento(req, res, next) {
             var convert_to_d3 = { nodes: nodes, links: links };
             //var rendering = res.render('example',{title:'Express'});
             var fs = require('fs');
-            var arquivo = 'public/javascripts/d3_prop_proj_teste3.json'
+            var nome_arq = 'd3_prop_proj_' + randomIntInc(0,100000) + '.json';
+            var arquivo = 'public/javascripts/' + nome_arq;
 
 
             //fs.writeFileSync('public/javascripts/d3_prop_proj_teste3.json', JSON.stringify(convert_to_d3))
@@ -74,9 +75,10 @@ function get_relacionamento(req, res, next) {
                 })
             }
 
+            var filetod3 = "../static/javascripts/" + nome_arq;
             createD3Mode(3, fs.writeFileSync(arquivo, JSON.stringify(convert_to_d3)))
                 .then((convert_to_d3) => convert_to_d3)
-                .then(res.render('relacionamento', { title: 'Express' }))
+                .then(res.render('relacionamento', { title: filetod3}))
                 .catch(function (err) {
                     console.log(err);
                 });
@@ -90,6 +92,10 @@ function get_relacionamento(req, res, next) {
         )
     session
 
+}
+
+function randomIntInc(low, high) {
+  return Math.floor(Math.random() * (high - low + 1) + low)
 }
 
 router.get('/:proponente', get_relacionamento)
