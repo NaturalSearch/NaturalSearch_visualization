@@ -13,7 +13,6 @@ var fs = require("fs");
 
 function get_relacionamento(req, res, next) {
     var proponente = req.params.proponente;
-    //console.log(proponente);
 
     var result = session
         .run(
@@ -21,14 +20,11 @@ function get_relacionamento(req, res, next) {
         .then(function (result) {
             var nodes = [], links = [];
             var count = result.summary.counters._stats.relationshipsCreated;
-            // CREATE NODE PROPONENTE
             result.records[0]._fields.forEach(function (r) {
                 if (r.labels == "Proponentes") {
                     nodes.push({ id: r.identity.low, nome: r.properties.nome, group: 0, group_color: 3, length_node: 25, distance_link: 100 });
-                    //console.log(nodes);
                 }
             });
-            //CREATE NODES THAT USE GROUPS TO LINK PROPERTIES
             for (i = 0; i < count; i++) {
                 result.records[i]._fields.forEach(function (r) {
                     if (r.labels == 'Projeto') {
@@ -36,9 +32,7 @@ function get_relacionamento(req, res, next) {
                         nodes.push({ id: "area" + i, area: r.properties.area, group: i + 1, group_color: 5, length_node: 15 });
                         nodes.push({ id: "valor" + i, valor_aprovado: "R$ " + r.properties.valor_aprovado.toString(), group: i + 1, group_color: 6, length_node: 15 });
                         nodes.push({ id: "UF" + i, UF: r.properties.UF, group: i + 1, group_color: 7, length_node: 15 });
-                        //nodes.push({ id: "proponente" + i, proponente: r.properties.proponente, group: i + 1, group_color: 8, length_node: 15 });
                         nodes.push({ id: "segmento" + i, segmento: r.properties.segmento, group: i + 1, group_color: 9, length_node: 15 });
-                        //nodes.push({ id: "valor_proposta" + i, valor_proposta: r.properties.valor_proposta.toString(), group: i + 1, group_color: 11, length_node: 15 });
                         nodes.push({ id: "ano_projeto" + i, ano_projeto: r.properties.ano_projeto, group: i + 1, group_color: 10, length_node: 15 });
                         nodes.push({ id: "valor_projeto" + i, valor_projeto: "R$ " + r.properties.valor_projeto.toString(), group: i + 1, group_color: 12, length_node: 15 });
                         nodes.push({ id: "valor_solicitado" + i, valor_solicitado: "R$ " + r.properties.valor_solicitado.toString(), group: i + 1, group_color: 13, length_node: 15 });
@@ -47,10 +41,8 @@ function get_relacionamento(req, res, next) {
                         links.push({ source: "area" + i, target: r.identity.low, value: 4, distance_link: 200 });
                         links.push({ source: "valor" + i, target: r.identity.low, value: 4, distance_link: 200 });
                         links.push({ source: "UF" + i, target: r.identity.low, value: 4, distance_link: 200 });
-                        //links.push({ source: "proponente" + i, target: r.identity.low, value: 4, distance_link: 200 });
                         links.push({ source: "segmento" + i, target: r.identity.low, value: 4, distance_link: 200 });
                         links.push({ source: "ano_projeto" + i, target: r.identity.low, value: 4, distance_link: 200 });
-                        //links.push({ source: "valor_proposta" + i, target: r.identity.low, value: 4, distance_link: 200 });
                         links.push({ source: "valor_projeto" + i, target: r.identity.low, value: 4, distance_link: 200 });
                         links.push({ source: "valor_captado" + i, target: r.identity.low, value: 4, distance_link: 200 });
                         links.push({ source: "valor_solicitado" + i, target: r.identity.low, value: 4, distance_link: 200 });
@@ -91,7 +83,6 @@ function get_relacionamento(req, res, next) {
         });
 
     session
-    //console.log(result); 
     var result = session
         .run(
             'MATCH (:Proponentes)-[f:LIGADOS]-(:Projeto)\
@@ -99,9 +90,6 @@ function get_relacionamento(req, res, next) {
         )
     session
 
-    //res.render('relacionamento',{title:'Express'});
-    //res.send("funcionou");
-    //res.redirect("/example");
 }
 
 router.get('/:proponente', get_relacionamento)
