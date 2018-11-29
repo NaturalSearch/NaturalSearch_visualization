@@ -33,7 +33,7 @@ router.get('/', function (req, res, next) {
                     elements_quantity = reminder;
                 }
                 for(let json_position = 0; json_position < elements_quantity; json_position++) {
-                    console.log(json.results[json_position].url);
+                    //console.log(json.results[json_position].url);
                          session    
                         .run('MERGE(n:Proponentes{tipo_pessoa:{tipo_pessoa},uf:{uf}, \
                              municipio:{municipio},nome:{nome}}) \

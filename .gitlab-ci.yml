@@ -11,7 +11,7 @@ cache:
   paths:
   - node_modules/
 
-test_with_lab:
+.test_with_lab:
   image: node:8.12
   stage: test
   script:
