@@ -26,7 +26,8 @@ search_result = req.query.q;
                      proponente: record._fields[0].properties.proponente,
                      segmento: record._fields[0].properties.segmento
     });
-    console.log(list_result); 
+    session.close();
+    //console.log(list_result); 
   });
   res.render('result', { list_result: list_result , 
       title: 'Express' });
