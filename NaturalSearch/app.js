@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 var url = require('url');
 
 //routes
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/index').indexRouter;
 var usersRouter = require('./routes/users');
 var resultRouter = require('./routes/result');
 var proponentesRoutes = require('./routes/proponentes');
