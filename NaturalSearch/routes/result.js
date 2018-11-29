@@ -10,33 +10,37 @@ password = fs.readFileSync('./PASSWORD.txt', 'utf8');
 var driver = neo4j.driver(link, neo4j.auth.basic(user_name, password));
 var session = driver.session();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-search_result = req.query.q;
+function get_result(req, res, next) {
+  search_result = req.query.q;
 
- session
+  session
     .run("match (project:Projeto) \
-          where (any(prop in keys(project) \
-          where tostring(project[prop]) =~ '(?i).*"
-    + search_result + ".*' )) RETURN project ")
- .then(function(result){
-  var list_result = [];
-  result.records.forEach(function(record){   
-    list_result.push({nome: record._fields[0].properties.nome,
-                     proponente: record._fields[0].properties.proponente,
-                     segmento: record._fields[0].properties.segmento
+            where (any(prop in keys(project) \
+            where tostring(project[prop]) =~ '(?i).*"
+      + search_result + ".*' )) RETURN project ")
+    .then(function (result) {
+      var list_result = [];
+      result.records.forEach(function (record) {
+        list_result.push({
+          nome: record._fields[0].properties.nome,
+          proponente: record._fields[0].properties.proponente,
+          segmento: record._fields[0].properties.segmento
+        });
+        session.close();
+        //console.log(list_result); 
+      });
+      res.render('result', {
+        list_result: list_result,
+        title: 'Express'
+      });
+    })
+    .catch(function (err) {
+      console.log(err);
     });
-    session.close();
-    //console.log(list_result); 
-  });
-  res.render('result', { list_result: list_result , 
-      title: 'Express' });
- })
- .catch(function(err){
-   console.log(err);
- });
+}
+router.get('/', get_result)
 
-  
-});
-
-module.exports = router;
+module.exports = {
+  resultRouter: router,
+  get_result: get_result
+}

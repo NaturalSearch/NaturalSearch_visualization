@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha",
+    "test": "mocha --exit",
     "test-with-coverage": "nyc --reporter=text mocha",
-    "coverage": "istanbul cover _mocha -- ./test/* --recursive",
+    "coverage": "istanbul cover _mocha -- ./test/* --recursive --exit",
     "test:coverage": "nyc --reporter=html --reporter=text npm run test"
   },
   "nodemonConfig": {
-    "ignore": ["public/javascripts/d3_prop_proj_teste3.json"]
+    "ignore": [
+      "public/javascripts/d3_prop_proj_teste3.json"
+    ]
   },
   "nyc": {
     "exclude": [
@@ -28,6 +30,7 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "neo4j-driver": "^1.6.3",
+    "node-coverage": "^2.1.0",
     "node-fetch": "^2.3.0",
     "nodemon": "^1.18.4",
     "sleep": "^5.2.3"
@@ -41,4 +44,3 @@
     "nyc": "^13.1.0"
   }
 }
-
