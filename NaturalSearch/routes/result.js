@@ -7,7 +7,7 @@ link = fs.readFileSync('./NEO4J_LINK.txt', 'utf8');
 user_name = fs.readFileSync('./USER_NAME.txt', 'utf8');
 password = fs.readFileSync('./PASSWORD.txt', 'utf8');
 
-var driver = neo4j.driver(link, neo4j.auth.basic(user_name, user_name));
+var driver = neo4j.driver(link, neo4j.auth.basic(user_name, password));
 var session = driver.session();
 
 /* GET users listing. */
