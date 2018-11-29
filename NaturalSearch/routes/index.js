@@ -16,8 +16,10 @@ router.get('/', function(req, res, next) {
   search_result = req.query.q;
 
   session
-    .run("MATCH (project:Projeto) RETURN count(distinct project.nome) as Total_Projetos, \
-          count(distinct project.proponente) as Total_Proponentes, \
+    .run("MATCH(proponent:Proponentes)\
+          WITH count(proponent.nome) as Total_Proponentes \
+          MATCH (project:Projeto) where project.nome = project.nome \
+          RETURN count(project.nome) as Total_Projetos, Total_Proponentes, \
           round(SUM (toFloat(project.valor_captado))) as Total_Captado")
       .then(function(result){
           var list_result = [];
@@ -67,7 +69,7 @@ router.get('/', function(req, res, next) {
               .then(function(result4){
                 var list_result4 = [];
                 for(i=0; i < 8 ;i++){
-                    list_result4.push(result4.records[i]._fields[1] );
+                      list_result4.push(result4.records[i]._fields[1] );
                 
                 } 
               session
