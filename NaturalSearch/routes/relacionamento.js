@@ -11,8 +11,7 @@ var driver = neo4j.driver(link, neo4j.auth.basic(user_name, password));
 var session = driver.session();
 var fs = require("fs");
 
-/* GET home page. */
-router.get('/:proponente', function (req, res, next) {
+function get_relacionamento(req, res, next) {
     var proponente = req.params.proponente;
     //console.log(proponente);
 
@@ -35,15 +34,15 @@ router.get('/:proponente', function (req, res, next) {
                     if (r.labels == 'Projeto') {
                         nodes.push({ id: r.identity.low, nome: r.properties.nome, group: i + 1, group_color: 4, length_node: 20 });
                         nodes.push({ id: "area" + i, area: r.properties.area, group: i + 1, group_color: 5, length_node: 15 });
-                        nodes.push({ id: "valor" + i, valor_aprovado: "R$ "+r.properties.valor_aprovado.toString(), group: i + 1, group_color: 6, length_node: 15 });
+                        nodes.push({ id: "valor" + i, valor_aprovado: "R$ " + r.properties.valor_aprovado.toString(), group: i + 1, group_color: 6, length_node: 15 });
                         nodes.push({ id: "UF" + i, UF: r.properties.UF, group: i + 1, group_color: 7, length_node: 15 });
                         //nodes.push({ id: "proponente" + i, proponente: r.properties.proponente, group: i + 1, group_color: 8, length_node: 15 });
                         nodes.push({ id: "segmento" + i, segmento: r.properties.segmento, group: i + 1, group_color: 9, length_node: 15 });
                         //nodes.push({ id: "valor_proposta" + i, valor_proposta: r.properties.valor_proposta.toString(), group: i + 1, group_color: 11, length_node: 15 });
                         nodes.push({ id: "ano_projeto" + i, ano_projeto: r.properties.ano_projeto, group: i + 1, group_color: 10, length_node: 15 });
-                        nodes.push({ id: "valor_projeto" + i, valor_projeto: "R$ "+r.properties.valor_projeto.toString(), group: i + 1, group_color: 12, length_node: 15 });
-                        nodes.push({ id: "valor_solicitado" + i, valor_solicitado: "R$ "+r.properties.valor_solicitado.toString(), group: i + 1, group_color: 13, length_node: 15 });
-                        nodes.push({ id: "valor_captado" + i, valor_captado: "R$ "+r.properties.valor_captado.toString(), group: i + 1, group_color: 14, length_node: 15 });
+                        nodes.push({ id: "valor_projeto" + i, valor_projeto: "R$ " + r.properties.valor_projeto.toString(), group: i + 1, group_color: 12, length_node: 15 });
+                        nodes.push({ id: "valor_solicitado" + i, valor_solicitado: "R$ " + r.properties.valor_solicitado.toString(), group: i + 1, group_color: 13, length_node: 15 });
+                        nodes.push({ id: "valor_captado" + i, valor_captado: "R$ " + r.properties.valor_captado.toString(), group: i + 1, group_color: 14, length_node: 15 });
 
                         links.push({ source: "area" + i, target: r.identity.low, value: 4, distance_link: 200 });
                         links.push({ source: "valor" + i, target: r.identity.low, value: 4, distance_link: 200 });
@@ -73,24 +72,24 @@ router.get('/:proponente', function (req, res, next) {
             var fs = require('fs');
             var arquivo = 'public/javascripts/d3_prop_proj_teste3.json'
 
-            
+
             //fs.writeFileSync('public/javascripts/d3_prop_proj_teste3.json', JSON.stringify(convert_to_d3))
-            function createD3Mode(segunds, convert_to_d3){        
-                return new Promise ((resolve, reject) => {
-                    setTimeout(() =>{
+            function createD3Mode(segunds, convert_to_d3) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
                         resolve(convert_to_d3)
                     }, segunds * 1000)
                 })
             }
-            
+
             createD3Mode(3, fs.writeFileSync(arquivo, JSON.stringify(convert_to_d3)))
                 .then((convert_to_d3) => convert_to_d3)
-                .then(res.render('relacionamento',{title:'Express'}))
-                .catch(function(err){
+                .then(res.render('relacionamento', { title: 'Express' }))
+                .catch(function (err) {
                     console.log(err);
-                  });
+                });
         });
-        
+
     session
     //console.log(result); 
     var result = session
@@ -99,10 +98,14 @@ router.get('/:proponente', function (req, res, next) {
         DELETE f'
         )
     session
-    
+
     //res.render('relacionamento',{title:'Express'});
     //res.send("funcionou");
     //res.redirect("/example");
-});
+}
 
-module.exports = router;
+router.get('/:proponente', get_relacionamento)
+module.exports = {
+    relacionamentoRoutes: router,
+    get_relacionamento: get_relacionamento
+}

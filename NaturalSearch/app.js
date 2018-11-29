@@ -16,7 +16,7 @@ var usersRouter = require('./routes/users');
 var resultRouter = require('./routes/result').resultRouter;
 var proponentesRoutes = require('./routes/proponentes');
 var projetosRoutes = require('./routes/projetos');
-var relacionamentoRoutes = require('./routes/relacionamento');
+var relacionamentoRoutes = require('./routes/relacionamento').relacionamentoRoutes;
 
 var app = express();
 
