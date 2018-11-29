@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var neo4j = require('neo4j-driver').v1;
-var driver = neo4j.driver("bolt://kunze-vista-teal-jess.graphstory.services/", neo4j.auth.basic("kunze_vista_teal_jess", "MPSbPSW1AuQX5B49eQOPnKPD8Q"));
+var fs = require('fs');
+
+link = fs.readFileSync('./NEO4J_LINK.txt', 'utf8');
+user_name = fs.readFileSync('./USER_NAME.txt', 'utf8');
+password = fs.readFileSync('./PASSWORD.txt', 'utf8');
+
+var driver = neo4j.driver(link, neo4j.auth.basic(user_name, password));
 var session = driver.session();
 var fs = require("fs");
 
@@ -12,13 +18,13 @@ router.get('/:proponente', function (req, res, next) {
 
     var result = session
         .run(
-            'MATCH (p:Nó_Proponentes), (pr:Nó_Projeto) WHERE p.nome="' + proponente + '" AND pr.proponente="' + proponente + '"CREATE (p)-[f:LIGADOS]->(pr) RETURN p,f,pr')
+            'MATCH (p:Proponentes), (pr:Projeto) WHERE p.nome="' + proponente + '" AND pr.proponente="' + proponente + '"CREATE (p)-[f:LIGADOS]->(pr) RETURN p,f,pr')
         .then(function (result) {
             var nodes = [], links = [];
             var count = result.summary.counters._stats.relationshipsCreated;
             // CREATE NODE PROPONENTE
             result.records[0]._fields.forEach(function (r) {
-                if (r.labels == "Nó_Proponentes") {
+                if (r.labels == "Proponentes") {
                     nodes.push({ id: r.identity.low, nome: r.properties.nome, group: 0, group_color: 3, length_node: 25, distance_link: 100 });
                     //console.log(nodes);
                 }
@@ -26,7 +32,7 @@ router.get('/:proponente', function (req, res, next) {
             //CREATE NODES THAT USE GROUPS TO LINK PROPERTIES
             for (i = 0; i < count; i++) {
                 result.records[i]._fields.forEach(function (r) {
-                    if (r.labels == 'Nó_Projeto') {
+                    if (r.labels == 'Projeto') {
                         nodes.push({ id: r.identity.low, nome: r.properties.nome, group: i + 1, group_color: 4, length_node: 20 });
                         nodes.push({ id: "area" + i, area: r.properties.area, group: i + 1, group_color: 5, length_node: 15 });
                         nodes.push({ id: "valor" + i, valor_aprovado: "R$ "+r.properties.valor_aprovado.toString(), group: i + 1, group_color: 6, length_node: 15 });
@@ -89,7 +95,7 @@ router.get('/:proponente', function (req, res, next) {
     //console.log(result); 
     var result = session
         .run(
-            'MATCH (:Nó_Proponentes)-[f:LIGADOS]-(:Nó_Projeto)\
+            'MATCH (:Proponentes)-[f:LIGADOS]-(:Projeto)\
         DELETE f'
         )
     session
